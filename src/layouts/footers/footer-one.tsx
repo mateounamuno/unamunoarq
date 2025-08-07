@@ -4,19 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from '@/assets/img/logo/logo-white.png';
 import { footerOneAnimation, footerTwoAnimation } from "@/utils/footer-anim";
+import menu_data from "@/data/menu-data";
 
 const footer_links = [
-  { link: "/portfolio-details-1", title: "Projects" },
-  { link: "/service", title: "What we do" },
-  { link: "/about-us", title: "About" },
-  { link: "/blog-modern", title: "Blog" },
-  { link: "/contact", title: "Contact" },
+  { link: "/", title: "Home" },
+  { link: "/portfolio-grid-col-4", title: "Proyectos" },
+  { link: "/blog-modern", title: "Artículos" },
+  { link: "/contact-2", title: "Contacto" },
 ];
+
 export default function FooterOne() {
   const [isActive, setIsActive] = React.useState(false);
   useEffect(() => {
     footerOneAnimation();
-  },[])
+  }, [])
   return (
     <footer>
       {/* footer area start */}
