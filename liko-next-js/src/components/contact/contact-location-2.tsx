@@ -12,34 +12,36 @@ import c_img_6 from "@/assets/img/inner-contact/contact/contact-6.jpg";
 const location_data = [
   {
     id: 1,
-    country: "Sydney",
+    country: "Oficinas",
     img_1: c_img_1,
     img_2: c_img_2,
     map: "https://www.google.com/maps/@23.822356,90.3671947,15z?entry=ttu",
-    address: "C26, 99 Jones Street, Ultimo. Sydney. 2007, NSW- Australia",
-    phone: "(+91) 76001726",
-    email: "sydney@contact.com",
+    address: "Córdoba, Argentina.",
+    email: undefined,
+    phone: undefined,
+    note: undefined,
   },
   {
     id: 2,
-    country: "London",
+    country: "Email",
     img_1: c_img_3,
     img_2: c_img_4,
-    map: "https://www.google.com/maps/@23.822356,90.3671947,15z?entry=ttu",
-    address: "86-90 Paul Street. London. EC2A 4NE, I-United Kingdom",
-    phone: "(+91) 76001726",
-    email: "london@contact.com",
+    email: "mateo@unamunoarq.com",
+    map: undefined,
+    address: undefined,
+    phone: undefined,
+    note: undefined,
   },
   {
     id: 3,
-    country: "Join us",
+    country: "Instagram",
     img_1: c_img_5,
     img_2: c_img_6,
-    map: "https://www.google.com/maps/@23.822356,90.3671947,15z?entry=ttu",
-    address:
-      "We're always looking for bright new talent. If you're keen. drop us a note:",
-    note: "( no 100mb PDFs please )",
-    email: "Hello@contact.com",
+    map: "https://www.instagram.com/unamuno.arq/",
+    address: "@unamuno.arq",
+    email: undefined,
+    phone: undefined,
+    note: undefined,
   },
 ];
 const ContactLocationTwo = () => {
@@ -50,7 +52,7 @@ const ContactLocationTwo = () => {
           {location_data.map((item) => (
             <div key={item.id} className="col-xl-4 col-lg-4 col-md-6 mb-30">
               <div className={`cn-contact-2-content ${item.id === 2 ? "mt-60" : ""} text-center`}>
-                <h4 className="cn-contact-2-title">{item.country}</h4>
+                <h4 className={`cn-contact-2-title ${item.country === "Instagram" ? "instagram-title" : ""}`}>{item.country}</h4>
                 <div className="cn-contact-2-thumb d-flex justify-content-center">
                   <Image
                     src={item.img_1}

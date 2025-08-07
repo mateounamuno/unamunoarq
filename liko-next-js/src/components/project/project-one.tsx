@@ -185,7 +185,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
                       <div className="tp-btn-bounce">
                         <Link
                           className="tp-btn-border"
-                          href="/portfolio-grid-col-3"
+                          href="/portfolio-grid-col-4"
                         >
                           <span className="tp-btn-border-wrap">
                             <span className="text-1">View all projects</span>
