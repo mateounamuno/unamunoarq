@@ -8,6 +8,10 @@ import {
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
+import "./project-one-fixes.css";
+import "./mac-specific-fixes.css";
+import "./mac-breakpoints.css";
+import "./final-project-fixes.css";
 
 const gellery = localFont({
   src: [

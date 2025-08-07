@@ -56,7 +56,7 @@ const slider_setting: SwiperOptions = {
 };
 const TestimonialOne = () => {
   return (
-    <div className="tp-testimonial-area pb-120">
+    <div className="tp-testimonial-area pb-120 pt-120" style={{ marginTop: '50px' }}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-10">

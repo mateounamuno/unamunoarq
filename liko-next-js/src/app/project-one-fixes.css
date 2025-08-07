@@ -1,0 +1,174 @@
+/* Project One Responsive Fixes - Updated with better breakpoints */
+
+/* Base styles for all screen sizes */
+.tp-project-area .container-1630 {
+  max-width: 1630px;
+  margin: 0 auto;
+}
+
+/* Large desktop screens (1400px and above) */
+@media (min-width: 1400px) {
+  .tp-project-area .container-1630 {
+    max-width: 1630px;
+    padding: 0 30px;
+  }
+
+  .tp-project-area .tp-project-left-wrap {
+    padding-right: 100px;
+  }
+
+  .tp-project-area .tp-project-right-wrap {
+    padding-left: 100px;
+  }
+}
+
+/* Medium desktop screens (1200px to 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .tp-project-area .container-1630 {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  .tp-project-area .tp-project-left-wrap {
+    padding-right: 60px;
+  }
+
+  .tp-project-area .tp-project-right-wrap {
+    padding-left: 60px;
+  }
+}
+
+/* Small desktop screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tp-project-area .container-1630 {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+
+  .tp-project-area .tp-project-left-wrap {
+    padding-right: 40px;
+  }
+
+  .tp-project-area .tp-project-right-wrap {
+    padding-left: 40px;
+  }
+}
+
+/* Tablet screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tp-project-area .container-1630 {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .tp-project-area .tp-project-left-wrap {
+    padding-right: 20px;
+  }
+
+  .tp-project-area .tp-project-right-wrap {
+    padding-left: 20px;
+  }
+
+  .tp-project-area .tp-project-item {
+    margin-bottom: 150px !important;
+  }
+}
+
+/* Mobile screens (up to 767px) */
+@media (max-width: 767px) {
+  .tp-project-area .container-1630 {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .tp-project-area .tp-project-left-wrap {
+    padding-right: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .tp-project-area .tp-project-right-wrap {
+    padding-left: 0 !important;
+  }
+
+  .tp-project-area .tp-project-item {
+    margin-bottom: 100px !important;
+  }
+
+  .tp-project-area .tp-project-img {
+    width: 100% !important;
+  }
+
+  .tp-project-area .tp-project-img img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .tp-project-area .row {
+    justify-content: center !important;
+  }
+
+  .tp-project-area .col-xl-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .tp-project-area .tp-project-gallery-top {
+    padding-bottom: 30px !important;
+  }
+
+  .tp-project-area .tp-project-gallery-wrapper {
+    text-align: center;
+  }
+}
+
+/* Specific fixes for MacBook screens (common resolutions) */
+@media (min-width: 1440px) and (max-width: 1600px) {
+  .tp-project-area .container-1630 {
+    max-width: 1400px;
+    padding: 0 50px;
+  }
+
+  .tp-project-area .tp-project-left-wrap {
+    padding-right: 80px;
+  }
+
+  .tp-project-area .tp-project-right-wrap {
+    padding-left: 80px;
+  }
+}
+
+/* Fix for Retina displays and high DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .tp-project-area .tp-project-img img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Ensure proper centering on all screen sizes */
+.tp-project-area .tp-project-gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tp-project-area .row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Fix for image sizing on different screen sizes */
+@media (max-width: 1200px) {
+
+  .tp-project-area .tp-project-img.height-1,
+  .tp-project-area .tp-project-img.height-2,
+  .tp-project-area .tp-project-img.height-3,
+  .tp-project-area .tp-project-img.height-4,
+  .tp-project-area .tp-project-img.height-5,
+  .tp-project-area .tp-project-img.height-6 {
+    width: 100% !important;
+  }
+}
