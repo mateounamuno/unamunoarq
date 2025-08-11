@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  Syne,
   Aladin,
   Big_Shoulders_Display,
   Marcellus,
@@ -40,31 +39,192 @@ const aladin = Aladin({
   subsets: ["latin"],
   variable: "--tp-ff-aladin",
 });
-const syne_body = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
+
+const geist_body = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/Geist-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
   variable: "--tp-ff-body",
 });
-const syne_heading = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
+
+const geist_heading = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/Geist-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
   variable: "--tp-ff-heading",
 });
-const syne_p = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
+
+const geist_p = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/Geist-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
   variable: "--tp-ff-p",
 });
-const syne = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--tp-ff-syne",
+
+const geist_mono = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/Geist-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Geist-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--tp-ff-mono",
 });
+
 const big_shoulders = Big_Shoulders_Display({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--tp-ff-shoulders",
 });
+
 const marcellus = Marcellus({
   weight: ["400"],
   subsets: ["latin"],
@@ -86,7 +246,7 @@ export default function RootLayout({
       <body
         id="body"
         suppressHydrationWarning={true}
-        className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
+        className={`${gellery.variable} ${aladin.variable} ${geist_body.variable} ${geist_heading.variable} ${geist_p.variable} ${geist_mono.variable} ${big_shoulders.variable} ${marcellus.variable}`}
       >
         <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
       </body>

@@ -21,6 +21,7 @@ import TeamOne from "@/components/team/team-one";
 import TestimonialOne from "@/components/testimonial/testimonial-one";
 import FooterOne from "@/layouts/footers/footer-one";
 import { WhatsApp } from "@/components/svg";
+import FontTest from "@/components/ui/font-test";
 
 // images
 import shape_1 from '@/assets/img/home-01/footer/footer-circle-shape-1.png';
