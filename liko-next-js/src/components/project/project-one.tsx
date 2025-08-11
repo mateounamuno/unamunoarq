@@ -10,7 +10,7 @@ import { useScreenSize, applyProjectStyles } from "./screen-detector";
 import p_1 from "@/assets/img/home-01/project/project-1-1.jpg";
 import p_2 from "@/assets/img/home-01/project/project-1-2.jpg";
 import p_3 from "@/assets/img/home-01/project/project-1-3.jpg";
-import p_4 from "@/assets/img/home-01/project/project-1-4.jpg";
+import p_4 from "@/assets/img/home-01/project/project-1-4.png";
 import p_5 from "@/assets/img/home-01/project/project-1-5.jpg";
 import p_6 from "@/assets/img/home-01/project/project-1-6.jpg";
 
