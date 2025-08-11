@@ -24,6 +24,7 @@ import { WhatsApp } from "@/components/svg";
 
 // images
 import shape_1 from '@/assets/img/home-01/footer/footer-circle-shape-1.png';
+import shape_2 from '@/assets/img/home-01/footer/footer-circle-shape-2.png';
 
 // animation
 import { videoAnimOne } from "@/utils/video-anim";
@@ -120,6 +121,7 @@ const HomeMain = () => {
             <div className="whatsapp-icon">
               <WhatsApp />
             </div>
+            <span></span>
           </div>
         </a>
       </div>

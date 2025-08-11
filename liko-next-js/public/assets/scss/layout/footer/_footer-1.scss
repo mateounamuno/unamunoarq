@@ -311,18 +311,6 @@
     &-shape {
         display: inline-block;
 
-        & span {
-            height: 53px;
-            width: 53px;
-            border-radius: 50%;
-            background-color: #333333;
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
         & .img-1 {
             animation: rotate2 15s linear infinite;
         }
@@ -342,8 +330,8 @@
             transform: translate(-50%, -50%);
             z-index: 4;
             color: #25D366;
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             display: flex;
             align-items: center;
             justify-content: center;
