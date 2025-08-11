@@ -30,38 +30,38 @@ const ProjectTextLine = () => {
       className="tp-project-textline tp-project-effect mb-115"
       data-scrub="0.0001"
     >
-      <span className="textline-1">
-        Co
+      <span className="textline-1" style={{ fontSize: '125px', fontWeight: '400' }}>
+        by
         <span>
           <Image src={shape} alt="shape" />
         </span>
-        lest
+        Unamuno
       </span>
-      <span className="textline-2">Project</span>
-      <span className="textline-1">
-        Co
+      <span className="textline-2" style={{ fontSize: '125px', fontWeight: '400' }}>Proyectos</span>
+      <span className="textline-1" style={{ fontSize: '125px', fontWeight: '400' }}>
+        by
         <span>
           <Image src={shape} alt="shape" />
         </span>
-        lest
+        Unamuno
       </span>
-      <span className="textline-2">Project</span>
-      <span className="textline-1">
-        Co
+      <span className="textline-2" style={{ fontSize: '125px', fontWeight: '400' }}>Proyectos</span>
+      <span className="textline-1" style={{ fontSize: '125px', fontWeight: '400' }}>
+        by
         <span>
           <Image src={shape} alt="shape" />
         </span>
-        lest
+        Unamuno
       </span>
-      <span className="textline-2">Project</span>
-      <span className="textline-1">
-        Co
+      <span className="textline-2" style={{ fontSize: '125px', fontWeight: '400' }}>Proyectos</span>
+      <span className="textline-1" style={{ fontSize: '125px', fontWeight: '400' }}>
+        by
         <span>
           <Image src={shape} alt="shape" />
         </span>
-        lest
+        Unamuno
       </span>
-      <span className="textline-2">Project</span>
+      <span className="textline-2" style={{ fontSize: '125px', fontWeight: '400' }}>Proyectos</span>
     </div>
   );
 };
