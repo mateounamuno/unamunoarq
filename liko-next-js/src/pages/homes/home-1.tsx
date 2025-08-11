@@ -20,10 +20,10 @@ import AwardOne from "@/components/award/award-one";
 import TeamOne from "@/components/team/team-one";
 import TestimonialOne from "@/components/testimonial/testimonial-one";
 import FooterOne from "@/layouts/footers/footer-one";
+import { WhatsApp } from "@/components/svg";
 
 // images
 import shape_1 from '@/assets/img/home-01/footer/footer-circle-shape-1.png';
-import shape_2 from '@/assets/img/home-01/footer/footer-circle-shape-2.png';
 
 // animation
 import { videoAnimOne } from "@/utils/video-anim";
@@ -114,13 +114,14 @@ const HomeMain = () => {
 
       {/* footer shape */}
       <div className="tp-footer-shape-wrap z-index-5 smooth">
-        <Link href="/contact">
+        <a href="https://wa.me/+5493584262112" target="_blank" rel="noopener noreferrer">
           <div className="tp-footer-shape p-relative">
             <Image className="img-1" src={shape_1} alt="shape" />
-            <Image className="img-2" src={shape_2} alt="shape" />
-            <span></span>
+            <div className="whatsapp-icon">
+              <WhatsApp />
+            </div>
           </div>
-        </Link>
+        </a>
       </div>
       {/* footer shape */}
     </Wrapper>
