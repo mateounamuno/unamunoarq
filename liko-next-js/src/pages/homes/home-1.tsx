@@ -121,7 +121,6 @@ const HomeMain = () => {
             <div className="whatsapp-icon">
               <WhatsApp />
             </div>
-            <span></span>
           </div>
         </a>
       </div>
