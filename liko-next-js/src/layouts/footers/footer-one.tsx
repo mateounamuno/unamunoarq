@@ -50,7 +50,7 @@ export default function FooterOne() {
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-widget">
                         <h4 className="tp-footer-title tp_fade_bottom">
-                          Escribinos!
+                          Escríbenos!
                         </h4>
                         <div className="tp-footer-widget-info">
                           <div className="tp-footer-widget-info-mail tp_fade_bottom">
