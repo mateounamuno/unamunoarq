@@ -104,15 +104,16 @@
                 }
 
                 & a {
-                    font-weight: 400;
-                    font-size: 50px;
+                    font-weight: 300;
+                    font-size: 40px;
                     line-height: 1;
                     position: relative;
                     padding-left: 50px;
                     transition: .3s;
                     display: block;
                     color: rgba(245, 247, 245, 0.3);
-                    font-family: var(--tp-ff-gallery);
+                    font-family: var(--tp-ff-heading);
+                    text-transform: none;
 
                     & .tp-menu-text {
                         display: inline-flex;

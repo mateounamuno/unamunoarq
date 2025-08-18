@@ -54,8 +54,8 @@ export default function FooterOne() {
                         </h4>
                         <div className="tp-footer-widget-info">
                           <div className="tp-footer-widget-info-mail tp_fade_bottom">
-                            <a href="mailto:contact@agency.com">
-                              contact@agency.com
+                            <a href="mailto:mateo@unamunoarq.com">
+                              mateo@unamunoarq.com
                             </a>
                           </div>
                           <div className="tp-footer-widget-info-location tp_fade_bottom">
@@ -63,7 +63,7 @@ export default function FooterOne() {
                               href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
                               target="_blank"
                             >
-                              389 Street St. <br /> San Francisco,CA
+                              Rondeau 614 <br /> Córdoba, AR.
                             </a>
                           </div>
                         </div>
