@@ -33,19 +33,7 @@ const HeroBannerOne = () => {
 
               <div className="tp-hero-title-box text-center p-relative">
                 <h1 className="tp-hero-title tp_fade_bottom">
-                  <span className="p-relative">
-                    Unamuno
 
-                    <span className="tp-hero-shape-2 d-none d-md-block">
-                      <Image
-                        src="/assets/img/home-01/hero/hero-shape-1-1.png"
-                        alt="shape"
-                        width={40}
-                        height={40}
-                      />
-                    </span>
-                  </span>
-                  <br />
 
                   <span className="tp-hero-title-img">
 
@@ -58,7 +46,7 @@ const HeroBannerOne = () => {
                       style={{ height: "auto" }}
                     />
                   </span>
-                  Arq.
+
                 </h1>
               </div>
             </div>
