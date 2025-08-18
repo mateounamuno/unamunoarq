@@ -41,16 +41,16 @@ export default function FooterOne() {
                   </ul>
                 </div>
               </div>
-              <div className="col-xl-5 col-lg-6">
+              <div className="col-xl-6 col-lg-6">
                 <div className="tp-footer-middle-wrap">
                   <div className="tp-footer-content">
-                    <h4 className="tp-footer-big-title footer-big-text">{"Let's"} Contact!</h4>
+                    <h4 className="tp-footer-big-title footer-big-text"> {"GET IN"} TOUCH!</h4>
                   </div>
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-widget">
                         <h4 className="tp-footer-title tp_fade_bottom">
-                          Say hello at:
+                          Escribinos!
                         </h4>
                         <div className="tp-footer-widget-info">
                           <div className="tp-footer-widget-info-mail tp_fade_bottom">
@@ -72,20 +72,11 @@ export default function FooterOne() {
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-widget">
                         <h4 className="tp-footer-title tp_fade_bottom">
-                          Stalk us
+                          Nuestras redes
                         </h4>
                         <ul className="tp-footer-widget-social">
                           <li className="tp_fade_bottom">
-                            <a href="#">Facebook</a>
-                          </li>
-                          <li className="tp_fade_bottom">
                             <a href="#">Instagram</a>
-                          </li>
-                          <li className="tp_fade_bottom">
-                            <a href="#">Behance</a>
-                          </li>
-                          <li className="tp_fade_bottom">
-                            <a href="#">Dribbble</a>
                           </li>
                         </ul>
                       </div>
