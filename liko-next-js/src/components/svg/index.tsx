@@ -40,7 +40,6 @@ import Address from "./address";
 import Shipping from "./shipping";
 import Close, { CloseTwo, CloseThree } from "./close";
 import Dots from "./dots";
-import WhatsApp from "./whatsapp";
 
 export {
   PrevIcon,
@@ -115,5 +114,4 @@ export {
   Youtube,
   InstagramTwo,
   CloseThree,
-  WhatsApp,
 }
