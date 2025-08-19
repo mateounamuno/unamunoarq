@@ -63,9 +63,8 @@ type IProps = {
 export default function ProjectFive({ style_2 = false }: IProps) {
   return (
     <div
-      className={`tp-project-5-2-area pb-130 ${
-        style_2 ? "" : "tp-project-5-2-pt black-bg"
-      }`}
+      className={`tp-project-5-2-area pb-130 ${style_2 ? "" : "tp-project-5-2-pt black-bg"
+        }`}
     >
       {!style_2 && (
         <div className="row">
@@ -80,7 +79,7 @@ export default function ProjectFive({ style_2 = false }: IProps) {
             <div key={item.id} className="col-xl-6 col-lg-6 col-md-6">
               <div
                 className="tp-project-5-2-thumb fix mb-140 p-relative not-hide-cursor"
-                data-cursor="View<br>Demo"
+                data-cursor="Ver<br>Proyecto"
               >
                 <Link className="cursor-hide" href="/portfolio-details-1">
                   <span className="tp_img_reveal">
@@ -109,9 +108,8 @@ export default function ProjectFive({ style_2 = false }: IProps) {
             <div className="tp-projct-5-2-btn-box d-flex justify-content-center">
               <div className="tp-hover-btn-wrapper">
                 <Link
-                  className={`tp-btn-circle ${
-                    style_2 ? "style-2" : ""
-                  } tp-hover-btn-item tp-hover-btn`}
+                  className={`tp-btn-circle ${style_2 ? "style-2" : ""
+                    } tp-hover-btn-item tp-hover-btn`}
                   href="/portfolio-details-1"
                 >
                   <span className="tp-btn-circle-text">

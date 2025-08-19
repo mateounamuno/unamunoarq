@@ -3,73 +3,38 @@ import React from "react";
 import ProjectTextLine from "./project-text-line";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { projects } from "@/data/project-data";
 import styles from "./project-one.module.scss";
 import { useScreenSize, applyProjectStyles } from "./screen-detector";
 
-// project images
-import p_1 from "@/assets/img/home-01/project/project-1-1.jpg";
-import p_2 from "@/assets/img/home-01/project/project-1-2.jpg";
-import p_3 from "@/assets/img/home-01/project/project-1-3.jpg";
-import p_4 from "@/assets/img/home-01/project/project-1-4.png";
-import p_5 from "@/assets/img/home-01/project/project-1-5.jpg";
-import p_6 from "@/assets/img/home-01/project/project-1-6.jpg";
+// project images (no longer used; data-driven from src/data/project-data)
 
 // type
 type IProject = {
-  id: number;
+  slug: string;
   cls: string;
   cls_2: string;
-  img: StaticImageData;
+  img: StaticImageData | string;
 };
 
-const project_data: IProject[] = [
-  {
-    id: 1,
-    cls: "tp-project-mr",
-    cls_2: "height-1",
-    img: p_1,
-  },
-  {
-    id: 2,
-    cls: "text-end",
-    cls_2: "height-2 d-inline-flex justify-content-end",
-    img: p_2,
-  },
-  {
-    id: 3,
-    cls: "tp-project-mr",
-    cls_2: "height-3",
-    img: p_3,
-  },
-  {
-    id: 4,
-    cls: "",
-    cls_2: "height-4",
-    img: p_4,
-  },
-  {
-    id: 5,
-    cls: "tp-project-ml",
-    cls_2: "height-5",
-    img: p_5,
-  },
-  {
-    id: 6,
-    cls: "",
-    cls_2: "height-6",
-    img: p_6,
-  },
-];
+const project_data: IProject[] = (
+  projects.filter(p => p.showOnHome).slice(0, 6).map((p, index) => ({
+    slug: p.slug,
+    cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
+    cls_2: `height-${index + 1}` + (index === 1 ? " d-inline-flex justify-content-end" : ""),
+    img: p.thumbnail,
+  }))
+) as IProject[];
 
 function ProjectItem({ item }: { item: IProject }) {
   return (
     <div className={`tp-project-item ${item.cls} mb-200 ${styles.projectItem}`}>
       <div
         className={`tp-project-img ${item.cls_2} fix not-hide-cursor ${styles.projectImg}`}
-        data-cursor="View<br>Demo"
+        data-cursor="Ver<br>Proyecto"
       >
-        <Link className="cursor-hide" href="/portfolio-details-3">
-          <Image data-speed=".8" src={item.img} alt="project-img" style={{ height: "auto" }} />
+        <Link className="cursor-hide" href={`/portfolio/${item.slug}`}>
+          <Image data-speed=".8" src={item.img} alt="project-img" style={{ height: "auto" }} width={800} height={600} />
         </Link>
       </div>
     </div>
@@ -171,14 +136,14 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
                 <div className={`col-xl-6 col-lg-6 col-md-6 ${styles.col}`}>
                   <div className={`tp-project-left-wrap ${styles.leftWrap}`}>
                     {project_data.slice(0, 3).map((item, i) => (
-                      <ProjectItem key={item.id} item={item} />
+                      <ProjectItem key={item.slug} item={item} />
                     ))}
                   </div>
                 </div>
                 <div className={`col-xl-6 col-lg-6 col-md-6 ${styles.col}`}>
                   <div className={`tp-project-right-wrap ${styles.rightWrap}`}>
                     {project_data.slice(3, 6).map((item) => (
-                      <ProjectItem key={item.id} item={item} />
+                      <ProjectItem key={item.slug} item={item} />
                     ))}
 
                     <div className="tp-project-btn tp-btn-trigger">
@@ -188,8 +153,8 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
                           href="/portfolio-grid-col-4"
                         >
                           <span className="tp-btn-border-wrap">
-                            <span className="text-1">View all projects</span>
-                            <span className="text-2">View all projects</span>
+                            <span className="text-1"> Más proyectos</span>
+                            <span className="text-2"> Más proyectos</span>
                           </span>
                         </Link>
                       </div>

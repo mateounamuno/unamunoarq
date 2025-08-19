@@ -66,7 +66,7 @@ export default function PerspectivePortfolioSlider() {
                           </span>
                           <h1
                             className="tp-portfolio-9-title tp_reveal_anim not-hide-cursor"
-                            data-cursor="View<br>Demo"
+                            data-cursor="Ver<br>Proyecto"
                           >
                             <Link
                               className="cursor-hide"
