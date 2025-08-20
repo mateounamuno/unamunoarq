@@ -1,0 +1,22 @@
+/* Contact Location Two fixes */
+
+/* Reduce font size for all titles to prevent overflow */
+.cn-contact-2-content h4.cn-contact-2-title {
+  font-size: 45px !important;
+  letter-spacing: -2.7px !important;
+}
+
+/* Responsive adjustments for all titles */
+@media (max-width: 991px) {
+  .cn-contact-2-content h4.cn-contact-2-title {
+    font-size: 35px !important;
+    letter-spacing: -2.1px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .cn-contact-2-content h4.cn-contact-2-title {
+    font-size: 30px !important;
+    letter-spacing: -1.8px !important;
+  }
+}

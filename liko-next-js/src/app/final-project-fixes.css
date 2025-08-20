@@ -1,0 +1,154 @@
+/* Final Project One fixes - Comprehensive solution */
+
+/* Force container centering and sizing */
+.tp-project-area .container-1630 {
+    margin: 0 auto !important;
+    max-width: 1630px !important;
+}
+
+/* Responsive breakpoints with !important to override existing styles */
+@media (min-width: 1400px) {
+    .tp-project-area .container-1630 {
+        max-width: 1630px !important;
+        padding: 0 30px !important;
+    }
+
+    .tp-project-area .tp-project-left-wrap {
+        padding-right: 100px !important;
+    }
+
+    .tp-project-area .tp-project-right-wrap {
+        padding-left: 100px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .tp-project-area .container-1630 {
+        max-width: 100% !important;
+        padding: 0 40px !important;
+    }
+
+    .tp-project-area .tp-project-left-wrap {
+        padding-right: 60px !important;
+    }
+
+    .tp-project-area .tp-project-right-wrap {
+        padding-left: 60px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .tp-project-area .container-1630 {
+        max-width: 100% !important;
+        padding: 0 30px !important;
+    }
+
+    .tp-project-area .tp-project-left-wrap {
+        padding-right: 40px !important;
+    }
+
+    .tp-project-area .tp-project-right-wrap {
+        padding-left: 40px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .tp-project-area .container-1630 {
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+
+    .tp-project-area .tp-project-left-wrap {
+        padding-right: 20px !important;
+    }
+
+    .tp-project-area .tp-project-right-wrap {
+        padding-left: 20px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .tp-project-area .container-1630 {
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+
+    .tp-project-area .tp-project-left-wrap {
+        padding-right: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .tp-project-area .tp-project-right-wrap {
+        padding-left: 0 !important;
+    }
+
+    .tp-project-area .tp-project-item {
+        margin-bottom: 100px !important;
+    }
+
+    .tp-project-area .tp-project-img {
+        width: 100% !important;
+    }
+
+    .tp-project-area .tp-project-img img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+
+    .tp-project-area .row {
+        justify-content: center !important;
+    }
+
+    .tp-project-area .col-xl-6 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Mac-specific fixes */
+@media (min-width: 1440px) and (max-width: 1600px) {
+    .tp-project-area .container-1630 {
+        max-width: 1400px !important;
+        padding: 0 50px !important;
+    }
+
+    .tp-project-area .tp-project-left-wrap {
+        padding-right: 80px !important;
+    }
+
+    .tp-project-area .tp-project-right-wrap {
+        padding-left: 80px !important;
+    }
+}
+
+/* Ensure proper centering */
+.tp-project-area .tp-project-gallery-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.tp-project-area .row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Force image sizing */
+.tp-project-area .tp-project-img {
+    display: inline-block !important;
+}
+
+.tp-project-area .tp-project-img img {
+    width: auto !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Override any conflicting styles */
+.tp-project-area * {
+    box-sizing: border-box !important;
+}
+
+/* Debug styles - removed */

@@ -1,0 +1,31 @@
+// font url - removed since we're using local Geist fonts
+
+@font-face {
+    font-family: 'gallery_modernregular';
+    src: url('../../fonts/gallerymodern-webfont.woff2') format('woff2'),
+        url('../../fonts/gallerymodern-webfont.woff') format('woff'),
+        url('../../fonts/gallerymodern-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font family
+$font-family: (
+    'ff': ('body': "'Geist', sans-serif",
+        'heading': "'Geist', sans-serif",
+        'p': "'Geist', sans-serif",
+        'mono': "'Geist', monospace",
+        'gallery': "'gallery_modernregular', sans-serif",
+        'shoulders': "'Big Shoulders Display', cursive",
+        'marcellus': "'Marcellus', sans-serif",
+        'aladin': "'Aladin', system-ui",
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);
+
+// font size
+$font-size: (
+    'fz': ('body': 14px,
+        'p': 16px,
+    )
+);

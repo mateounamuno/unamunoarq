@@ -1,0 +1,119 @@
+"use client";
+import React, { useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import logo from '@/assets/img/logo/logo-white.png';
+import { footerOneAnimation, footerTwoAnimation } from "@/utils/footer-anim";
+import menu_data from "@/data/menu-data";
+
+const footer_links = [
+  { link: "/", title: "Home" },
+  { link: "/portfolio-grid-col-4", title: "Proyectos" },
+  { link: "/blog-modern", title: "Artículos" },
+  { link: "/contact-2", title: "Contacto" },
+];
+
+export default function FooterOne() {
+  const [isActive, setIsActive] = React.useState(false);
+  useEffect(() => {
+    footerOneAnimation();
+  }, [])
+  return (
+    <footer>
+      {/* footer area start */}
+      <div className="tp-footer-area black-bg pt-90">
+        <div className="container-fluid">
+          <div className="tp-footer-wrap">
+            <div className="row align-items-end">
+              <div className="col-xl-5 col-lg-6">
+                <div className="tp-footer-menu menu-anim">
+                  <ul className="counter-row tp-text-anim">
+                    {footer_links.map((item, i) => (
+                      <li
+                        key={i}
+                        onMouseEnter={() => setIsActive(true)}
+                        onMouseLeave={() => setIsActive(false)}
+                        className={isActive ? "" : "active"}
+                      >
+                        <a href={item.link}>{item.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="col-xl-6 col-lg-6">
+                <div className="tp-footer-middle-wrap">
+                  <div className="tp-footer-content">
+                    <h4 className="tp-footer-big-title footer-big-text"> {"GET IN"} TOUCH!</h4>
+                  </div>
+                  <div className="row">
+                    <div className="col-xl-6 col-lg-6 col-md-6">
+                      <div className="tp-footer-widget">
+                        <h4 className="tp-footer-title tp_fade_bottom">
+                          Escríbenos!
+                        </h4>
+                        <div className="tp-footer-widget-info">
+                          <div className="tp-footer-widget-info-mail tp_fade_bottom">
+                            <a href="mailto:mateo@unamunoarq.com">
+                              mateo@unamunoarq.com
+                            </a>
+                          </div>
+                          <div className="tp-footer-widget-info-location tp_fade_bottom">
+                            <a
+                              href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
+                              target="_blank"
+                            >
+                              Rondeau 614 <br /> Córdoba, AR.
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-xl-6 col-lg-6 col-md-6">
+                      <div className="tp-footer-widget">
+                        <h4 className="tp-footer-title tp_fade_bottom">
+                          Nuestras redes
+                        </h4>
+                        <ul className="tp-footer-widget-social">
+                          <li className="tp_fade_bottom">
+                            <a href="#">Instagram</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* footer area end */}
+
+        {/* copyright area start */}
+        <div className="container-fluid">
+          <div className="tp-copyright-wrap">
+            <div className="row align-items-center">
+              <div className="col-xl-6 col-md-4">
+                <div className="tp-copyright-logo text-center text-md-start">
+                  <Link href="/">
+                    <Image src={logo} alt="logo" />
+                  </Link>
+                </div>
+              </div>
+              <div className="col-xl-6 col-md-8">
+                <div className="tp-copyright-text text-center text-md-end">
+                  <p>
+                    Copyright © {new Date().getFullYear()} Themepure. All rights
+                    reserved.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* copyright area end */}
+      </div>
+      {/* footer area start */}
+    </footer>
+  );
+}
