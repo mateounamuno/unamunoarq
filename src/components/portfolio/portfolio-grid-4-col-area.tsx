@@ -2,89 +2,65 @@ import React from "react";
 import { UpArrow } from "../svg";
 import Image from "next/image";
 import Link from "next/link";
-
-const portfolio_data = [
-  {
-    id: 1,
-    img: "/assets/img/inner-project/portfolio-col-2/port-4.jpg",
-    category: "Concept",
-    year: "2024",
-    title: "Lectus",
-  },
-  {
-    id: 2,
-    img: "/assets/img/inner-project/portfolio-col-2/port-3.jpg",
-    category: "Branding",
-    year: "2024",
-    title: "The Stage",
-  },
-  {
-    id: 3,
-    img: "/assets/img/inner-project/portfolio-col-2/port-2.jpg",
-    category: "Branding",
-    year: "2024",
-    title: "Art Direction",
-  },
-  {
-    id: 4,
-    img: "/assets/img/inner-project/portfolio-col-2/port-1.jpg",
-    category: "Branding",
-    year: "2024",
-    title: "Petit Navire",
-  },
-  {
-    id: 5,
-    img: "/assets/img/inner-project/portfolio-col-2/port-5.jpg",
-    category: "Branding",
-    year: "2024",
-    title: "Big dream",
-  },
-  {
-    id: 6,
-    img: "/assets/img/inner-project/portfolio-col-2/port-6.jpg",
-    category: "Branding",
-    year: "2024",
-    title: "The Stage",
-  },
-  {
-    id: 7,
-    img: "/assets/img/inner-project/portfolio-col-2/port-7.jpg",
-    category: "Creative",
-    year: "2024",
-    title: "Big dream",
-  },
-  {
-    id: 8,
-    img: "/assets/img/inner-project/portfolio-col-2/port-8.jpg",
-    category: "Creative",
-    year: "2024",
-    title: "Big dream",
-  },
-];
+import { projects } from "@/data/project-data";
+import React__ from 'react';
 
 // prop type 
 type IProps = {
   style_2?: boolean;
 }
 
-export default function PortfolioGridFourColArea({style_2=false}:IProps) {
+export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
+  const [active, setActive] = React.useState<string>('All');
+  const categories = React.useMemo(() => {
+    const cats = Array.from(new Set(projects.filter(p => p.showInGrid).map(p => p.category)));
+    return ['All', ...cats];
+  }, []);
+  const items = React.useMemo(() => {
+    return projects.filter(p => p.showInGrid && (active === 'All' || p.category === active));
+  }, [active]);
+  // render all filtered items (no load-more pagination)
+  const gridItems = React.useMemo(() => {
+    const desired = 12; // 3 filas x 4 columnas
+    if (items.length >= desired) return items.slice(0, desired);
+    if (items.length === 0) return [] as typeof items;
+    const repeated: typeof items = [] as any;
+    let idx = 0;
+    while (repeated.length < desired) {
+      repeated.push(items[idx % items.length]);
+      idx += 1;
+    }
+    return repeated;
+  }, [items]);
   return (
     <div className="tp-project-5-2-area tp-project-5-2-pt pb-130">
-      <div className={`container container-${style_2?'1800':'1530'}`}>
+      <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
-          {portfolio_data.map((item) => (
-            <div key={item.id} className="col-xl-3 col-lg-6 col-md-6">
-              <div className="tp-project-5-2-thumb mb-30 p-relative not-hide-cursor" data-cursor="View<br>Demo">
-                <Link href="/portfolio-details-2" className="tp_img_reveal cursor-hide">
-                  <div className="tp_img_reveal">
-                    <Image
-                      src={item.img}
-                      alt="prd-img"
-                      width={style_2?426:359}
-                      height={style_2?504:424}
-                      style={{ height: "100%" }}
-                    />
-                  </div>
+          <div className="col-xl-12">
+            <div className="d-flex gap-3 justify-content-center mb-40 flex-wrap">
+              {categories.map(cat => (
+                <button key={cat} className={`tp-btn-border ${active === cat ? 'active' : ''}`} onClick={() => setActive(cat)}>
+                  <span className="tp-btn-border-wrap">
+                    <span className="text-1">{cat}</span>
+                    <span className="text-2">{cat}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          {items.map((item) => (
+            <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
+              <div className="tp-project-5-2-thumb mb-30 p-relative not-hide-cursor" data-cursor="Ver<br>Proyecto" style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}>
+                <Link href={`/portfolio/${item.slug}`} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
+                  <Image
+                    src={item.gridThumbnail || item.thumbnail}
+                    alt="prd-img"
+                    width={style_2 ? 426 : 359}
+                    height={style_2 ? 504 : 330}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: 'block' }}
+                  />
                   <div className="tp-project-5-2-category tp_fade_anim">
                     <span>{item.category}</span>
                   </div>

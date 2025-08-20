@@ -20,10 +20,11 @@ import AwardOne from "@/components/award/award-one";
 import TeamOne from "@/components/team/team-one";
 import TestimonialOne from "@/components/testimonial/testimonial-one";
 import FooterOne from "@/layouts/footers/footer-one";
+// removed WhatsApp button usage
+import FontTest from "@/components/ui/font-test";
 
 // images
-import shape_1 from '@/assets/img/home-01/footer/footer-circle-shape-1.png';
-import shape_2 from '@/assets/img/home-01/footer/footer-circle-shape-2.png';
+// removed WhatsApp footer shapes
 
 // animation
 import { videoAnimOne } from "@/utils/video-anim";
@@ -112,17 +113,7 @@ const HomeMain = () => {
         </div>
       </div>
 
-      {/* footer shape */}
-      <div className="tp-footer-shape-wrap z-index-5 smooth">
-        <Link href="/contact">
-          <div className="tp-footer-shape p-relative">
-            <Image className="img-1" src={shape_1} alt="shape" />
-            <Image className="img-2" src={shape_2} alt="shape" />
-            <span></span>
-          </div>
-        </Link>
-      </div>
-      {/* footer shape */}
+      {/* WhatsApp footer button removed */}
     </Wrapper>
   );
 };

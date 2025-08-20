@@ -100,7 +100,7 @@ export default function PortfolioGridColTwoArea() {
               key={item.id}
               className={`col-xl-6 col-lg-6 col-md-6 grid-item ${item.show}`}
             >
-              <div className="tp-project-5-2-thumb anim-zoomin-wrap mb-30 not-hide-cursor p-relative" data-cursor="View<br>Demo">
+              <div className="tp-project-5-2-thumb anim-zoomin-wrap mb-30 not-hide-cursor p-relative" data-cursor="Ver<br>Proyecto">
                 <Link href="/portfolio-details-1" className="cursor-hide">
                   <Image
                     className="anim-zoomin"

@@ -7,11 +7,11 @@ import useSticky from "@/hooks/use-sticky";
 import MobileOffcanvas from "@/components/offcanvas/mobile-offcanvas";
 
 const HeaderOne = () => {
-  const {sticky,headerRef,headerFullWidth} = useSticky();
+  const { sticky, headerRef, headerFullWidth } = useSticky();
   const [openOffCanvas, setOpenOffCanvas] = React.useState(false);
   useEffect(() => {
     headerFullWidth();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -19,7 +19,7 @@ const HeaderOne = () => {
       <header className="tp-header-height" ref={headerRef}>
         <div
           id="header-sticky"
-          className={`tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9 ${sticky?'header-sticky':''}`}
+          className={`tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9 ${sticky ? 'header-sticky' : ''}`}
         >
           <div className="container">
             <div className="row align-items-center">
@@ -29,16 +29,16 @@ const HeaderOne = () => {
                     <Image
                       src="/assets/img/logo/logo.png"
                       alt="logo"
-                      width={85}
-                      height={26}
+                      width={300}
+                      height={95}
                     />
                   </Link>
                   <Link className="logo-2" href="/">
                     <Image
                       src="/assets/img/logo/logo-white.png"
                       alt="logo"
-                      width={85}
-                      height={26}
+                      width={300}
+                      height={95}
                     />
                   </Link>
                 </div>
