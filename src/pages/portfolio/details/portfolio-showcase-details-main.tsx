@@ -14,8 +14,14 @@ import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-animation";
 
+// Importa el tipo de dato para que TypeScript valide la prop.
+import type { ShowcaseProject } from '@/data/projects-showcase';
 
-const PortfolioDetailsShowcaseMain = () => {
+// Define que este componente recibirá una prop llamada 'project' de tipo ShowcaseProject.
+type Props = { project: ShowcaseProject };
+
+// Modifica el componente para que acepte la prop 'project' como argumento.
+const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
 
   useScrollSmooth();
 
@@ -38,7 +44,8 @@ const PortfolioDetailsShowcaseMain = () => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <PortfolioDetailsShowcaseArea/>
+            {/* Ahora, pasas el objeto 'project' al componente hijo. */}
+            <PortfolioDetailsShowcaseArea project={project} />
             {/* portfolio details area */}
           </main>
 

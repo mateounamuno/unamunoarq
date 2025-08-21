@@ -1,15 +1,32 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import { scroller } from 'react-scroll';
-import details_thumb_1 from '@/assets/img/inner-project/showcase/showcase-details-1.jpg';
-import details_thumb_2 from '@/assets/img/inner-project/showcase/showcase-details-2.jpg';
-import details_thumb_3 from '@/assets/img/inner-project/showcase/showcase-details-3.jpg';
-import { Project } from '@/data/project-data';
 import Link from 'next/link';
 
-type Props = { project?: Project; prevSlug?: string | null; nextSlug?: string | null };
+// Importa el tipo de dato correcto y la data de los proyectos.
+import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 
-export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSlug }: Props) {
+// Función para encontrar el slug del proyecto anterior y siguiente.
+const findPrevNextSlugs = (currentSlug: string) => {
+  const currentIndex = showcaseProjects.findIndex((project) => project.slug === currentSlug);
+  const prevProject = currentIndex > 0 ? showcaseProjects[currentIndex - 1] : null;
+  const nextProject = currentIndex < showcaseProjects.length - 1 ? showcaseProjects[currentIndex + 1] : null;
+
+  return {
+    prevSlug: prevProject ? prevProject.slug : null,
+    nextSlug: nextProject ? nextProject.slug : null,
+  };
+};
+
+// Define los tipos de las props que este componente espera.
+// Ya no necesitamos prevSlug y nextSlug aquí, los calcularemos internamente.
+type Props = { project: ShowcaseProject };
+
+export default function PortfolioDetailsShowcaseArea({ project }: Props) {
+  // Calculamos los slugs de navegación a partir de la data del proyecto actual.
+  const { prevSlug, nextSlug } = findPrevNextSlugs(project.slug);
+
   const scrollTo = () => {
     scroller.scrollTo('xyz', {
       duration: 800,
@@ -17,21 +34,34 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
       smooth: 'easeInOutQuart',
     });
   };
-  const heroBg = (project as any)?.showcaseHeroBg || "/assets/img/inner-project/showcase/showcase-1.jpg";
-  const subtitle = (project as any)?.subtitle || "[ UI, Web Design ]";
-  const title = project?.title || "Top Paddock";
-  const thumbs = (project as any)?.showcaseThumbs && (project as any).showcaseThumbs.length > 0
-    ? (project as any).showcaseThumbs as string[]
+
+  // Desestructuramos las propiedades del objeto project con valores por defecto para mayor seguridad.
+  const {
+    showcaseHeroBg = "/assets/img/inner-project/showcase/showcase-1.jpg",
+    subtitle = "[ UI, Web Design ]",
+    title = "Top Paddock",
+    overview = "Eagle Films is an active player on the entertainment scene as a major Hollywood movies distributor and co-producer. They reach out to me to not only redesign their website but also to change the look and feel of their brand.",
+    client = 'LikoTheme',
+    services = 'UI / UX Design',
+    location = 'USA',
+    releaseDate = "October '2024",
+    showcaseThumbs,
+  } = project;
+
+  // Usa la data real si existe, de lo contrario, usa un array de fallback.
+  const thumbs = showcaseThumbs && showcaseThumbs.length > 0
+    ? showcaseThumbs
     : [
       "/assets/img/inner-project/showcase/showcase-details-1.jpg",
       "/assets/img/inner-project/showcase/showcase-details-2.jpg",
       "/assets/img/inner-project/showcase/showcase-details-3.jpg",
     ];
+
   return (
     <>
       {/* details area */}
       <div className="tp-showcase-details-area">
-        <div className="tp-showcase-details-bg d-flex align-items-center justify-content-center include-bg p-relative" style={{ backgroundImage: `url(${heroBg})` }}>
+        <div className="tp-showcase-details-bg d-flex align-items-center justify-content-center include-bg p-relative" style={{ backgroundImage: `url(${showcaseHeroBg})` }}>
           <div className="port-showcase-slider-social tp-hover-btn-wrapper">
             <a className="tp-hover-btn-item tp-hover-btn" href="https://www.instagram.com/unamuno.arq/">Fb</a>
           </div>
@@ -62,7 +92,7 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
             </div>
             <div className="col-xl-8">
               <div className="showcase-details-overview-right">
-                <p className="tp_title_anim">{(project as any)?.overview || "Eagle Films is an active player on the entertainment scene as a major Hollywood movies distributor and co-producer. They reach out to me to not only redesign their website but also to change the look and feel of their brand."}</p>
+                <p className="tp_title_anim">{overview}</p>
                 <div className="showcase-details-overview-info">
                   <div className="showcase-details-overview-info-item tp_fade_bottom">
                     <div className="row align-items-center">
@@ -73,7 +103,7 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{(project as any)?.client || 'LikoTheme'}</span>
+                          <span>{client}</span>
                         </div>
                       </div>
                     </div>
@@ -87,7 +117,7 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{(project as any)?.services || 'UI / UX Design'}</span>
+                          <span>{services}</span>
                         </div>
                       </div>
                     </div>
@@ -101,7 +131,7 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{(project as any)?.location || 'USA'}</span>
+                          <span>{location}</span>
                         </div>
                       </div>
                     </div>
@@ -115,7 +145,7 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{(project as any)?.releaseDate || "October '2024"}</span>
+                          <span>{releaseDate}</span>
                         </div>
                       </div>
                     </div>
@@ -153,37 +183,18 @@ export default function PortfolioDetailsShowcaseArea({ project, prevSlug, nextSl
 
       {/* navigation after thumbs */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-        <a className="project-details-1-prev" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
+        <Link className="project-details-1-prev" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
           <span>Prev</span>
-        </a>
+        </Link>
         <a href="#">
           <span>• • •</span>
         </a>
-        <a className="project-details-1-next" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
+        <Link className="project-details-1-next" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
           <span>Next</span>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
-        </a>
+        </Link>
       </div>
-
-      {/* details overview */}
-      {/* <div className="showcase-details-overview pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-4">
-              <div className="showcase-details-overview-left">
-                <span className="showcase-details-subtitle fs-40 tp-char-animation">The challenge</span>
-              </div>
-            </div>
-            <div className="col-xl-8">
-              <div className="showcase-details-overview-right tp_title_anim">
-                <p>Blue Marine Foundation challenged us to create a digital experience that successfully educates people on the importance of our oceans and the solutions we can implement to mitigate climate change. The health of the ocean affects us all and for that reason, the site needed to connect with as many people as possible, from students to policymakers. The journey begins with an introduction to ocean preservation, in the form of a meditative breathing exercise. This aims to reduce tension and in-turn improve concentration and memory.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* details overview */}
     </>
-  )
+  );
 }
