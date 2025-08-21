@@ -25,12 +25,12 @@ const slider_setting: SwiperOptions = {
 type Props = { project?: Project; prevSlug?: string | null; nextSlug?: string | null };
 
 export default function PortfolioDetailsTwoArea({ project, prevSlug, nextSlug }: Props) {
-    const slides =
-        (project as Details2Project)?.sliderImages || [
-            "/assets/img/inner-project/portfolio-details-2/slide-1.jpg",
-            "/assets/img/inner-project/portfolio-details-2/slide-2.jpg",
-            "/assets/img/inner-project/portfolio-details-2/slide-3.jpg",
-        ];
+    const details2Project = project as any;
+    const slides = details2Project?.sliderImages || [
+        "/assets/img/inner-project/portfolio-details-2/slide-1.jpg",
+        "/assets/img/inner-project/portfolio-details-2/slide-2.jpg",
+        "/assets/img/inner-project/portfolio-details-2/slide-3.jpg",
+    ];
 
     return (
         <>
@@ -44,7 +44,7 @@ export default function PortfolioDetailsTwoArea({ project, prevSlug, nextSlug }:
                                     modules={[Navigation, EffectFade]}
                                     className="swiper-container project-details-2-slider p-relative fix"
                                 >
-                                    {slides.map((imgSrc, i) => (
+                                    {slides.map((imgSrc: string, i: number) => (
                                         <SwiperSlide key={i} className="swiper-slide">
                                             <div className="project-details-2-slider-thumb">
                                                 <Image
@@ -83,7 +83,7 @@ export default function PortfolioDetailsTwoArea({ project, prevSlug, nextSlug }:
                                                 {project?.title || "Roadtrip"}
                                             </h4>
                                             <p>
-                                                {(project as Details2Project)?.summary ||
+                                                {details2Project?.summary ||
                                                     "We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.!"}
                                             </p>
                                         </div>
@@ -92,15 +92,15 @@ export default function PortfolioDetailsTwoArea({ project, prevSlug, nextSlug }:
                                         <div className="project-details-1-info-wrap">
                                             <div className="project-details-1-info">
                                                 <span>Client</span>
-                                                <h4>{(project as Details2Project)?.client || "LikoTheme"}</h4>
+                                                <h4>{details2Project?.client || "LikoTheme"}</h4>
                                             </div>
                                             <div className="project-details-1-info">
                                                 <span>Date</span>
-                                                <h4>{(project as Details2Project)?.date || "October '2022"}</h4>
+                                                <h4>{details2Project?.date || "October '2022"}</h4>
                                             </div>
                                             <div className="project-details-1-info">
                                                 <span>Services</span>
-                                                <h4>{(project as Details2Project)?.services || "UI / UX Design"}</h4>
+                                                <h4>{details2Project?.services || "UI / UX Design"}</h4>
                                             </div>
                                             <div className="project-details-1-info">
                                                 {/* <span>Share</span>
@@ -122,7 +122,7 @@ export default function PortfolioDetailsTwoArea({ project, prevSlug, nextSlug }:
                             <div className="col-xl-10">
                                 <div className="project-details-1-title-box text-center">
                                     <p style={{ fontSize: '1.5em', margin: 0 }}>
-                                        {(project as Details2Project)?.summary ||
+                                        {details2Project?.summary ||
                                             "We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.!"}
                                     </p>
                                 </div>

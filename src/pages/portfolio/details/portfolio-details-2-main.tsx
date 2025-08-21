@@ -20,6 +20,7 @@ import { Dots } from "@/components/svg";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 
 import { Project } from "@/data/project-data";
+import type { Details2Project } from "@/data/projects-details-2";
 
 // image slider setting 
 const slider_setting: SwiperOptions = {
@@ -40,6 +41,7 @@ type Props = { project?: Project };
 
 const PortfolioDetailsTwoMain = ({ project }: Props) => {
 
+   const details2Project = project as any;
    useScrollSmooth();
 
    useGSAP(() => {
@@ -66,11 +68,11 @@ const PortfolioDetailsTwoMain = ({ project }: Props) => {
                            <div className="col-xl-12">
                               <div className="project-details-2-slider-wrap">
                                  <Swiper {...slider_setting} modules={[Navigation, EffectFade]} className="swiper-container project-details-2-slider p-relative fix">
-                                    {(project?.sliderImages || [
+                                    {(details2Project?.sliderImages || [
                                        '/assets/img/inner-project/portfolio-details-2/slide-1.jpg',
                                        '/assets/img/inner-project/portfolio-details-2/slide-2.jpg',
                                        '/assets/img/inner-project/portfolio-details-2/slide-3.jpg',
-                                    ]).map((imgSrc, i) => (
+                                    ]).map((imgSrc: string, i: number) => (
                                        <SwiperSlide key={i} className="swiper-slide">
                                           <div className="project-details-2-slider-thumb">
                                              <Image src={imgSrc} alt="port-img" width={1400} height={900} style={{ height: 'auto' }} />
@@ -97,7 +99,7 @@ const PortfolioDetailsTwoMain = ({ project }: Props) => {
                                        <div className="project-details-1-title-box pb-50">
                                           <span className="project-details-1-subtitle"><i>01</i>{project?.category || 'Shooting'}</span>
                                           <h4 className="project-details-1-title">{project?.title || 'Roadtrip'}</h4>
-                                          <p>{project?.summary || 'We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.!'}</p>
+                                          <p>{details2Project?.summary || 'We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.!'}</p>
                                        </div>
                                     </div>
                                     <div className="col-xl-6">
