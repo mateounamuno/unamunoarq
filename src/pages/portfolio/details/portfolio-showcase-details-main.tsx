@@ -18,7 +18,7 @@ import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-anim
 import type { ShowcaseProject } from '@/data/projects-showcase';
 
 // Define que este componente recibirá una prop llamada 'project' de tipo ShowcaseProject.
-type Props = { project: ShowcaseProject };
+type Props = { project: ShowcaseProject | undefined };
 
 // Modifica el componente para que acepte la prop 'project' como argumento.
 const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
@@ -33,6 +33,30 @@ const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
     }, 100);
     return () => clearTimeout(timer);
   });
+
+  // Early return if project is undefined
+  if (!project) {
+    return (
+      <Wrapper>
+        <HeaderEleven transparent={true} />
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <main>
+              <div className="container py-120">
+                <div className="row">
+                  <div className="col-12 text-center">
+                    <h2>Proyecto no encontrado</h2>
+                    <p>El proyecto que buscas no existe o no está disponible.</p>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <FooterTwo topCls="" />
+          </div>
+        </div>
+      </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>
