@@ -1,97 +1,101 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
-import { Leaf, UpArrow, UpArrowTwo } from '@/components/svg';
-import { Project } from '@/data/project-data';
 import Link from 'next/link';
+
+// Componentes SVG
+import { UpArrow, Dots } from '@/components/svg';
+import { Leaf, UpArrowTwo } from '@/components/svg';
+
+// Importamos la data para la navegación dinámica
+import { showcase2Projects } from '@/data/projects-showcase-2';
+
+// Importamos el tipo de dato que me proporcionaste.
 import type { Showcase2Project } from '@/data/projects-showcase-2';
 
-// images 
-import port_d_1 from '@/assets/img/inner-project/showcase/showcase-details-2-2.jpg';
-import port_d_2 from '@/assets/img/inner-project/showcase/showcase-details-2-3.jpg';
-import port_d_3 from '@/assets/img/inner-project/showcase/showcase-details-2-4.jpg';
-import port_d_4 from '@/assets/img/inner-project/showcase/showcase-details-2-5.jpg';
-import port_d_5 from '@/assets/img/inner-project/showcase/showcase-details-2-6.jpg';
-import port_d_6 from '@/assets/img/inner-project/showcase/showcase-details-2-7.jpg';
-import port_d_7 from '@/assets/img/inner-project/showcase/showcase-details-2-8.jpg';
-import port_d_8 from '@/assets/img/inner-project/showcase/showcase-details-2-9.jpg';
+// image data
+const img_data_default = [
+  "/assets/img/inner-project/showcase/showcase-details-2-2.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-3.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-4.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-5.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-6.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-7.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-8.jpg",
+  "/assets/img/inner-project/showcase/showcase-details-2-9.jpg",
+];
 
-import fullwidth_img from '@/assets/img/inner-project/showcase/showcase-details-2-10.jpg';
-import d_g_img_1 from '@/assets/img/inner-project/showcase/showcase-details-2-11.jpg';
-import d_g_img_2 from '@/assets/img/inner-project/showcase/showcase-details-2-12.jpg';
+// Función para encontrar el slug anterior y siguiente para la navegación.
+const findPrevNextSlugs = (currentSlug: string) => {
+  const currentIndex = showcase2Projects.findIndex(p => p.slug === currentSlug);
+  const prevProject = currentIndex > 0 ? showcase2Projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < showcase2Projects.length - 1 ? showcase2Projects[currentIndex + 1] : null;
 
-// img data
-const img_data_default = [port_d_1, port_d_2, port_d_3, port_d_4, port_d_5, port_d_6, port_d_7, port_d_8];
-
-type Props = { project?: Project; prevSlug?: string | null; nextSlug?: string | null };
-
-export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nextSlug }: Props) {
-  // Cast project to Showcase2Project for type safety
-  const showcase2Project = project?.template === 'showcase-2' ? (project as Showcase2Project) : null;
-
-  const heroBg = showcase2Project?.showcaseHeroBg || "/assets/img/inner-project/showcase/showcase-details-2-1.jpg";
-  const heroOverlayOpacity = showcase2Project?.heroOverlayOpacity ?? 0;
-  const title = project?.title || "World Fashion";
-  const subtitle = showcase2Project?.subtitle || "Effortless chic lifestyle";
-  const content = showcase2Project?.summary || "Lorem ipsum dolor sit amet consectetur. Ultrices malesuada sed volutpat elit cum. Viverra dolor maecenas amet dui Netus aliquet.!";
-  const client = showcase2Project?.client || "Castro Capital";
-  const services = showcase2Project?.services || "Web Development";
-  const industries = showcase2Project?.industries || "Photography";
-  const date = showcase2Project?.date || "April 2024";
-  const movingTop = showcase2Project?.movingGalleryTop || img_data_default.slice(0, 4);
-  const movingBottom = showcase2Project?.movingGalleryBottom || img_data_default.slice(4, 8);
-  const fullWidthImage = showcase2Project?.fullWidthImage || "/assets/img/inner-project/showcase/showcase-details-2-10.jpg";
-  const gridImages = showcase2Project?.gridImages || [
-    "/assets/img/inner-project/showcase/showcase-details-2-11.jpg",
-    "/assets/img/inner-project/showcase/showcase-details-2-12.jpg",
-  ];
-
-  // New text fields with fallbacks
-  const visitWebsiteText = showcase2Project?.visitWebsiteText || "Visit Website";
-  const sectionTitles = showcase2Project?.sectionTitles || {
-    section1: "Simple & Significant",
-    section2: "The Goal",
-    section3: "The planning..",
+  return {
+    prevSlug: prevProject?.slug || null,
+    nextSlug: nextProject?.slug || null,
   };
-  const sectionSubtitles = showcase2Project?.sectionSubtitles || {
-    section1: "Objective",
-    section2: "An introduction",
-    section3: "Mapping the journey",
-    section4: "Case Details",
-  };
-  const sectionContents = showcase2Project?.sectionContents || {
-    section1:
-      "Liko website was using a generic template, felt quite outdated and not in-line with the quality of his work. " +
-      "The main goal was to translate his high-end photography into a digital experience that would honor and present his work in a memorable and contemporary way.",
-    section2:
-      "Liko website was using a generic template, felt quite outdated and not in-line with the quality of his work. " +
-      "The main goal was to translate his high-end photography into a digital experience that would honor and present his work in a memorable and contemporary way. " +
-      "Each case study gets its own identity through the styling options in the custom content management system. " +
-      "The styling options are pre-defined",
-    section3:
-      "The journey of visiting Khajuraho and mapping out all temples for the Khajuraho Digital Expo by HASPR was a truly immersive experience. " +
-      "Our team was tasked with capturing the essence of the UNESCO World Heritage Site and bringing it to life through digital technology.",
-    section4:
-      "Each case study gets its own identity through the styling options in the custom content management system. " +
-      "The styling options are pre-defined by our design team to makes sure the website looks amazing in every composition.",
-  };
-  const navigationTexts = showcase2Project?.navigationTexts || {
-    prev: "Prev",
-    next: "Next",
-  };
+};
+
+// El componente ahora espera recibir una prop 'project' con el tipo Showcase2Project
+type Props = { project: Showcase2Project | undefined };
+
+export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
+  // Early return if project is undefined
+  if (!project) {
+    return (
+      <div className="container py-120">
+        <div className="row">
+          <div className="col-12 text-center">
+            <h2>Proyecto no encontrado</h2>
+            <p>El proyecto que buscas no existe o no está disponible.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const { prevSlug, nextSlug } = findPrevNextSlugs(project.slug);
+
+  // Extraemos la data del objeto 'project', con fallbacks por si acaso
+  const {
+    showcaseHeroBg,
+    heroOverlayOpacity = 0,
+    title,
+    subtitle,
+    summary,
+    client,
+    services,
+    industries,
+    date,
+    movingGalleryTop,
+    movingGalleryBottom,
+    fullWidthImage,
+    gridImages,
+    visitWebsiteText = "Visit Website",
+    sectionTitles,
+    sectionSubtitles,
+    sectionContents,
+    navigationTexts = { prev: "Prev", next: "Next" }
+  } = project;
+
+  const isSection1Empty = !sectionTitles?.section1 && !sectionSubtitles?.section1;
+  const isSection2Empty = !sectionTitles?.section2 && !sectionSubtitles?.section2;
+  const isSection3Empty = !sectionTitles?.section3 && !sectionSubtitles?.section3;
+  const isSection4Empty = !sectionTitles?.section4 && !sectionSubtitles?.section4;
+
   return (
     <>
       {/* portfolio hero */}
-      <div className="showcase-details-2-area showcase-details-2-bg p-relative" style={{ backgroundImage: `url(${heroBg})` }}>
+      <div className="showcase-details-2-area showcase-details-2-bg p-relative" style={{ backgroundImage: `url(${showcaseHeroBg})` }}>
         <div
           aria-hidden
-          style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, backgroundColor: `rgba(0,0,0, ${Math.max(0, Math.min(1, heroOverlayOpacity))})`, pointerEvents: 'none', zIndex: 0 }}
+          style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, backgroundColor: `rgba(0,0,0, ${heroOverlayOpacity})`, pointerEvents: 'none', zIndex: 0 }}
         />
         <div className="showcase-details-2-link" style={{ position: 'relative', zIndex: 1 }}>
           <a className="project-details-custom-link" href="#">
             {visitWebsiteText}
-            <span>
-              <UpArrow />
-            </span>
+            <span><UpArrow /></span>
           </a>
         </div>
         <div className="showcase-details-2-wrapper" data-lag="0.2" data-stagger="0.08" style={{ position: 'relative', zIndex: 1 }}>
@@ -105,7 +109,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
               </div>
               <div className="col-xxl-7 col-xl-10">
                 <div className="showcase-details-2-content tp_title_anim">
-                  <p>{content}</p>
+                  <p>{summary}</p>
                 </div>
                 <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between">
                   <div className="showcase-details-2-info tp_fade_bottom">
@@ -132,55 +136,49 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
       </div>
       {/* portfolio hero */}
 
-      {/* details title  */}
+      {/* details title */}
       <div className="showcase-details-2-area pt-120 pb-120">
         <div className="container">
-          {sectionTitles?.section1 ? (
-            <>
-              <div className="row">
-                <div className="col-xl-8">
-                  <div className="showcase-details-2-section-box">
-                    <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section1}</h4>
-                  </div>
+          {sectionTitles?.section1 || sectionSubtitles?.section1 ? (
+            <div className="row">
+              <div className="col-xl-8">
+                <div className="showcase-details-2-section-box">
+                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles?.section1}</h4>
                 </div>
               </div>
-              <div className="row">
-
-                <div className="col-xl-10">
-                  <div className="showcase-details-2-section-right tp_title_anim">
-                    <p>{sectionContents.section1}</p>
-                  </div>
+              <div className="col-xl-10">
+                <div className="showcase-details-2-section-right tp_title_anim">
+                  <p>{sectionContents?.section1}</p>
                 </div>
               </div>
-            </>
+            </div>
           ) : (
             <div className="row">
               <div className="col-12">
                 <div className="showcase-details-2-section-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents.section1}</p>
+                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section1}</p>
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
-      {/* details title  */}
+      {/* details title */}
 
       {/* moving image */}
       <div className="showcase-details-2-slider-area pb-120">
         <div className="moving-gallery">
           <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
-            {movingTop.map((imgSrc, i) => (
+            {movingGalleryTop.map((imgSrc, i) => (
               <div key={i} className="showcase-details-2-slider-item" style={{ height: 420 }}>
                 <Image src={imgSrc} alt="port-img" width={800} height={600} style={{ height: 420, width: 'auto', objectFit: 'cover' }} />
               </div>
             ))}
           </div>
         </div>
-
         <div className="moving-gallery">
           <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
-            {movingBottom.map((imgSrc, i) => (
+            {movingGalleryBottom.map((imgSrc, i) => (
               <div key={i} className="showcase-details-2-slider-item" style={{ height: 420 }}>
                 <Image src={imgSrc} alt="port-img" width={800} height={600} style={{ height: 420, width: 'auto', objectFit: 'cover' }} />
               </div>
@@ -193,21 +191,19 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
       {/* details title 2 */}
       <div className="showcase-details-2-area pb-120">
         <div className="container">
-          {sectionTitles?.section1 ? (
-            <>
-              <div className="row justify-content-center">
-                <div className="col-xl-10">
-                  <div className="showcase-details-2-section-right tp_title_anim text-center">
-                    <p style={{ fontSize: '1.7em' }}>{sectionContents.section2}</p>
-                  </div>
+          {sectionTitles?.section2 || sectionSubtitles?.section2 ? (
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="showcase-details-2-section-right tp_title_anim text-center">
+                  <p style={{ fontSize: '1.7em' }}>{sectionContents?.section2}</p>
                 </div>
               </div>
-            </>
+            </div>
           ) : (
             <div className="row">
               <div className="col-12">
                 <div className="showcase-details-2-section-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents.section1}</p>
+                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section2}</p>
                 </div>
               </div>
             </div>
@@ -225,22 +221,19 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
       {/* detail title 3 */}
       <div className="showcase-details-2-area pt-120 pb-120">
         <div className="container">
-          {sectionTitles?.section3 ? (
-            <>
-
-              <div className="row justify-content-center">
-                <div className="col-xl-10">
-                  <div className="showcase-details-2-section-right tp_title_anim text-center">
-                    <p style={{ fontSize: '1.7em' }}>{sectionContents.section3}</p>
-                  </div>
+          {sectionTitles?.section3 || sectionSubtitles?.section3 ? (
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="showcase-details-2-section-right tp_title_anim text-center">
+                  <p style={{ fontSize: '1.7em' }}>{sectionContents?.section3}</p>
                 </div>
               </div>
-            </>
+            </div>
           ) : (
             <div className="row">
               <div className="col-12">
                 <div className="showcase-details-2-content-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents.section3}</p>
+                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section3}</p>
                 </div>
               </div>
             </div>
@@ -253,7 +246,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
       <div className="showcase-details-2-grid-area">
         <div className="container-fluid p-0">
           <div className="row g-0">
-            {gridImages.slice(0, 2).map((src, i) => (
+            {gridImages.map((src, i) => (
               <div key={i} className="col-6">
                 <div
                   className="showcase-details-2-grid-img mb-30"
@@ -275,21 +268,21 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
       {/* grid images */}
 
       {/* details title 4 */}
-      {/* <div className="showcase-details-2-area pb-120">
+      <div className="showcase-details-2-area pb-120">
         <div className="container">
-          {sectionSubtitles?.section4 ? (
+          {sectionTitles?.section4 || sectionSubtitles?.section4 ? (
             <div className="row">
               <div className="col-xl-3">
                 <div className="showcase-details-2-section-left">
                   <span className="ab-inner-subtitle mb-25">
                     <Leaf />
-                    {sectionSubtitles.section4}
+                    {sectionSubtitles?.section4}
                   </span>
                 </div>
               </div>
               <div className="col-xl-9">
                 <div className="showcase-details-2-content-right tp_title_anim">
-                  <p>{sectionContents.section4}</p>
+                  <p>{sectionContents?.section4}</p>
                 </div>
               </div>
             </div>
@@ -297,28 +290,28 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
             <div className="row">
               <div className="col-12">
                 <div className="showcase-details-2-content-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents.section4}</p>
+                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section4}</p>
                 </div>
               </div>
             </div>
           )}
         </div>
-      </div> */}
+      </div>
       {/* details title 4 */}
 
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pt-120 pb-60">
-        <a className="project-details-1-prev" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
+        <Link className="project-details-1-prev" href={prevSlug ? `/showcase/${prevSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
           <span>{navigationTexts.prev}</span>
-        </a>
-        <a href="#">
-          <span>• • •</span>
-        </a>
-        <a className="project-details-1-next" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
+        </Link>
+        <Link href="#">
+          <span><Dots /></span>
+        </Link>
+        <Link className="project-details-1-next" href={nextSlug ? `/showcase/${nextSlug}` : '#'}>
           <span>{navigationTexts.next}</span>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
-        </a>
+        </Link>
       </div>
     </>
-  )
+  );
 }

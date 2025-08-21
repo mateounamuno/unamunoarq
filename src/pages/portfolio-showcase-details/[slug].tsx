@@ -8,15 +8,19 @@ import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
 import FooterTwo from "@/layouts/footers/footer-two";
-import { charAnimation, titleAnimation, fadeAnimation } from "@/utils/title-animation";
 import PortfolioDetailsShowcaseArea from "@/components/portfolio/details/portfolio-details-showcase-area";
 import { projects } from "@/data/project-data";
+import { useShowcaseAnimations } from "@/hooks/use-showcase-animations";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 export default function PortfolioShowcaseDynamicPage() {
     const router = useRouter();
     const { slug } = router.query;
+
+    // Hooks must be called at the top level, before any conditional returns
+    useScrollSmooth();
+    useShowcaseAnimations();
 
     if (!slug || typeof slug !== 'string') return null;
 
@@ -26,16 +30,6 @@ export default function PortfolioShowcaseDynamicPage() {
     if (!project) return null;
     const prevSlug = index > 0 ? showcaseProjects[index - 1].slug : null;
     const nextSlug = index < showcaseProjects.length - 1 ? showcaseProjects[index + 1].slug : null;
-
-    useScrollSmooth();
-    useGSAP(() => {
-        const timer = setTimeout(() => {
-            charAnimation();
-            titleAnimation();
-            fadeAnimation();
-        }, 100);
-        return () => clearTimeout(timer);
-    });
 
     return (
         <Wrapper>

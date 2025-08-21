@@ -49,7 +49,7 @@ export type Showcase2Project = {
 export const showcase2Projects: Showcase2Project[] = [
     {
         template: "showcase-2",
-        slug: "casa-cielo-y-tierra",
+        slug: "cielo-y-tierra",
         title: "Casa: Cielo y Tierra",
         category: "Arquitectura",
         year: "2024",

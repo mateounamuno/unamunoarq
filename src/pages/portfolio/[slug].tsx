@@ -14,11 +14,11 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import FooterTwo from "@/layouts/footers/footer-two";
 import Social from "@/components/social/social";
 import { Dots } from "@/components/svg";
-import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { projects } from "@/data/project-data";
 import PortfolioDetailsShowcaseTwoArea from "@/components/portfolio/details/portfolio-details-showcase-2-area";
 import PortfolioDetailsShowcaseArea from "@/components/portfolio/details/portfolio-details-showcase-area";
-import { movingImageSlider } from "@/utils/scroll-marque";
+import { usePortfolioAnimations } from "@/hooks/use-portfolio-animations";
+import { useShowcase2Animations } from "@/hooks/use-showcase-2-animations";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // image slider setting (same as portfolio-details-2)
@@ -39,11 +39,18 @@ export default function PortfolioDynamicDetailsPage() {
     const router = useRouter();
     const { slug } = router.query;
 
+    // Hooks must be called at the top level, before any conditional returns
+    useScrollSmooth();
+
+    // Always call the basic animation hook
+    usePortfolioAnimations();
+
     if (!slug || typeof slug !== "string") return null;
 
-    const index = projects.findIndex((p) => p.slug === slug);
-    const project = index >= 0 ? projects[index] : undefined;
+    const project = projects.find((p) => p.slug === slug);
     if (!project) return null;
+
+
 
     const isShowcase2 = project.template === "showcase-2";
     const isDetails2 = project.template === "details-2";
@@ -58,17 +65,7 @@ export default function PortfolioDynamicDetailsPage() {
                 "/assets/img/inner-project/portfolio-details-2/slide-3.jpg",
             ];
 
-    useScrollSmooth();
-    useGSAP(() => {
-        const timer = setTimeout(() => {
-            charAnimation();
-            titleAnimation();
-            if (isShowcase2) {
-                movingImageSlider();
-            }
-        }, 100);
-        return () => clearTimeout(timer);
-    }, [isShowcase2]);
+
 
     if (isShowcase2) {
         // Render exactly like showcase-details-2 for showcase-2 projects

@@ -12,10 +12,14 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import PortfolioDetailsShowcaseTwoArea from "@/components/portfolio/details/portfolio-details-showcase-2-area";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
-import {charAnimation,titleAnimation} from "@/utils/title-animation";
+import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { movingImageSlider } from "@/utils/scroll-marque";
+import type { Showcase2Project } from "@/data/projects-showcase-2";
 
-const PortfolioDetailsShowcaseTwoMain = () => {
+// Define los tipos de las props que este componente espera.
+type Props = { project: Showcase2Project | undefined };
+
+const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
   useScrollSmooth();
 
   useGSAP(() => {
@@ -29,21 +33,14 @@ const PortfolioDetailsShowcaseTwoMain = () => {
 
   return (
     <Wrapper>
-      {/* header area start */}
       <HeaderEleven transparent={true} />
-      {/* header area end */}
-
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            {/* portfolio details area */}
-            <PortfolioDetailsShowcaseTwoArea />
-            {/* portfolio details area */}
+            {/* Aquí, le pasas el objeto 'project' al componente que lo necesita */}
+            <PortfolioDetailsShowcaseTwoArea project={project} />
           </main>
-
-          {/* footer area */}
           <FooterTwo topCls="" />
-          {/* footer area */}
         </div>
       </div>
     </Wrapper>
