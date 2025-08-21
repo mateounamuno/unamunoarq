@@ -82,7 +82,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
   const isSection1Empty = !sectionTitles?.section1 && !sectionSubtitles?.section1;
   const isSection2Empty = !sectionTitles?.section2 && !sectionSubtitles?.section2;
   const isSection3Empty = !sectionTitles?.section3 && !sectionSubtitles?.section3;
-  const isSection4Empty = !sectionTitles?.section4 && !sectionSubtitles?.section4;
+  const isSection4Empty = !sectionSubtitles?.section4;
 
   return (
     <>
@@ -270,7 +270,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* details title 4 */}
       <div className="showcase-details-2-area pb-120">
         <div className="container">
-          {sectionTitles?.section4 || sectionSubtitles?.section4 ? (
+          {sectionSubtitles?.section4 ? (
             <div className="row">
               <div className="col-xl-3">
                 <div className="showcase-details-2-section-left">

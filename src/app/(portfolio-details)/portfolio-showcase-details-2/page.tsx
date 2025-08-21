@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const PortfolioDetailsShowcaseTwoPage = () => {
   return (
-    <PortfolioDetailsShowcaseTwoMain/>
+    <PortfolioDetailsShowcaseTwoMain project={undefined} />
   );
 };
 

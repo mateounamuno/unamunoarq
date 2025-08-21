@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const PortfolioDetailsTwoPage = () => {
   return (
-    <PortfolioDetailsTwoMain/>
+    <PortfolioDetailsTwoMain project={undefined} />
   );
 };
 

@@ -17,7 +17,7 @@ const FontTest = () => {
                     Geist Font (Body & Headings)
                 </h2>
                 <p style={{ fontFamily: 'var(--tp-ff-body)', marginBottom: '15px' }}>
-                    This is the Geist font used for body text. It's a modern, clean sans-serif font designed for excellent readability.
+                    This is the Geist font used for body text. It&apos;s a modern, clean sans-serif font designed for excellent readability.
                 </p>
                 <p style={{ fontFamily: 'var(--tp-ff-p)', marginBottom: '15px' }}>
                     The Geist font family includes multiple weights from 100 to 900, making it perfect for creating visual hierarchy.
@@ -64,7 +64,7 @@ const FontTest = () => {
                         borderRadius: '4px',
                         fontSize: '14px'
                     }}>
-                        const greeting = "Hello, Geist Mono!";
+                        const greeting = &quot;Hello, Geist Mono!&quot;;
                     </code>
                 </div>
 

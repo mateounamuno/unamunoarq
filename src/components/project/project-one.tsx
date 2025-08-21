@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/project-data";
 import styles from "./project-one.module.scss";
-import { useScreenSize, applyProjectStyles } from "./screen-detector";
+import { useScreenSize, useProjectStyles } from "./screen-detector";
 
 // project images (no longer used; data-driven from src/data/project-data)
 
@@ -47,7 +47,7 @@ type IProps = {
 };
 const ProjectOne = ({ style_2 = false }: IProps) => {
   const screenSize = useScreenSize();
-  applyProjectStyles(screenSize);
+  useProjectStyles(screenSize);
 
   // Force styles after component mounts
   React.useEffect(() => {

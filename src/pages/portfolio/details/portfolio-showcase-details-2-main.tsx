@@ -31,6 +31,30 @@ const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
     return () => clearTimeout(timer);
   });
 
+  // Early return if project is undefined
+  if (!project) {
+    return (
+      <Wrapper>
+        <HeaderEleven transparent={true} />
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <main>
+              <div className="container py-120">
+                <div className="row">
+                  <div className="col-12 text-center">
+                    <h2>Proyecto no encontrado</h2>
+                    <p>El proyecto que buscas no existe o no está disponible.</p>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <FooterTwo topCls="" />
+          </div>
+        </div>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
       <HeaderEleven transparent={true} />

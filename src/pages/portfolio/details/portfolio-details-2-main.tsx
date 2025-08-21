@@ -34,7 +34,7 @@ const slider_setting: SwiperOptions = {
    },
 }
 
-type Props = { project: ProjectType };
+type Props = { project?: ProjectType };
 
 const PortfolioDetailsTwoMain = ({ project }: Props) => {
    useScrollSmooth();
@@ -46,6 +46,30 @@ const PortfolioDetailsTwoMain = ({ project }: Props) => {
       }, 100);
       return () => clearTimeout(timer);
    });
+
+   // Early return if project is undefined
+   if (!project) {
+      return (
+         <Wrapper>
+            <HeaderEleven />
+            <div id="smooth-wrapper">
+               <div id="smooth-content">
+                  <main>
+                     <div className="container py-120">
+                        <div className="row">
+                           <div className="col-12 text-center">
+                              <h2>Proyecto no encontrado</h2>
+                              <p>El proyecto que buscas no existe o no está disponible.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </main>
+                  <FooterTwo topCls="" />
+               </div>
+            </div>
+         </Wrapper>
+      );
+   }
 
    return (
       <Wrapper>
