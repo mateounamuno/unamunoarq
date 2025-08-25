@@ -103,9 +103,14 @@ export default function ProjectFive({ style_2 = false }: IProps) {
             </div>
           ))}
         </div>
-        <div className="row">
+        <div className="row" style={{ position: 'relative' }}>
           <div className="col-xl-12">
-            <div className="tp-projct-5-2-btn-box d-flex justify-content-center">
+            <div className="tp-projct-5-2-btn-box d-flex justify-content-end" style={{
+              position: 'absolute',
+              right: '15px',
+              bottom: '0',
+              marginTop: '0'
+            }}>
               <div className="tp-hover-btn-wrapper">
                 <Link
                   className={`tp-btn-circle ${style_2 ? "style-2" : ""
