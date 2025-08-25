@@ -153,7 +153,7 @@ export default function FooterTwo({ whiteFooter = false, topCls = 'footer-top' }
             </div>
             <div className="col-xl-8 col-lg-7">
               <div className="tp-copyright-2-social text-center text-lg-end">
-                <a className="mb-10" href="#">Instagram</a>
+                <a className="mb-10" href="https://www.instagram.com/unamuno.arq/">Instagram</a>
               </div>
             </div>
           </div>

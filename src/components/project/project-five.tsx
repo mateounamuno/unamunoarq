@@ -3,58 +3,31 @@ import Image from "next/image";
 import LineTextFour from "../line-text/line-text-4";
 import { UpArrow } from "../svg";
 import Link from "next/link";
-// images
-import p_img_1 from "@/assets/img/home-05/project/project-4.jpg";
-import p_img_2 from "@/assets/img/home-05/project/project-5.jpg";
-import p_img_3 from "@/assets/img/home-05/project/project-6.jpg";
-import p_img_4 from "@/assets/img/home-05/project/project-7.jpg";
-import p_img_5 from "@/assets/img/home-05/project/project-8.jpg";
-import p_img_6 from "@/assets/img/home-05/project/project-9.jpg";
+import { projects, Project } from "@/data/project-data";
 
-const project_data = [
-  {
-    id: 1,
-    title: "Art Direction",
-    category: "Branding",
-    img: p_img_1,
-    year: 2024,
-  },
-  {
-    id: 2,
-    title: "Petit Navire",
-    category: "Branding",
-    img: p_img_2,
-    year: 2024,
-  },
-  {
-    id: 3,
-    title: "Big dream",
-    category: "Branding",
-    img: p_img_3,
-    year: 2024,
-  },
-  {
-    id: 4,
-    title: "The Stage",
-    category: "Branding",
-    img: p_img_4,
-    year: 2024,
-  },
-  {
-    id: 5,
-    title: "Big dream",
-    category: "Branding",
-    img: p_img_5,
-    year: 2024,
-  },
-  {
-    id: 6,
-    title: "Sed Lectus",
-    category: "Concept",
-    img: p_img_6,
-    year: 2024,
-  },
-];
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "details-2":
+      return `/portfolio/details/${slug}`;
+    case "showcase-2":
+      return `/portfolio/details2/${slug}`;
+    case "showcase":
+      return `/portfolio/details3/${slug}`;
+    default:
+      return `/portfolio/details/${slug}`;
+  }
+};
+
+const project_data = projects.filter(p => p.showInGrid).slice(0, 6).map((p, index) => ({
+  id: index + 1,
+  title: p.title,
+  category: p.category,
+  img: p.thumbnail,
+  year: p.year,
+  slug: p.slug,
+  template: p.template,
+}));
 
 // prop type
 type IProps = {
@@ -81,7 +54,7 @@ export default function ProjectFive({ style_2 = false }: IProps) {
                 className="tp-project-5-2-thumb fix mb-140 p-relative not-hide-cursor"
                 data-cursor="Ver<br>Proyecto"
               >
-                <Link className="cursor-hide" href="/portfolio-details-1">
+                <Link className="cursor-hide" href={getProjectLink(item.slug, item.template)}>
                   <span className="tp_img_reveal">
                     <div className="tp_img_reveal">
                       <Image
@@ -115,7 +88,7 @@ export default function ProjectFive({ style_2 = false }: IProps) {
                 <Link
                   className={`tp-btn-circle ${style_2 ? "style-2" : ""
                     } tp-hover-btn-item tp-hover-btn`}
-                  href="/portfolio-details-1"
+                  href="/portfolio-standard"
                 >
                   <span className="tp-btn-circle-text">
                     More <br /> Projects

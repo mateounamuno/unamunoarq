@@ -1,49 +1,33 @@
 import React from "react";
 import Image from "next/image";
-
 import { ProjectShape, RightArrow } from "../svg";
-// images
-import port_1 from "@/assets/img/home-03/portfolio/port-1.jpg";
-import port_2 from "@/assets/img/home-03/portfolio/port-2.jpg";
-import port_3 from "@/assets/img/home-03/portfolio/port-3.jpg";
-import port_4 from "@/assets/img/home-03/portfolio/port-4.jpg";
-import port_5 from "@/assets/img/home-03/portfolio/port-5.jpg";
-import port_6 from "@/assets/img/home-03/portfolio/port-6.jpg";
-import port_7 from "@/assets/img/home-03/portfolio/port-7.jpg";
-import port_8 from "@/assets/img/home-03/portfolio/port-8.jpg";
 import Link from "next/link";
+import { projects, Project } from "@/data/project-data";
+
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "details-2":
+      return `/portfolio/details/${slug}`;
+    case "showcase-2":
+      return `/portfolio/details2/${slug}`;
+    case "showcase":
+      return `/portfolio/details3/${slug}`;
+    default:
+      return `/portfolio/details/${slug}`;
+  }
+};
 
 // portfolio data
-const project_data = [
-  {
-    id: 1,
-    img_1: port_1,
-    img_2: port_2,
-    meta: "DEC 2024 . Creative",
-    title: "Pellente dapibus",
-  },
-  {
-    id: 2,
-    img_1: port_3,
-    img_2: port_4,
-    meta: "NOV 2024 . Creative",
-    title: "Chania tourism",
-  },
-  {
-    id: 3,
-    img_1: port_5,
-    img_2: port_6,
-    meta: "OCT 2024 . Creative",
-    title: "Fashion sentence",
-  },
-  {
-    id: 4,
-    img_1: port_7,
-    img_2: port_8,
-    meta: "SEP 2024 . Creative",
-    title: "Fashion sentence",
-  },
-];
+const project_data = projects.filter(p => p.showInGrid).slice(0, 4).map((p, index) => ({
+  id: index + 1,
+  img_1: p.thumbnail,
+  img_2: p.cover,
+  meta: `${p.year} . ${p.category}`,
+  title: p.title,
+  slug: p.slug,
+  template: p.template,
+}));
 
 // prop type
 type IProps = {
@@ -94,11 +78,11 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                     <div className="tp-project-3-content text-center">
                       <span className="tp-project-3-meta">{item.meta} </span>
                       <h4 className="tp-project-3-title-sm">
-                        <Link href="/portfolio-details-1">{item.title}</Link>
+                        <Link href={getProjectLink(item.slug, item.template)}>{item.title}</Link>
                       </h4>
                       <Link
                         className="tp-btn-project-sm"
-                        href="/portfolio-details-1"
+                        href={getProjectLink(item.slug, item.template)}
                       >
                         See Project
                       </Link>

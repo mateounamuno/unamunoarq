@@ -103,7 +103,22 @@ export default function FooterOne() {
               <div className="col-xl-6 col-md-8">
                 <div className="tp-copyright-text text-center text-md-end">
                   <p>
-                    Copyright © {new Date().getFullYear()} Themepure. All rights
+                    Copyright © {new Date().getFullYear()} <a
+                      href="https://authenticwebstudio.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        transition: 'text-decoration 0.3s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.textDecoration = 'underline';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.textDecoration = 'none';
+                      }}
+                    >Authentic</a>. All rights
                     reserved.
                   </p>
                 </div>

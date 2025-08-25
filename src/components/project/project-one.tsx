@@ -3,7 +3,7 @@ import React from "react";
 import ProjectTextLine from "./project-text-line";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/project-data";
+import { projects, Project } from "@/data/project-data";
 import styles from "./project-one.module.scss";
 import { useScreenSize, useProjectStyles } from "./screen-detector";
 
@@ -12,14 +12,30 @@ import { useScreenSize, useProjectStyles } from "./screen-detector";
 // type
 type IProject = {
   slug: string;
+  template: string;
   cls: string;
   cls_2: string;
   img: StaticImageData | string;
 };
 
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "details-2":
+      return `/portfolio/details/${slug}`;
+    case "showcase-2":
+      return `/portfolio/details2/${slug}`;
+    case "showcase":
+      return `/portfolio/details3/${slug}`;
+    default:
+      return `/portfolio/details/${slug}`;
+  }
+};
+
 const project_data: IProject[] = (
   projects.filter(p => p.showOnHome).slice(0, 6).map((p, index) => ({
     slug: p.slug,
+    template: p.template,
     cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
     cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
     img: p.thumbnail,
@@ -69,7 +85,7 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
           maxWidth: '100%'
         }}
       >
-        <Link className="cursor-hide" href={`/portfolio/${item.slug}`} style={{ display: 'block', height: '100%', width: '100%' }}>
+        <Link className="cursor-hide" href={getProjectLink(item.slug, item.template)} style={{ display: 'block', height: '100%', width: '100%' }}>
           <Image
             data-speed=".8"
             src={item.img}
