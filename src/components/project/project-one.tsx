@@ -26,7 +26,7 @@ const project_data: IProject[] = (
   }))
 ) as IProject[];
 
-function ProjectItem({ item }: { item: IProject }) {
+function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
   // Función para obtener la altura responsiva
   const getResponsiveHeight = () => {
     if (typeof window !== 'undefined') {
@@ -50,7 +50,13 @@ function ProjectItem({ item }: { item: IProject }) {
   }, []);
 
   return (
-    <div className={`tp-project-item mb-200 ${styles.projectItem}`} style={{ width: '100%' }}>
+    <div
+      className={`tp-project-item ${styles.projectItem}`}
+      style={{
+        width: '100%',
+        marginBottom: isLast ? '70px' : '200px'
+      }}
+    >
       <div
         className={`tp-project-img height-uniform fix not-hide-cursor ${styles.projectImg}`}
         data-cursor="Ver<br>Proyecto"
@@ -178,21 +184,44 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
                 <div className={`col-xl-6 col-lg-6 col-md-6 ${styles.col}`}>
                   <div className={`tp-project-left-wrap ${styles.leftWrap}`}>
                     {project_data.slice(0, 3).map((item, i) => (
-                      <ProjectItem key={item.slug} item={item} />
+                      <ProjectItem
+                        key={item.slug}
+                        item={item}
+                        isLast={false}
+                      />
                     ))}
                   </div>
                 </div>
                 <div className={`col-xl-6 col-lg-6 col-md-6 ${styles.col}`}>
                   <div className={`tp-project-right-wrap ${styles.rightWrap}`}>
-                    {project_data.slice(3, 6).map((item) => (
-                      <ProjectItem key={item.slug} item={item} />
+                    {project_data.slice(3, 6).map((item, index) => (
+                      <ProjectItem
+                        key={item.slug}
+                        item={item}
+                        isLast={index === 2} // El último proyecto de la segunda columna
+                      />
                     ))}
 
-                    <div className="tp-project-btn tp-btn-trigger">
-                      <div className="tp-btn-bounce">
+                    <div className="tp-project-btn tp-btn-trigger" style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      width: '100%',
+                      marginTop: '10px'
+                    }}>
+                      <div className="tp-btn-bounce" style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%'
+                      }}>
                         <Link
                           className="tp-btn-border"
                           href="/portfolio-grid-col-4"
+                          style={{
+                            margin: '0 auto',
+                            display: 'inline-block'
+                          }}
                         >
                           <span className="tp-btn-border-wrap">
                             <span className="text-1"> Más proyectos</span>

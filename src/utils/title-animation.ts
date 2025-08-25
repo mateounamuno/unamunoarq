@@ -61,7 +61,7 @@ function bounceAnimation() {
       gsap.to(btn, {
         scrollTrigger: {
           trigger: $this.closest(".tp-btn-trigger"),
-          start: "top center",
+          start: "top 80%",
           markers: false,
         },
         duration: 1,
@@ -78,11 +78,11 @@ function bounceAnimation() {
       gsap.to(btn, {
         scrollTrigger: {
           trigger: $this.closest(".tp-btn-trigger"),
-          start: "bottom bottom",
+          start: "bottom 90%",
           markers: false,
         },
         duration: 0.9,
-        delay: 4,
+        delay: 2,
         ease: "bounce.out",
         y: 0,
         opacity: 1,
