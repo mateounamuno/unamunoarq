@@ -29,16 +29,26 @@ const HeaderOne = () => {
                     <Image
                       src="/assets/img/logo/logo.png"
                       alt="logo"
-                      width={300}
-                      height={95}
+                      width={400}
+                      height={130}
+                      style={{
+                        width: 'auto',
+                        height: '60px',
+                        maxWidth: 'none'
+                      }}
                     />
                   </Link>
                   <Link className="logo-2" href="/">
                     <Image
                       src="/assets/img/logo/logo-white.png"
                       alt="logo"
-                      width={300}
-                      height={95}
+                      width={400}
+                      height={130}
+                      style={{
+                        width: 'auto',
+                        height: '60px',
+                        maxWidth: 'none'
+                      }}
                     />
                   </Link>
                 </div>
