@@ -2,62 +2,39 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useIsotop } from "@/hooks/use-isotop";
-
-// images
-import p_m_1 from "@/assets/img/inner-project/masonary/masonary-1.jpg";
-import p_m_2 from "@/assets/img/inner-project/masonary/masonary-2.jpg";
-import p_m_3 from "@/assets/img/inner-project/masonary/masonary-3.jpg";
-import p_m_4 from "@/assets/img/inner-project/masonary/masonary-4.jpg";
-import p_m_5 from "@/assets/img/inner-project/masonary/masonary-5.jpg";
-import p_m_6 from "@/assets/img/inner-project/masonary/masonary-6.jpg";
+import { projects, Project } from "@/data/project-data";
 import { UpArrow } from "../svg";
 
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "details-2":
+      return `/portfolio/details/${slug}`;
+    case "showcase-2":
+      return `/portfolio/details2/${slug}`;
+    case "showcase":
+      return `/portfolio/details3/${slug}`;
+    default:
+      return `/portfolio/details/${slug}`;
+  }
+};
+
 // data
-const portfolio_masonry_data = [
-  {
-    id: 1,
-    title: "D&T ASSOCIATION",
-    subtitle: "Creative",
-    img: p_m_1,
-  },
-  {
-    id: 2,
-    title: "D&T ASSOCIATION",
-    subtitle: "Creative",
-    img: p_m_2,
-  },
-  {
-    id: 3,
-    title: "D&T ASSOCIATION",
-    subtitle: "Creative",
-    img: p_m_3,
-  },
-  {
-    id: 4,
-    title: "D&T ASSOCIATION",
-    subtitle: "Creative",
-    img: p_m_4,
-  },
-  {
-    id: 5,
-    title: "D&T ASSOCIATION",
-    subtitle: "Creative",
-    img: p_m_5,
-  },
-  {
-    id: 6,
-    title: "D&T ASSOCIATION",
-    subtitle: "Creative",
-    img: p_m_6,
-  },
-];
+const portfolio_masonry_data = projects.filter(p => p.showInGrid).slice(0, 6).map((p, index) => ({
+  id: index + 1,
+  title: p.title,
+  subtitle: p.category,
+  img: p.thumbnail,
+  slug: p.slug,
+  template: p.template,
+}));
 export default function PortfolioMasonryArea() {
   const { initIsotop, isotopContainer } = useIsotop();
 
   useEffect(() => {
     initIsotop();
   }, [initIsotop]);
-  
+
   return (
     <div className="pm-project-masonary-area">
       <div className="container container-1800">
@@ -80,7 +57,7 @@ export default function PortfolioMasonryArea() {
                     {item.subtitle}
                   </span>
                   <h4 className="pm-project-masonary-title">
-                    <Link href="/portfolio-details-comparison">{item.title}</Link>
+                    <Link href={getProjectLink(item.slug, item.template)}>{item.title}</Link>
                   </h4>
                 </div>
               </div>

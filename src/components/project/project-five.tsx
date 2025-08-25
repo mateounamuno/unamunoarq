@@ -8,14 +8,12 @@ import { projects, Project } from "@/data/project-data";
 // Función para generar el enlace correcto según el template
 const getProjectLink = (slug: string, template: string): string => {
   switch (template) {
-    case "details-2":
-      return `/portfolio/details/${slug}`;
     case "showcase-2":
       return `/portfolio/details2/${slug}`;
     case "showcase":
       return `/portfolio/details3/${slug}`;
     default:
-      return `/portfolio/details/${slug}`;
+      return `/portfolio/details2/${slug}`;
   }
 };
 

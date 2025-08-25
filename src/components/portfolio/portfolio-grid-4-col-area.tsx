@@ -2,8 +2,20 @@ import React from "react";
 import { UpArrow } from "../svg";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/project-data";
+import { projects, Project } from "@/data/project-data";
 import React__ from 'react';
+
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "showcase-2":
+      return `/portfolio/details2/${slug}`;
+    case "showcase":
+      return `/portfolio/details3/${slug}`;
+    default:
+      return `/portfolio/details2/${slug}`;
+  }
+};
 
 // prop type 
 type IProps = {
@@ -131,7 +143,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
           {items.map((item) => (
             <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
               <div className="tp-project-5-2-thumb mb-30 p-relative not-hide-cursor" data-cursor="Ver<br>Proyecto" style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}>
-                <Link href={`/portfolio/${item.slug}`} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
+                <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
                   <Image
                     src={item.gridThumbnail || item.thumbnail}
                     alt="prd-img"

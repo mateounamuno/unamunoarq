@@ -3,83 +3,49 @@ import Image from "next/image";
 import Link from "next/link";
 import { UpArrow } from "../svg";
 import { useIsotop } from "@/hooks/use-isotop";
+import { projects, Project } from "@/data/project-data";
 
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "showcase-2":
+      return `/portfolio/details2/${slug}`;
+    case "showcase":
+      return `/portfolio/details3/${slug}`;
+    default:
+      return `/portfolio/details2/${slug}`;
+  }
+};
+
+// Función para generar las clases de filtro basadas en la categoría
+const getFilterClasses = (category: string): string => {
+  const categoryMap: { [key: string]: string } = {
+    'Arquitectura': 'cat1',
+    'Branding': 'cat2',
+    'Arquitectura Comercial': 'cat3',
+    'Diseño Minimalista': 'cat4',
+    'Concept': 'cat1',
+    'Creative': 'cat2',
+    'Studio': 'cat3',
+    'Agency': 'cat4',
+    'Visual': 'cat1',
+    'Shooting': 'cat2',
+  };
+
+  return categoryMap[category] || 'cat1';
+};
 
 // data
-const portfolio_data = [
-  {
-    id: 1,
-    img: "/assets/img/inner-project/portfolio-col-2/port-9.jpg",
-    category: "Branding",
-    title: "The Stage",
-    year: "2024",
-    show: "cat2 cat4",
-  },
-  {
-    id: 2,
-    img: "/assets/img/inner-project/portfolio-col-2/port-8.jpg",
-    category: "Creative",
-    title: "Big dream",
-    year: "2023",
-    show: "cat2 cat4 cat3",
-  },
-  {
-    id: 3,
-    img: "/assets/img/inner-project/portfolio-col-2/port-7.jpg",
-    category: "Concept",
-    title: "Sed Lectus",
-    year: "2023",
-    show: "cat4 cat2 cat3",
-  },
-  {
-    id: 4,
-    img: "/assets/img/inner-project/portfolio-col-2/port-6.jpg",
-    category: "Branding",
-    title: "Art Direction",
-    year: "2024",
-    show: "cat2 cat4 cat3",
-  },
-  {
-    id: 5,
-    img: "/assets/img/inner-project/portfolio-col-2/port-5.jpg",
-    category: "Branding",
-    title: "Petit Navire",
-    year: "2024",
-    show: "cat1 cat4 cat3",
-  },
-  {
-    id: 6,
-    img: "/assets/img/inner-project/portfolio-col-2/port-4.jpg",
-    category: "Branding",
-    title: "Big dream",
-    year: "2024",
-    show: "cat4 cat1 cat3",
-  },
-  {
-    id: 7,
-    img: "/assets/img/inner-project/portfolio-col-2/port-3.jpg",
-    category: "Branding",
-    title: "The Stage",
-    year: "2024",
-    show: "cat2 cat4 cat3",
-  },
-  {
-    id: 8,
-    img: "/assets/img/inner-project/portfolio-col-2/port-2.jpg",
-    category: "Creative",
-    title: "Big dream",
-    year: "2024",
-    show: "cat2 cat4",
-  },
-  {
-    id: 9,
-    img: "/assets/img/inner-project/portfolio-col-2/port-1.jpg",
-    category: "Concept",
-    title: "Sed Lectus",
-    year: "2024",
-    show: "cat1 cat3",
-  },
-];
+const portfolio_data = projects.filter(p => p.showInGrid).slice(0, 9).map((p, index) => ({
+  id: index + 1,
+  img: p.thumbnail,
+  category: p.category,
+  title: p.title,
+  year: p.year,
+  show: getFilterClasses(p.category),
+  slug: p.slug,
+  template: p.template,
+}));
 
 // prop type
 type IProps = {
@@ -125,7 +91,7 @@ export default function PortfolioGridColThreeArea({ style_2 = false }: IProps) {
               className={`col-xl-4 col-lg-6 col-md-6 grid-item ${item.show}`}
             >
               <div className="tp-project-5-2-thumb mb-30 p-relative not-hide-cursor" data-cursor="Ver<br>Proyecto">
-                <Link href="/portfolio-details-1" className="cursor-hide">
+                <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide">
                   <Image
                     className="anim-zoomin"
                     src={item.img}
