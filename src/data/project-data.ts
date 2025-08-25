@@ -1,6 +1,6 @@
 import { showcaseProjects, ShowcaseProject } from "./projects-showcase";
 import { showcase2Projects, Showcase2Project } from "./projects-showcase-2";
-import { details2Projects, Details2Project } from "./projects-details-2";
+import { details2Projects, Details2Project } from "./projects";
 
 export type ProjectTemplate = "showcase" | "showcase-2" | "details-2";
 

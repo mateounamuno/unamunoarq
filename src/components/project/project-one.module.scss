@@ -41,18 +41,68 @@
   }
 
   .projectItem {
+    // Forzar ancho uniforme para todos los proyectos
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    // Eliminar cualquier margen que pueda causar diferencias
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    
     @media (max-width: 767px) {
       margin-bottom: 100px !important;
     }
   }
 
   .projectImg {
+    // Asegurar que el contenedor mantenga sus proporciones fijas
+    display: block !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    // Asegurar que las imágenes llenen completamente el contenedor
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+    }
+
+    // Altura uniforme para todos los proyectos
+    &.height-uniform {
+      height: 500px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      
+      @media (max-width: 1200px) {
+        height: 450px !important;
+      }
+      
+      @media (max-width: 992px) {
+        height: 400px !important;
+      }
+      
+      @media (max-width: 767px) {
+        height: 350px !important;
+      }
+    }
+
+    // Eliminar cualquier estilo que pueda causar diferencias de ancho
+    &.tp-project-mr,
+    &.tp-project-ml {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
     @media (max-width: 767px) {
       width: 100% !important;
 
       img {
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
         object-fit: cover !important;
       }
     }

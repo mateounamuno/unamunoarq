@@ -99,7 +99,7 @@ const HomeMain = () => {
             {/* <VideOne /> */}
             {/* video area */}
 
-            <ProjectOne />
+            <ProjectOne style_2={true} />
             {/* project area */}
 
             {/* testimonial area */}

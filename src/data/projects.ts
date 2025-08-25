@@ -1,4 +1,4 @@
-export type Projects = {
+export type Details2Project = {
     template: "details-2";
     slug: string;
     title: string;
@@ -16,7 +16,10 @@ export type Projects = {
     sliderImages: string[];
 };
 
-export const Projects: Projects[] = [
+// Alias para mantener compatibilidad
+export type Projects = Details2Project;
+
+export const details2Projects: Details2Project[] = [
     {
         template: "details-2",
         slug: "casa-nina",
@@ -41,7 +44,7 @@ export const Projects: Projects[] = [
     {
         template: "details-2",
         slug: "the-stage",
-        title: "The Stage",
+        title: "The ",
         category: "Branding",
         year: "2024",
         cover: "/assets/img/inner-project/portfolio-col-2/port-6.jpg",
@@ -60,4 +63,5 @@ export const Projects: Projects[] = [
     },
 ];
 
-
+// Alias para mantener compatibilidad
+export const Projects = details2Projects;

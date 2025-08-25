@@ -21,20 +21,62 @@ const project_data: IProject[] = (
   projects.filter(p => p.showOnHome).slice(0, 6).map((p, index) => ({
     slug: p.slug,
     cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
-    cls_2: `height-${index + 1}` + (index === 1 ? " d-inline-flex justify-content-end" : ""),
+    cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
     img: p.thumbnail,
   }))
 ) as IProject[];
 
 function ProjectItem({ item }: { item: IProject }) {
+  // Función para obtener la altura responsiva
+  const getResponsiveHeight = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1200) return '500px';
+      if (window.innerWidth >= 992) return '450px';
+      if (window.innerWidth >= 768) return '400px';
+      return '350px';
+    }
+    return '500px'; // altura por defecto
+  };
+
+  const [height, setHeight] = React.useState(getResponsiveHeight());
+
+  React.useEffect(() => {
+    const updateHeight = () => {
+      setHeight(getResponsiveHeight());
+    };
+
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   return (
-    <div className={`tp-project-item ${item.cls} mb-200 ${styles.projectItem}`}>
+    <div className={`tp-project-item mb-200 ${styles.projectItem}`} style={{ width: '100%' }}>
       <div
-        className={`tp-project-img ${item.cls_2} fix not-hide-cursor ${styles.projectImg}`}
+        className={`tp-project-img height-uniform fix not-hide-cursor ${styles.projectImg}`}
         data-cursor="Ver<br>Proyecto"
+        style={{
+          height: height,
+          width: '100%',
+          display: 'block',
+          overflow: 'hidden',
+          position: 'relative',
+          maxWidth: '100%'
+        }}
       >
-        <Link className="cursor-hide" href={`/portfolio/${item.slug}`}>
-          <Image data-speed=".8" src={item.img} alt="project-img" style={{ height: "auto" }} width={800} height={600} />
+        <Link className="cursor-hide" href={`/portfolio/${item.slug}`} style={{ display: 'block', height: '100%', width: '100%' }}>
+          <Image
+            data-speed=".8"
+            src={item.img}
+            alt="project-img"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+            width={800}
+            height={600}
+          />
         </Link>
       </div>
     </div>
@@ -129,7 +171,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
             </div>
           </div>
         )}
-        <div className={`tp-project-gallery-wrapper ${styles.projectGalleryWrapper}`}>
+        <div className={`tp-project-gallery-wrapper pt-100 ${styles.projectGalleryWrapper}`}>
           <div className={`container container-1630 ${styles.container1630}`}>
             <div className={`tp-project-gallery-top pb-50 ${styles.projectGalleryTop}`}>
               <div className={`row ${styles.row}`}>
