@@ -7,7 +7,7 @@ import { SwiperOptions } from "swiper/types";
 import Social from "@/components/social/social";
 import { Dots } from "@/components/svg";
 import { Project } from "@/data/project-data";
-import type { Details2Project } from "@/data/projects";
+import type { Showcase2Project } from "@/data/projects-showcase-2";
 
 const slider_setting: SwiperOptions = {
     slidesPerView: 1,

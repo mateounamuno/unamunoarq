@@ -18,7 +18,7 @@ import Social from "@/components/social/social";
 import { Dots } from "@/components/svg";
 // animation
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
-import type { Projects as ProjectType } from "@/data/projects";
+import type { Showcase2Project } from "@/data/projects-showcase-2";
 
 // image slider setting 
 const slider_setting: SwiperOptions = {
@@ -34,7 +34,7 @@ const slider_setting: SwiperOptions = {
    },
 }
 
-type Props = { project?: ProjectType };
+type Props = { project?: Showcase2Project };
 
 const PortfolioDetailsTwoMain = ({ project }: Props) => {
    useScrollSmooth();
