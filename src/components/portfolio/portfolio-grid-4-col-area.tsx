@@ -37,7 +37,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
           <div className="col-xl-12">
-            <div className="d-flex gap-2 justify-content-center mb-40 flex-wrap">
+            <div className="d-flex gap-2 justify-content-center mb-50 flex-wrap">
               {categories.map(cat => (
                 <button
                   key={cat}
