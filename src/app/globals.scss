@@ -132,8 +132,35 @@
   }
 }
 
+/* Global Geist font application */
+* {
+  font-family: var(--tp-ff-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  font-family: var(--tp-ff-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Override any existing font-family declarations */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+textarea,
+select {
+  font-family: var(--tp-ff-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+}
+
 /* Footer: keep Geist and single-line, no explicit size */
 .tp-footer-big-title.footer-big-text {
-  font-family: var(--tp-ff-heading), sans-serif;
+  font-family: var(--tp-ff-body), var(--tp-ff-heading), sans-serif;
   font-weight: 400;
 }

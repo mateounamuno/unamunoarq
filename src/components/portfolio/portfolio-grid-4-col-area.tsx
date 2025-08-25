@@ -37,12 +37,90 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
           <div className="col-xl-12">
-            <div className="d-flex gap-3 justify-content-center mb-40 flex-wrap">
+            <div className="d-flex gap-2 justify-content-center mb-40 flex-wrap">
               {categories.map(cat => (
-                <button key={cat} className={`tp-btn-border ${active === cat ? 'active' : ''}`} onClick={() => setActive(cat)}>
-                  <span className="tp-btn-border-wrap">
-                    <span className="text-1">{cat}</span>
-                    <span className="text-2">{cat}</span>
+                <button
+                  key={cat}
+                  className={`tp-btn-border ${active === cat ? 'active' : ''}`}
+                  onClick={() => setActive(cat)}
+                  style={{
+                    padding: '0px 20px',
+                    fontSize: '14px',
+                    minWidth: 'auto',
+                    height: '60px !important',
+                    lineHeight: '60px !important',
+                    borderRadius: '0 !important',
+                    border: '1px solid var(--tp-border-1)',
+                    background: active === cat ? 'var(--tp-common-black)' : 'transparent',
+                    color: active === cat ? 'var(--tp-common-white)' : 'var(--tp-common-black)',
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    transition: 'all 0.3s ease',
+                    margin: '0',
+                    overflow: 'hidden',
+                    clipPath: 'none',
+                    WebkitClipPath: 'none'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (active !== cat) {
+                      e.currentTarget.style.background = 'var(--tp-common-black)';
+                      e.currentTarget.style.color = 'var(--tp-common-white)';
+                      // Cambiar el color del texto en los spans
+                      const text1 = e.currentTarget.querySelector('.text-1') as HTMLElement;
+                      const text2 = e.currentTarget.querySelector('.text-2') as HTMLElement;
+                      if (text1) text1.style.color = 'var(--tp-common-white)';
+                      if (text2) text2.style.color = 'var(--tp-common-white)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (active !== cat) {
+                      e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = 'var(--tp-common-black)';
+                      // Restaurar el color del texto en los spans
+                      const text1 = e.currentTarget.querySelector('.text-1') as HTMLElement;
+                      const text2 = e.currentTarget.querySelector('.text-2') as HTMLElement;
+                      if (text1) text1.style.color = 'var(--tp-common-black)';
+                      if (text2) text2.style.color = 'var(--tp-common-black)';
+                    }
+                  }}
+                >
+                  <span
+                    className="tp-btn-border-wrap"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      width: '100%',
+                      height: '100%',
+                      borderBottom: 'none',
+                      paddingBottom: '0',
+                      borderRadius: '0 !important',
+                      clipPath: 'none',
+                      WebkitClipPath: 'none'
+                    }}
+                  >
+                    <span
+                      className="text-1"
+                      style={{
+                        textAlign: 'center',
+                        color: active === cat ? 'var(--tp-common-white)' : 'var(--tp-common-black)'
+                      }}
+                    >
+                      {cat}
+                    </span>
+                    <span
+                      className="text-2"
+                      style={{
+                        textAlign: 'center',
+                        color: active === cat ? 'var(--tp-common-white)' : 'var(--tp-common-black)'
+                      }}
+                    >
+                      {cat}
+                    </span>
                   </span>
                 </button>
               ))}

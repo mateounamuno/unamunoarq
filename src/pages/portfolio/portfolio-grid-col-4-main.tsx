@@ -14,7 +14,7 @@ import BigText from "@/components/big-text";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { hoverBtn } from "@/utils/hover-btn";
-import {charAnimation,fadeAnimation,titleAnimation} from "@/utils/title-animation";
+import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-animation";
 import { imageRevealAnimation } from "@/utils/image-reveal-anim";
 
 const PortfolioGridColFourMain = () => {
@@ -28,10 +28,10 @@ const PortfolioGridColFourMain = () => {
   }, []);
 
   useEffect(() => {
-    if(typeof window !== 'undefined' && document.querySelector('.tp-magic-cursor')) {
+    if (typeof window !== 'undefined' && document.querySelector('.tp-magic-cursor')) {
       cursorAnimation();
     }
-  },[]);
+  }, []);
 
   useGSAP(() => {
     const timer = setTimeout(() => {
@@ -66,9 +66,9 @@ const PortfolioGridColFourMain = () => {
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="tm-hero-content">
-                      <span className="tm-hero-subtitle">Liko Studio</span>
+                      <span className="tm-hero-subtitle">Unamuno Arquitectura</span>
                       <h4 className="tm-hero-title fs-220 tp-char-animation">
-                        Classic Grid
+                        Proyectos
                       </h4>
                     </div>
                     <div className="tm-hero-text tp_title_anim">
@@ -85,7 +85,7 @@ const PortfolioGridColFourMain = () => {
             {/* portfolio hero */}
 
             {/* portfolio area */}
-            <PortfolioGridFourColArea/>
+            <PortfolioGridFourColArea />
             {/* portfolio area */}
 
             {/* big text */}
