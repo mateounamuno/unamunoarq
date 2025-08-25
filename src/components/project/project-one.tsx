@@ -235,24 +235,24 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
               </div>
             </div>
           </div>
-          {!style_2 && (
-            <div className="container-fluid p-0">
-              <div className="row g-0">
-                <div className="col-xl-12">
-                  <div className="tp-project-full-img-wrap p-relative fix">
-                    <div
-                      className="tp-project-full-img"
-                      data-speed="auto"
-                      style={{
-                        backgroundImage:
-                          "url(/assets/img/inner-service/hero/hero-1-2.jpg)",
-                      }}
-                    ></div>
-                  </div>
+          (
+          <div className="container-fluid p-0">
+            <div className="row g-0">
+              <div className="col-xl-12">
+                <div className="tp-project-full-img-wrap p-relative fix">
+                  <div
+                    className="tp-project-full-img"
+                    data-speed="auto"
+                    style={{
+                      backgroundImage:
+                        "url(/assets/img/inner-service/hero/hero-1-2.jpg)",
+                    }}
+                  ></div>
                 </div>
               </div>
             </div>
-          )}
+          </div>
+          )
         </div>
       </div>
     </>
