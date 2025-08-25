@@ -91,7 +91,7 @@ const PortfolioDetailsTwoMain = ({ project }: Props) => {
                                     className="swiper-container project-details-2-slider p-relative fix"
                                     style={{ height: '100%' }}
                                  >
-                                    {(project.sliderImages || []).map((imgSrc: string, i: number) => (
+                                    {(project.movingGalleryTop || []).map((imgSrc: string, i: number) => (
                                        <SwiperSlide key={i} className="swiper-slide">
                                           <div className="project-details-2-slider-thumb" style={{
                                              display: 'flex',
