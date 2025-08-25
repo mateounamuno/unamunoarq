@@ -113,19 +113,19 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
                 </div>
                 <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between">
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>CLIENT</span>
+                    <span>POR</span>
                     <h5>{client}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>Services</span>
+                    <span>CATEGORÍA</span>
                     <h5>{services}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>INDUSTRIES</span>
+                    <span>UBICACIÓN</span>
                     <h5>{industries}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>Date</span>
+                    <span>FECHA</span>
                     <h5>{date}</h5>
                   </div>
                 </div>
@@ -200,10 +200,10 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
               </div>
             </div>
           ) : (
-            <div className="row">
-              <div className="col-12">
-                <div className="showcase-details-2-section-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section2}</p>
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="showcase-details-2-section-right tp_title_anim text-center">
+                  <p style={{ fontSize: '1.7em' }}>{sectionContents?.section2}</p>
                 </div>
               </div>
             </div>
@@ -267,37 +267,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       </div>
       {/* grid images */}
 
-      {/* details title 4 */}
-      <div className="showcase-details-2-area pb-120">
-        <div className="container">
-          {sectionSubtitles?.section4 ? (
-            <div className="row">
-              <div className="col-xl-3">
-                <div className="showcase-details-2-section-left">
-                  <span className="ab-inner-subtitle mb-25">
-                    <Leaf />
-                    {sectionSubtitles?.section4}
-                  </span>
-                </div>
-              </div>
-              <div className="col-xl-9">
-                <div className="showcase-details-2-content-right tp_title_anim">
-                  <p>{sectionContents?.section4}</p>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="row">
-              <div className="col-12">
-                <div className="showcase-details-2-content-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section4}</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-      {/* details title 4 */}
+
 
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pt-120 pb-60">
         <Link className="project-details-1-prev" href={prevSlug ? `/showcase/${prevSlug}` : '#'}>
