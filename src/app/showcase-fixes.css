@@ -1,0 +1,142 @@
+/* Fixes for showcase-details-2 superposición issues */
+
+.showcase-details-2-area {
+    position: relative !important;
+    width: 100% !important;
+    clear: both !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.showcase-details-2-area.showcase-details-2-bg {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.showcase-details-2-area.pt-120 {
+    padding-top: 120px !important;
+}
+
+.showcase-details-2-area.pb-120 {
+    padding-bottom: 120px !important;
+}
+
+.showcase-details-2-slider-area {
+    position: relative !important;
+    width: 100% !important;
+    clear: both !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.showcase-details-2-grid-area {
+    position: relative !important;
+    width: 100% !important;
+    clear: both !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.showcase-details-2-fullwidth-img {
+    position: relative !important;
+    width: 100% !important;
+    clear: both !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure proper spacing between sections */
+.showcase-details-2-area+.showcase-details-2-area,
+.showcase-details-2-area+.showcase-details-2-slider-area,
+.showcase-details-2-slider-area+.showcase-details-2-area,
+.showcase-details-2-area+.showcase-details-2-fullwidth-img,
+.showcase-details-2-fullwidth-img+.showcase-details-2-area,
+.showcase-details-2-area+.showcase-details-2-grid-area,
+.showcase-details-2-grid-area+.project-details-1-navigation {
+    margin-top: 0 !important;
+}
+
+/* Fix for project navigation */
+.project-details-1-navigation {
+    position: relative !important;
+    z-index: 8 !important;
+    clear: both !important;
+    width: 100% !important;
+}
+
+/* Ensure images don't overlap */
+.showcase-details-2-slider-item img,
+.showcase-details-2-grid-img img,
+.showcase-details-2-fullwidth-img img {
+    position: relative !important;
+    z-index: 1 !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Fix for moving gallery */
+.moving-gallery {
+    position: relative !important;
+    z-index: 1 !important;
+    clear: both !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .showcase-details-2-area.pt-120 {
+        padding-top: 60px !important;
+    }
+
+    .showcase-details-2-area.pb-120 {
+        padding-bottom: 60px !important;
+    }
+
+    .showcase-details-2-slider-area.pb-120 {
+        padding-bottom: 60px !important;
+    }
+}
+
+/* Specific section fixes */
+.showcase-section-1,
+.showcase-section-2,
+.showcase-section-3 {
+    position: relative !important;
+    z-index: auto !important;
+    clear: both !important;
+    overflow: visible !important;
+}
+
+.showcase-slider-section {
+    position: relative !important;
+    z-index: auto !important;
+    clear: both !important;
+    overflow: visible !important;
+}
+
+.showcase-fullwidth-section {
+    position: relative !important;
+    z-index: auto !important;
+    clear: both !important;
+    overflow: visible !important;
+}
+
+.showcase-grid-section {
+    position: relative !important;
+    z-index: auto !important;
+    clear: both !important;
+    overflow: visible !important;
+}
+
+/* Force proper stacking context */
+.showcase-details-2-area,
+.showcase-details-2-slider-area,
+.showcase-details-2-grid-area,
+.showcase-details-2-fullwidth-img {
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    perspective: 1000px !important;
+}

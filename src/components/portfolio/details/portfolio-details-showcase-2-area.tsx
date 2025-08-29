@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import '@/app/showcase-fixes.css';
 
 // Componentes SVG
 import { UpArrow, Dots } from '@/components/svg';
@@ -137,7 +138,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* portfolio hero */}
 
       {/* details title */}
-      <div className="showcase-details-2-area pt-120 pb-120">
+      <div className="showcase-details-2-area pt-120 pb-120 showcase-section-1" style={{ position: 'relative', zIndex: 2, clear: 'both' }}>
         <div className="container">
           {sectionTitles?.section1 || sectionSubtitles?.section1 ? (
             <div className="row">
@@ -166,7 +167,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* details title */}
 
       {/* moving image */}
-      <div className="showcase-details-2-slider-area pb-120">
+      <div className="showcase-details-2-slider-area pb-120 showcase-slider-section" style={{ position: 'relative', zIndex: 3, clear: 'both' }}>
         <div className="moving-gallery">
           <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
             {movingGalleryTop.map((imgSrc, i) => (
@@ -189,7 +190,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* moving image */}
 
       {/* details title 2 */}
-      <div className="showcase-details-2-area pb-120">
+      <div className="showcase-details-2-area pb-120 showcase-section-2" style={{ position: 'relative', zIndex: 4, clear: 'both' }}>
         <div className="container">
           {sectionTitles?.section2 || sectionSubtitles?.section2 ? (
             <div className="row justify-content-center">
@@ -213,13 +214,13 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* details title 2 */}
 
       {/* full width image */}
-      <div className="showcase-details-2-fullwidth-img">
+      <div className="showcase-details-2-fullwidth-img showcase-fullwidth-section" style={{ position: 'relative', zIndex: 5, clear: 'both' }}>
         <Image data-speed=".8" src={fullWidthImage} alt="fullwidth_img" width={1600} height={900} style={{ height: 'auto' }} />
       </div>
       {/* full width image */}
 
       {/* detail title 3 */}
-      <div className="showcase-details-2-area pt-120 pb-120">
+      <div className="showcase-details-2-area pt-120 pb-120 showcase-section-3" style={{ position: 'relative', zIndex: 6, clear: 'both' }}>
         <div className="container">
           {sectionTitles?.section3 || sectionSubtitles?.section3 ? (
             <div className="row justify-content-center">
@@ -243,7 +244,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* detail title 3 */}
 
       {/* grid images */}
-      <div className="showcase-details-2-grid-area">
+      <div className="showcase-details-2-grid-area showcase-grid-section" style={{ position: 'relative', zIndex: 7, clear: 'both' }}>
         <div className="container-fluid p-0">
           <div className="row g-0">
             {gridImages.map((src, i) => (
@@ -269,9 +270,9 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
 
 
 
-      <div className="project-details-1-navigation d-flex justify-content-between align-items-center pt-120 pb-60">
+      <div className="project-details-1-navigation d-flex justify-content-between align-items-center pt-120 pb-60" style={{ position: 'relative', zIndex: 8, clear: 'both' }}>
         <Link className="project-details-1-prev" href={prevSlug ? `/showcase/${prevSlug}` : '#'}>
-          <i className="fa-sharp fa-regular fa-arrow-left"></i>
+          <i className="fa-sharp fa-arrow-left"></i>
           <span>{navigationTexts.prev}</span>
         </Link>
         <Link href="#">
@@ -279,7 +280,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
         </Link>
         <Link className="project-details-1-next" href={nextSlug ? `/showcase/${nextSlug}` : '#'}>
           <span>{navigationTexts.next}</span>
-          <i className="fa-sharp fa-regular fa-arrow-right"></i>
+          <i className="fa-sharp fa-arrow-right"></i>
         </Link>
       </div>
     </>

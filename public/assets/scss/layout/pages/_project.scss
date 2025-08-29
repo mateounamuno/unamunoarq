@@ -3324,6 +3324,31 @@
     }
 }
 
+.showcase-details-2-area {
+    position: relative;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+
+    &.showcase-details-2-bg {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.pt-120 {
+        padding-top: 120px;
+    }
+
+    &.pb-120 {
+        padding-bottom: 120px;
+    }
+
+    &.pt-120.pb-120 {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+
 .showcase-details-2 {
     &-bg {
         padding-top: 400px;
@@ -3501,13 +3526,44 @@
         }
     }
 
+    &-fullwidth {
+        &-img {
+            position: relative;
+            width: 100%;
+            clear: both;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            & img {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
     &-slider {
+        &-area {
+            position: relative;
+            width: 100%;
+            clear: both;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
         &-item {
             margin: 0px 10px;
             display: inline-block;
+            position: relative;
+            z-index: 1;
 
             & img {
                 max-width: inherit;
+                position: relative;
+                z-index: 1;
 
                 @media #{$xs} {
                     max-width: 100%;
@@ -3518,9 +3574,23 @@
     }
 
     &-grid {
+        &-area {
+            position: relative;
+            width: 100%;
+            clear: both;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
         &-img {
+            position: relative;
+            overflow: hidden;
+
             & img {
                 max-width: inherit;
+                position: relative;
+                z-index: 1;
 
                 @media #{$lg,$md,$xs} {
                     max-width: 100%;
@@ -4369,4 +4439,33 @@
             width: 100%;
         }
     }
+}
+
+.showcase-details-2-area {
+    position: relative;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+
+    &.showcase-details-2-bg {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.pt-120 {
+        padding-top: 120px;
+    }
+
+    &.pb-120 {
+        padding-bottom: 120px;
+    }
+
+    &.pt-120.pb-120 {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+
+.showcase-details-2 {
+    // ... existing code ...
 }
