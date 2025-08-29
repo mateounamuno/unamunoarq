@@ -191,7 +191,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
             </div>
           </div>
         )}
-        <div className={`tp-project-gallery-wrapper pt-100 ${styles.projectGalleryWrapper}`}>
+        <div className={`tp-project-gallery-wrapper ${style_2 ? 'pt-100' : ''} ${styles.projectGalleryWrapper}`}>
           <div className={`container container-1630 ${styles.container1630}`}>
             <div className={`tp-project-gallery-top pb-50 ${styles.projectGalleryTop}`}>
               <div className={`row ${styles.row}`}>
@@ -249,7 +249,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
               </div>
             </div>
           </div>
-          (
+
           <div className="container-fluid p-0">
             <div className="row g-0">
               <div className="col-xl-12">
@@ -266,7 +266,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
               </div>
             </div>
           </div>
-          )
+
         </div>
       </div>
     </>

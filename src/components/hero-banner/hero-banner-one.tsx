@@ -52,10 +52,8 @@ const HeroBannerOne = () => {
             </div>
             <div className="tp-hero-content tp_fade_bottom">
               <p>
-                <span></span>
-                Global digital design studio partnering with brands and
-                businesses that create exceptional experiences. We are design
-                and development agency based in Netherland.
+                {/* <span></span> */}
+                Creemos en una arquitectura genuina: honesta con su contexto, responsable con el medio en el que se inserta y atenta a las huellas que deja en el tiempo.
               </p>
             </div>
           </div>
