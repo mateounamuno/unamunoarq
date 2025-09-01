@@ -7,13 +7,13 @@ import { fadeAnimation } from "@/utils/title-animation";
 
 const HeroBannerTwo = () => {
   useGSAP(() => {
-
     if (typeof window !== 'undefined') {
       setTimeout(() => {
         fadeAnimation();
       }, 100)
     }
   }, {});
+
   return (
     <div className="tp-hero-area tp-hero-ptb main-slider">
       {/* Fondo del hero con opacidad */}
@@ -27,10 +27,10 @@ const HeroBannerTwo = () => {
         />
       </div>
 
-      <div className="container-fluid">
-        <div className="row justify-content-center">
+      <div className="container-fluid h-100">
+        <div className="row justify-content-center align-items-center h-100">
           <div className="col-xxl-12">
-            <div className="tp-hero-title-wrap p-relative">
+            {/* <div className="tp-hero-title-wrap p-relative">
 
               <div className="tp-hero-title-box text-center p-relative">
                 <h1 className="tp-hero-title tp_fade_bottom">
@@ -50,9 +50,9 @@ const HeroBannerTwo = () => {
 
                 </h1>
               </div>
-            </div>
-            <div className="tp-hero-content tp_fade_bottom">
-              <p>
+            </div> */}
+            <div className="tp-hero-content tp_fade_bottom text-center d-flex align-items-center justify-content-center h-100">
+              <p className="mb-0 mt-100">
                 <span></span>
                 Creemos en una arquitectura genuina: honesta con su contexto, responsable con el medio en el que se inserta y atenta a las huellas que deja en el tiempo.
               </p>
