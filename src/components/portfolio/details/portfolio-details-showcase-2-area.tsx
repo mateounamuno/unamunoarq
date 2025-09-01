@@ -32,21 +32,14 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     <>
       {/* portfolio hero */}
       <div className="showcase-details-2-area showcase-details-2-bg p-relative" style={{ backgroundImage: `url(${showcaseHeroBg})` }}>
-        <div className="showcase-details-2-link">
-          <a className="project-details-custom-link" href="#">
-            {visitWebsiteText || "Visit Website"}
-            <span>
-              <UpArrow />
-            </span>
-          </a>
-        </div>
+
         <div className="showcase-details-2-wrapper" data-lag="0.2" data-stagger="0.08">
           <div className="container container-1550">
             <div className="row">
               <div className="col-xl-8">
                 <div className="showcase-details-2-title-box showcase-details-2-title">
                   <h5 className="showcase-details-2-title mb-20 tp-char-animation">{title}</h5>
-                  <span className="showcase-details-2-subtitle tp_title_anim">{subtitle}</span>
+
                 </div>
               </div>
               <div className="col-xxl-7 col-xl-10">
