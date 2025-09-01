@@ -48,19 +48,19 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                 </div>
                 <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between showcase-details-2-project-info">
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>CLIENT</span>
+                    <span>ARQUITECTURA</span>
                     <h5>{client}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>Services</span>
+                    <span>CATEGORIA</span>
                     <h5>{services}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>INDUSTRIES</span>
+                    <span>LUGAR</span>
                     <h5>{industries}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>Date</span>
+                    <span>FECHA</span>
                     <h5>{date}</h5>
                   </div>
                 </div>
