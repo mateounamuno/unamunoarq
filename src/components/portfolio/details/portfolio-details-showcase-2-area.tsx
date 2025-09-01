@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Leaf, UpArrow } from '@/components/svg';
+import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
 
 interface PortfolioDetailsShowcaseTwoAreaProps {
@@ -127,24 +127,9 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {sectionTitles?.section2 && sectionContents?.section2 && (
         <div className="showcase-details-2-area pb-120 showcase-details-2-section">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-8">
-                <div className="showcase-details-2-section-box">
-                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section2}</h4>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-3">
-                <div className="showcase-details-2-section-left">
-                  <span className="ab-inner-subtitle mb-25">
-                    <Leaf />
-                    {sectionSubtitles?.section2 || "An introduction"}
-                  </span>
-                </div>
-              </div>
-              <div className="col-xl-9">
-                <div className="showcase-details-2-content-right tp_title_anim">
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="showcase-details-2-content-center tp_title_anim text-center">
                   <p className="pb-25">{sectionContents.section2}</p>
                 </div>
               </div>

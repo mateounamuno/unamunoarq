@@ -87,12 +87,12 @@ export const showcase2Projects: Showcase2Project[] = [
         visitWebsiteText: "Ver Proyecto",
         sectionTitles: {
             section1: "Simple y Significativo",
-            section2: "",
+            section2: "El Objetivo",
             section3: "La Planificación",
         },
         sectionSubtitles: {
             section1: "Objetivo",
-            section2: "",
+            section2: "Propósito del Proyecto",
             section3: "Mapeando el viaje",
             section4: "Detalles del Caso",
         },
@@ -206,15 +206,15 @@ export const showcase2Projects: Showcase2Project[] = [
         // Example with empty strings for sectionTitles and sectionSubtitles for full-width content
         visitWebsiteText: "Ver Más",
         sectionTitles: {
-            section1: "",
-            section2: "",
-            section3: "",
+            section1: "Diseño Minimalista",
+            section2: "La Filosofía",
+            section3: "El Proceso",
         },
         sectionSubtitles: {
-            section1: "",
-            section2: "",
-            section3: "",
-            section4: "",
+            section1: "Enfoque",
+            section2: "Concepto",
+            section3: "Metodología",
+            section4: "Resultado",
         },
         sectionContents: {
             section1: "Este proyecto demuestra cómo el diseño minimalista puede crear espacios extraordinarios. La filosofía de 'menos es más' se aplica en cada detalle, desde la selección de materiales hasta la disposición de los elementos. El resultado es un ambiente que respira calma y serenidad, donde cada elemento tiene un propósito y contribuye al todo.",
