@@ -83,19 +83,12 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
               </div>
             </div>
             <div className="row">
-              <div className="col-xl-3">
+              <div className="col-xl-10">
                 <div className="showcase-details-2-section-left">
-                  <span className="ab-inner-subtitle mb-25">
-                    <Leaf />
-                    {sectionSubtitles?.section1 || "Objective"}
-                  </span>
-                </div>
-              </div>
-              <div className="col-xl-9">
-                <div className="showcase-details-2-section-right tp_title_anim">
                   <p>{sectionContents.section1}</p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
