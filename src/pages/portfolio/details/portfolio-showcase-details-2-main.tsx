@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React from "react";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
@@ -11,11 +11,20 @@ import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
 import PortfolioDetailsShowcaseTwoArea from "@/components/portfolio/details/portfolio-details-showcase-2-area";
 import FooterTwo from "@/layouts/footers/footer-two";
+
 // animation
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { movingImageSlider } from "@/utils/scroll-marque";
 
-const PortfolioDetailsShowcaseTwoMain = () => {
+
+// Importa el tipo de dato para que TypeScript valide la prop.
+import type { Showcase2Project } from '@/data/projects-showcase-2';
+
+// Define que este componente recibirá una prop llamada 'project' de tipo Showcase2Project.
+type Props = { project: Showcase2Project };
+
+const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
+  const componentRef = useRef<HTMLDivElement>(null);
   useScrollSmooth();
 
   useGSAP(() => {
@@ -27,6 +36,7 @@ const PortfolioDetailsShowcaseTwoMain = () => {
     return () => clearTimeout(timer);
   });
 
+
   return (
     <Wrapper>
       {/* header area start */}
@@ -37,7 +47,7 @@ const PortfolioDetailsShowcaseTwoMain = () => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <PortfolioDetailsShowcaseTwoArea />
+            <PortfolioDetailsShowcaseTwoArea project={project} />
             {/* portfolio details area */}
           </main>
 

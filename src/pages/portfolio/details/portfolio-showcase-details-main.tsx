@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
@@ -11,8 +11,6 @@ import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
 import PortfolioDetailsShowcaseArea from "@/components/portfolio/details/portfolio-details-showcase-area";
 import FooterTwo from "@/layouts/footers/footer-two";
-// animation
-import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-animation";
 
 // Importa el tipo de dato para que TypeScript valide la prop.
 import type { ShowcaseProject } from '@/data/projects-showcase';
@@ -22,17 +20,147 @@ type Props = { project: ShowcaseProject | undefined };
 
 // Modifica el componente para que acepte la prop 'project' como argumento.
 const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
+  const componentRef = useRef<HTMLDivElement>(null);
 
   useScrollSmooth();
 
   useGSAP(() => {
-    const timer = setTimeout(() => {
-      charAnimation();
-      titleAnimation();
-      fadeAnimation();
-    }, 100);
-    return () => clearTimeout(timer);
-  });
+    if (!componentRef.current) return;
+
+    // Configurar las animaciones iniciales
+    const tl = gsap.timeline();
+
+    // Animación del hero
+    tl.fromTo(".tp-showcase-details-bg",
+      {
+        scale: 1.1,
+        opacity: 0
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.out"
+      }
+    );
+
+    // Animación del título y subtítulo
+    tl.fromTo(".port-showcase-slider-subtitle",
+      {
+        y: 50,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      },
+      "-=0.5"
+    );
+
+    tl.fromTo(".port-showcase-slider-title",
+      {
+        y: 50,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      },
+      "-=0.3"
+    );
+
+    // Configurar ScrollTrigger para las animaciones de scroll
+    gsap.utils.toArray(".tp_title_anim").forEach((element: any) => {
+      gsap.fromTo(element,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    // Animaciones para los elementos con clase tp_fade_bottom
+    gsap.utils.toArray(".tp_fade_bottom").forEach((element: any, index: number) => {
+      gsap.fromTo(element,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    // Animación para las imágenes
+    gsap.utils.toArray(".showcase-details-thumb").forEach((element: any, index: number) => {
+      gsap.fromTo(element,
+        {
+          y: 100,
+          opacity: 0,
+          scale: 0.95
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power2.out",
+          delay: index * 0.2,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    // Animación para la navegación
+    gsap.fromTo(".project-details-1-navigation",
+      {
+        y: 30,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".project-details-1-navigation",
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+  }, { scope: componentRef });
 
   // Early return if project is undefined
   if (!project) {
@@ -66,9 +194,8 @@ const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main>
+          <main ref={componentRef}>
             {/* portfolio details area */}
-            {/* Ahora, pasas el objeto 'project' al componente hijo. */}
             <PortfolioDetailsShowcaseArea project={project} />
             {/* portfolio details area */}
           </main>

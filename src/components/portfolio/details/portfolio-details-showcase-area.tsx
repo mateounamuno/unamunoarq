@@ -72,7 +72,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                   <span className="port-showcase-slider-subtitle tp_title_anim">
                     {subtitle}
                   </span>
-                  <h4 className="port-showcase-slider-title tp-char-animation">{title}</h4>
+                  <h4 className="port-showcase-slider-title tp_title_anim">{title}</h4>
                 </div>
               </div>
             </div>
@@ -87,23 +87,23 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
           <div className="row">
             <div className="col-xl-4">
               <div className="showcase-details-overview-left">
-                <span className="showcase-details-subtitle">Resumen</span>
+                <span className="showcase-details-subtitle tp_title_anim">Resumen</span>
               </div>
             </div>
             <div className="col-xl-8">
               <div className="showcase-details-overview-right">
-                <p className="tp_title_anim">{overview}</p>
+                <p className="tp_title_anim" data-fade-offset="30" data-duration="1.2">{overview}</p>
                 <div className="showcase-details-overview-info">
                   <div className="showcase-details-overview-info-item tp_fade_bottom">
                     <div className="row align-items-center">
                       <div className="col-6">
                         <div className="showcase-details-overview-info-left">
-                          <span>Por</span>
+                          <span className="tp_title_anim">Por</span>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{client}</span>
+                          <span className="tp_title_anim">{client}</span>
                         </div>
                       </div>
                     </div>
@@ -112,12 +112,12 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     <div className="row align-items-center">
                       <div className="col-6">
                         <div className="showcase-details-overview-info-left">
-                          <span>Servicios</span>
+                          <span className="tp_title_anim">Servicios</span>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{services}</span>
+                          <span className="tp_title_anim">{services}</span>
                         </div>
                       </div>
                     </div>
@@ -126,12 +126,12 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     <div className="row align-items-center">
                       <div className="col-6">
                         <div className="showcase-details-overview-info-left">
-                          <span>Ubicación</span>
+                          <span className="tp_title_anim">Ubicación</span>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{location}</span>
+                          <span className="tp_title_anim">{location}</span>
                         </div>
                       </div>
                     </div>
@@ -140,12 +140,12 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     <div className="row align-items-center">
                       <div className="col-6">
                         <div className="showcase-details-overview-info-left">
-                          <span>Fotografía</span>
+                          <span className="tp_title_anim">Fotografía</span>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span>{releaseDate}</span>
+                          <span className="tp_title_anim">{releaseDate}</span>
                         </div>
                       </div>
                     </div>
@@ -183,14 +183,14 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
 
       {/* navigation after thumbs */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-        <Link className="project-details-1-prev" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
+        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
           <span>Prev</span>
         </Link>
-        <a href="#">
+        <a href="#" className="tp_title_anim">
           <span>• • •</span>
         </a>
-        <Link className="project-details-1-next" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
+        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
           <span>Next</span>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
