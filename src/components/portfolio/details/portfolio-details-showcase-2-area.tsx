@@ -85,7 +85,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row">
               <div className="col-xl-10">
                 <div className="showcase-details-2-section-left">
-                  <p>{sectionContents.section1}</p>
+                  <p className="fs-5">{sectionContents.section1}</p>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row justify-content-center">
               <div className="col-xl-10">
                 <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="pb-25">{sectionContents.section2}</p>
+                  <p className="pb-25 fs-5">{sectionContents.section2}</p>
                 </div>
               </div>
             </div>
@@ -151,25 +151,11 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {sectionTitles?.section3 && sectionContents?.section3 && (
         <div className="showcase-details-2-area pt-120 pb-120 showcase-details-2-section">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-8">
-                <div className="showcase-details-2-section-box">
-                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section3}</h4>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-3">
-                <div className="showcase-details-2-section-left">
-                  <span className="ab-inner-subtitle mb-25">
-                    <Leaf />
-                    {sectionSubtitles?.section3 || "Mapping the journey"}
-                  </span>
-                </div>
-              </div>
-              <div className="col-xl-9">
-                <div className="showcase-details-2-content-right tp_title_anim">
-                  <p>{sectionContents.section3}</p>
+
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="showcase-details-2-content-center tp_title_anim text-center">
+                  <p className="fs-5">{sectionContents.section3}</p>
                 </div>
               </div>
             </div>
@@ -203,18 +189,10 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {sectionContents?.section4 && (
         <div className="showcase-details-2-area pb-120 showcase-details-2-section">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-3">
-                <div className="showcase-details-2-section-left">
-                  <span className="ab-inner-subtitle mb-25">
-                    <Leaf />
-                    {sectionSubtitles?.section4 || "Case Details"}
-                  </span>
-                </div>
-              </div>
-              <div className="col-xl-9">
-                <div className="showcase-details-2-content-right tp_title_anim">
-                  <p>{sectionContents.section4}</p>
+            <div className="row justify-content-center">
+              <div className="col-xl-10">
+                <div className="showcase-details-2-content-center tp_title_anim text-center">
+                  <p className="fs-5">{sectionContents.section4}</p>
                 </div>
               </div>
             </div>
