@@ -1,32 +1,40 @@
 import React from 'react';
 import Image from 'next/image';
-import { Leaf, UpArrow, UpArrowTwo } from '@/components/svg';
+import { Leaf, UpArrow } from '@/components/svg';
+import { Showcase2Project } from '@/data/projects-showcase-2';
 
-// images 
-import port_d_1 from '@/assets/img/inner-project/showcase/showcase-details-2-2.jpg';
-import port_d_2 from '@/assets/img/inner-project/showcase/showcase-details-2-3.jpg';
-import port_d_3 from '@/assets/img/inner-project/showcase/showcase-details-2-4.jpg';
-import port_d_4 from '@/assets/img/inner-project/showcase/showcase-details-2-5.jpg';
-import port_d_5 from '@/assets/img/inner-project/showcase/showcase-details-2-6.jpg';
-import port_d_6 from '@/assets/img/inner-project/showcase/showcase-details-2-7.jpg';
-import port_d_7 from '@/assets/img/inner-project/showcase/showcase-details-2-8.jpg';
-import port_d_8 from '@/assets/img/inner-project/showcase/showcase-details-2-9.jpg';
+interface PortfolioDetailsShowcaseTwoAreaProps {
+  project: Showcase2Project;
+}
 
-import fullwidth_img from '@/assets/img/inner-project/showcase/showcase-details-2-10.jpg';
-import d_g_img_1 from '@/assets/img/inner-project/showcase/showcase-details-2-11.jpg';
-import d_g_img_2 from '@/assets/img/inner-project/showcase/showcase-details-2-12.jpg';
+export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDetailsShowcaseTwoAreaProps) {
+  const {
+    title,
+    subtitle,
+    summary,
+    client,
+    services,
+    industries,
+    date,
+    showcaseHeroBg,
+    movingGalleryTop,
+    movingGalleryBottom,
+    fullWidthImage,
+    gridImages,
+    sectionTitles,
+    sectionSubtitles,
+    sectionContents,
+    navigationTexts,
+    visitWebsiteText
+  } = project;
 
-// img data
-const img_data = [port_d_1, port_d_2, port_d_3, port_d_4, port_d_5, port_d_6, port_d_7, port_d_8];
-
-export default function PortfolioDetailsShowcaseTwoArea() {
   return (
     <>
       {/* portfolio hero */}
-      <div className="showcase-details-2-area showcase-details-2-bg p-relative" style={{ backgroundImage: "url(/assets/img/inner-project/showcase/showcase-details-2-1.jpg)" }}>
+      <div className="showcase-details-2-area showcase-details-2-bg p-relative" style={{ backgroundImage: `url(${showcaseHeroBg})` }}>
         <div className="showcase-details-2-link">
           <a className="project-details-custom-link" href="#">
-            Visit Website
+            {visitWebsiteText || "Visit Website"}
             <span>
               <UpArrow />
             </span>
@@ -36,33 +44,31 @@ export default function PortfolioDetailsShowcaseTwoArea() {
           <div className="container container-1550">
             <div className="row">
               <div className="col-xl-8">
-                <div className="showcase-details-2-title-box">
-                  <h5 className="showcase-details-2-title mb-20 tp-char-animation">World Fashion</h5>
-                  <span className="showcase-details-2-subtitle tp_title_anim">Effortless chic lifestyle</span>
+                <div className="showcase-details-2-title-box showcase-details-2-title">
+                  <h5 className="showcase-details-2-title mb-20 tp-char-animation">{title}</h5>
+                  <span className="showcase-details-2-subtitle tp_title_anim">{subtitle}</span>
                 </div>
               </div>
               <div className="col-xxl-7 col-xl-10">
                 <div className="showcase-details-2-content tp_title_anim">
-                  <p>Lorem ipsum dolor sit amet consectetur. Ultrices
-                    malesuada sed volutpat elit cum. Viverra dolor
-                    maecenas amet dui Netus aliquet.!</p>
+                  <p>{summary}</p>
                 </div>
-                <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between">
+                <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between showcase-details-2-project-info">
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>CLIENT</span>
-                    <h5>Castro Capital</h5>
+                    <h5>{client}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>Services</span>
-                    <h5>Web Development</h5>
+                    <h5>{services}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>INDUSTRIES</span>
-                    <h5>Photography</h5>
+                    <h5>{industries}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>Date</span>
-                    <h5>April 2024</h5>
+                    <h5>{date}</h5>
                   </div>
                 </div>
               </div>
@@ -73,162 +79,177 @@ export default function PortfolioDetailsShowcaseTwoArea() {
       {/* portfolio hero */}
 
       {/* details title  */}
-      <div className="showcase-details-2-area pt-120 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-8">
-              <div className="showcase-details-2-section-box">
-                <h4 className="showcase-details-2-section-title tp-char-animation">Simple & Significant</h4>
+      {sectionTitles?.section1 && sectionContents?.section1 && (
+        <div className="showcase-details-2-area pt-120 pb-120 showcase-details-2-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-8">
+                <div className="showcase-details-2-section-box">
+                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section1}</h4>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-xl-3">
-              <div className="showcase-details-2-section-left">
-                <span className="ab-inner-subtitle mb-25">
-                  <Leaf />
-                  Objective
-                </span>
+            <div className="row">
+              <div className="col-xl-3">
+                <div className="showcase-details-2-section-left">
+                  <span className="ab-inner-subtitle mb-25">
+                    <Leaf />
+                    {sectionSubtitles?.section1 || "Objective"}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="col-xl-9">
-              <div className="showcase-details-2-section-right tp_title_anim">
-                <p>Liko website was using a generic template, felt quite outdated and not in-line with the quality of his work. The main goal was to translate his high-end photography into a digital experience that would honor and present his work in a memorable and contemporary way.</p>
+              <div className="col-xl-9">
+                <div className="showcase-details-2-section-right tp_title_anim">
+                  <p>{sectionContents.section1}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       {/* details title  */}
 
       {/* moving image */}
-      <div className="showcase-details-2-slider-area pb-120">
-        <div className="moving-gallery">
-          <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
-            {img_data.slice(0, 4).map((imgSrc, i) => (
-              <div key={i} className="showcase-details-2-slider-item">
-                <Image src={imgSrc} alt="port-img" style={{ height: "auto" }} />
-              </div>
-            ))}
+      {movingGalleryTop && movingGalleryTop.length > 0 && (
+        <div className="showcase-details-2-slider-area pb-120 showcase-details-2-gallery">
+          <div className="moving-gallery">
+            <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
+              {movingGalleryTop.map((imgSrc, i) => (
+                <div key={i} className="showcase-details-2-slider-item">
+                  <Image src={imgSrc} alt={`${title} gallery image ${i + 1}`} width={400} height={300} style={{ height: "auto" }} />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="moving-gallery">
-          <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
-            {img_data.slice(4, 8).map((imgSrc, i) => (
-              <div key={i} className="showcase-details-2-slider-item">
-                <Image src={imgSrc} alt="port-img" style={{ height: "auto" }} />
+          {movingGalleryBottom && movingGalleryBottom.length > 0 && (
+            <div className="moving-gallery">
+              <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
+                {movingGalleryBottom.map((imgSrc, i) => (
+                  <div key={i} className="showcase-details-2-slider-item">
+                    <Image src={imgSrc} alt={`${title} gallery image ${i + 1}`} width={400} height={300} style={{ height: "auto" }} />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
-      </div>
+      )}
       {/* moving image */}
 
       {/* details title 2 */}
-      <div className="showcase-details-2-area pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-8">
-              <div className="showcase-details-2-section-box">
-                <h4 className="showcase-details-2-section-title tp-char-animation">The Goal</h4>
+      {sectionTitles?.section2 && sectionContents?.section2 && (
+        <div className="showcase-details-2-area pb-120 showcase-details-2-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-8">
+                <div className="showcase-details-2-section-box">
+                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section2}</h4>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-xl-3">
-              <div className="showcase-details-2-section-left">
-                <span className="ab-inner-subtitle mb-25">
-                  <Leaf />
-                  An introduction
-                </span>
+            <div className="row">
+              <div className="col-xl-3">
+                <div className="showcase-details-2-section-left">
+                  <span className="ab-inner-subtitle mb-25">
+                    <Leaf />
+                    {sectionSubtitles?.section2 || "An introduction"}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="col-xl-9">
-              <div className="showcase-details-2-content-right tp_title_anim">
-                <p className="pb-25">Liko website was using a generic template, felt quite outdated and not in-line with the quality of his work. The main goal was to translate his high-end photography into a digital experience that would honor and present his work in a memorable and contemporary way.</p>
-                <p>Each case study gets its own identity through the styling options in the custom content management system. The styling options are pre-defined</p>
+              <div className="col-xl-9">
+                <div className="showcase-details-2-content-right tp_title_anim">
+                  <p className="pb-25">{sectionContents.section2}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       {/* details title 2 */}
 
       {/* full width image */}
-      <div className="showcase-details-2-fullwidth-img">
-        <Image data-speed=".8" src={fullwidth_img} alt="fullwidth_img" style={{ height: 'auto' }} />
-      </div>
+      {fullWidthImage && (
+        <div className="showcase-details-2-fullwidth-img">
+          <Image data-speed=".8" src={fullWidthImage} alt={`${title} full width image`} width={1920} height={1080} style={{ height: 'auto' }} />
+        </div>
+      )}
       {/* full width image */}
 
       {/* detail title 3 */}
-      <div className="showcase-details-2-area pt-120 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-8">
-              <div className="showcase-details-2-section-box">
-                <h4 className="showcase-details-2-section-title tp-char-animation">The planning..</h4>
+      {sectionTitles?.section3 && sectionContents?.section3 && (
+        <div className="showcase-details-2-area pt-120 pb-120 showcase-details-2-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-8">
+                <div className="showcase-details-2-section-box">
+                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section3}</h4>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-xl-3">
-              <div className="showcase-details-2-section-left">
-                <span className="ab-inner-subtitle mb-25">
-                  <Leaf />
-                  Mapping the journey
-                </span>
+            <div className="row">
+              <div className="col-xl-3">
+                <div className="showcase-details-2-section-left">
+                  <span className="ab-inner-subtitle mb-25">
+                    <Leaf />
+                    {sectionSubtitles?.section3 || "Mapping the journey"}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="col-xl-9">
-              <div className="showcase-details-2-content-right tp_title_anim">
-                <p>The journey of visiting Khajuraho and mapping out all temples for the Khajuraho Digital Expo by HASPR was a truly immersive experience. Our team was tasked with capturing the essence of the UNESCO World Heritage Site and bringing it to life through digital technology.</p>
+              <div className="col-xl-9">
+                <div className="showcase-details-2-content-right tp_title_anim">
+                  <p>{sectionContents.section3}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       {/* detail title 3 */}
 
       {/* grid images */}
-      <div className="showcase-details-2-grid-area pb-90">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-6 col-lg-6">
-              <div className="showcase-details-2-grid-img mb-30">
-                <Image className="img-left" src={d_g_img_1} alt="details-img" style={{ height: 'auto' }} />
+      {gridImages && gridImages.length >= 2 && (
+        <div className="showcase-details-2-grid-area pb-90 showcase-details-2-gallery">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-6 col-lg-6">
+                <div className="showcase-details-2-grid-img mb-30">
+                  <Image className="img-left" src={gridImages[0]} alt={`${title} grid image 1`} width={600} height={400} style={{ height: 'auto' }} />
+                </div>
               </div>
-            </div>
-            <div className="col-xl-6 col-lg-6">
-              <div className="showcase-details-2-grid-img mb-30">
-                <Image className="img-right" src={d_g_img_2} alt="details-img" style={{ height: 'auto' }} />
+              <div className="col-xl-6 col-lg-6">
+                <div className="showcase-details-2-grid-img mb-30">
+                  <Image className="img-right" src={gridImages[1]} alt={`${title} grid image 2`} width={600} height={400} style={{ height: 'auto' }} />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       {/* grid images */}
 
       {/* details title 4 */}
-      <div className="showcase-details-2-area pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-3">
-              <div className="showcase-details-2-section-left">
-                <span className="ab-inner-subtitle mb-25">
-                  <Leaf />
-                  Case Details
-                </span>
+      {sectionContents?.section4 && (
+        <div className="showcase-details-2-area pb-120 showcase-details-2-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-3">
+                <div className="showcase-details-2-section-left">
+                  <span className="ab-inner-subtitle mb-25">
+                    <Leaf />
+                    {sectionSubtitles?.section4 || "Case Details"}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="col-xl-9">
-              <div className="showcase-details-2-content-right tp_title_anim">
-                <p>Each case study gets its own identity through the styling options in the custom content management system. The styling options are pre-defined by our design team to makes sure the website looks amazing in every composition.</p>
+              <div className="col-xl-9">
+                <div className="showcase-details-2-content-right tp_title_anim">
+                  <p>{sectionContents.section4}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       {/* details title 4 */}
     </>
   )
