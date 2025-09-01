@@ -21,9 +21,26 @@ import { movingImageSlider } from "@/utils/scroll-marque";
 import type { Showcase2Project } from '@/data/projects-showcase-2';
 
 // Define que este componente recibirá una prop llamada 'project' de tipo Showcase2Project.
-type Props = { project: Showcase2Project };
+type Props = { project: Showcase2Project | undefined };
 
 const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
+  // Validar que project existe antes de renderizar
+  if (!project) {
+    return (
+      <Wrapper>
+        <HeaderEleven transparent={true} />
+        <div className="container pt-120 pb-120">
+          <div className="row justify-content-center">
+            <div className="col-xl-8 text-center">
+              <h2>Proyecto no encontrado</h2>
+              <p>El proyecto solicitado no está disponible.</p>
+            </div>
+          </div>
+        </div>
+        <FooterTwo topCls="" />
+      </Wrapper>
+    );
+  }
   const componentRef = useRef<HTMLDivElement>(null);
   useScrollSmooth();
 

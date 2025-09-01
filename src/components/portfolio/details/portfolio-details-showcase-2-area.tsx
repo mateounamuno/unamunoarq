@@ -4,10 +4,14 @@ import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
 
 interface PortfolioDetailsShowcaseTwoAreaProps {
-  project: Showcase2Project;
+  project: Showcase2Project | undefined;
 }
 
 export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDetailsShowcaseTwoAreaProps) {
+  // Validar que project existe antes de renderizar
+  if (!project) {
+    return null;
+  }
   const {
     title,
     subtitle,
