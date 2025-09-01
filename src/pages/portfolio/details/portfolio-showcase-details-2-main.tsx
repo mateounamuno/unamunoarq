@@ -14,12 +14,8 @@ import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { movingImageSlider } from "@/utils/scroll-marque";
-import type { Showcase2Project } from "@/data/projects-showcase-2";
 
-// Define los tipos de las props que este componente espera.
-type Props = { project: Showcase2Project | undefined };
-
-const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
+const PortfolioDetailsShowcaseTwoMain = () => {
   useScrollSmooth();
 
   useGSAP(() => {
@@ -31,40 +27,23 @@ const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
     return () => clearTimeout(timer);
   });
 
-  // Early return if project is undefined
-  if (!project) {
-    return (
-      <Wrapper>
-        <HeaderEleven transparent={true} />
-        <div id="smooth-wrapper">
-          <div id="smooth-content">
-            <main>
-              <div className="container py-120">
-                <div className="row">
-                  <div className="col-12 text-center">
-                    <h2>Proyecto no encontrado</h2>
-                    <p>El proyecto que buscas no existe o no está disponible.</p>
-                  </div>
-                </div>
-              </div>
-            </main>
-            <FooterTwo topCls="" />
-          </div>
-        </div>
-      </Wrapper>
-    );
-  }
-
   return (
     <Wrapper>
+      {/* header area start */}
       <HeaderEleven transparent={true} />
+      {/* header area end */}
+
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            {/* Aquí, le pasas el objeto 'project' al componente que lo necesita */}
-            <PortfolioDetailsShowcaseTwoArea project={project} />
+            {/* portfolio details area */}
+            <PortfolioDetailsShowcaseTwoArea />
+            {/* portfolio details area */}
           </main>
+
+          {/* footer area */}
           <FooterTwo topCls="" />
+          {/* footer area */}
         </div>
       </div>
     </Wrapper>

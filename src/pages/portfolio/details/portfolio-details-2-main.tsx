@@ -45,7 +45,7 @@ const PortfolioDetailsTwoMain = ({ project }: Props) => {
          titleAnimation();
       }, 100);
       return () => clearTimeout(timer);
-   });
+   }, []);
 
    // Early return if project is undefined
    if (!project) {

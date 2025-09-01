@@ -11,54 +11,24 @@ import { Leaf, UpArrowTwo } from '@/components/svg';
 // Importamos la data para la navegación dinámica
 import { showcase2Projects } from '@/data/projects-showcase-2';
 
-// Importamos el tipo de dato que me proporcionaste.
-import type { Showcase2Project } from '@/data/projects-showcase-2';
+export default function PortfolioDetailsShowcaseTwoArea() {
+  // Usamos el primer proyecto como ejemplo principal
+  const mainProject = showcase2Projects[0];
 
-// image data
-const img_data_default = [
-  "/assets/img/inner-project/showcase/showcase-details-2-2.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-3.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-4.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-5.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-6.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-7.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-8.jpg",
-  "/assets/img/inner-project/showcase/showcase-details-2-9.jpg",
-];
-
-// Función para encontrar el slug anterior y siguiente para la navegación.
-const findPrevNextSlugs = (currentSlug: string) => {
-  const currentIndex = showcase2Projects.findIndex(p => p.slug === currentSlug);
-  const prevProject = currentIndex > 0 ? showcase2Projects[currentIndex - 1] : null;
-  const nextProject = currentIndex < showcase2Projects.length - 1 ? showcase2Projects[currentIndex + 1] : null;
-
-  return {
-    prevSlug: prevProject?.slug || null,
-    nextSlug: nextProject?.slug || null,
-  };
-};
-
-// El componente ahora espera recibir una prop 'project' con el tipo Showcase2Project
-type Props = { project: Showcase2Project | undefined };
-
-export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
-  // Early return if project is undefined
-  if (!project) {
+  if (!mainProject) {
     return (
       <div className="container py-120">
         <div className="row">
           <div className="col-12 text-center">
-            <h2>Proyecto no encontrado</h2>
-            <p>El proyecto que buscas no existe o no está disponible.</p>
+            <h2>No hay proyectos disponibles</h2>
+            <p>No hay proyectos showcase 2 disponibles en este momento.</p>
           </div>
         </div>
       </div>
     );
   }
 
-  const { prevSlug, nextSlug } = findPrevNextSlugs(project.slug);
-
-  // Extraemos la data del objeto 'project', con fallbacks por si acaso
+  // Extraemos la data del proyecto principal
   const {
     showcaseHeroBg,
     heroOverlayOpacity = 0,
@@ -78,12 +48,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
     sectionSubtitles,
     sectionContents,
     navigationTexts = { prev: "Prev", next: "Next" }
-  } = project;
-
-  const isSection1Empty = !sectionTitles?.section1 && !sectionSubtitles?.section1;
-  const isSection2Empty = !sectionTitles?.section2 && !sectionSubtitles?.section2;
-  const isSection3Empty = !sectionTitles?.section3 && !sectionSubtitles?.section3;
-  const isSection4Empty = !sectionSubtitles?.section4;
+  } = mainProject;
 
   return (
     <>
@@ -140,11 +105,11 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* details title */}
       <div className="showcase-details-2-area pt-120 pb-120 showcase-section-1" style={{ position: 'relative', zIndex: 2, clear: 'both' }}>
         <div className="container">
-          {sectionTitles?.section1 || sectionSubtitles?.section1 ? (
+          {sectionTitles?.section1 ? (
             <div className="row">
               <div className="col-xl-8">
                 <div className="showcase-details-2-section-box">
-                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles?.section1}</h4>
+                  <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section1}</h4>
                 </div>
               </div>
               <div className="col-xl-10">
@@ -157,7 +122,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
             <div className="row">
               <div className="col-12">
                 <div className="showcase-details-2-section-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section1}</p>
+                  <p>{sectionContents?.section1}</p>
                 </div>
               </div>
             </div>
@@ -192,23 +157,13 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* details title 2 */}
       <div className="showcase-details-2-area pb-120 showcase-section-2" style={{ position: 'relative', zIndex: 4, clear: 'both' }}>
         <div className="container">
-          {sectionTitles?.section2 || sectionSubtitles?.section2 ? (
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <div className="showcase-details-2-section-right tp_title_anim text-center">
-                  <p style={{ fontSize: '1.7em' }}>{sectionContents?.section2}</p>
-                </div>
+          <div className="row justify-content-center">
+            <div className="col-xl-10">
+              <div className="showcase-details-2-section-right tp_title_anim text-center">
+                <p style={{ fontSize: '1.7em' }}>{sectionContents?.section2}</p>
               </div>
             </div>
-          ) : (
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <div className="showcase-details-2-section-right tp_title_anim text-center">
-                  <p style={{ fontSize: '1.7em' }}>{sectionContents?.section2}</p>
-                </div>
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </div>
       {/* details title 2 */}
@@ -222,7 +177,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       {/* detail title 3 */}
       <div className="showcase-details-2-area pt-120 pb-120 showcase-section-3" style={{ position: 'relative', zIndex: 6, clear: 'both' }}>
         <div className="container">
-          {sectionTitles?.section3 || sectionSubtitles?.section3 ? (
+          {sectionTitles?.section3 ? (
             <div className="row justify-content-center">
               <div className="col-xl-10">
                 <div className="showcase-details-2-section-right tp_title_anim text-center">
@@ -234,7 +189,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
             <div className="row">
               <div className="col-12">
                 <div className="showcase-details-2-content-right tp_title_anim">
-                  <p style={{ fontSize: 'inherit', lineHeight: 'inherit', fontWeight: 'inherit' }}>{sectionContents?.section3}</p>
+                  <p>{sectionContents?.section3}</p>
                 </div>
               </div>
             </div>
@@ -268,17 +223,16 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: Props) {
       </div>
       {/* grid images */}
 
-
-
+      {/* navigation */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pt-120 pb-60" style={{ position: 'relative', zIndex: 8, clear: 'both' }}>
-        <Link className="project-details-1-prev" href={prevSlug ? `/showcase/${prevSlug}` : '#'}>
+        <Link className="project-details-1-prev" href="#">
           <i className="fa-sharp fa-arrow-left"></i>
           <span>{navigationTexts.prev}</span>
         </Link>
         <Link href="#">
           <span><Dots /></span>
         </Link>
-        <Link className="project-details-1-next" href={nextSlug ? `/showcase/${nextSlug}` : '#'}>
+        <Link className="project-details-1-next" href="#">
           <span>{navigationTexts.next}</span>
           <i className="fa-sharp fa-arrow-right"></i>
         </Link>

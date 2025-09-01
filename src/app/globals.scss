@@ -98,39 +98,27 @@
   }
 
   /* Ensure proper centering on all screen sizes */
-  .row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
+  .tp-project-textline {
     @media (max-width: 767px) {
-      justify-content: center;
+      text-align: center !important;
     }
   }
 
-  .col-xl-6 {
+  .tp-project-title {
     @media (max-width: 767px) {
-      flex: 0 0 100%;
-      max-width: 100%;
+      text-align: center !important;
     }
   }
 
-  /* MacBook specific fixes */
-  @media (min-width: 1440px) and (max-width: 1600px) {
-    .container-1630 {
-      max-width: 1400px;
-      padding: 0 50px;
-    }
-
-    .tp-project-left-wrap {
-      padding-right: 80px;
-    }
-
-    .tp-project-right-wrap {
-      padding-left: 80px;
+  .tp-project-content {
+    @media (max-width: 767px) {
+      text-align: center !important;
     }
   }
 }
+
+/* Import hero custom styles */
+@import './hero-custom-styles.scss';
 
 /* Global Geist font application */
 * {

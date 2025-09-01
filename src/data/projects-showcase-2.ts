@@ -80,8 +80,8 @@ export const showcase2Projects: Showcase2Project[] = [
         ],
         fullWidthImage: "/assets/img/inner-project/cielo-y-tierra/full-width.jpg",
         gridImages: [
-            "/assets/img/inner-project/cielo-y-tierra/moving-top-2.png",
-            "/assets/img/inner-project/cielo-y-tierra/moving-top-4.jpg",
+            "/assets/img/inner-project/cielo-y-tierra/grid-1.jpg",
+            "/assets/img/inner-project/cielo-y-tierra/grid-2.png",
         ],
         // Specific texts for this project
         visitWebsiteText: "Ver Proyecto",
