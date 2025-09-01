@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeOnePage from "./(homes)/home-1/page";
+import HomeTwoPage from "./(homes)/home-2/page";
 
 export const metadata: Metadata = {
   title: "Unamuno Arquitectura",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HomeOnePage />
+      <HomeTwoPage />
     </>
   );
 }
