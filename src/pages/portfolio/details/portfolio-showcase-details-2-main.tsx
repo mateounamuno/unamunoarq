@@ -24,6 +24,19 @@ import type { Showcase2Project } from '@/data/projects-showcase-2';
 type Props = { project: Showcase2Project | undefined };
 
 const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
+  // Los hooks deben estar siempre al inicio, antes de cualquier validación condicional
+  const componentRef = useRef<HTMLDivElement>(null);
+  useScrollSmooth();
+
+  useGSAP(() => {
+    const timer = setTimeout(() => {
+      charAnimation();
+      titleAnimation();
+      movingImageSlider();
+    }, 100);
+    return () => clearTimeout(timer);
+  });
+
   // Validar que project existe antes de renderizar
   if (!project) {
     return (
@@ -41,17 +54,6 @@ const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
       </Wrapper>
     );
   }
-  const componentRef = useRef<HTMLDivElement>(null);
-  useScrollSmooth();
-
-  useGSAP(() => {
-    const timer = setTimeout(() => {
-      charAnimation();
-      titleAnimation();
-      movingImageSlider();
-    }, 100);
-    return () => clearTimeout(timer);
-  });
 
 
   return (
