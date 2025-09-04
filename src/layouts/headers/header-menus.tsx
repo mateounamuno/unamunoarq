@@ -5,6 +5,33 @@ import menu_data from "@/data/menu-data";
 import "@/app/portfolio-menu-fixes.css";
 
 const imgStyle: CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
+
+// Componente reutilizable que mantiene exactamente la misma estructura HTML y clases CSS
+const PortfolioMenuColumn = ({
+  title,
+  items,
+  isFirst = false
+}: {
+  title: string;
+  items: { title: string; link: string }[];
+  isFirst?: boolean;
+}) => (
+  <div className="col-xxl-3 col-xl-3">
+    <div className={`tp-megamenu-list ${!isFirst ? 'tp-megamenu-list-2' : ''}`}>
+      <h4 className="tp-megamenu-title">{title}</h4>
+      <div className="tp-megamenu-list-wrap">
+        <ul className="portfolio-menu-vertical">
+          {items.map((item) => (
+            <li key={item.title}>
+              <Link href={item.link}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
 const HeaderMenus = () => {
   return (
     <ul>
@@ -125,51 +152,22 @@ const HeaderMenus = () => {
                     <div className="col-xxl-9 col-xl-10">
                       <div className="tp-megamenu-list-box">
                         <div className="row gx-30">
-                          <div className="col-xxl-3 col-xl-3">
-                            <div className="tp-megamenu-list">
-                              <h4 className="tp-megamenu-title">
-                                {menu.portfolio_mega_menus.first.title}
-                              </h4>
-                              <div className="tp-megamenu-list-wrap">
-                                <ul className="portfolio-menu-vertical">
-                                  {menu.portfolio_mega_menus.first.submenus.map(
-                                    (portSm, i) => (
-                                      portSm.menu_lists.map((psm) => (
-                                        <li key={psm.title}>
-                                          <Link href={psm.link}>
-                                            {psm.title}
-                                          </Link>
-                                        </li>
-                                      ))
-                                    )
-                                  )}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
+                          {/* Primera columna - RESIDENCIAL */}
+                          <PortfolioMenuColumn
+                            title={menu.portfolio_mega_menus.first.title}
+                            items={menu.portfolio_mega_menus.first.submenus.flatMap(submenu => submenu.menu_lists)}
+                            isFirst={true}
+                          />
 
-                          {menu.portfolio_mega_menus.second.submenus.map(
-                            (portSm2, i) => (
-                              <div key={i} className="col-xxl-3 col-xl-3">
-                                <div className="tp-megamenu-list tp-megamenu-list-2">
-                                  <h4 className="tp-megamenu-title">
-                                    {portSm2.title}
-                                  </h4>
-                                  <div className="tp-megamenu-list-wrap">
-                                    <ul className="portfolio-menu-vertical">
-                                      {portSm2.menu_lists.map((psm) => (
-                                        <li key={psm.title}>
-                                          <Link href={psm.link}>
-                                            {psm.title}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            )
-                          )}
+                          {/* Columnas restantes - COMERCIAL, CONCURSOS, EXPERIMENTACIONES */}
+                          {menu.portfolio_mega_menus.second.submenus.map((submenu, i) => (
+                            <PortfolioMenuColumn
+                              key={i}
+                              title={submenu.title}
+                              items={submenu.menu_lists}
+                              isFirst={false}
+                            />
+                          ))}
                         </div>
                       </div>
                     </div>
