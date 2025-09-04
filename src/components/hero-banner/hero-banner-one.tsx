@@ -41,8 +41,8 @@ const HeroBannerOne = () => {
                       className="tp-zoom-img"
                       src="/assets/img/home-01/hero/hero-1-1.png"
                       alt="hero-img"
-                      width={325}
-                      height={400}
+                      width={400}
+                      height={500}
                       style={{ height: "auto" }}
                     />
                   </span>

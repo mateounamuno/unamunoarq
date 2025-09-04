@@ -33,7 +33,7 @@ const HeaderOne = () => {
                       height={130}
                       style={{
                         width: 'auto',
-                        height: '60px',
+                        height: '75px',
                         maxWidth: 'none'
                       }}
                     />
