@@ -24,7 +24,7 @@ export default function FooterOne() {
       <div className="tp-footer-area black-bg pt-90">
         <div className="container-fluid">
           <div className="tp-footer-wrap">
-            <div className="row align-items-end">
+            <div className="row align-items-start">
               <div className="col-xl-5 col-lg-6">
                 <div className="tp-footer-menu menu-anim">
                   <ul className="counter-row tp-text-anim">
