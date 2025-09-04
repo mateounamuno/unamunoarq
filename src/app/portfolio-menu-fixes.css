@@ -1,0 +1,72 @@
+/* Estilos personalizados para el menú de portfolio */
+.portfolio-menu-vertical li {
+    display: block !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+.portfolio-menu-vertical li a {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+/* Asegurar que no haya elementos flotantes */
+.portfolio-menu-vertical {
+    clear: both;
+}
+
+.portfolio-menu-vertical::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Reducir el ancho del mega menú de portfolio con márgenes laterales iguales */
+.tp-submenu.tp-mega-menu {
+    width: 1000px !important;
+    max-width: 1000px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 auto !important;
+}
+
+.header-main-menu nav ul li>.tp-mega-menu {
+    width: 1000px !important;
+    max-width: 1000px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 auto !important;
+}
+
+.tp-megamenu-portfolio {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Ajustar el contenedor del mega menú */
+.tp-menu-fullwidth {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Enfoque más agresivo para limitar el ancho */
+.tp-header-menu .tp-main-menu-content ul li.has-dropdown .tp-submenu.tp-mega-menu {
+    width: 1000px !important;
+    max-width: 1000px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 auto !important;
+}
+
+/* Aplicar al contenedor principal del header */
+.tp-header-menu {
+    position: relative !important;
+}
+
+.tp-header-menu .tp-main-menu-content {
+    position: relative !important;
+}

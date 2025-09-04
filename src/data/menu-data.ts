@@ -1,5 +1,31 @@
 import { IMenuDT } from "@/types/menu-d-t";
+import { projects } from "./project-data";
 
+// Función para obtener proyectos por categoría
+const getProjectsByCategory = (category: string) => {
+  return projects.filter(project => project.category === category);
+};
+
+// Función para generar el enlace correcto según el template (igual que en portfolio-grid-col-4)
+const getProjectLink = (slug: string, template: string): string => {
+  switch (template) {
+    case "showcase-2":
+      return `/portfolio/showcase-2/${slug}`;
+    case "showcase":
+      return `/portfolio/showcase/${slug}`;
+    default:
+      return `/portfolio/showcase2/${slug}`;
+  }
+};
+
+// Función para crear enlaces de proyectos
+const createProjectLinks = (category: string) => {
+  const categoryProjects = getProjectsByCategory(category);
+  return categoryProjects.map(project => ({
+    title: project.title,
+    link: getProjectLink(project.slug, project.template)
+  }));
+};
 
 const menu_data: IMenuDT[] = [
   {
@@ -13,28 +39,12 @@ const menu_data: IMenuDT[] = [
     link: '/portfolio-grid-col-4',
     portfolio_mega_menus: {
       first: {
-        title: 'PORTFOLIO LIST',
+        title: 'RESIDENCIAL',
         submenus: [
           {
             id: 1,
             menu_lists: [
-              { title: 'Standard', link: '/portfolio-standard' },
-              { title: 'Interactive', link: '/home-10' },
-              { title: 'random', link: '/portfolio-random' },
-              { title: 'showcase parallax', link: '/home-11' },
-              { title: 'Masonry random', link: '/portfolio-masonry' },
-              { title: 'Vertical Carousel', link: '/home-12' },
-              { title: 'wrapper', link: '/portfolio-wrapper' },
-            ]
-          },
-          {
-            id: 2,
-            menu_lists: [
-              { title: 'horizontal', link: '/portfolio-showcase' },
-              { title: 'Image Slider', link: '/home-7' },
-              { title: 'wrapper Slider', link: '/home-11' },
-              { title: 'parallax showcase', link: '/portfolio-showcase' },
-              { title: 'Perspective Slider', link: '/home-9' },
+              ...createProjectLinks('Residencial'),
             ]
           }
         ]
@@ -43,27 +53,23 @@ const menu_data: IMenuDT[] = [
         submenus: [
           {
             id: 1,
-            title: 'List Layouts',
+            title: 'COMERCIAL',
             menu_lists: [
-              { title: 'two-columns', link: '/portfolio-grid-col-2' },
-              { title: 'three-columns', link: '/portfolio-grid-col-3' },
-              { title: 'three-columns Wide', link: '/portfolio-grid-col-3-fullwidth' },
-              { title: 'four-columns', link: '/portfolio-grid-col-4' },
-              { title: 'four-columns Wide', link: '/portfolio-grid-col-4-fullwidth' },
+              ...createProjectLinks('Comercial'),
             ]
           },
           {
             id: 2,
-            title: 'PORTFOLIO SINGLES',
+            title: 'CONCURSOS',
             menu_lists: [
-              { title: 'Creative', link: '/portfolio-showcase-details-2' },
-              { title: 'images Small', link: '/portfolio-details-1' },
-              { title: 'Sliding', link: '/portfolio-details-2' },
-              { title: 'Image Comparison', link: '/portfolio-details-comparison' },
-              { title: 'Video', link: '/portfolio-details-video' },
-              { title: 'CUSTOM LIGHT', link: '/portfolio-custom-light' },
-              { title: 'Gallery', link: '/portfolio-showcase-details' },
-              { title: 'Mockups', link: '/portfolio-details-3' },
+              ...createProjectLinks('Concursos'),
+            ]
+          },
+          {
+            id: 3,
+            title: 'EXPERIMENTACIONES',
+            menu_lists: [
+              ...createProjectLinks('Experimentaciones'),
             ]
           },
         ]
@@ -150,34 +156,14 @@ export const mobile_menu_data: {
     },
     {
       id: 3,
-      title: 'Portfolio',
-      link: '/portfolio-standard',
+      title: 'Proyectos',
+      link: '/portfolio-grid-col-4',
       dropdown_menus: [
-        { title: 'Standard', link: '/portfolio-standard' },
-        { title: 'Interactive', link: '/home-10' },
-        { title: 'random', link: '/portfolio-random' },
-        { title: 'showcase parallax', link: '/home-11' },
-        { title: 'Masonry random', link: '/portfolio-masonry' },
-        { title: 'Vertical Carousel', link: '/home-12' },
-        { title: 'wrapper', link: '/portfolio-wrapper' },
-        { title: 'horizontal', link: '/portfolio-showcase' },
-        { title: 'Image Slider', link: '/home-7' },
-        { title: 'wrapper Slider', link: '/home-11' },
-        { title: 'parallax showcase', link: '/portfolio-showcase' },
-        { title: 'Perspective Slider', link: '/home-9' },
-        { title: 'two-columns', link: '/portfolio-grid-col-2' },
-        { title: 'three-columns', link: '/portfolio-grid-col-3' },
-        { title: 'three-columns Wide', link: '/portfolio-grid-col-3-fullwidth' },
-        { title: 'four-columns', link: '/portfolio-grid-col-4' },
-        { title: 'four-columns Wide', link: '/portfolio-grid-col-4-fullwidth' },
-        { title: 'Creative', link: '/portfolio-showcase-details-2' },
-        { title: 'images Small', link: '/portfolio-details-1' },
-        { title: 'Sliding', link: '/portfolio-details-2' },
-        { title: 'Image Comparison', link: '/portfolio-details-comparison' },
-        { title: 'Video', link: '/portfolio-details-video' },
-        { title: 'CUSTOM LIGHT', link: '/portfolio-custom-light' },
-        { title: 'Gallery', link: '/portfolio-showcase-details' },
-        { title: 'Mockups', link: '/portfolio-details-3' },
+        { title: 'Ver Todos', link: '/portfolio-grid-col-4' },
+        ...createProjectLinks('Residencial'),
+        ...createProjectLinks('Comercial'),
+        ...createProjectLinks('Concursos'),
+        ...createProjectLinks('Experimentaciones'),
       ]
     },
     {

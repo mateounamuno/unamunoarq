@@ -2,8 +2,9 @@ import React, { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import menu_data from "@/data/menu-data";
+import "@/app/portfolio-menu-fixes.css";
 
-const imgStyle:CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
+const imgStyle: CSSProperties = { width: "100%", height: "auto", objectFit: "cover" };
 const HeaderMenus = () => {
   return (
     <ul>
@@ -20,8 +21,8 @@ const HeaderMenus = () => {
                         <div className="homemenu-thumb-wrap mb-20">
                           <div className="homemenu-thumb fix">
                             <Link href={home_menu.link}>
-                              <Image src={home_menu.img} alt="home-img" width={251} height={235} 
-                              style={imgStyle}/>
+                              <Image src={home_menu.img} alt="home-img" width={251} height={235}
+                                style={imgStyle} />
                             </Link>
                           </div>
                         </div>
@@ -51,7 +52,7 @@ const HeaderMenus = () => {
                             <div className="tp-megamenu-list-wrap">
                               <ul>
                                 {menu.pages_mega_menu.first.submenus.map(
-                                  (psm,i) => (
+                                  (psm, i) => (
                                     <li key={i}>
                                       <Link href={psm.link}>{psm.title}</Link>
                                     </li>
@@ -69,7 +70,7 @@ const HeaderMenus = () => {
                             <div className="tp-megamenu-list-wrap">
                               <ul>
                                 {menu.pages_mega_menu.second.submenus.map(
-                                  (psm,i) => (
+                                  (psm, i) => (
                                     <li key={i}>
                                       <Link href={psm.link}>{psm.title}</Link>
                                     </li>
@@ -123,30 +124,26 @@ const HeaderMenus = () => {
                   <div className="row gx-50">
                     <div className="col-xxl-9 col-xl-10">
                       <div className="tp-megamenu-list-box">
-                        <div className="row gx-50">
-                          <div className="col-xxl-5 col-xl-6">
+                        <div className="row gx-30">
+                          <div className="col-xxl-3 col-xl-3">
                             <div className="tp-megamenu-list">
                               <h4 className="tp-megamenu-title">
                                 {menu.portfolio_mega_menus.first.title}
                               </h4>
-                              <div className="tp-megamenu-list-wrap tp-portfolio-menu-style">
-                                <div className="row">
+                              <div className="tp-megamenu-list-wrap">
+                                <ul className="portfolio-menu-vertical">
                                   {menu.portfolio_mega_menus.first.submenus.map(
                                     (portSm, i) => (
-                                      <div key={i} className="col-lg-6">
-                                        <ul>
-                                          {portSm.menu_lists.map((psm) => (
-                                            <li key={psm.title}>
-                                              <Link href={psm.link}>
-                                                {psm.title}
-                                              </Link>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
+                                      portSm.menu_lists.map((psm) => (
+                                        <li key={psm.title}>
+                                          <Link href={psm.link}>
+                                            {psm.title}
+                                          </Link>
+                                        </li>
+                                      ))
                                     )
                                   )}
-                                </div>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -154,12 +151,12 @@ const HeaderMenus = () => {
                           {menu.portfolio_mega_menus.second.submenus.map(
                             (portSm2, i) => (
                               <div key={i} className="col-xxl-3 col-xl-3">
-                                <div className="tp-megamenu-list tp-megamenu-list-2 ml-20">
+                                <div className="tp-megamenu-list tp-megamenu-list-2">
                                   <h4 className="tp-megamenu-title">
                                     {portSm2.title}
                                   </h4>
                                   <div className="tp-megamenu-list-wrap">
-                                    <ul>
+                                    <ul className="portfolio-menu-vertical">
                                       {portSm2.menu_lists.map((psm) => (
                                         <li key={psm.title}>
                                           <Link href={psm.link}>
