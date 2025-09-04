@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
+import HeaderOne from "@/layouts/headers/header-one";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation } from "@/utils/title-animation";
@@ -28,7 +28,7 @@ const ContactTwoMain = () => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven />
+      <HeaderOne />
       {/* header area end */}
 
       <div id="smooth-wrapper">
@@ -47,7 +47,7 @@ const ContactTwoMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
+                        <span className="tm-hero-subtitle">UNAMUNO ARQUITECTURA</span>
                         <h4 className="tm-hero-title-big tp-char-animation">
                           Get <br /> in touch
                         </h4>
