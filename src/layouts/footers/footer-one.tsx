@@ -9,7 +9,7 @@ import menu_data from "@/data/menu-data";
 const footer_links = [
   { link: "/", title: "Home" },
   { link: "/portfolio-grid-col-4", title: "Proyectos" },
-  { link: "/blog-modern", title: "Apuntes" },
+  { link: "/blog-details/1", title: "Apuntes" },
   { link: "/contact-2", title: "Contacto" },
 ];
 
