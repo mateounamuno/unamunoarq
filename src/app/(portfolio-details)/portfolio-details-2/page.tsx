@@ -32,7 +32,7 @@ const PortfolioDetailsTwoPage = () => {
                     <h4>{project.title}</h4>
                     <p>{project.subtitle}</p>
                     <Link
-                      href={`/portfolio/details2/${project.slug}`}
+                      href={`/portfolio/showcase-2/${project.slug}`}
                       className="btn btn-primary"
                     >
                       Ver Proyecto

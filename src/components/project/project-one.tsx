@@ -22,11 +22,11 @@ type IProject = {
 const getProjectLink = (slug: string, template: string): string => {
   switch (template) {
     case "showcase-2":
-      return `/portfolio/details2/${slug}`;
+      return `/portfolio/showcase-2/${slug}`;
     case "showcase":
-      return `/portfolio/details3/${slug}`;
+      return `/portfolio/showcase/${slug}`;
     default:
-      return `/portfolio/details2/${slug}`;
+      return `/portfolio/showcase2/${slug}`;
   }
 };
 
