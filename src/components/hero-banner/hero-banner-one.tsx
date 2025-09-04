@@ -50,12 +50,7 @@ const HeroBannerOne = () => {
                 </h1>
               </div>
             </div>
-            <div className="tp-hero-content tp_fade_bottom">
-              <p>
-                {/* <span></span> */}
-                Creemos en una arquitectura genuina: honesta con su contexto, responsable con el medio en el que se inserta y atenta a las huellas que deja en el tiempo.
-              </p>
-            </div>
+
           </div>
         </div>
         <div className="row">

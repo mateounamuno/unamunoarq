@@ -51,12 +51,7 @@ const HeroBannerTwo = () => {
                 </h1>
               </div>
             </div> */}
-            <div className="tp-hero-content tp_fade_bottom text-center d-flex align-items-center justify-content-center h-100">
-              <p className="mb-0 mt-100">
-                <span></span>
-                Creemos en una arquitectura genuina: honesta con su contexto, responsable con el medio en el que se inserta y atenta a las huellas que deja en el tiempo.
-              </p>
-            </div>
+
           </div>
         </div>
         <div className="row">
