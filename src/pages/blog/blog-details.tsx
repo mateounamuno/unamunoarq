@@ -8,14 +8,14 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
+import HeaderOne from "@/layouts/headers/header-one";
 import FooterTwo from "@/layouts/footers/footer-two";
 import { IBlogDT } from "@/types/blog-d-t";
-import BlogDetailsArea from "@/components/blog/details/blog-details-area";
 import BlogDetailsBreadcrumb from "@/components/blog/details/blog-details-breadcrumb";
 import BlogDetailsRelatedPosts from "@/components/blog/details/blog-details-related-posts";
 // animation
 import { charAnimation } from "@/utils/title-animation";
+import BlogDetailsAreaTwo from "@/components/blog/details/blog-details-area-2";
 
 // prop type
 type IProps = {
@@ -35,7 +35,7 @@ const BlogDetailsMain = ({ blog }: IProps) => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven transparent={true} />
+      <HeaderOne transparent={true} />
       {/* header area end */}
 
       <div id="smooth-wrapper">
@@ -46,12 +46,9 @@ const BlogDetailsMain = ({ blog }: IProps) => {
             {/* blog details hero */}
 
             {/* blog details area */}
-            <BlogDetailsArea/>
+            <BlogDetailsAreaTwo />
             {/* blog details area */}
 
-            {/* related posts */}
-            <BlogDetailsRelatedPosts/>
-            {/* related posts */}
           </main>
 
           {/* footer area */}

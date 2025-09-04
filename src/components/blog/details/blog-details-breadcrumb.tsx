@@ -25,12 +25,7 @@ export default function BlogDetailsBreadcrumb() {
                 <h4 className="blog-details-title tp-char-animation">
                   Cultivating Originality In Photography
                 </h4>
-                <div className="blog-details-top-author d-flex align-items-center">
-                  <Image src={avatar} alt="avatar" />
-                  <span>
-                    Mike Granetz / <i>5 min</i>
-                  </span>
-                </div>
+
               </div>
             </div>
           </div>

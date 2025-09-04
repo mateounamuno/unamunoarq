@@ -78,7 +78,7 @@ const menu_data: IMenuDT[] = [
   },
   {
     id: 3,
-    title: 'Artículos',
+    title: 'Apuntes',
     link: '/blog-modern',
     dropdown_menus: [
       { title: 'Modern', link: '/blog-modern' },

@@ -85,7 +85,7 @@ export default function FooterTwo({ whiteFooter = false, topCls = 'footer-top' }
                       <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/portfolio-grid-col-4">Proyectos</a></li>
-                        <li><a href="/blog-modern">Artículos</a></li>
+                        <li><a href="/blog-modern">Apuntes</a></li>
                         <li><a href="/contact-2">Contacto</a></li>
                       </ul>
                     </div>

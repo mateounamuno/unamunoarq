@@ -156,53 +156,6 @@ export default function BlogDetailsAreaTwo() {
                       unchanged
                     </p>
                   </div>
-                  <div className="blog-details-share-wrap mb-40">
-                    <div className="row">
-                      <div className="col-xl-8">
-                        <div className="blog-details-tag">
-                          <span>
-                            <Tag />
-                          </span>
-                          <a href="#">Creative</a>
-                          <a href="#">Photography</a>
-                          <a href="#">Lifestyle</a>
-                        </div>
-                      </div>
-                      <div className="col-xl-4">
-                        <div className="blog-details-share text-md-end text-start">
-                          <span>
-                            <Share />
-                          </span>
-                          <a href="#">Share Post</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* blog details author */}
-                  <BlogDetailsAuthor />
-                  {/* blog details author */}
-
-                  {/* blog details navigation */}
-                  <BlogDetailsNavigation />
-                  {/* blog details navigation */}
-                  <div className="postbox__comment mb-100">
-                    <h3 className="postbox__comment-title">3 Comments</h3>
-                    {/* blog details comments */}
-                    <BlogDetailsComments />
-                    {/* blog details comments */}
-                  </div>
-                  <div className="tp-postbox-details-form">
-                    <h3 className="tp-postbox-details-form-title">
-                      Leave a Reply
-                    </h3>
-                    <p>
-                      Your email address will not be published. Required fields
-                      are marked *
-                    </p>
-                    {/* blog reply form */}
-                    <BlogReplyForm />
-                    {/* blog reply form */}
-                  </div>
                 </div>
               </div>
             </div>
