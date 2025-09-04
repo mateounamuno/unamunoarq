@@ -43,9 +43,6 @@ export default function FooterOne() {
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="tp-footer-middle-wrap">
-                  <div className="tp-footer-content">
-                    <h4 className="tp-footer-big-title footer-big-text"> {"GET IN"} TOUCH!</h4>
-                  </div>
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-widget">

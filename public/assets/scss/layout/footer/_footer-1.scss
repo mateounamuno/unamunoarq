@@ -61,8 +61,8 @@
         & ul {
             & li {
                 list-style-type: none;
-                padding-bottom: 30px;
-                padding-top: 30px;
+                padding-bottom: 15px;
+                padding-top: 15px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.12);
                 position: relative;
 
@@ -105,12 +105,13 @@
 
                 & a {
                     font-weight: 300;
-                    font-size: 40px;
+                    font-size: 25px;
                     line-height: 1;
                     position: relative;
                     padding-left: 50px;
                     transition: .3s;
-                    display: block;
+                    display: flex;
+                    align-items: center;
                     color: rgba(245, 247, 245, 0.3);
                     font-family: var(--tp-ff-heading);
                     text-transform: none;
@@ -119,7 +120,7 @@
                         display: inline-flex;
                         overflow: hidden;
                         text-shadow: 0 80px 0 var(--tp-common-white);
-                        height: 55px;
+                        height: 30px;
 
                         span {
                             display: block;
@@ -147,7 +148,8 @@
                         text-transform: uppercase;
                         position: absolute;
                         left: 0;
-                        bottom: 22px;
+                        top: 50%;
+                        transform: translateY(-50%);
                         color: rgba(245, 247, 245, 0.2);
                         font-family: var(--tp-ff-body);
                         transition: .3s;
