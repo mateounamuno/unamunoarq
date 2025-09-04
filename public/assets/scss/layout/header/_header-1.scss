@@ -150,3 +150,18 @@
         }
     }
 }
+
+/*----------------------------------------*/
+/*  Header One Transparent Mode
+/*----------------------------------------*/
+.tp-header-area {
+    &.transparent {
+        .tp-header-menu nav>ul>li>a {
+            color: var(--tp-common-white);
+        }
+
+        .tp-header-bar button span {
+            background-color: var(--tp-common-white);
+        }
+    }
+}

@@ -6,7 +6,13 @@ import HeaderMenus from "./header-menus";
 import useSticky from "@/hooks/use-sticky";
 import MobileOffcanvas from "@/components/offcanvas/mobile-offcanvas";
 
-const HeaderOne = () => {
+// prop type 
+type IProps = {
+  transparent?: boolean;
+  cls?: string;
+}
+
+const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
   const { sticky, headerRef, headerFullWidth } = useSticky();
   const [openOffCanvas, setOpenOffCanvas] = React.useState(false);
   useEffect(() => {
@@ -19,15 +25,15 @@ const HeaderOne = () => {
       <header className="tp-header-height" ref={headerRef}>
         <div
           id="header-sticky"
-          className={`tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9 ${sticky ? 'header-sticky' : ''}`}
+          className={`tp-header-area tp-header-mob-space ${cls} ${transparent ? 'transparent' : 'tp-transparent'} pl-60 pr-60 z-index-9 ${sticky ? 'header-sticky' : ''}`}
         >
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-6">
                 <div className="tp-header-logo">
-                  <Link className="logo-1" href="/">
+                  <Link className={`${transparent ? 'ab-logo-1' : 'logo-1'}`} href="/">
                     <Image
-                      src="/assets/img/logo/logo.png"
+                      src={transparent ? "/assets/img/logo/logo-white.png" : "/assets/img/logo/logo.png"}
                       alt="logo"
                       width={400}
                       height={130}
@@ -38,9 +44,9 @@ const HeaderOne = () => {
                       }}
                     />
                   </Link>
-                  <Link className="logo-2" href="/">
+                  <Link className={`${transparent ? 'ab-logo-2' : 'logo-2'}`} href="/">
                     <Image
-                      src="/assets/img/logo/logo-white.png"
+                      src={transparent ? "/assets/img/logo/logo.png" : "/assets/img/logo/logo-white.png"}
                       alt="logo"
                       width={400}
                       height={130}

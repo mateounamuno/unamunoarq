@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
+import HeaderOne from "@/layouts/headers/header-one";
 import PortfolioDetailsShowcaseTwoArea from "@/components/portfolio/details/portfolio-details-showcase-2-area";
 import FooterTwo from "@/layouts/footers/footer-two";
 
@@ -41,7 +41,7 @@ const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
   if (!project) {
     return (
       <Wrapper>
-        <HeaderEleven transparent={true} />
+        <HeaderOne transparent={true} />
         <div className="container pt-120 pb-120">
           <div className="row justify-content-center">
             <div className="col-xl-8 text-center">
@@ -59,7 +59,7 @@ const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven transparent={true} />
+      <HeaderOne transparent={true} />
       {/* header area end */}
 
       <div id="smooth-wrapper">
