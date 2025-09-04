@@ -9,7 +9,7 @@
     &-black {
         height: 60px;
         line-height: 60px;
-        border-radius: 40px;
+        border-radius: 0;
         padding: 0 42px;
         font-weight: 500;
         font-size: 16px;
@@ -169,7 +169,7 @@
     &-black-2 {
         height: 60px;
         line-height: 55px;
-        border-radius: 40px;
+        border-radius: 0;
         padding: 0 18px 0 24px;
         font-weight: 500;
         font-size: 18px;
@@ -315,7 +315,7 @@
     &-white {
         height: 38px;
         line-height: 33px;
-        border-radius: 100px;
+        border-radius: 0;
         padding: 0 20px;
         font-weight: 600;
         font-size: 16px;
@@ -756,7 +756,7 @@
     &-border {
         height: 80px;
         line-height: 80px;
-        border-radius: 40px;
+        border-radius: 0;
         padding: 0 70px;
         font-weight: 500;
         font-size: 20px;
@@ -774,7 +774,7 @@
         @media #{$md,$xs} {
             height: 60px;
             line-height: 60px;
-            border-radius: 40px;
+            border-radius: 0;
             padding: 0 40px;
         }
 
@@ -858,7 +858,7 @@
     &-border-lg {
         height: 60px;
         line-height: 58px;
-        border-radius: 40px;
+        border-radius: 0;
         padding: 0 30px;
         font-weight: 500;
         font-size: 16px;
@@ -902,7 +902,7 @@
     &-border-sm {
         height: 44px;
         line-height: 42px;
-        border-radius: 100px;
+        border-radius: 0;
         padding: 0 30px;
         z-index: 9;
         font-size: 16px;

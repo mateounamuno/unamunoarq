@@ -2087,6 +2087,7 @@
         position: relative;
         transition: .3s;
         margin-bottom: 20px;
+        border-radius: 0;
 
         @media #{$xs} {
             margin: 0px 15px;
