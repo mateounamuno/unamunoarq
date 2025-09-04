@@ -65,7 +65,7 @@ export const showcase2Projects: Showcase2Project[] = [
         industries: "Río Cuarto, Córdoba, AR",
         date: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        heroOverlayOpacity: 0.35,
+        heroOverlayOpacity: 0.25,
         movingGalleryTop: [
             "/assets/img/inner-project/cielo-y-tierra/moving-top-1.jpg",
             "/assets/img/inner-project/cielo-y-tierra/moving-top-2.png",

@@ -37,6 +37,17 @@
         display: block;
     }
 
+    // Cuando el header transparente se vuelve sticky, el texto debe ser negro
+    &.transparent {
+        .tp-header-menu nav>ul>li>a {
+            color: var(--tp-common-black) !important;
+        }
+
+        .tp-header-bar button span {
+            background-color: var(--tp-common-black) !important;
+        }
+    }
+
     &::after {
         position: absolute;
         content: '';
@@ -163,5 +174,18 @@
         .tp-header-bar button span {
             background-color: var(--tp-common-white);
         }
+    }
+}
+
+/*----------------------------------------*/
+/*  Header One Sticky Override for Transparent Mode
+/*----------------------------------------*/
+.tp-header-area.header-sticky.transparent {
+    .tp-header-menu nav>ul>li>a {
+        color: var(--tp-common-black) !important;
+    }
+
+    .tp-header-bar button span {
+        background-color: var(--tp-common-black) !important;
     }
 }

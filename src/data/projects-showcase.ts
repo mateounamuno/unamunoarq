@@ -16,6 +16,7 @@ export type ShowcaseProject = {
     location?: string;
     releaseDate?: string;
     showcaseHeroBg: string;
+    heroOverlayOpacity?: number; // 0 to 1
     showcaseThumbs: string[]; // length 3 recommended
 };
 
@@ -39,6 +40,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         location: "Córdoba, AR",
         releaseDate: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
+        heroOverlayOpacity: 0.20,
         showcaseThumbs: [
             "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-2.jpg",
@@ -64,6 +66,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         location: "Córdoba, AR",
         releaseDate: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
+        heroOverlayOpacity: 0.4,
         showcaseThumbs: [
             "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-2.jpg",

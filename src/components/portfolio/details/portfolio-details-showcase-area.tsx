@@ -38,6 +38,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
   // Desestructuramos las propiedades del objeto project con valores por defecto para mayor seguridad.
   const {
     showcaseHeroBg = "/assets/img/inner-project/showcase/showcase-1.jpg",
+    heroOverlayOpacity = 0.5,
     subtitle = "[ UI, Web Design ]",
     title = "Top Paddock",
     overview = "Eagle Films is an active player on the entertainment scene as a major Hollywood movies distributor and co-producer. They reach out to me to not only redesign their website but also to change the look and feel of their brand.",
@@ -62,10 +63,23 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details area */}
       <div className="tp-showcase-details-area">
         <div className="tp-showcase-details-bg d-flex align-items-center justify-content-center include-bg p-relative" style={{ backgroundImage: `url(${showcaseHeroBg})` }}>
-          <div className="port-showcase-slider-social tp-hover-btn-wrapper">
+          {/* Overlay con opacidad */}
+          <div
+            className="tp-showcase-overlay"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: `rgba(0, 0, 0, ${heroOverlayOpacity})`,
+              zIndex: 1
+            }}
+          ></div>
+          <div className="port-showcase-slider-social tp-hover-btn-wrapper" style={{ position: 'relative', zIndex: 2 }}>
             <a className="tp-hover-btn-item tp-hover-btn" href="https://www.instagram.com/unamuno.arq/">Fb</a>
           </div>
-          <div className="container">
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="row">
               <div className="col-12">
                 <div className="tp-showcase-details-content text-center">

@@ -21,6 +21,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     industries,
     date,
     showcaseHeroBg,
+    heroOverlayOpacity = 0.5,
     movingGalleryTop,
     movingGalleryBottom,
     fullWidthImage,
@@ -36,8 +37,21 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     <>
       {/* portfolio hero */}
       <div className="showcase-details-2-area showcase-details-2-bg p-relative" style={{ backgroundImage: `url(${showcaseHeroBg})` }}>
+        {/* Overlay con opacidad */}
+        <div
+          className="showcase-details-2-overlay"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: `rgba(0, 0, 0, ${heroOverlayOpacity})`,
+            zIndex: 1
+          }}
+        ></div>
 
-        <div className="showcase-details-2-wrapper" data-lag="0.2" data-stagger="0.08">
+        <div className="showcase-details-2-wrapper" data-lag="0.2" data-stagger="0.08" style={{ position: 'relative', zIndex: 2 }}>
           <div className="container container-1550">
             <div className="row">
               <div className="col-xl-8">
