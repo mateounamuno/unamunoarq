@@ -8,12 +8,13 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderEleven from "@/layouts/headers/header-eleven";
+import HeaderOne from "@/layouts/headers/header-one";
 import PortfolioDetailsShowcaseArea from "@/components/portfolio/details/portfolio-details-showcase-area";
 import FooterTwo from "@/layouts/footers/footer-two";
 
 // Importa el tipo de dato para que TypeScript valide la prop.
 import type { ShowcaseProject } from '@/data/projects-showcase';
+
 
 // Define que este componente recibirá una prop llamada 'project' de tipo ShowcaseProject.
 type Props = { project: ShowcaseProject | undefined };
@@ -166,7 +167,7 @@ const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
   if (!project) {
     return (
       <Wrapper>
-        <HeaderEleven transparent={true} />
+        <HeaderOne transparent={true} />
         <div id="smooth-wrapper">
           <div id="smooth-content">
             <main>
@@ -189,7 +190,7 @@ const PortfolioDetailsShowcaseMain = ({ project }: Props) => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven transparent={true} />
+      <HeaderOne transparent={true} />
       {/* header area end */}
 
       <div id="smooth-wrapper">

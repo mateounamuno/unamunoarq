@@ -139,16 +139,7 @@ const HeaderMenus = () => {
             <div className="tp-submenu submenu tp-mega-menu">
               <div className="tp-menu-fullwidth">
                 <div className="tp-megamenu-portfolio p-relative">
-                  <div className="tp-megamenu-portfolio-banner">
-                    <Image
-                      src="/assets/img/menu/portfolio-menu/portfolio.png"
-                      alt="image"
-                      width={438}
-                      height={480}
-                      style={imgStyle}
-                    />
-                  </div>
-                  <div className="row gx-50">
+                  <div className="row gx-50 justify-content-center">
                     <div className="col-xxl-9 col-xl-10">
                       <div className="tp-megamenu-list-box">
                         <div className="row gx-30">
@@ -171,12 +162,7 @@ const HeaderMenus = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-xxl-3 col-xl-3 d-none d-xxl-block">
-                      <div className="tp-megamenu-portfolio-text">
-                        <h4>60+</h4>
-                        <span>Pre-built demo home page</span>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               </div>

@@ -26,38 +26,6 @@ const HeroBannerTwo = () => {
           priority
         />
       </div>
-
-      <div className="container-fluid h-100">
-        <div className="row justify-content-center align-items-center h-100">
-          <div className="col-xxl-12">
-            {/* <div className="tp-hero-title-wrap p-relative">
-
-              <div className="tp-hero-title-box text-center p-relative">
-                <h1 className="tp-hero-title tp_fade_bottom">
-
-
-                  <span className="tp-hero-title-img">
-
-                    <Image
-                      className="tp-zoom-img"
-                      src="/assets/img/home-01/hero/hero-1-1.png"
-                      alt="hero-img"
-                      width={325}
-                      height={400}
-                      style={{ height: "auto" }}
-                    />
-                  </span>
-
-                </h1>
-              </div>
-            </div> */}
-
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xl-12"></div>
-        </div>
-      </div>
     </div>
   );
 };
