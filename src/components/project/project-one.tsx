@@ -101,10 +101,17 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center'
+              objectPosition: 'center',
+              transition: 'transform 0.3s ease'
             }}
             width={800}
             height={600}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
           />
           {/* Overlay */}
           <div
