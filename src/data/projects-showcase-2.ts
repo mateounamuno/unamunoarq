@@ -7,6 +7,7 @@ export type Showcase2Project = {
     cover: string;
     thumbnail: string;
     gridThumbnail?: string;
+    homeGrid?: string;
     showOnHome?: boolean;
     showInGrid?: boolean;
     subtitle?: string;
@@ -53,6 +54,7 @@ export const showcase2Projects: Showcase2Project[] = [
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
+        homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
         cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
@@ -113,6 +115,7 @@ export const showcase2Projects: Showcase2Project[] = [
         title: "Edificio Moderno",
         category: "Comercial",
         year: "2024",
+        homeGrid: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
         cover: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
         thumbnail: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
         gridThumbnail: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
@@ -173,6 +176,7 @@ export const showcase2Projects: Showcase2Project[] = [
         title: "Proyecto Simple",
         category: "Concursos",
         year: "2024",
+        homeGrid: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
         cover: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
         thumbnail: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",
         gridThumbnail: "/assets/img/inner-project/showcase/showcase-details-2-1.jpg",

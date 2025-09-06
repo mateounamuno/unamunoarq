@@ -7,6 +7,7 @@ export type ShowcaseProject = {
     cover: string;
     thumbnail: string;
     gridThumbnail?: string;
+    homeGrid?: string;
     showOnHome?: boolean;
     showInGrid?: boolean;
     subtitle: string;
@@ -27,6 +28,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         title: "La casa de al lado.",
         category: "Residencial",
         year: "2024",
+        homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
         cover: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         thumbnail: "/assets/img/inner-project/casa-al-lado/detail-3.jpg",
         gridThumbnail: "/assets/img/inner-project/casa-al-lado/banner.jpg",
@@ -53,6 +55,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
+        homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
         cover: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         thumbnail: "/assets/img/inner-project/casa-al-lado/detail-3.jpg",
         gridThumbnail: "/assets/img/inner-project/casa-al-lado/banner.jpg",

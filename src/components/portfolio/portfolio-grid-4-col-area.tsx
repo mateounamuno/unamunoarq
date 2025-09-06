@@ -144,7 +144,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
               <div className="tp-project-5-2-thumb mb-30 p-relative not-hide-cursor" data-cursor="Ver<br>Proyecto" style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}>
                 <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
                   <Image
-                    src={item.gridThumbnail || item.thumbnail}
+                    src={item.homeGrid || item.gridThumbnail || item.thumbnail}
                     alt="prd-img"
                     width={style_2 ? 426 : 359}
                     height={style_2 ? 504 : 330}

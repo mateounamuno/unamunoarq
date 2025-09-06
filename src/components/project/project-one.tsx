@@ -36,7 +36,7 @@ const project_data: IProject[] = (
     template: p.template,
     cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
     cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
-    img: p.thumbnail,
+    img: p.homeGrid || p.thumbnail,
   }))
 ) as IProject[];
 
@@ -83,7 +83,7 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
           maxWidth: '100%'
         }}
       >
-        <Link className="cursor-hide" href={getProjectLink(item.slug, item.template)} style={{ display: 'block', height: '100%', width: '100%' }}>
+        <Link className="cursor-hide" href={getProjectLink(item.slug, item.template)} style={{ display: 'block', height: '100%', width: '100%', position: 'relative' }}>
           <Image
             data-speed=".8"
             src={item.img}
@@ -97,6 +97,43 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
             width={800}
             height={600}
           />
+          {/* Overlay */}
+          <div
+            className="project-overlay"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(0, 0, 0, 0.3)',
+              opacity: 0,
+              transition: 'opacity 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 1
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = '1';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = '0';
+            }}
+          >
+            <div
+              style={{
+                color: 'white',
+                fontSize: '18px',
+                fontWeight: '600',
+                textAlign: 'center',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+              }}
+            >
+              Ver Proyecto
+            </div>
+          </div>
         </Link>
       </div>
     </div>
