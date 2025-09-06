@@ -80,7 +80,18 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
           display: 'block',
           overflow: 'hidden',
           position: 'relative',
-          maxWidth: '100%'
+          maxWidth: '100%',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+          borderRadius: '6px',
+          transition: 'box-shadow 0.3s ease, transform 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
+          e.currentTarget.style.transform = 'translateY(-2px)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+          e.currentTarget.style.transform = 'translateY(0)';
         }}
       >
         <Link className="cursor-hide" href={getProjectLink(item.slug, item.template)} style={{ display: 'block', height: '100%', width: '100%', position: 'relative' }}>
