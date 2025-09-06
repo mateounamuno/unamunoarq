@@ -82,7 +82,6 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
           position: 'relative',
           maxWidth: '100%',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
-          borderRadius: '6px',
           transition: 'box-shadow 0.3s ease, transform 0.3s ease'
         }}
         onMouseEnter={(e) => {
