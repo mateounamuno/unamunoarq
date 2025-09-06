@@ -72,8 +72,7 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
       }}
     >
       <div
-        className={`tp-project-img height-uniform fix not-hide-cursor ${styles.projectImg}`}
-        data-cursor="Ver<br>Proyecto"
+        className={`tp-project-img height-uniform fix ${styles.projectImg}`}
         style={{
           height: height,
           width: '100%',
