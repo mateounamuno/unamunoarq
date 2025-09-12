@@ -8,11 +8,11 @@ import BlogReplyForm from "@/components/form/blog-reply-form";
 
 // images
 import details_thumb_1 from "@/assets/img/inner-blog/blog-details/blog-details-2.jpg";
-import details_thumb_2 from "@/assets/img/inner-blog/blog-details-without-sidebar/blog-details-2.jpg";
+import details_thumb_2 from "@/assets/img/inner-blog/blog-details/blog-details-6.jpg";
 import details_thumb_3 from "@/assets/img/inner-blog/blog-details/blog-details-4.jpg";
-import details_thumb_4 from "@/assets/img/inner-blog/blog-details/blog-details-4.jpg";
-import details_thumb_5 from "@/assets/img/inner-blog/blog-details/blog-details-4.jpg";
-import details_thumb_6 from "@/assets/img/inner-blog/blog-details/blog-details-4.jpg";
+import details_thumb_4 from "@/assets/img/inner-blog/blog-details/blog-details-5.png";
+import details_thumb_5 from "@/assets/img/inner-blog/blog-details/blog-details-3.png";
+import details_thumb_6 from "@/assets/img/inner-blog/blog-details/blog-details-7.jpg";
 
 export default function BlogDetailsAreaTwo() {
   return (
@@ -88,7 +88,7 @@ export default function BlogDetailsAreaTwo() {
                     <div className="blog-details-thumb">
                       <Image
                         className="mb-20"
-                        src={details_thumb_1}
+                        src={details_thumb_4}
                         alt="details-thumb"
                         style={{ height: "550px", objectFit: "cover", width: "100%" }}
                       />
@@ -98,7 +98,7 @@ export default function BlogDetailsAreaTwo() {
                     <div className="blog-details-thumb">
                       <Image
                         className="mb-20"
-                        src={details_thumb_2}
+                        src={details_thumb_5}
                         alt="details-thumb"
                         style={{ height: "550px", objectFit: "cover", width: "100%" }}
                       />
@@ -133,7 +133,7 @@ export default function BlogDetailsAreaTwo() {
                     <div className="blog-details-thumb">
                       <Image
                         className="w-100"
-                        src={details_thumb_3}
+                        src={details_thumb_6}
                         alt="details-thumb"
                         style={{ height: "600px", objectFit: "cover", width: "100%" }}
                       />

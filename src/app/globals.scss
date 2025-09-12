@@ -3,6 +3,19 @@
 @import "swiper/css/bundle";
 @import '../../public/assets/scss/main.scss';
 
+/* Contact images mobile styles */
+@media (max-width: 767px) {
+  .contact-img-mobile {
+    max-height: 150px !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover !important;
+  }
+
+  .cn-contact-2-thumb {
+    gap: 10px;
+  }
+}
+
 /* Custom fixes for Project One section responsiveness - Updated */
 .tp-project-area {
   .container-1630 {

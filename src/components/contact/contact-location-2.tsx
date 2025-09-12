@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 
 // images
-import c_img_1 from "@/assets/img/inner-contact/contact/contact-1.jpg";
-import c_img_2 from "@/assets/img/inner-contact/contact/contact-2.jpg";
-import c_img_3 from "@/assets/img/inner-contact/contact/contact-3.jpg";
-import c_img_4 from "@/assets/img/inner-contact/contact/contact-4.jpg";
-import c_img_5 from "@/assets/img/inner-contact/contact/contact-5.jpg";
-import c_img_6 from "@/assets/img/inner-contact/contact/contact-6.jpg";
+import c_img_1 from "@/assets/img/inner-contact/contact/contact-1.png";
+import c_img_2 from "@/assets/img/inner-contact/contact/contact-2.png";
+import c_img_3 from "@/assets/img/inner-contact/contact/contact-3.png";
+import c_img_4 from "@/assets/img/inner-contact/contact/contact-4.jpeg";
+import c_img_5 from "@/assets/img/inner-contact/contact/contact-5.png";
+import c_img_6 from "@/assets/img/inner-contact/contact/contact-6.png";
 
 const location_data = [
   {
@@ -57,12 +57,26 @@ const ContactLocationTwo = () => {
                   <Image
                     src={item.img_1}
                     alt="contact-img"
-                    style={{ height: "auto" }}
+                    style={{
+                      height: "auto",
+                      objectFit: "cover",
+                      width: "100%",
+                      maxHeight: "200px",
+                      aspectRatio: "1/1"
+                    }}
+                    className="contact-img-mobile"
                   />
                   <Image
                     src={item.img_2}
                     alt="contact-img"
-                    style={{ height: "auto" }}
+                    style={{
+                      height: "auto",
+                      objectFit: "cover",
+                      width: "100%",
+                      maxHeight: "200px",
+                      aspectRatio: "1/1"
+                    }}
+                    className="contact-img-mobile"
                   />
                 </div>
                 <div className="cn-contact-2-info-details">
