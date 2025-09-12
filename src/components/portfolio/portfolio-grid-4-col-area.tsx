@@ -141,14 +141,43 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
         <div className="row">
           {items.map((item) => (
             <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
-              <div className="tp-project-5-2-thumb mb-30 p-relative not-hide-cursor" data-cursor="Ver<br>Proyecto" style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}>
+              <div
+                className="tp-project-5-2-thumb mb-30 p-relative"
+                style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}
+                onMouseEnter={(e) => {
+                  const img = e.currentTarget.querySelector('img');
+                  if (img) img.style.transform = 'scale(1.1)';
+                }}
+                onMouseLeave={(e) => {
+                  const img = e.currentTarget.querySelector('img');
+                  if (img) img.style.transform = 'scale(1)';
+                }}
+              >
                 <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
                   <Image
                     src={item.homeGrid || item.gridThumbnail || item.thumbnail}
                     alt="prd-img"
                     width={style_2 ? 426 : 359}
                     height={style_2 ? 504 : 330}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: 'block' }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: 'block',
+                      transition: 'transform 0.3s ease'
+                    }}
+                  />
+                  {/* Overlay permanente */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'rgba(0, 0, 0, 0.4)',
+                      zIndex: 1
+                    }}
                   />
                   <div className="tp-project-5-2-category tp_fade_anim">
                     <span>{item.category}</span>
