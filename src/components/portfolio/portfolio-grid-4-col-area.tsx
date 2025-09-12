@@ -154,37 +154,39 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                 }}
               >
                 <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
-                  <Image
-                    src={item.homeGrid || item.gridThumbnail || item.thumbnail}
-                    alt="prd-img"
-                    width={style_2 ? 426 : 359}
-                    height={style_2 ? 504 : 330}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: 'block',
-                      transition: 'transform 0.3s ease'
-                    }}
-                  />
-                  {/* Overlay permanente */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: 'rgba(0, 0, 0, 0.4)',
-                      zIndex: 1
-                    }}
-                  />
-                  <div className="tp-project-5-2-category tp_fade_anim">
-                    <span>{item.category}</span>
-                  </div>
-                  <div className="tp-project-5-2-content tp_fade_anim">
-                    <span className="tp-project-5-2-meta">{item.year}</span>
-                    <h4 className="tp-project-5-2-title-sm">{item.title}</h4>
+                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Image
+                      src={item.homeGrid || item.gridThumbnail || item.thumbnail}
+                      alt="prd-img"
+                      width={style_2 ? 426 : 359}
+                      height={style_2 ? 504 : 330}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: 'block',
+                        transition: 'transform 0.3s ease'
+                      }}
+                    />
+                    {/* Overlay solo sobre la imagen */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: 'rgba(0, 0, 0, 0.4)',
+                        zIndex: 1
+                      }}
+                    />
+                    <div className="tp-project-5-2-category tp_fade_anim" style={{ zIndex: 2, position: 'absolute', top: '10px', left: '10px' }}>
+                      <span style={{ color: 'white', fontWeight: '500' }}>{item.category}</span>
+                    </div>
+                    <div className="tp-project-5-2-content tp_fade_anim" style={{ zIndex: 2, position: 'absolute', bottom: '10px', left: '10px' }}>
+                      <span className="tp-project-5-2-meta" style={{ color: 'white' }}>{item.year}</span>
+                      <h4 className="tp-project-5-2-title-sm" style={{ color: 'white' }}>{item.title}</h4>
+                    </div>
                   </div>
                 </Link>
               </div>
