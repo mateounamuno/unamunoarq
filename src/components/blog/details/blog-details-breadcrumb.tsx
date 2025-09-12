@@ -9,7 +9,8 @@ export default function BlogDetailsBreadcrumb() {
       <div
         className="blog-details-bg blog-details-bg-height blog-details-overlay p-relative d-flex align-items-end pt-170 pb-170"
         style={{
-          backgroundImage: `url(/assets/img/inner-blog/blog-details/blog-details-1.jpg)`,
+          backgroundImage: `url(/assets/img/inner-blog/blog-details/blog-details-1.jpeg)`,
+          backgroundSize: 'cover',
         }}
       >
         <div className="blog-details-overlay-shape">
@@ -20,10 +21,10 @@ export default function BlogDetailsBreadcrumb() {
             <div className="col-xl-11">
               <div className="blog-details-content z-index-5">
                 <span className="blog-details-meta">
-                  Creative <i>. 01 Oct, 2022</i>
+                  Manifiesto <i>. 12 Sept, 2025</i>
                 </span>
                 <h4 className="blog-details-title tp-char-animation">
-                  Cultivating Originality In Photography
+                  La arquitectura como un gesto de liberdad.
                 </h4>
 
               </div>
