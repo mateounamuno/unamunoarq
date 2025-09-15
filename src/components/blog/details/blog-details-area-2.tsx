@@ -7,8 +7,8 @@ import BlogDetailsComments from "./blog-details-comments";
 import BlogReplyForm from "@/components/form/blog-reply-form";
 
 // images
-import details_thumb_1 from "@/assets/img/inner-blog/blog-details/blog-details-2.jpg";
-import details_thumb_2 from "@/assets/img/inner-blog/blog-details/blog-details-66.jpg";
+import details_thumb_1 from "@/assets/img/inner-blog/blog-details/blog-details-2.JPG";
+import details_thumb_2 from "@/assets/img/inner-blog/blog-details/blog-details-66.JPG";
 import details_thumb_3 from "@/assets/img/inner-blog/blog-details/blog-details-4.jpg";
 import details_thumb_4 from "@/assets/img/inner-blog/blog-details/blog-details-5.png";
 import details_thumb_5 from "@/assets/img/inner-blog/blog-details/blog-details-3.png";
