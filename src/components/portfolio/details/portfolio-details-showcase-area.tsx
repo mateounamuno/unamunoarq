@@ -6,26 +6,15 @@ import Link from 'next/link';
 
 // Importa el tipo de dato correcto y la data de los proyectos.
 import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
-
-// Función para encontrar el slug del proyecto anterior y siguiente.
-const findPrevNextSlugs = (currentSlug: string) => {
-  const currentIndex = showcaseProjects.findIndex((project) => project.slug === currentSlug);
-  const prevProject = currentIndex > 0 ? showcaseProjects[currentIndex - 1] : null;
-  const nextProject = currentIndex < showcaseProjects.length - 1 ? showcaseProjects[currentIndex + 1] : null;
-
-  return {
-    prevSlug: prevProject ? prevProject.slug : null,
-    nextSlug: nextProject ? nextProject.slug : null,
-  };
-};
+import { findUnifiedPrevNext } from '@/utils/unified-projects';
 
 // Define los tipos de las props que este componente espera.
 // Ya no necesitamos prevSlug y nextSlug aquí, los calcularemos internamente.
 type Props = { project: ShowcaseProject };
 
 export default function PortfolioDetailsShowcaseArea({ project }: Props) {
-  // Calculamos los slugs de navegación a partir de la data del proyecto actual.
-  const { prevSlug, nextSlug } = findPrevNextSlugs(project.slug);
+  // Calculamos los slugs de navegación unificada
+  const { prevSlug, nextSlug, prevType, nextType } = findUnifiedPrevNext(project.slug, 'showcase');
 
   const scrollTo = () => {
     scroller.scrollTo('xyz', {
@@ -197,13 +186,13 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
 
       {/* navigation after thumbs */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
+        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/${prevType === 'showcase-2' ? 'showcase-2' : 'showcase'}/${prevSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
         </Link>
         <a href="#" className="tp_title_anim">
           <span>• • •</span>
         </a>
-        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
+        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/${nextType === 'showcase-2' ? 'showcase-2' : 'showcase'}/${nextSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
       </div>

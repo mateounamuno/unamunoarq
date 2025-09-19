@@ -23,11 +23,9 @@ import type { Showcase2Project } from '@/data/projects-showcase-2';
 // Define que este componente recibirá una prop llamada 'project' de tipo Showcase2Project.
 type Props = {
   project: Showcase2Project | undefined;
-  prevSlug: string;
-  nextSlug: string;
 };
 
-const PortfolioDetailsShowcaseTwoMain = ({ project, prevSlug, nextSlug }: Props) => {
+const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
   // Los hooks deben estar siempre al inicio, antes de cualquier validación condicional
   const componentRef = useRef<HTMLDivElement>(null);
   useScrollSmooth();
@@ -70,7 +68,7 @@ const PortfolioDetailsShowcaseTwoMain = ({ project, prevSlug, nextSlug }: Props)
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <PortfolioDetailsShowcaseTwoArea project={project} prevSlug={prevSlug} nextSlug={nextSlug} />
+            <PortfolioDetailsShowcaseTwoArea project={project} />
             {/* portfolio details area */}
           </main>
 

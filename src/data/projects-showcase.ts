@@ -24,7 +24,7 @@ export type ShowcaseProject = {
 export const showcaseProjects: ShowcaseProject[] = [
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-1",
         title: "La casa de al lado.",
         category: "Residencial",
         year: "2024",
@@ -51,7 +51,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-2",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -78,7 +78,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-3",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -105,7 +105,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-4",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -132,7 +132,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-5",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -159,7 +159,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-6",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -186,7 +186,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-7",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -213,7 +213,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-8",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -240,7 +240,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-9",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -267,7 +267,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-10",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -294,7 +294,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-11",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -321,7 +321,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-12",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -348,7 +348,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-13",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
@@ -375,7 +375,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado",
+        slug: "casa-al-lado-14",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",

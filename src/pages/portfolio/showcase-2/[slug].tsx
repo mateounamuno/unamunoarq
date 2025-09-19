@@ -47,8 +47,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 // El componente de la página recibe 'project' y se lo pasa al componente de UI.
-const ProjectDetailsPage = ({ project, prevSlug, nextSlug }: { project: Showcase2Project; prevSlug: string; nextSlug: string }) => {
-    return <PortfolioDetailsShowcaseTwoMain project={project} prevSlug={prevSlug} nextSlug={nextSlug} />;
+const ProjectDetailsPage = ({ project }: { project: Showcase2Project }) => {
+    return <PortfolioDetailsShowcaseTwoMain project={project} />;
 };
 
 export default ProjectDetailsPage;

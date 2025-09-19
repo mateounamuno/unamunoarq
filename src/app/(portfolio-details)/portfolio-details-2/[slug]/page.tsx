@@ -51,7 +51,7 @@ const PortfolioDetailsTwoPage = ({ params }: Props) => {
     const nextSlug = showcase2Projects[nextIndex].slug;
 
 
-    return <PortfolioDetailsShowcaseTwoMain project={project} prevSlug={prevSlug} nextSlug={nextSlug} />;
+    return <PortfolioDetailsShowcaseTwoMain project={project} />;
 };
 
 export default PortfolioDetailsTwoPage;

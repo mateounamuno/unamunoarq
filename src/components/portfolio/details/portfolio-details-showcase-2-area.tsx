@@ -3,14 +3,15 @@ import Image from 'next/image';
 import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
 import Link from 'next/link';
+import { findUnifiedPrevNext } from '@/utils/unified-projects';
 
 interface PortfolioDetailsShowcaseTwoAreaProps {
   project: Showcase2Project | undefined;
-  prevSlug: string;
-  nextSlug: string;
 }
 
-export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nextSlug }: PortfolioDetailsShowcaseTwoAreaProps) {
+export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDetailsShowcaseTwoAreaProps) {
+  // Calculamos los slugs de navegación unificada
+  const { prevSlug, nextSlug, prevType, nextType } = findUnifiedPrevNext(project?.slug || '', 'showcase-2');
   // Validar que project existe antes de renderizar
   if (!project) {
     return null;
@@ -224,13 +225,13 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
 
       {/* navigation after thumbs */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-        <Link className="project-details-1-prev tp_title_anim" href={`/portfolio/showcase-2/${prevSlug}`}>
+        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/${prevType === 'showcase-2' ? 'showcase-2' : 'showcase'}/${prevSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
         </Link>
         <a href="#" className="tp_title_anim">
           <span>• • •</span>
         </a>
-        <Link className="project-details-1-next tp_title_anim" href={`/portfolio/showcase-2/${nextSlug}`}>
+        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/${nextType === 'showcase-2' ? 'showcase-2' : 'showcase'}/${nextSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
       </div>
