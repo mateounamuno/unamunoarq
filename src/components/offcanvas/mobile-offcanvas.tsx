@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Behance, CloseTwo, Dribble, InstagramTwo, Youtube } from "../svg";
 
 // images
-import logo from "@/assets/img/logo/logo.png";
+import logo from "@/assets/img/logo/logo-mini.png";
 import gallery_1 from "@/assets/img/menu/offcanvas/offcanvas-1.jpg";
 import gallery_2 from "@/assets/img/menu/offcanvas/offcanvas-2.jpg";
 import gallery_3 from "@/assets/img/menu/offcanvas/offcanvas-3.jpg";
@@ -18,15 +18,15 @@ type IProps = {
   setOpenOffcanvas: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps) {
+export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IProps) {
   return (
     <>
       <div className={`tp-offcanvas-area ${openOffcanvas ? "opened" : ""}`}>
         <div className="tp-offcanvas-wrapper">
-          <div className="tp-offcanvas-top d-flex align-items-center justify-content-between">
+          <div className="tp-offcanvas-top d-flex align-items-center justify-content-between" style={{ paddingBottom: '0', marginBottom: '45px' }}>
             <div className="tp-offcanvas-logo">
               <a href="#">
-                <Image src={logo} alt="logo" />
+                <Image src={logo} alt="logo" width={120} height={60} style={{ width: 'auto', height: 'auto' }} />
               </a>
             </div>
             <div className="tp-offcanvas-close">
@@ -40,11 +40,11 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
           </div>
           <div className="tp-offcanvas-main">
             <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title">Hello There!</h3>
+              <h3 className="tp-offcanvas-title">Unamuno Arq.</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
             </div>
             <div className="tp-main-menu-mobile d-xl-none">
-              <MobileMenus/>
+              <MobileMenus />
             </div>
             <div className="tp-offcanvas-gallery">
               <div className="row gx-2">
@@ -75,20 +75,12 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
               </ul>
             </div>
             <div className="tp-offcanvas-social">
-              <h3 className="tp-offcanvas-title sm">Follow Us</h3>
+              <h3 className="tp-offcanvas-title sm">REDES SOCIALES</h3>
               <ul>
                 <li>
-                  <a href="#"><InstagramTwo /></a>
+                  <a href="https://www.instagram.com/unamuno.arq/"><InstagramTwo /></a>
                 </li>
-                <li>
-                  <a href="#"><Dribble /></a>
-                </li>
-                <li>
-                  <a href="#"> <Behance /></a>
-                </li>
-                <li>
-                  <a href="#"><Youtube /></a>
-                </li>
+
               </ul>
             </div>
           </div>
