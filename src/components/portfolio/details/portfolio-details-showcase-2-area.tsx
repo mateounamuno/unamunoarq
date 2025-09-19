@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
 import Link from 'next/link';
 import { findUnifiedPrevNext } from '@/utils/unified-projects';
+import ImageLightbox from '@/components/modal/image-lightbox';
 
 interface PortfolioDetailsShowcaseTwoAreaProps {
   project: Showcase2Project | undefined;
 }
 
 export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDetailsShowcaseTwoAreaProps) {
+  // State for lightbox modal
+  const [showLightbox, setShowLightbox] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState('');
+  const [lightboxAlt, setLightboxAlt] = useState('');
+
   // Calculamos los slugs de navegación unificada
   const { prevSlug, nextSlug, prevType, nextType } = findUnifiedPrevNext(project?.slug || '', 'showcase-2');
+
+  // Function to open lightbox
+  const openLightbox = (imageSrc: string, imageAlt: string) => {
+    setLightboxImage(imageSrc);
+    setLightboxAlt(imageAlt);
+    setShowLightbox(true);
+  };
+
   // Validar que project existe antes de renderizar
   if (!project) {
     return null;
@@ -124,7 +138,14 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
               {movingGalleryTop.map((imgSrc, i) => (
                 <div key={i} className="showcase-details-2-slider-item">
-                  <Image src={imgSrc} alt={`${title} gallery image ${i + 1}`} width={400} height={300} style={{ height: "auto" }} />
+                  <Image
+                    src={imgSrc}
+                    alt={`${title} gallery image ${i + 1}`}
+                    width={400}
+                    height={300}
+                    style={{ height: "auto", cursor: "pointer" }}
+                    onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
+                  />
                 </div>
               ))}
             </div>
@@ -135,7 +156,14 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
               <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
                 {movingGalleryBottom.map((imgSrc, i) => (
                   <div key={i} className="showcase-details-2-slider-item">
-                    <Image src={imgSrc} alt={`${title} gallery image ${i + 1}`} width={400} height={300} style={{ height: "auto" }} />
+                    <Image
+                      src={imgSrc}
+                      alt={`${title} gallery image ${i + 1}`}
+                      width={400}
+                      height={300}
+                      style={{ height: "auto", cursor: "pointer" }}
+                      onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
+                    />
                   </div>
                 ))}
               </div>
@@ -164,7 +192,15 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {/* full width image */}
       {fullWidthImage && (
         <div className="showcase-details-2-fullwidth-img">
-          <Image data-speed=".8" src={fullWidthImage} alt={`${title} full width image`} width={1920} height={1080} style={{ height: 'auto' }} />
+          <Image
+            data-speed=".8"
+            src={fullWidthImage}
+            alt={`${title} full width image`}
+            width={1920}
+            height={1080}
+            style={{ height: 'auto', cursor: 'pointer' }}
+            onClick={() => openLightbox(fullWidthImage, `${title} full width image`)}
+          />
         </div>
       )}
       {/* full width image */}
@@ -193,12 +229,28 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row">
               <div className="col-xl-6 col-lg-6">
                 <div className="showcase-details-2-grid-img mb-30">
-                  <Image className="img-left" src={gridImages[0]} alt={`${title} grid image 1`} width={600} height={400} style={{ height: 'auto' }} />
+                  <Image
+                    className="img-left"
+                    src={gridImages[0]}
+                    alt={`${title} grid image 1`}
+                    width={600}
+                    height={400}
+                    style={{ height: 'auto', cursor: 'pointer' }}
+                    onClick={() => openLightbox(gridImages[0], `${title} grid image 1`)}
+                  />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="showcase-details-2-grid-img mb-30">
-                  <Image className="img-right" src={gridImages[1]} alt={`${title} grid image 2`} width={600} height={400} style={{ height: 'auto' }} />
+                  <Image
+                    className="img-right"
+                    src={gridImages[1]}
+                    alt={`${title} grid image 2`}
+                    width={600}
+                    height={400}
+                    style={{ height: 'auto', cursor: 'pointer' }}
+                    onClick={() => openLightbox(gridImages[1], `${title} grid image 2`)}
+                  />
                 </div>
               </div>
             </div>
@@ -235,6 +287,14 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
       </div>
+
+      {/* Image Lightbox Modal */}
+      <ImageLightbox
+        showModal={showLightbox}
+        setShowModal={setShowLightbox}
+        imageSrc={lightboxImage}
+        imageAlt={lightboxAlt}
+      />
     </>
   )
 }

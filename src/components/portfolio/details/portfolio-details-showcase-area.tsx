@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { scroller } from 'react-scroll';
 import Link from 'next/link';
@@ -7,14 +7,27 @@ import Link from 'next/link';
 // Importa el tipo de dato correcto y la data de los proyectos.
 import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 import { findUnifiedPrevNext } from '@/utils/unified-projects';
+import ImageLightbox from '@/components/modal/image-lightbox';
 
 // Define los tipos de las props que este componente espera.
 // Ya no necesitamos prevSlug y nextSlug aquí, los calcularemos internamente.
 type Props = { project: ShowcaseProject };
 
 export default function PortfolioDetailsShowcaseArea({ project }: Props) {
+  // State for lightbox modal
+  const [showLightbox, setShowLightbox] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState('');
+  const [lightboxAlt, setLightboxAlt] = useState('');
+
   // Calculamos los slugs de navegación unificada
   const { prevSlug, nextSlug, prevType, nextType } = findUnifiedPrevNext(project.slug, 'showcase');
+
+  // Function to open lightbox
+  const openLightbox = (imageSrc: string, imageAlt: string) => {
+    setLightboxImage(imageSrc);
+    setLightboxAlt(imageAlt);
+    setShowLightbox(true);
+  };
 
   const scrollTo = () => {
     scroller.scrollTo('xyz', {
@@ -168,14 +181,30 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
             {thumbs.slice(0, 2).map((src: string, i: number) => (
               <div key={i} className="col-xl-6 col-lg-6">
                 <div className="showcase-details-thumb mb-80">
-                  <Image data-speed=".8" src={src} alt="details-thumb" width={800} height={600} style={{ width: "100%", height: "auto", objectFit: "cover" }} />
+                  <Image
+                    data-speed=".8"
+                    src={src}
+                    alt={`${title} details thumb ${i + 1}`}
+                    width={800}
+                    height={600}
+                    style={{ width: "100%", height: "auto", objectFit: "cover", cursor: "pointer" }}
+                    onClick={() => openLightbox(src, `${title} details thumb ${i + 1}`)}
+                  />
                 </div>
               </div>
             ))}
             {thumbs[2] && (
               <div className="col-xl-12">
                 <div className="showcase-details-thumb mb-80">
-                  <Image data-speed=".8" src={thumbs[2]} alt="details-thumb" width={1200} height={800} style={{ width: "100%", height: "auto", objectFit: "cover" }} />
+                  <Image
+                    data-speed=".8"
+                    src={thumbs[2]}
+                    alt={`${title} details thumb 3`}
+                    width={1200}
+                    height={800}
+                    style={{ width: "100%", height: "auto", objectFit: "cover", cursor: "pointer" }}
+                    onClick={() => openLightbox(thumbs[2], `${title} details thumb 3`)}
+                  />
                 </div>
               </div>
             )}
@@ -196,6 +225,14 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
       </div>
+
+      {/* Image Lightbox Modal */}
+      <ImageLightbox
+        showModal={showLightbox}
+        setShowModal={setShowLightbox}
+        imageSrc={lightboxImage}
+        imageAlt={lightboxAlt}
+      />
     </>
   );
 }
