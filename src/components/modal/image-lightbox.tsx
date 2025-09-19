@@ -38,6 +38,7 @@ export default function ImageLightbox({ showModal, setShowModal, imageSrc, image
             className="tp-image-lightbox-modal"
             size="xl"
             backdrop="static"
+            fullscreen="sm-down"
         >
             <button
                 onClick={handleClose}
@@ -45,8 +46,8 @@ export default function ImageLightbox({ showModal, setShowModal, imageSrc, image
                 className="tp-image-lightbox-close-btn"
                 style={{
                     position: 'absolute',
-                    top: '20px',
-                    right: '20px',
+                    top: '10px',
+                    right: '10px',
                     zIndex: 1000,
                     background: 'rgba(0, 0, 0, 0.7)',
                     border: 'none',
@@ -58,22 +59,35 @@ export default function ImageLightbox({ showModal, setShowModal, imageSrc, image
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    touchAction: 'manipulation'
                 }}
             >
                 <i className="fa-regular fa-xmark"></i>
             </button>
 
-            <Modal.Body style={{ padding: 0, position: 'relative' }}>
+            <Modal.Body
+                style={{
+                    padding: 0,
+                    position: 'relative',
+                    height: '100vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+                onClick={handleClose}
+            >
                 <div
                     style={{
                         position: 'relative',
                         width: '100%',
-                        height: '80vh',
+                        height: '100%',
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        padding: '20px'
                     }}
+                    onClick={(e) => e.stopPropagation()}
                 >
                     <Image
                         src={imageSrc}
@@ -85,6 +99,7 @@ export default function ImageLightbox({ showModal, setShowModal, imageSrc, image
                             maxHeight: '100%'
                         }}
                         priority
+                        sizes="100vw"
                     />
                 </div>
             </Modal.Body>
