@@ -78,9 +78,6 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
               zIndex: 1
             }}
           ></div>
-          <div className="port-showcase-slider-social tp-hover-btn-wrapper" style={{ position: 'relative', zIndex: 2 }}>
-            <a className="tp-hover-btn-item tp-hover-btn" href="https://www.instagram.com/unamuno.arq/">Fb</a>
-          </div>
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="row">
               <div className="col-12">
