@@ -15,8 +15,8 @@ const HeroBannerOne = () => {
   }, {});
   return (
     <div className="tp-hero-area tp-hero-ptb main-slider">
-      {/* Fondo del hero con opacidad */}
-      <div className="tp-hero-bg-image">
+      {/* Fondo del hero con opacidad y efecto Ken Burns */}
+      <div className="tp-hero-bg-image ken-burns-pan">
         <Image
           src="/assets/img/home-01/hero/hero-1-bg.jpg.jpeg"
           alt="hero background"
