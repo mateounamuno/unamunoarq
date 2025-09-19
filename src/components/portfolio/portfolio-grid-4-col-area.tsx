@@ -24,26 +24,35 @@ type IProps = {
 
 export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
   const [active, setActive] = React.useState<string>('All');
+  const [visibleCount, setVisibleCount] = React.useState<number>(12);
+
   const categories = React.useMemo(() => {
     const cats = Array.from(new Set(projects.filter(p => p.showInGrid).map(p => p.category)));
     return ['All', ...cats];
   }, []);
+
   const items = React.useMemo(() => {
     return projects.filter(p => p.showInGrid && (active === 'All' || p.category === active));
   }, [active]);
-  // render all filtered items (no load-more pagination)
+
+  // Reset visible count when category changes
+  React.useEffect(() => {
+    setVisibleCount(12);
+  }, [active]);
+
+  // render paginated items
   const gridItems = React.useMemo(() => {
-    const desired = 12; // 3 filas x 4 columnas
-    if (items.length >= desired) return items.slice(0, desired);
     if (items.length === 0) return [] as typeof items;
-    const repeated: typeof items = [] as any;
-    let idx = 0;
-    while (repeated.length < desired) {
-      repeated.push(items[idx % items.length]);
-      idx += 1;
-    }
-    return repeated;
-  }, [items]);
+
+    // Mostrar solo los primeros 'visibleCount' proyectos únicos
+    return items.slice(0, visibleCount);
+  }, [items, visibleCount]);
+
+  const hasMoreProjects = visibleCount < items.length;
+
+  const loadMoreProjects = () => {
+    setVisibleCount(prev => Math.min(prev + 12, items.length));
+  };
   return (
     <div className="tp-project-5-2-area tp-project-5-2-pt pb-130">
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
@@ -139,7 +148,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
           </div>
         </div>
         <div className="row">
-          {items.map((item) => (
+          {gridItems.map((item) => (
             <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
               <div
                 className="tp-project-5-2-thumb mb-30 p-relative"
@@ -193,26 +202,32 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
             </div>
           ))}
         </div>
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="tp-projct-5-2-btn-box mt-50 d-flex justify-content-center">
-              <div className="tp-hover-btn-wrapper">
-                <Link
-                  className="tp-btn-circle style-2 tp-hover-btn-item tp-hover-btn"
-                  href="/portfolio-grid-col-2"
-                >
-                  <span className="tp-btn-circle-text">
-                    More <br /> Projects
-                  </span>
-                  <span className="tp-btn-circle-icon">
-                    <UpArrow />
-                  </span>
-                  <i className="tp-btn-circle-dot"></i>
-                </Link>
+        {hasMoreProjects && (
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="tp-projct-5-2-btn-box mt-50 d-flex justify-content-center">
+                <div className="tp-hover-btn-wrapper">
+                  <a
+                    className="tp-btn-circle style-2 tp-hover-btn-item tp-hover-btn"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      loadMoreProjects();
+                    }}
+                  >
+                    <span className="tp-btn-circle-text">
+                      More <br /> Projects
+                    </span>
+                    <span className="tp-btn-circle-icon">
+                      <UpArrow />
+                    </span>
+                    <i className="tp-btn-circle-dot"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
