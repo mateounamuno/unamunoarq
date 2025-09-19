@@ -21,9 +21,13 @@ import { movingImageSlider } from "@/utils/scroll-marque";
 import type { Showcase2Project } from '@/data/projects-showcase-2';
 
 // Define que este componente recibirá una prop llamada 'project' de tipo Showcase2Project.
-type Props = { project: Showcase2Project | undefined };
+type Props = {
+  project: Showcase2Project | undefined;
+  prevSlug?: string | null;
+  nextSlug?: string | null;
+};
 
-const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
+const PortfolioDetailsShowcaseTwoMain = ({ project, prevSlug, nextSlug }: Props) => {
   // Los hooks deben estar siempre al inicio, antes de cualquier validación condicional
   const componentRef = useRef<HTMLDivElement>(null);
   useScrollSmooth();
@@ -66,7 +70,7 @@ const PortfolioDetailsShowcaseTwoMain = ({ project }: Props) => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <PortfolioDetailsShowcaseTwoArea project={project} />
+            <PortfolioDetailsShowcaseTwoArea project={project} prevSlug={prevSlug} nextSlug={nextSlug} />
             {/* portfolio details area */}
           </main>
 

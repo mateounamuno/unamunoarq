@@ -16,24 +16,35 @@ export async function getStaticPaths() {
 
 // Esta función carga los datos del proyecto que coincida con el slug.
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-    const project = showcase2Projects.find((p: Showcase2Project) => p.slug === params.slug);
+    const projectIndex = showcase2Projects.findIndex((p: Showcase2Project) => p.slug === params.slug);
 
-    if (!project) {
+    if (projectIndex === -1) {
         return {
             notFound: true,
         };
     }
 
+    const project = showcase2Projects[projectIndex];
+
+    // Calcular los slugs de navegación
+    const prevProject = projectIndex > 0 ? showcase2Projects[projectIndex - 1] : null;
+    const nextProject = projectIndex < showcase2Projects.length - 1 ? showcase2Projects[projectIndex + 1] : null;
+
+    const prevSlug = prevProject ? prevProject.slug : null;
+    const nextSlug = nextProject ? nextProject.slug : null;
+
     return {
         props: {
             project, // Pasa el objeto 'project' a la página.
+            prevSlug,
+            nextSlug,
         },
     };
 }
 
 // El componente de la página recibe 'project' y se lo pasa al componente de UI.
-const ProjectDetailsPage = ({ project }: { project: Showcase2Project }) => {
-    return <PortfolioDetailsShowcaseTwoMain project={project} />;
+const ProjectDetailsPage = ({ project, prevSlug, nextSlug }: { project: Showcase2Project; prevSlug: string | null; nextSlug: string | null }) => {
+    return <PortfolioDetailsShowcaseTwoMain project={project} prevSlug={prevSlug} nextSlug={nextSlug} />;
 };
 
 export default ProjectDetailsPage;

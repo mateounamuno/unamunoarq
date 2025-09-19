@@ -2,12 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
+import Link from 'next/link';
 
 interface PortfolioDetailsShowcaseTwoAreaProps {
   project: Showcase2Project | undefined;
+  prevSlug?: string | null;
+  nextSlug?: string | null;
 }
 
-export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDetailsShowcaseTwoAreaProps) {
+export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nextSlug }: PortfolioDetailsShowcaseTwoAreaProps) {
   // Validar que project existe antes de renderizar
   if (!project) {
     return null;
@@ -218,6 +221,21 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
         </div>
       )}
       {/* details title 4 */}
+
+      {/* navigation after thumbs */}
+      <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
+        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/showcase-2/${prevSlug}` : '#'}>
+          <i className="fa-sharp fa-regular fa-arrow-left"></i>
+          <span>Prev</span>
+        </Link>
+        <a href="#" className="tp_title_anim">
+          <span>• • •</span>
+        </a>
+        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/showcase-2/${nextSlug}` : '#'}>
+          <span>Next</span>
+          <i className="fa-sharp fa-regular fa-arrow-right"></i>
+        </Link>
+      </div>
     </>
   )
 }
