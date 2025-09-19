@@ -199,13 +199,11 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
         <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/${prevSlug}` : '#'}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
-          <span>Prev</span>
         </Link>
         <a href="#" className="tp_title_anim">
           <span>• • •</span>
         </a>
         <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/${nextSlug}` : '#'}>
-          <span>Next</span>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
       </div>

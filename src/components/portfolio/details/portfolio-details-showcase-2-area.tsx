@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 interface PortfolioDetailsShowcaseTwoAreaProps {
   project: Showcase2Project | undefined;
-  prevSlug?: string | null;
-  nextSlug?: string | null;
+  prevSlug: string;
+  nextSlug: string;
 }
 
 export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nextSlug }: PortfolioDetailsShowcaseTwoAreaProps) {
@@ -224,15 +224,13 @@ export default function PortfolioDetailsShowcaseTwoArea({ project, prevSlug, nex
 
       {/* navigation after thumbs */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/showcase-2/${prevSlug}` : '#'}>
+        <Link className="project-details-1-prev tp_title_anim" href={`/portfolio/showcase-2/${prevSlug}`}>
           <i className="fa-sharp fa-regular fa-arrow-left"></i>
-          <span>Prev</span>
         </Link>
         <a href="#" className="tp_title_anim">
           <span>• • •</span>
         </a>
-        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/showcase-2/${nextSlug}` : '#'}>
-          <span>Next</span>
+        <Link className="project-details-1-next tp_title_anim" href={`/portfolio/showcase-2/${nextSlug}`}>
           <i className="fa-sharp fa-regular fa-arrow-right"></i>
         </Link>
       </div>

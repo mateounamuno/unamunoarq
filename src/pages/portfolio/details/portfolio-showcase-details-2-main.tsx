@@ -23,8 +23,8 @@ import type { Showcase2Project } from '@/data/projects-showcase-2';
 // Define que este componente recibirá una prop llamada 'project' de tipo Showcase2Project.
 type Props = {
   project: Showcase2Project | undefined;
-  prevSlug?: string | null;
-  nextSlug?: string | null;
+  prevSlug: string;
+  nextSlug: string;
 };
 
 const PortfolioDetailsShowcaseTwoMain = ({ project, prevSlug, nextSlug }: Props) => {

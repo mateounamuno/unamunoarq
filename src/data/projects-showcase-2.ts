@@ -50,7 +50,7 @@ export type Showcase2Project = {
 export const showcase2Projects: Showcase2Project[] = [
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-1",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
@@ -111,7 +111,7 @@ export const showcase2Projects: Showcase2Project[] = [
     },
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-2",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
@@ -172,7 +172,7 @@ export const showcase2Projects: Showcase2Project[] = [
     },
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-3",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
@@ -233,7 +233,7 @@ export const showcase2Projects: Showcase2Project[] = [
     },
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-4",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
@@ -294,7 +294,7 @@ export const showcase2Projects: Showcase2Project[] = [
     },
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-5",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
@@ -355,7 +355,7 @@ export const showcase2Projects: Showcase2Project[] = [
     },
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-6",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",
@@ -416,7 +416,7 @@ export const showcase2Projects: Showcase2Project[] = [
     },
     {
         template: "showcase-2",
-        slug: "cielo-y-tierra",
+        slug: "cielo-y-tierra-7",
         title: "Casa: Cielo y Tierra",
         category: "Residencial",
         year: "2024",

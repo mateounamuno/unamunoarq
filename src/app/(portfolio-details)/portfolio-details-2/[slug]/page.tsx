@@ -32,16 +32,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const PortfolioDetailsTwoPage = ({ params }: Props) => {
-    const project = showcase2Projects.find((p) => p.slug === params.slug);
+    const projectIndex = showcase2Projects.findIndex((p) => p.slug === params.slug);
 
-    if (!project) {
+    if (projectIndex === -1) {
         notFound();
     }
 
-    // Debug: Log the project data
-    console.log("Rendering project:", project.slug, project.title);
+    const project = showcase2Projects[projectIndex];
 
-    return <PortfolioDetailsShowcaseTwoMain project={project} />;
+    // Calcular los slugs de navegación con lógica circular
+    const totalProjects = showcase2Projects.length;
+
+    // Navegación circular: si estamos en el primer proyecto, prev va al último
+    const prevIndex = projectIndex === 0 ? totalProjects - 1 : projectIndex - 1;
+    const nextIndex = projectIndex === totalProjects - 1 ? 0 : projectIndex + 1;
+
+    const prevSlug = showcase2Projects[prevIndex].slug;
+    const nextSlug = showcase2Projects[nextIndex].slug;
+
+
+    return <PortfolioDetailsShowcaseTwoMain project={project} prevSlug={prevSlug} nextSlug={nextSlug} />;
 };
 
 export default PortfolioDetailsTwoPage;

@@ -26,12 +26,16 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
     const project = showcase2Projects[projectIndex];
 
-    // Calcular los slugs de navegación
-    const prevProject = projectIndex > 0 ? showcase2Projects[projectIndex - 1] : null;
-    const nextProject = projectIndex < showcase2Projects.length - 1 ? showcase2Projects[projectIndex + 1] : null;
+    // Calcular los slugs de navegación con lógica circular
+    const totalProjects = showcase2Projects.length;
 
-    const prevSlug = prevProject ? prevProject.slug : null;
-    const nextSlug = nextProject ? nextProject.slug : null;
+    // Navegación circular: si estamos en el primer proyecto, prev va al último
+    const prevIndex = projectIndex === 0 ? totalProjects - 1 : projectIndex - 1;
+    const nextIndex = projectIndex === totalProjects - 1 ? 0 : projectIndex + 1;
+
+    const prevSlug = showcase2Projects[prevIndex].slug;
+    const nextSlug = showcase2Projects[nextIndex].slug;
+
 
     return {
         props: {
@@ -43,7 +47,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 // El componente de la página recibe 'project' y se lo pasa al componente de UI.
-const ProjectDetailsPage = ({ project, prevSlug, nextSlug }: { project: Showcase2Project; prevSlug: string | null; nextSlug: string | null }) => {
+const ProjectDetailsPage = ({ project, prevSlug, nextSlug }: { project: Showcase2Project; prevSlug: string; nextSlug: string }) => {
     return <PortfolioDetailsShowcaseTwoMain project={project} prevSlug={prevSlug} nextSlug={nextSlug} />;
 };
 
