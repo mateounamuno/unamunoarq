@@ -44,10 +44,10 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
     subtitle = "[ UI, Web Design ]",
     title = "Top Paddock",
     overview = "Eagle Films is an active player on the entertainment scene as a major Hollywood movies distributor and co-producer. They reach out to me to not only redesign their website but also to change the look and feel of their brand.",
-    client = 'LikoTheme',
+    autores = 'LikoTheme',
     services = 'UI / UX Design',
     location = 'USA',
-    releaseDate = "October '2024",
+    fotografia = "October '2024",
     showcaseThumbs,
   } = project;
 
@@ -116,7 +116,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span className="tp_title_anim">{client}</span>
+                          <span className="tp_title_anim">{autores}</span>
                         </div>
                       </div>
                     </div>
@@ -158,7 +158,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                       </div>
                       <div className="col-6">
                         <div className="showcase-details-overview-info-right">
-                          <span className="tp_title_anim">{releaseDate}</span>
+                          <span className="tp_title_anim">{fotografia}</span>
                         </div>
                       </div>
                     </div>

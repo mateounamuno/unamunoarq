@@ -9,10 +9,10 @@ export type Showcase2Project = {
     showInGrid?: boolean;
     subtitle?: string;
     summary?: string;
-    client?: string;
+    autores?: string;
     services?: string;
     industries?: string;
-    date?: string;
+    fotografia?: string;
     showcaseHeroBg: string;
     heroOverlayOpacity?: number; // 0 to 1
     movingGalleryTop: string[]; // 4
@@ -56,10 +56,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -114,10 +114,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -172,10 +172,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -230,10 +230,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -288,10 +288,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -346,10 +346,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -404,10 +404,10 @@ export const showcase2Projects: Showcase2Project[] = [
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        client: "Unamuno Arq.",
+        autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
-        date: "Abril 2024",
+        fotografia: "Abril 2024",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [

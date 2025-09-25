@@ -36,10 +36,10 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     title,
     subtitle,
     summary,
-    client,
+    autores,
     services,
     industries,
-    date,
+    fotografia,
     showcaseHeroBg,
     heroOverlayOpacity = 0.5,
     movingGalleryTop,
@@ -87,7 +87,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                 <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between showcase-details-2-project-info">
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>ARQUITECTURA</span>
-                    <h5>{client}</h5>
+                    <h5>{autores}</h5>
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>CATEGORIA</span>
@@ -99,7 +99,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>FECHA</span>
-                    <h5>{date}</h5>
+                    <h5>{fotografia}</h5>
                   </div>
                 </div>
               </div>

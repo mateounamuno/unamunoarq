@@ -9,10 +9,10 @@ export type ShowcaseProject = {
     showInGrid?: boolean;
     subtitle: string;
     overview?: string;
-    client?: string;
+    autores?: string;
     services?: string;
     location?: string;
-    releaseDate?: string;
+    fotografia?: string;
     showcaseHeroBg: string;
     heroOverlayOpacity?: number; // 0 to 1
     showcaseThumbs: string[]; // length 3 recommended
@@ -31,10 +31,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.20,
         showcaseThumbs: [
@@ -55,16 +55,16 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
-        showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
-        heroOverlayOpacity: 0.4,
+        fotografia: "Lorenzo Egues",
+        showcaseHeroBg: "/assets/img/inner-project/casa-nina/frente.png",
+        heroOverlayOpacity: 0.2,
         showcaseThumbs: [
-            "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
-            "/assets/img/inner-project/casa-al-lado/detail-2.jpg",
-            "/assets/img/inner-project/casa-al-lado/detail-3.jpg",
+            "/assets/img/inner-project/casa-nina/render1.jpg",
+            "/assets/img/inner-project/casa-nina/dibujo-horizontal.png",
+            "/assets/img/inner-project/casa-nina/render3.jpg",
         ],
     },
     {
@@ -79,12 +79,12 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
-        heroOverlayOpacity: 0.4,
+        heroOverlayOpacity: 0.1,
         showcaseThumbs: [
             "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-2.jpg",
@@ -103,10 +103,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -127,10 +127,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -151,10 +151,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -175,10 +175,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -199,10 +199,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -223,10 +223,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -247,10 +247,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -271,10 +271,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -295,10 +295,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -319,10 +319,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
@@ -343,10 +343,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        client: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        releaseDate: "Lorenzo Egues",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [

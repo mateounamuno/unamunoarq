@@ -92,11 +92,11 @@ export default function PortfolioDetailsTwoArea({ project, prevSlug, nextSlug }:
                                         <div className="project-details-1-info-wrap">
                                             <div className="project-details-1-info">
                                                 <span>Client</span>
-                                                <h4>{details2Project?.client || "LikoTheme"}</h4>
+                                                <h4>{details2Project?.autores || "LikoTheme"}</h4>
                                             </div>
                                             <div className="project-details-1-info">
                                                 <span>Date</span>
-                                                <h4>{details2Project?.date || "October '2022"}</h4>
+                                                <h4>{details2Project?.fotografia || "October '2022"}</h4>
                                             </div>
                                             <div className="project-details-1-info">
                                                 <span>Services</span>
