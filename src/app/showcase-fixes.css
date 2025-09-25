@@ -190,14 +190,14 @@
 
 .showcase-details-2-grid-img {
     position: relative;
-    height: 225px;
+    height: 300px;
     overflow: hidden;
 }
 
 .showcase-details-2-grid-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
