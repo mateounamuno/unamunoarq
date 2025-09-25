@@ -69,7 +69,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     },
     {
         template: "showcase",
-        slug: "casa-al-lado-3",
+        slug: "edificio-recova",
         title: "La casa de al lado.",
         category: "Experimentaciones",
         year: "2024",
