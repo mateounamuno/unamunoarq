@@ -31,10 +31,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+        autores: "Unamuno Arq.",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        fotografia: "Lorenzo Egues",
+        fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.20,
         showcaseThumbs: [
@@ -54,11 +54,11 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
-            "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
+            "En esta vivienda ubicada en un lote de 250 m² en la localidad de Malageño, se busca integrar de manera armónica los árboles existentes del terreno, acompañando con una orientación estratégica para optimizar la luz solar y garantizar una flexibilidad funcional en los espacios interiores. En lugar de desarrollar un volumen compacto con un único patio trasero, se optó por una disposición que incorpora dos patios de casi igual jerarquía. Esta configuración no solo permite aprovechar al máximo el lote, sino que también, integrar el exterior al interior de la vivienda en ambos sentidos. En planta baja, el espacio social se integra con el exterior y una doble altura en la que balconea la circulación de planta alta. En esta, el volumen privado de dormitorios, intenta leerse como un bloque independiente simplemente apoyado.",
+        autores: "Unamuno Arq.",
         services: "Arquitectura",
         location: "Córdoba, AR",
-        fotografia: "Lorenzo Egues",
+        fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/casa-nina/frente.png",
         heroOverlayOpacity: 0.2,
         showcaseThumbs: [
@@ -78,7 +78,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
-            "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
+            "En esta vivienda ubicada en un lote de 250 m2 en la localidad de Malageño, se busca integrar de manera armónica los árboles existentes del terreno, acompañando con una orientación estratégica para optimizar la luz solar y garantizar una flexibilidad funcional en los espacios interiores. En lugar de desarrollar un volumen compacto con un único patio trasero, se optó por una disposición que incorpora dos patios de casi igual jerarquía. Esta configuración no solo permite aprovechar al máximo el lote, sino que también, integrar el exterior al interior de la vivienda en ambos sentidos. En planta baja, el espacio social se integra con el exterior y una doble altura en la que balconea la circulación de planta alta. En esta, el volumen privado de dormitorios, intenta leerse como un bloque independiente simplemente apoyado.",
         autores: "Unamuno Arq. & Estudio RARE & Flesia Bertoya",
         services: "Arquitectura",
         location: "Córdoba, AR",
