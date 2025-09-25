@@ -98,7 +98,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -122,7 +122,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -146,7 +146,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -170,7 +170,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -194,7 +194,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -218,7 +218,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -242,7 +242,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -266,7 +266,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -290,7 +290,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -314,7 +314,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
@@ -338,7 +338,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
-        showOnHome: true,
+        showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
