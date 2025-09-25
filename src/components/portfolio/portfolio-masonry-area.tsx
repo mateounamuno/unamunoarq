@@ -22,7 +22,7 @@ const portfolio_masonry_data = projects.filter(p => p.showInGrid).slice(0, 6).ma
   id: index + 1,
   title: p.title,
   subtitle: p.category,
-  img: p.homeGrid || p.thumbnail,
+  img: p.homeGrid,
   slug: p.slug,
   template: p.template,
 }));

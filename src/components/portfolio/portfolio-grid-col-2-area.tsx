@@ -38,7 +38,7 @@ const getFilterClasses = (category: string): string => {
 // data
 const portfolio_data = projects.filter(p => p.showInGrid).slice(0, 6).map((p, index) => ({
   id: index + 1,
-  img: p.homeGrid || p.thumbnail,
+  img: p.homeGrid,
   category: p.category,
   title: p.title,
   year: p.year,

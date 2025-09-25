@@ -4,9 +4,6 @@ export type Showcase2Project = {
     title: string;
     category: string;
     year: string;
-    cover: string;
-    thumbnail: string;
-    gridThumbnail?: string;
     homeGrid?: string;
     showOnHome?: boolean;
     showInGrid?: boolean;
@@ -55,9 +52,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
@@ -116,9 +110,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
@@ -177,9 +168,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
@@ -238,9 +226,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
@@ -299,9 +284,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
@@ -360,9 +342,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",
@@ -421,9 +400,6 @@ export const showcase2Projects: Showcase2Project[] = [
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/cielo-y-tierra/grid.png",
-        cover: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        thumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
-        gridThumbnail: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
         showOnHome: true,
         showInGrid: true,
         subtitle: "Diseño arquitectónico sostenible",

@@ -21,7 +21,7 @@ const project_data = projects.filter(p => p.showInGrid).slice(0, 6).map((p, inde
   id: index + 1,
   title: p.title,
   category: p.category,
-  img: p.homeGrid || p.thumbnail,
+  img: p.homeGrid,
   year: p.year,
   slug: p.slug,
   template: p.template,
