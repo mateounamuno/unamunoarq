@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
@@ -27,6 +27,32 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     setLightboxAlt(imageAlt);
     setShowLightbox(true);
   };
+
+  // Scroll-triggered animation effect (desktop only)
+  useEffect(() => {
+    const handleScroll = () => {
+      // Only apply scroll effect on desktop (screen width > 768px)
+      if (window.innerWidth <= 768) return;
+
+      const scrollY = window.scrollY;
+      const topSlider = document.querySelector('.slider-wrap-top');
+      const bottomSlider = document.querySelector('.slider-wrap-bottom');
+
+      if (topSlider) {
+        topSlider.style.transform = `translateX(-${scrollY * 0.5}px)`;
+      }
+      if (bottomSlider) {
+        bottomSlider.style.transform = `translateX(${scrollY * 0.5}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   // Validar que project existe antes de renderizar
   if (!project) {

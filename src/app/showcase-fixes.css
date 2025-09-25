@@ -145,7 +145,8 @@
 .showcase-details-2-slider-wrap {
     display: flex;
     gap: 20px;
-    animation: scroll 30s linear infinite;
+    animation: none;
+    transition: transform 0.3s ease;
 }
 
 .showcase-details-2-slider-wrap.slider-wrap-top {
@@ -279,6 +280,25 @@
 
     100% {
         transform: translateX(-100%);
+    }
+}
+
+/* Mobile responsive - disable scroll effect and stack images */
+@media (max-width: 768px) {
+    .showcase-details-2-slider-wrap {
+        flex-direction: column;
+        gap: 20px;
+        animation: none;
+        transform: none !important;
+    }
+
+    .showcase-details-2-slider-item {
+        width: 100%;
+        height: 300px;
+    }
+
+    .showcase-details-2-grid-img {
+        height: 300px;
     }
 }
 
