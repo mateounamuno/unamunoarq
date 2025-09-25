@@ -152,7 +152,6 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/edificio-recova/moving-top-1.jpg",
             "/assets/img/inner-project/edificio-recova/moving-top-2.png",
             "/assets/img/inner-project/edificio-recova/moving-top-3.jpg"
-
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/edificio-recova/moving-bottom-1.jpg",

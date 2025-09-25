@@ -158,8 +158,8 @@
 
 .showcase-details-2-slider-item {
     flex-shrink: 0;
-    height: 420px;
-    border-radius: 8px;
+    width: 400px;
+    height: 225px;
     overflow: hidden;
 }
 
@@ -168,6 +168,7 @@
     height: 100%;
     object-fit: cover;
 }
+
 
 /* Full width image */
 .showcase-details-2-fullwidth-img {
@@ -188,9 +189,8 @@
 
 .showcase-details-2-grid-img {
     position: relative;
-    aspect-ratio: 4/3;
+    height: 225px;
     overflow: hidden;
-    border-radius: 8px;
 }
 
 .showcase-details-2-grid-img img {

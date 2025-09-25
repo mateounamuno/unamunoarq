@@ -136,14 +136,14 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
         <div className="showcase-details-2-slider-area pb-120 showcase-details-2-gallery">
           <div className="moving-gallery">
             <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
-              {movingGalleryTop.map((imgSrc, i) => (
+              {[...movingGalleryTop, ...movingGalleryTop].map((imgSrc, i) => (
                 <div key={i} className="showcase-details-2-slider-item">
                   <Image
                     src={imgSrc}
                     alt={`${title} gallery image ${i + 1}`}
                     width={400}
-                    height={300}
-                    style={{ height: "auto", cursor: "pointer" }}
+                    height={225}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
                     onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
                   />
                 </div>
@@ -154,14 +154,14 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
           {movingGalleryBottom && movingGalleryBottom.length > 0 && (
             <div className="moving-gallery">
               <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
-                {movingGalleryBottom.map((imgSrc, i) => (
+                {[...movingGalleryBottom, ...movingGalleryBottom].map((imgSrc, i) => (
                   <div key={i} className="showcase-details-2-slider-item">
                     <Image
                       src={imgSrc}
                       alt={`${title} gallery image ${i + 1}`}
-                      width={400}
-                      height={300}
-                      style={{ height: "auto", cursor: "pointer" }}
+                      width={300}
+                      height={420}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
                       onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
                     />
                   </div>
@@ -198,7 +198,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             alt={`${title} full width image`}
             width={1920}
             height={1080}
-            style={{ height: 'auto', cursor: 'pointer' }}
+            style={{ width: '100%', height: 'auto', cursor: 'pointer' }}
             onClick={() => openLightbox(fullWidthImage, `${title} full width image`)}
           />
         </div>
@@ -233,9 +233,9 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                     className="img-left"
                     src={gridImages[0]}
                     alt={`${title} grid image 1`}
-                    width={600}
-                    height={400}
-                    style={{ height: 'auto', cursor: 'pointer' }}
+                    width={400}
+                    height={225}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
                     onClick={() => openLightbox(gridImages[0], `${title} grid image 1`)}
                   />
                 </div>
@@ -246,9 +246,9 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                     className="img-right"
                     src={gridImages[1]}
                     alt={`${title} grid image 2`}
-                    width={600}
-                    height={400}
-                    style={{ height: 'auto', cursor: 'pointer' }}
+                    width={400}
+                    height={225}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
                     onClick={() => openLightbox(gridImages[1], `${title} grid image 2`)}
                   />
                 </div>
