@@ -23,10 +23,6 @@ export type Showcase2Project = {
     sectionTitles?: {
         section1?: string;
     } | null;
-    sectionSubtitles?: {
-        section1?: string;
-        section4?: string;
-    } | null;
     sectionContents?: {
         section1?: string;
         section2?: string;
@@ -78,12 +74,10 @@ export const showcase2Projects: Showcase2Project[] = [
         sectionTitles: {
             section1: "Simple y Significativo",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
+            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
             section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
         },
         navigationTexts: {
@@ -105,36 +99,32 @@ export const showcase2Projects: Showcase2Project[] = [
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
         release_date: "2022",
-        showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
+        showcaseHeroBg: "/assets/img/inner-project/casa-andar/banner.jpg",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
-            "/assets/img/inner-project/cielo-y-tierra/moving-top-1.jpg",
-            "/assets/img/inner-project/cielo-y-tierra/moving-top-2.png",
-            "/assets/img/inner-project/cielo-y-tierra/moving-top-3.jpg",
-            "/assets/img/inner-project/cielo-y-tierra/moving-top-4.jpg",
+            "/assets/img/inner-project/casa-andar/aerea.jpg",
+            "/assets/img/inner-project/casa-andar/draw-1.png",
+            "/assets/img/inner-project/casa-andar/frente.jpg"
         ],
         movingGalleryBottom: [
-            "/assets/img/inner-project/cielo-y-tierra/moving-bottom-1.jpg",
-            "/assets/img/inner-project/cielo-y-tierra/moving-bottom-2.png",
-            "/assets/img/inner-project/cielo-y-tierra/moving-bottom-3.jpg",
-            "/assets/img/inner-project/cielo-y-tierra/moving-bottom-4.png",
+            "/assets/img/inner-project/casa-andar/draw-2.png",
+            "/assets/img/inner-project/casa-andar/arriba.jpg",
+            "/assets/img/inner-project/casa-andar/draw-3.png"
         ],
-        fullWidthImage: "/assets/img/inner-project/cielo-y-tierra/full-width.jpg",
+        fullWidthImage: "/assets/img/inner-project/casa-andar/banner.jpg",
         gridImages: [
-            "/assets/img/inner-project/cielo-y-tierra/grid-1.jpg",
-            "/assets/img/inner-project/cielo-y-tierra/grid-2.png",
+            "/assets/img/inner-project/casa-andar/planta.JPEG",
+            "/assets/img/inner-project/casa-andar/draw-1.png",
         ],
         // Specific texts for this project
         visitWebsiteText: "Ver Proyecto",
         sectionTitles: {
             section1: "Andar y descubrir",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "En casa para andar no hay comienzo y no hay final. Si no se anda, no se descubre. Si no se descubre, no se encuentra el interior. Porque el andar es dinámico, la casa es dinámica. Porque es dinámica, puede cambiar. El andar a pie es primitivo, es por ello que la casa para andar es vernácula. La casa para andar es una performance artística. La casa es paisaje, porque en el paisaje andamos, anduvimos y andaremos. ",
+            section2: "Es un conjunto de piedras y ladrillos que un artista del land art encontró, parte en la montaña y parte en la ciudad. Luego las desparramó, según su orgánico y racional criterio, a pie de un cerro.",
+            section3: "En el andar hay paradas, porque quien no descansa no anda. Sin pausa, pero sin prisa. Si andar es de máquina, esta máquina funciona a sol y luna.",
             section4: "No es una imagen, son muchas imágenes,más bien diría que es un film. Es deriva y es errar, errar de errante y errar de error. Se amasó con paisaje y se quemó en un horno ladrillero.",
         },
         navigationTexts: {
@@ -180,12 +170,10 @@ export const showcase2Projects: Showcase2Project[] = [
         sectionTitles: {
             section1: "Simple y Significativo",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
+            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
             section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
         },
         navigationTexts: {
@@ -231,12 +219,10 @@ export const showcase2Projects: Showcase2Project[] = [
         sectionTitles: {
             section1: "Simple y Significativo",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
+            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
             section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
         },
         navigationTexts: {
@@ -282,12 +268,10 @@ export const showcase2Projects: Showcase2Project[] = [
         sectionTitles: {
             section1: "Simple y Significativo",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
+            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
             section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
         },
         navigationTexts: {
@@ -333,12 +317,10 @@ export const showcase2Projects: Showcase2Project[] = [
         sectionTitles: {
             section1: "Simple y Significativo",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
+            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
             section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
         },
         navigationTexts: {
@@ -384,12 +366,10 @@ export const showcase2Projects: Showcase2Project[] = [
         sectionTitles: {
             section1: "Simple y Significativo",
         },
-        sectionSubtitles: {
-            section1: "Objetivo",
-            section4: "Detalles del Caso",
-        },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
+            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
             section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
         },
         navigationTexts: {

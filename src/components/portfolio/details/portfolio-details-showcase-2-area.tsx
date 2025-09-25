@@ -34,12 +34,11 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
   }
   const {
     title,
-    subtitle,
     summary,
     autores,
     services,
     industries,
-    fotografia,
+    release_date,
     showcaseHeroBg,
     heroOverlayOpacity = 0.5,
     movingGalleryTop,
@@ -47,7 +46,6 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     fullWidthImage,
     gridImages,
     sectionTitles,
-    sectionSubtitles,
     sectionContents,
     navigationTexts,
     visitWebsiteText
@@ -99,7 +97,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                   </div>
                   <div className="showcase-details-2-info tp_fade_bottom">
                     <span>FECHA</span>
-                    <h5>{fotografia}</h5>
+                    <h5>{release_date}</h5>
                   </div>
                 </div>
               </div>
@@ -176,7 +174,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {/* moving image */}
 
       {/* details title 2 */}
-      {sectionTitles?.section2 && sectionContents?.section2 && (
+      {sectionContents?.section2 && (
         <div className="showcase-details-2-area pb-120 showcase-details-2-section">
           <div className="container">
             <div className="row justify-content-center">
@@ -208,7 +206,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {/* full width image */}
 
       {/* detail title 3 */}
-      {sectionTitles?.section3 && sectionContents?.section3 && (
+      {sectionContents?.section3 && (
         <div className="showcase-details-2-area pt-120 pb-120 showcase-details-2-section">
           <div className="container">
 
