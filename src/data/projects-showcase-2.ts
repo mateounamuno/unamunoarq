@@ -76,9 +76,9 @@ export const showcase2Projects: Showcase2Project[] = [
         },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
-            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
-            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
-            section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza. Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
+            section3: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
+            section4: "",
         },
         navigationTexts: {
             prev: "Anterior",
@@ -141,11 +141,11 @@ export const showcase2Projects: Showcase2Project[] = [
         homeGrid: "/assets/img/inner-project/edificio-recova/grid.jpg",
         showOnHome: true,
         showInGrid: true,
-        summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
+        summary: "Un proyecto vigente, que indagó sobre cuestiones historicistas de la arquitectura colonial y del siglo XIX de nuestro país, en relación con una tipología contemporánea.",
         autores: "Unamuno Arq.",
         services: "Diseño Arquitectónico",
-        industries: "Río Cuarto, Córdoba, AR",
-        release_date: "Abril 2024",
+        industries: "Salta, AR",
+        release_date: "2019",
         showcaseHeroBg: "/assets/img/inner-project/edificio-recova/banner.png",
         heroOverlayOpacity: 0.25,
         movingGalleryTop: [
@@ -166,13 +166,13 @@ export const showcase2Projects: Showcase2Project[] = [
         // Specific texts for this project
         visitWebsiteText: "Ver Proyecto",
         sectionTitles: {
-            section1: "Simple y Significativo",
+            section1: "Colonial y Contemporáneo.",
         },
         sectionContents: {
-            section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
-            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza.",
-            section3: "Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
-            section4: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
+            section1: "Uno de mis primeros encargos en el año 2019 que lamentablemente quedó en proyecto y la obra nunca se ejecutó. Sin embargo, un proyecto vigente, que indagó sobre cuestiones historicistas de la arquitectura colonial y del siglo XIX de nuestro país, en relación con una tipología contemporánea.",
+            section2: "Ubicado en Vicente López esquina con Pje. La Tablada de la ciudad de Salta, el encargo comenzó como un pequeño “hotel”. Ese hotel se transformó en un conjunto de unidades para alquiler transitorio (turismo), 18 tipologías mínimas, por encima de una planta libre que contiene estacionamiento, un local comercial y un patio.",
+            section3: "Ingresar por una recova, encontrarse con materiales y texturas nobles y pesadas, y recorrer un tiempo por el espacio intermedio hasta llegar a un volumen de circulación permeable como mirador, fueron algunas ideas que pretendían hacer alusión a situaciones espaciales de nuestra arquitectura del pasado.",
+            section4: "Otra idea consciente es la llegada de la escalera a un espacio “múltiple”. No es un “palier”, no es un espacio de distribución/circulación… es una expansión de las tipologías, un espacio donde mirar, donde ventilar, donde encontrarse con los vecinos… Las tipologías son mínimas… quizás demasiadas compactas a pedido del cliente, pero con una contemporaneidad explícita en su flexibilidad y compacidad.",
         },
         navigationTexts: {
             prev: "Anterior",
@@ -189,7 +189,7 @@ export const showcase2Projects: Showcase2Project[] = [
         showOnHome: false,
         showInGrid: true,
         summary: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural.",
-        autores: "Unamuno Arq.",
+        autores: "Unamuno Arq. & RARE & Esteras Perrote",
         services: "Diseño Arquitectónico",
         industries: "Río Cuarto, Córdoba, AR",
         release_date: "Abril 2024",
