@@ -147,7 +147,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row">
               <div className="col-xl-10">
                 <div className="showcase-details-2-section-left">
-                  <p className="fs-5">{sectionContents.section1}</p>
+                  <p className="fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section1 }} />
                 </div>
               </div>
 
@@ -206,7 +206,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row justify-content-center">
               <div className="col-xl-10">
                 <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="pb-25 fs-5">{sectionContents.section2}</p>
+                  <p className="pb-25 fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section2 }} />
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row justify-content-center">
               <div className="col-xl-10">
                 <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="fs-5">{sectionContents.section3}</p>
+                  <p className="fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section3 }} />
                 </div>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
             <div className="row justify-content-center">
               <div className="col-xl-10">
                 <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="fs-5">{sectionContents.section4}</p>
+                  <p className="fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section4 }} />
                 </div>
               </div>
             </div>
