@@ -21,7 +21,7 @@ const PortfolioDetailsTwoPage = () => {
                 <div className="portfolio-item">
                   <div className="portfolio-img">
                     <Image
-                      src={project.cover}
+                      src={project.homeGrid || project.showcaseHeroBg}
                       alt={project.title}
                       width={400}
                       height={300}
@@ -30,7 +30,7 @@ const PortfolioDetailsTwoPage = () => {
                   </div>
                   <div className="portfolio-content p-20">
                     <h4>{project.title}</h4>
-                    <p>{project.subtitle}</p>
+                    <p>{project.summary}</p>
                     <Link
                       href={`/portfolio/showcase-2/${project.slug}`}
                       className="btn btn-primary"
