@@ -199,11 +199,11 @@ const PortfolioDetailsTwoMain = ({ project }: Props) => {
                                        <div className="project-details-1-info-wrap">
                                           <div className="project-details-1-info">
                                              <span>Client</span>
-                                             <h4>{project.client || "—"}</h4>
+                                             <h4>{project.autores || "—"}</h4>
                                           </div>
                                           <div className="project-details-1-info">
                                              <span>Date</span>
-                                             <h4>{project.date || "—"}</h4>
+                                             <h4>{project.release_date || "—"}</h4>
                                           </div>
                                           <div className="project-details-1-info">
                                              <span>Services</span>
