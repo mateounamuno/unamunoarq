@@ -185,7 +185,7 @@ export const showcase2Projects: Showcase2Project[] = [
         title: "Remodelación AR",
         category: "Residencial",
         year: "2024",
-        homeGrid: "/assets/img/inner-project/remodelacion-ar/grid.png",
+        homeGrid: "/assets/img/inner-project/remodelacion-ar/grid.jpg",
         showOnHome: false,
         showInGrid: true,
         summary: "Con intervenciones mínimas, la vivienda volvió a respirar.",
