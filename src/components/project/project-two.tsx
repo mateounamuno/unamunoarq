@@ -18,7 +18,7 @@ const getProjectLink = (slug: string, template: string): string => {
 
 const project_data = projects.filter(p => p.showInGrid).slice(0, 7).map((p, index) => ({
   id: index + 1,
-  img: p.homeGrid,
+  img: p.homeGrid || p.showcaseHeroBg,
   subtitle: p.category,
   title: p.title,
   slug: p.slug,

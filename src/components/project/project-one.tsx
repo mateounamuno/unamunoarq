@@ -36,7 +36,7 @@ const project_data: IProject[] = (
     template: p.template,
     cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
     cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
-    img: p.homeGrid,
+    img: p.homeGrid || p.showcaseHeroBg,
   }))
 ) as IProject[];
 
