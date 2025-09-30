@@ -35,8 +35,8 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       if (window.innerWidth <= 768) return;
 
       const scrollY = window.scrollY;
-      const topSlider = document.querySelector('.slider-wrap-top');
-      const bottomSlider = document.querySelector('.slider-wrap-bottom');
+      const topSlider = document.querySelector('.slider-wrap-top') as HTMLElement;
+      const bottomSlider = document.querySelector('.slider-wrap-bottom') as HTMLElement;
 
       if (topSlider) {
         topSlider.style.transform = `translateX(-${scrollY * 0.5}px)`;
