@@ -132,7 +132,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/la-barranca/banner.jpg",
-        heroOverlayOpacity: 0.2,
+        heroOverlayOpacity: 0.4,
         showcaseThumbs: [
             "/assets/img/inner-project/la-barranca/detail-1.jpg",
             "/assets/img/inner-project/la-barranca/detail-2.jpg",
