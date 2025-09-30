@@ -105,7 +105,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
             </div>
             <div className="col-xl-8">
               <div className="showcase-details-overview-right">
-                <p className="tp_title_anim" data-fade-offset="30" data-duration="1.2">{overview}</p>
+                <p className="tp_title_anim" data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
                 <div className="showcase-details-overview-info">
                   <div className="showcase-details-overview-info-item tp_fade_bottom">
                     <div className="row align-items-center">
