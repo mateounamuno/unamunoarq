@@ -345,10 +345,7 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/molt/moving-bottom-4.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/molt/full-width.jpg",
-        gridImages: [
-            "",
-            "",
-        ],
+        gridImages: [],
         // Specific texts for this project
         visitWebsiteText: "Ver Proyecto",
         sectionTitles: {
