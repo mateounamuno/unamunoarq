@@ -315,6 +315,7 @@ export const showcase2Projects: Showcase2Project[] = [
             prev: "Anterior",
             next: "Siguiente",
         },
+
     },
     {
         template: "showcase-2",
@@ -361,8 +362,54 @@ export const showcase2Projects: Showcase2Project[] = [
             prev: "Anterior",
             next: "Siguiente",
         },
+    },
+    {
+        template: "showcase-2",
+        slug: "cafe-del-popolo",
+        title: "Caffè del Popolo",
+        category: "Comercial",
+        year: "2023",
+        homeGrid: "/assets/img/inner-project/molt/grid.png",
+        showOnHome: false,
+        showInGrid: true,
+        summary: "Una experiencia sintética, atemporal y unificadora.",
+        autores: "Unamuno Arq. & Estudio Parvas",
+        services: "Diseño Arquitectónico",
+        industries: "Córdoba, AR",
+        release_date: "Abril 2024",
+        showcaseHeroBg: "/assets/img/inner-project/cafe-popolo/banner.jpg",
+        heroOverlayOpacity: 0.25,
+        movingGalleryTop: [
+            "/assets/img/inner-project/cafe-popolo/moving-top-1.jpg",
+            "/assets/img/inner-project/cafe-popolo/moving-top-2.jpg",
+            "/assets/img/inner-project/cafe-popolo/moving-top-3.jpg",
+        ],
+        movingGalleryBottom: [
+            "/assets/img/inner-project/cafe-popolo/moving-bottom-1.jpg",
+            "/assets/img/inner-project/cafe-popolo/moving-bottom-2.jpg",
+            "/assets/img/inner-project/cafe-popolo/moving-bottom-3.jpg",
+        ],
+        fullWidthImage: "/assets/img/inner-project/cafe-popolo/full-width.jpg",
+        gridImages: [
+            "/assets/img/inner-project/cafe-popolo/grid-1.png",
+            "/assets/img/inner-project/cafe-popolo/grid-2.jpg",
+        ],
+        // Specific texts for this project
+        visitWebsiteText: "Ver Proyecto",
+        sectionTitles: {
+            section1: "Atemporal y Surreal",
+        },
+        sectionContents: {
+            section1: "Molt propone un espacio abstracto. Una experiencia sintética, atemporal y unificadora. <br/> Con un material translúcido como predominante, el espacio se transforma en una gran lámpara que destaca por sobre el espacio público corriente. <br/> Casi como una invitación a una cápsula del tiempo, una realidad paralela o surreal.",
+            section2: "La forma de exhibir los productos de manera provocativa, también potencian la experiencia peculiar con los clientes.",
+            section3: "",
+            section4: "",
+        },
+        navigationTexts: {
+            prev: "Anterior",
+            next: "Siguiente",
+        },
     }
-
 ];
 
 
