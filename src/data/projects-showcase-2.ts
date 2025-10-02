@@ -409,6 +409,50 @@ export const showcase2Projects: Showcase2Project[] = [
             prev: "Anterior",
             next: "Siguiente",
         },
+    },
+    {
+        template: "showcase-2",
+        slug: "tregua",
+        title: "Tregua",
+        category: "Comercial",
+        year: "2023",
+        homeGrid: "/assets/img/inner-project/tregua/grid.png",
+        showOnHome: false,
+        showInGrid: true,
+        summary: "Un restaurante de comida con coctelería.",
+        autores: "Unamuno Arq. & Estudio Parvas",
+        services: "Diseño Arquitectónico",
+        industries: "Córdoba, AR",
+        release_date: "Abril 2023",
+        showcaseHeroBg: "/assets/img/inner-project/tregua/banner.jpg",
+        heroOverlayOpacity: 0.15,
+        movingGalleryTop: [
+            "/assets/img/inner-project/tregua/moving-top-1.jpg",
+            "/assets/img/inner-project/tregua/moving-top-2.jpg",
+            "/assets/img/inner-project/tregua/moving-top-3.jpg",
+        ],
+        movingGalleryBottom: [
+            "/assets/img/inner-project/tregua/moving-bottom-1.jpg",
+            "/assets/img/inner-project/tregua/moving-bottom-2.jpg",
+            "/assets/img/inner-project/tregua/moving-bottom-3.jpg",
+        ],
+        fullWidthImage: "/assets/img/inner-project/tregua/full-width.jpg",
+        gridImages: [],
+        // Specific texts for this project
+        visitWebsiteText: "Ver Proyecto",
+        sectionTitles: {
+            section1: "Un diálogo entre rubros.",
+        },
+        sectionContents: {
+            section1: "Tregua es un restaurante de comida con coctelería, ubicado en barrio General Paz de la ciudad de Córdoba. Se intentó generar un ambiente que pueda dialogar con los dos rubros que interactúan en la cocina, combinando materiales pulidos y brillosos, con otros más opacos y nobles como el hormigón.",
+            section2: "El revestimiento predominante está compuesto por placas de hormigón prefabricadas de manera artesanal, que de algún modo intentan dialogar con la fachada del edificio donde se encuentra el local. Al mismo tiempo, identificar ese revestimiento como derivado del Banco RARX. <br/> Mobiliario diseñado en el año 2021",
+            section3: "",
+            section4: "",
+        },
+        navigationTexts: {
+            prev: "Anterior",
+            next: "Siguiente",
+        },
     }
 ];
 
