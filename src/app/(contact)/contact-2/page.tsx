@@ -1,14 +1,74 @@
+"use client";
+import { gsap } from "gsap";
 import React from "react";
-import { Metadata } from "next";
-import ContactTwoMain from "@/pages/contact/contact-2";
+import useScrollSmooth from "@/hooks/use-scroll-smooth";
+import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
-export const metadata: Metadata = {
-  title: "Liko - Contact 2 Page",
-};
+// internal imports
+import Wrapper from "@/layouts/wrapper";
+import HeaderOne from "@/layouts/headers/header-one";
+import FooterTwo from "@/layouts/footers/footer-two";
+// animation
+import { charAnimation } from "@/utils/title-animation";
+import ContactLocationTwo from "@/components/contact/contact-location-2";
 
 const ContactTwoPage = () => {
+  useScrollSmooth();
+
+  useGSAP(() => {
+    const timer = setTimeout(() => {
+      charAnimation();
+    }, 100);
+    return () => clearTimeout(timer);
+  });
+
   return (
-    <ContactTwoMain/>
+    <Wrapper>
+      {/* header area start */}
+      <HeaderOne />
+      {/* header area end */}
+
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <div
+            className="inner-bg"
+            style={{
+              backgroundImage:
+                "url(/assets/img/home-01/team/team-details-bg.png)",
+            }}
+          >
+            <main>
+              {/* hero area start */}
+              <div className="tm-hero-area tm-hero-ptb p-relative">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xl-12">
+                      <div className="tm-hero-content">
+                        <span className="tm-hero-subtitle">UNAMUNO ARQUITECTURA</span>
+                        <h4 className="tm-hero-title-big tp-char-animation">
+                          Get <br /> in touch
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* hero area end */}
+
+              {/* contact location */}
+              <ContactLocationTwo />
+              {/* contact location */}
+            </main>
+
+            {/* footer area */}
+            <FooterTwo topCls="" />
+            {/* footer area */}
+          </div>
+        </div>
+      </div>
+    </Wrapper>
   );
 };
 

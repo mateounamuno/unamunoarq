@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { QuoteThree, Share, Tag } from "@/components/svg";
-import BlogDetailsAuthor from "./blog-details-author";
-import BlogDetailsNavigation from "./blog-details-navigation";
-import BlogDetailsComments from "./blog-details-comments";
-import BlogReplyForm from "@/components/form/blog-reply-form";
+import { QuoteThree } from "@/components/svg";
 
 // images
 import details_thumb_1 from "@/assets/img/inner-blog/blog-details/blog-details-2.jpg";
