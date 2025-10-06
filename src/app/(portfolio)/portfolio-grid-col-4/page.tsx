@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
@@ -73,9 +73,8 @@ const PortfolioGridColFourPage = () => {
                     </div>
                     <div className="tm-hero-text tp_title_anim">
                       <p>
-                        We're a diverse team that works as fancies attention to
-                        details, enjoys beers on Friday nights and aspires to
-                        design the dent in the universe.
+                        Somos un equipo diverso que trabaja con atención al
+                        detalle y aspira a diseñar espacios únicos.
                       </p>
                     </div>
                   </div>
