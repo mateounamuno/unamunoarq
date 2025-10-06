@@ -104,12 +104,14 @@ export const showcase2Projects: Showcase2Project[] = [
         movingGalleryTop: [
             "/assets/img/inner-project/casa-andar/aerea.jpg",
             "/assets/img/inner-project/casa-andar/draw-1.png",
-            "/assets/img/inner-project/casa-andar/frente.jpg"
+            "/assets/img/inner-project/casa-andar/frente.jpg",
+            "/assets/img/inner-project/casa-andar/aerea.jpg"
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/casa-andar/draw-2.png",
             "/assets/img/inner-project/casa-andar/arriba.jpg",
-            "/assets/img/inner-project/casa-andar/draw-3.png"
+            "/assets/img/inner-project/casa-andar/draw-3.png",
+            "/assets/img/inner-project/casa-andar/draw-2.png"
         ],
         fullWidthImage: "/assets/img/inner-project/casa-andar/banner.jpg",
         gridImages: [
@@ -151,12 +153,14 @@ export const showcase2Projects: Showcase2Project[] = [
         movingGalleryTop: [
             "/assets/img/inner-project/edificio-recova/moving-top-1.jpg",
             "/assets/img/inner-project/edificio-recova/moving-top-2.png",
-            "/assets/img/inner-project/edificio-recova/moving-top-3.jpg"
+            "/assets/img/inner-project/edificio-recova/moving-top-3.jpg",
+            "/assets/img/inner-project/edificio-recova/moving-top-1.jpg"
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/edificio-recova/moving-bottom-1.jpg",
             "/assets/img/inner-project/edificio-recova/moving-bottom-2.png",
-            "/assets/img/inner-project/edificio-recova/moving-bottom-3.png"
+            "/assets/img/inner-project/edificio-recova/moving-bottom-3.png",
+            "/assets/img/inner-project/edificio-recova/moving-bottom-1.jpg"
         ],
         fullWidthImage: "/assets/img/inner-project/edificio-recova/banner.png",
         gridImages: [
@@ -199,11 +203,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/remodelacion-ar/moving-top-1.jpg",
             "/assets/img/inner-project/remodelacion-ar/moving-top-2.jpg",
             "/assets/img/inner-project/remodelacion-ar/moving-top-3.jpg",
+            "/assets/img/inner-project/remodelacion-ar/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/remodelacion-ar/moving-bottom-1.jpg",
             "/assets/img/inner-project/remodelacion-ar/moving-bottom-2.jpg",
             "/assets/img/inner-project/remodelacion-ar/moving-bottom-3.jpg",
+            "/assets/img/inner-project/remodelacion-ar/moving-bottom-1.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/remodelacion-ar/full-width.jpg",
         gridImages: [
@@ -245,11 +251,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/atelier-artista/moving-top-1.jpg",
             "/assets/img/inner-project/atelier-artista/moving-top-2.png",
             "/assets/img/inner-project/atelier-artista/moving-top-3.jpg",
+            "/assets/img/inner-project/atelier-artista/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/atelier-artista/moving-bottom-1.png",
             "/assets/img/inner-project/atelier-artista/moving-bottom-2.png",
-            "/assets/img/inner-project/atelier-artista/moving-bottom-3.png"
+            "/assets/img/inner-project/atelier-artista/moving-bottom-3.png",
+            "/assets/img/inner-project/atelier-artista/moving-bottom-1.png"
         ],
         fullWidthImage: "/assets/img/inner-project/atelier-artista/full-width.jpg",
         gridImages: [
@@ -292,11 +300,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/patio-con-casa/moving-top-1.jpg",
             "/assets/img/inner-project/patio-con-casa/moving-top-2.jpg",
             "/assets/img/inner-project/patio-con-casa/moving-top-3.jpg",
+            "/assets/img/inner-project/patio-con-casa/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/patio-con-casa/moving-bottom-1.jpg",
             "/assets/img/inner-project/patio-con-casa/moving-bottom-2.jpg",
             "/assets/img/inner-project/patio-con-casa/moving-bottom-3.jpg",
+            "/assets/img/inner-project/patio-con-casa/moving-bottom-1.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/patio-con-casa/full-width.jpg",
         gridImages: [],
@@ -383,11 +393,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/cafe-popolo/moving-top-1.jpg",
             "/assets/img/inner-project/cafe-popolo/moving-top-2.jpg",
             "/assets/img/inner-project/cafe-popolo/moving-top-3.jpg",
+            "/assets/img/inner-project/cafe-popolo/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/cafe-popolo/moving-bottom-1.jpg",
             "/assets/img/inner-project/cafe-popolo/moving-bottom-2.jpg",
             "/assets/img/inner-project/cafe-popolo/moving-bottom-3.jpg",
+            "/assets/img/inner-project/cafe-popolo/moving-bottom-1.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/cafe-popolo/full-width.jpg",
         gridImages: [],
@@ -427,11 +439,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/tregua/moving-top-1.jpg",
             "/assets/img/inner-project/tregua/moving-top-2.jpg",
             "/assets/img/inner-project/tregua/moving-top-3.jpg",
+            "/assets/img/inner-project/tregua/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/tregua/moving-bottom-1.jpg",
             "/assets/img/inner-project/tregua/moving-bottom-2.jpg",
             "/assets/img/inner-project/tregua/moving-bottom-3.jpg",
+            "/assets/img/inner-project/tregua/moving-bottom-1.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/tregua/full-width.jpg",
         gridImages: [],
@@ -471,11 +485,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/la-macarena/moving-top-1.jpg",
             "/assets/img/inner-project/la-macarena/moving-top-2.jpg",
             "/assets/img/inner-project/la-macarena/moving-top-3.jpg",
+            "/assets/img/inner-project/la-macarena/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/la-macarena/moving-bottom-1.jpg",
             "/assets/img/inner-project/la-macarena/moving-bottom-2.jpg",
             "/assets/img/inner-project/la-macarena/moving-bottom-3.jpg",
+            "/assets/img/inner-project/la-macarena/moving-bottom-1.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/la-macarena/full-width.png",
         gridImages: [],
@@ -515,11 +531,13 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/banco-rarx/moving-top-1.jpg",
             "/assets/img/inner-project/banco-rarx/moving-top-2.jpg",
             "/assets/img/inner-project/banco-rarx/moving-top-3.jpg",
+            "/assets/img/inner-project/banco-rarx/moving-top-1.jpg",
         ],
         movingGalleryBottom: [
             "/assets/img/inner-project/banco-rarx/moving-bottom-1.jpg",
             "/assets/img/inner-project/banco-rarx/moving-bottom-2.jpg",
             "/assets/img/inner-project/banco-rarx/moving-bottom-3.jpg",
+            "/assets/img/inner-project/banco-rarx/moving-bottom-1.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/banco-rarx/full-width.jpg",
         gridImages: [],
