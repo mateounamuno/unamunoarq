@@ -390,10 +390,7 @@ export const showcase2Projects: Showcase2Project[] = [
             "/assets/img/inner-project/cafe-popolo/moving-bottom-3.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/cafe-popolo/full-width.jpg",
-        gridImages: [
-            "/assets/img/inner-project/cafe-popolo/grid-1.png",
-            "/assets/img/inner-project/cafe-popolo/grid-2.jpg",
-        ],
+        gridImages: [],
         // Specific texts for this project
         visitWebsiteText: "Ver Proyecto",
         sectionTitles: {
