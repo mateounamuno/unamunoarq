@@ -32,7 +32,9 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
   }, []);
 
   const items = React.useMemo(() => {
-    return projects.filter(p => p.showInGrid && (active === 'All' || p.category === active));
+    const filtered = projects.filter(p => p.showInGrid && (active === 'All' || p.category === active));
+    // Ordenar alfabéticamente por título
+    return filtered.sort((a, b) => a.title.localeCompare(b.title, 'es', { sensitivity: 'base' }));
   }, [active]);
 
   // Reset visible count when category changes

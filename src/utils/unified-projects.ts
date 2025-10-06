@@ -9,7 +9,7 @@ export type UnifiedProject = {
     originalProject: ShowcaseProject | Showcase2Project;
 };
 
-// Función para obtener todos los proyectos unificados
+// Función para obtener todos los proyectos unificados ordenados alfabéticamente
 export function getAllUnifiedProjects(): UnifiedProject[] {
     const showcaseUnified: UnifiedProject[] = showcaseProjects.map(project => ({
         slug: project.slug,
@@ -25,7 +25,9 @@ export function getAllUnifiedProjects(): UnifiedProject[] {
         originalProject: project
     }));
 
-    return [...showcaseUnified, ...showcase2Unified];
+    // Combinar y ordenar alfabéticamente por título
+    const allProjects = [...showcaseUnified, ...showcase2Unified];
+    return allProjects.sort((a, b) => a.title.localeCompare(b.title, 'es', { sensitivity: 'base' }));
 }
 
 // Función para encontrar el proyecto anterior y siguiente en la lista unificada

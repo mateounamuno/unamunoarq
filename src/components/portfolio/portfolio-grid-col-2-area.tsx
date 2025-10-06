@@ -35,17 +35,21 @@ const getFilterClasses = (category: string): string => {
   return categoryMap[category] || 'cat1';
 };
 
-// data
-const portfolio_data = projects.filter(p => p.showInGrid).slice(0, 6).map((p, index) => ({
-  id: index + 1,
-  img: p.homeGrid || p.showcaseHeroBg,
-  category: p.category,
-  title: p.title,
-  year: p.year,
-  show: getFilterClasses(p.category),
-  slug: p.slug,
-  template: p.template,
-}));
+// data - ordenados alfabéticamente
+const portfolio_data = projects
+  .filter(p => p.showInGrid)
+  .sort((a, b) => a.title.localeCompare(b.title, 'es', { sensitivity: 'base' }))
+  .slice(0, 6)
+  .map((p, index) => ({
+    id: index + 1,
+    img: p.homeGrid || p.showcaseHeroBg,
+    category: p.category,
+    title: p.title,
+    year: p.year,
+    show: getFilterClasses(p.category),
+    slug: p.slug,
+    template: p.template,
+  }));
 
 export default function PortfolioGridColTwoArea() {
   const { initIsotop, isotopContainer } = useIsotop();

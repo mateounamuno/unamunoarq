@@ -18,10 +18,14 @@ const getProjectLink = (slug: string, template: string): string => {
   }
 };
 
-// Función para crear enlaces de proyectos
+// Función para crear enlaces de proyectos ordenados alfabéticamente
 const createProjectLinks = (category: string) => {
   const categoryProjects = getProjectsByCategory(category);
-  return categoryProjects.map(project => ({
+  // Ordenar alfabéticamente por título
+  const sortedProjects = categoryProjects.sort((a, b) =>
+    a.title.localeCompare(b.title, 'es', { sensitivity: 'base' })
+  );
+  return sortedProjects.map(project => ({
     title: project.title,
     link: getProjectLink(project.slug, project.template)
   }));

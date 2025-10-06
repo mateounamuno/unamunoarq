@@ -31,13 +31,17 @@ const getProjectLink = (slug: string, template: string): string => {
 };
 
 const project_data: IProject[] = (
-  projects.filter(p => p.showOnHome).slice(0, 6).map((p, index) => ({
-    slug: p.slug,
-    template: p.template,
-    cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
-    cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
-    img: p.homeGrid || p.showcaseHeroBg,
-  }))
+  projects
+    .filter(p => p.showOnHome)
+    .sort((a, b) => a.title.localeCompare(b.title, 'es', { sensitivity: 'base' }))
+    .slice(0, 6)
+    .map((p, index) => ({
+      slug: p.slug,
+      template: p.template,
+      cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
+      cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
+      img: p.homeGrid || p.showcaseHeroBg,
+    }))
 ) as IProject[];
 
 function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
