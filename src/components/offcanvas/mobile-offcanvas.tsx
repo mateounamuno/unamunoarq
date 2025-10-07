@@ -4,10 +4,10 @@ import { Behance, CloseTwo, Dribble, InstagramTwo, Youtube } from "../svg";
 
 // images
 import logo from "@/assets/img/logo/logo-mini.png";
-import gallery_1 from "@/assets/img/menu/offcanvas/offcanvas-1.jpg";
-import gallery_2 from "@/assets/img/menu/offcanvas/offcanvas-2.jpg";
-import gallery_3 from "@/assets/img/menu/offcanvas/offcanvas-3.jpg";
-import gallery_4 from "@/assets/img/menu/offcanvas/offcanvas-4.jpg";
+import gallery_1 from "@/assets/img/menu/offcanvas/offcanvas-1.png";
+import gallery_2 from "@/assets/img/menu/offcanvas/offcanvas-2.png";
+import gallery_3 from "@/assets/img/menu/offcanvas/offcanvas-3.png";
+import gallery_4 from "@/assets/img/menu/offcanvas/offcanvas-4.png";
 import MobileMenus from "./mobile-menus";
 
 const gallery_images = [gallery_1, gallery_2, gallery_3, gallery_4];
@@ -50,9 +50,13 @@ export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IPr
               <div className="row gx-2">
                 {gallery_images.map((item, i) => (
                   <div className="col-md-3 col-3" key={i}>
-                    <div className="tp-offcanvas-gallery-img fix">
+                    <div className="tp-offcanvas-gallery-img fix" style={{ width: '80px', height: '100px', overflow: 'hidden' }}>
                       <a href="#">
-                        <Image src={item} alt="gallery-img" />
+                        <Image
+                          src={item}
+                          alt="gallery-img"
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
                       </a>
                     </div>
                   </div>
