@@ -161,7 +161,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
               ))}
               {/* Duplicate images for smooth scrolling */}
               {movingGalleryTop.map((imgSrc, i) => (
-                <div key={`top-dup-${i}`} className="showcase-details-2-slider-item">
+                <div key={`top-dup-${i}`} className="showcase-details-2-slider-item duplicate-for-animation">
                   <Image
                     src={imgSrc}
                     alt={`${title} gallery image ${i + 1}`}
@@ -193,7 +193,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                 ))}
                 {/* Duplicate images for smooth scrolling */}
                 {movingGalleryBottom.map((imgSrc, i) => (
-                  <div key={`bottom-dup-${i}`} className="showcase-details-2-slider-item">
+                  <div key={`bottom-dup-${i}`} className="showcase-details-2-slider-item duplicate-for-animation">
                     <Image
                       src={imgSrc}
                       alt={`${title} gallery image ${i + 1}`}

@@ -292,6 +292,11 @@
         height: 300px;
     }
 
+    /* Hide duplicate images on mobile - they're only for desktop scrolling animation */
+    .showcase-details-2-slider-item.duplicate-for-animation {
+        display: none;
+    }
+
     .showcase-details-2-grid-img {
         height: 300px;
     }
