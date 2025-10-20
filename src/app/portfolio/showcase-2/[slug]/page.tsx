@@ -1,7 +1,6 @@
 "use client";
 import { gsap } from "gsap";
 import React, { useEffect } from "react";
-import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from "@/plugins";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
@@ -14,10 +13,11 @@ import FooterTwo from "@/layouts/footers/footer-two";
 import { showcase2Projects, Showcase2Project } from '@/data/projects-showcase-2';
 
 // animation
-import { charAnimation, titleAnimation } from "@/utils/title-animation";
+import { useShowcase2Animations } from "@/hooks/use-showcase-2-animations";
 
 export default function ShowcaseTwoDetailsPage({ params }: { params: { slug: string } }) {
     useScrollSmooth();
+    useShowcase2Animations(); // Aplica todas las animaciones incluido movingImageSlider
 
     useEffect(() => {
         document.body.classList.add("tp-magic-cursor");
@@ -31,14 +31,6 @@ export default function ShowcaseTwoDetailsPage({ params }: { params: { slug: str
             cursorAnimation();
         }
     }, []);
-
-    useGSAP(() => {
-        const timer = setTimeout(() => {
-            charAnimation();
-            titleAnimation();
-        }, 100);
-        return () => clearTimeout(timer);
-    });
 
     const projectIndex = showcase2Projects.findIndex((p: Showcase2Project) => p.slug === params.slug);
 

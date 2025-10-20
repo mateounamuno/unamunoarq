@@ -145,16 +145,11 @@
 .showcase-details-2-slider-wrap {
     display: flex;
     gap: 20px;
-    animation: none;
-    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .showcase-details-2-slider-wrap.slider-wrap-top {
     margin-bottom: 20px;
-}
-
-.showcase-details-2-slider-wrap.slider-wrap-bottom {
-    animation-direction: reverse;
 }
 
 .showcase-details-2-slider-item {

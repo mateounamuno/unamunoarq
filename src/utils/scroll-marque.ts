@@ -83,6 +83,7 @@ function movingImageSlider() {
     // Moving Gallery		
     gsap.utils.toArray('.moving-gallery').forEach((section: any, index: number) => {
       const w = section.querySelector('.wrapper-gallery');
+      if (!w) return; // Skip if wrapper not found
       const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
       gsap.fromTo(w, { x }, {
         x: xEnd,
@@ -95,4 +96,4 @@ function movingImageSlider() {
   });
 }
 
-export { teamMarqueAnim, serviceMarqueAnim, heroScrollTextAnim,movingImageSlider };
+export { teamMarqueAnim, serviceMarqueAnim, heroScrollTextAnim, movingImageSlider };

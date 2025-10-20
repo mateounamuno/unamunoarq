@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Leaf } from '@/components/svg';
 import { Showcase2Project } from '@/data/projects-showcase-2';
@@ -28,31 +28,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
     setShowLightbox(true);
   };
 
-  // Scroll-triggered animation effect (desktop only)
-  useEffect(() => {
-    const handleScroll = () => {
-      // Only apply scroll effect on desktop (screen width > 768px)
-      if (window.innerWidth <= 768) return;
-
-      const scrollY = window.scrollY;
-      const topSlider = document.querySelector('.slider-wrap-top') as HTMLElement;
-      const bottomSlider = document.querySelector('.slider-wrap-bottom') as HTMLElement;
-
-      if (topSlider) {
-        topSlider.style.transform = `translateX(-${scrollY * 0.5}px)`;
-      }
-      if (bottomSlider) {
-        bottomSlider.style.transform = `translateX(${scrollY * 0.5}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
+  // Animation is now handled by GSAP movingImageSlider() function
 
   // Validar que project existe antes de renderizar
   if (!project) {
@@ -162,8 +138,22 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
         <div className="showcase-details-2-slider-area pb-120 showcase-details-2-gallery">
           <div className="moving-gallery">
             <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
+              {/* Original images */}
               {movingGalleryTop.map((imgSrc, i) => (
-                <div key={i} className="showcase-details-2-slider-item">
+                <div key={`top-${i}`} className="showcase-details-2-slider-item">
+                  <Image
+                    src={imgSrc}
+                    alt={`${title} gallery image ${i + 1}`}
+                    width={400}
+                    height={300}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+                    onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
+                  />
+                </div>
+              ))}
+              {/* Duplicate images for smooth scrolling */}
+              {movingGalleryTop.map((imgSrc, i) => (
+                <div key={`top-dup-${i}`} className="showcase-details-2-slider-item">
                   <Image
                     src={imgSrc}
                     alt={`${title} gallery image ${i + 1}`}
@@ -180,8 +170,22 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
           {movingGalleryBottom && movingGalleryBottom.length > 0 && (
             <div className="moving-gallery">
               <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
+                {/* Original images */}
                 {movingGalleryBottom.map((imgSrc, i) => (
-                  <div key={i} className="showcase-details-2-slider-item">
+                  <div key={`bottom-${i}`} className="showcase-details-2-slider-item">
+                    <Image
+                      src={imgSrc}
+                      alt={`${title} gallery image ${i + 1}`}
+                      width={300}
+                      height={420}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+                      onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
+                    />
+                  </div>
+                ))}
+                {/* Duplicate images for smooth scrolling */}
+                {movingGalleryBottom.map((imgSrc, i) => (
+                  <div key={`bottom-dup-${i}`} className="showcase-details-2-slider-item">
                     <Image
                       src={imgSrc}
                       alt={`${title} gallery image ${i + 1}`}
