@@ -38,22 +38,22 @@ const project_data: IProject[] = (
     .map((p, index) => ({
       slug: p.slug,
       template: p.template,
-      cls: index === 0 || index === 2 ? "tp-project-mr" : index === 4 ? "tp-project-ml" : (index === 1 ? "text-end" : ""),
-      cls_2: "height-uniform" + (index === 1 ? " d-inline-flex justify-content-end" : ""),
+      cls: "",
+      cls_2: "height-uniform",
       img: p.homeGrid || p.showcaseHeroBg,
     }))
 ) as IProject[];
 
 function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
-  // Función para obtener la altura responsiva
+  // Función para obtener la altura responsiva - cuadrados compactos
   const getResponsiveHeight = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1200) return '500px';
-      if (window.innerWidth >= 992) return '450px';
-      if (window.innerWidth >= 768) return '400px';
-      return '350px';
+      if (window.innerWidth >= 1200) return '350px';
+      if (window.innerWidth >= 992) return '320px';
+      if (window.innerWidth >= 768) return '300px';
+      return '350px'; // mantener altura mobile sin cambios
     }
-    return '500px'; // altura por defecto
+    return '350px'; // altura por defecto
   };
 
   const [height, setHeight] = React.useState(getResponsiveHeight());
@@ -67,12 +67,34 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
     return () => window.removeEventListener('resize', updateHeight);
   }, []);
 
+  // Función para obtener márgenes responsivos
+  const getResponsiveMargin = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 768) {
+        return isLast ? '0px' : '45px'; // márgenes para cuadrados compactos
+      }
+      return isLast ? '70px' : '200px'; // mantener márgenes mobile sin cambios
+    }
+    return isLast ? '0px' : '45px';
+  };
+
+  const [marginBottom, setMarginBottom] = React.useState(getResponsiveMargin());
+
+  React.useEffect(() => {
+    const updateMargin = () => {
+      setMarginBottom(getResponsiveMargin());
+    };
+
+    window.addEventListener('resize', updateMargin);
+    return () => window.removeEventListener('resize', updateMargin);
+  }, [isLast]);
+
   return (
     <div
       className={`tp-project-item ${styles.projectItem}`}
       style={{
         width: '100%',
-        marginBottom: isLast ? '70px' : '200px'
+        marginBottom: marginBottom
       }}
     >
       <div
@@ -84,16 +106,14 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
           overflow: 'hidden',
           position: 'relative',
           maxWidth: '100%',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
-          transition: 'box-shadow 0.3s ease, transform 0.3s ease'
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+          transition: 'box-shadow 0.3s ease'
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
-          e.currentTarget.style.transform = 'translateY(-2px)';
+          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
         }}
       >
         <Link className="cursor-hide" href={getProjectLink(item.slug, item.template)} style={{ display: 'block', height: '100%', width: '100%', position: 'relative' }}>
@@ -106,15 +126,15 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
               height: '100%',
               objectFit: 'cover',
               objectPosition: 'center',
-              transition: 'transform 0.3s ease'
+              transition: 'opacity 0.3s ease'
             }}
             width={800}
             height={600}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.opacity = '0.95';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.opacity = '1';
             }}
           />
           {/* Overlay */}
@@ -126,7 +146,7 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
               left: 0,
               right: 0,
               bottom: 0,
-              background: 'rgba(0, 0, 0, 0.2)',
+              background: 'rgba(0, 0, 0, 0.08)',
               opacity: 0,
               transition: 'opacity 0.3s ease',
               display: 'flex',
@@ -258,7 +278,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
                       <ProjectItem
                         key={item.slug}
                         item={item}
-                        isLast={false}
+                        isLast={i === 2}
                       />
                     ))}
                   </div>
@@ -269,7 +289,7 @@ const ProjectOne = ({ style_2 = false }: IProps) => {
                       <ProjectItem
                         key={item.slug}
                         item={item}
-                        isLast={index === 2} // El último proyecto de la segunda columna
+                        isLast={index === 2}
                       />
                     ))}
 

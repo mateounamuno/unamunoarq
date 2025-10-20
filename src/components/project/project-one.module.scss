@@ -12,6 +12,12 @@
   }
 
   .leftWrap {
+
+    // Reducir margin-top a la mitad (de 190px a 95px) en desktop
+    @media (min-width: 768px) {
+      margin-top: 95px !important;
+    }
+
     @media (max-width: 1399px) {
       padding-right: 50px !important;
     }
@@ -49,8 +55,22 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
 
+    // Márgenes responsivos para desktop - cuadrados compactos
+    @media (min-width: 768px) {
+      margin-bottom: 45px !important;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    // Mantener márgenes originales en mobile
     @media (max-width: 767px) {
-      margin-bottom: 100px !important;
+      margin-bottom: 200px !important;
+
+      &:last-child {
+        margin-bottom: 70px !important;
+      }
     }
   }
 
@@ -69,22 +89,22 @@
       object-position: center !important;
     }
 
-    // Altura uniforme para todos los proyectos
+    // Altura uniforme para todos los proyectos - cuadrados compactos
     &.height-uniform {
-      height: 500px !important;
+      height: 350px !important;
       width: 100% !important;
       max-width: 100% !important;
 
       @media (max-width: 1200px) {
-        height: 450px !important;
+        height: 320px !important;
       }
 
       @media (max-width: 992px) {
-        height: 400px !important;
+        height: 300px !important;
       }
 
       @media (max-width: 767px) {
-        height: 350px !important;
+        height: 350px !important; // mantener altura mobile sin cambios
       }
     }
 

@@ -67,15 +67,9 @@ const PortfolioGridColFourPage = () => {
                   <div className="col-xl-12">
                     <div className="tm-hero-content">
                       <span className="tm-hero-subtitle">Unamuno Arquitectura</span>
-                      <h4 className="tm-hero-title fs-220 tp-char-animation">
+                      <h4 className="tm-hero-title fs-200 tp-char-animation">
                         Proyectos
                       </h4>
-                    </div>
-                    <div className="tm-hero-text tp_title_anim">
-                      <p>
-                        Somos un equipo diverso que trabaja con atención al
-                        detalle y aspira a diseñar espacios únicos.
-                      </p>
                     </div>
                   </div>
                 </div>
