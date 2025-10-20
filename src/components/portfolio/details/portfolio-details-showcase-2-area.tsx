@@ -248,7 +248,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
 
       {/* grid images */}
       {gridImages && gridImages.length >= 2 && (
-        <div className="showcase-details-2-grid-area pb-90 showcase-details-2-gallery">
+        <div className="showcase-details-2-grid-area pt-120 pb-90 showcase-details-2-gallery">
           <div className="container">
             <div className="row">
               <div className="col-xl-6 col-lg-6">
