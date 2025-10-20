@@ -21,7 +21,7 @@ export default function BlogDetailsBreadcrumb() {
             <div className="col-xl-11">
               <div className="blog-details-content z-index-5">
                 <span className="blog-details-meta">
-                  Manifiesto <i>. 12 Sept, 2025</i>
+                  Manifiesto
                 </span>
                 <h4 className="blog-details-title tp-char-animation">
                   La arquitectura como un gesto de liberdad.
