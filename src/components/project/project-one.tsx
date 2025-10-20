@@ -73,7 +73,7 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
       if (window.innerWidth >= 768) {
         return isLast ? '0px' : '45px'; // márgenes para cuadrados compactos
       }
-      return isLast ? '70px' : '200px'; // mantener márgenes mobile sin cambios
+      return isLast ? '0px' : '60px'; // espaciado uniforme en mobile
     }
     return isLast ? '0px' : '45px';
   };
