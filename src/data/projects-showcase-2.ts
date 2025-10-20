@@ -76,8 +76,8 @@ export const showcase2Projects: Showcase2Project[] = [
         },
         sectionContents: {
             section1: "La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
-            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza. Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar.",
-            section3: "Cada detalle del proyecto fue cuidadosamente considerado, desde la selección de materiales hasta la disposición de los espacios. El resultado es una casa que no solo cumple con las necesidades funcionales de sus habitantes, sino que también crea un ambiente que promueve la conexión con la naturaleza y el bienestar emocional.",
+            section2: "El objetivo principal era diseñar una casa que no solo fuera funcional y estéticamente atractiva, sino que también promoviera un estilo de vida más consciente y conectado con la naturaleza. Cada elemento del diseño fue pensado para crear una experiencia sensorial completa que invite a la contemplación y el bienestar. <br/> La casa se encuentra ubicada en un terreno de 1000 metros cuadrados, con una vista panorámica a la ciudad y al río. El diseño se basa en la idea de que la casa es un elemento que sea en el entorno, no solo una estructura que se levanta sobre él.",
+            section3: "",
             section4: "",
         },
         navigationTexts: {
@@ -125,9 +125,9 @@ export const showcase2Projects: Showcase2Project[] = [
         },
         sectionContents: {
             section1: "En casa para andar no hay comienzo y no hay final. Si no se anda, no se descubre. Si no se descubre, no se encuentra el interior. Porque el andar es dinámico, la casa es dinámica. Porque es dinámica, puede cambiar. El andar a pie es primitivo, es por ello que la casa para andar es vernácula. La casa para andar es una performance artística. La casa es paisaje, porque en el paisaje andamos, anduvimos y andaremos. ",
-            section2: "Es un conjunto de piedras y ladrillos que un artista del land art encontró, parte en la montaña y parte en la ciudad. Luego las desparramó, según su orgánico y racional criterio, a pie de un cerro.",
-            section3: "En el andar hay paradas, porque quien no descansa no anda. Sin pausa, pero sin prisa. Si andar es de máquina, esta máquina funciona a sol y luna.",
-            section4: "No es una imagen, son muchas imágenes,más bien diría que es un film. Es deriva y es errar, errar de errante y errar de error. Se amasó con paisaje y se quemó en un horno ladrillero.",
+            section2: "Es un conjunto de piedras y ladrillos que un artista del land art encontró, parte en la montaña y parte en la ciudad. Luego las desparramó, según su orgánico y racional criterio, a pie de un cerro. <br/> En el andar hay paradas, porque quien no descansa no anda. Sin pausa, pero sin prisa. Si andar es de máquina, esta máquina funciona a sol y luna. <br/> No es una imagen, son muchas imágenes,más bien diría que es un film. Es deriva y es errar, errar de errante y errar de error. Se amasó con paisaje y se quemó en un horno ladrillero.",
+            section3: "",
+            section4: "",
         },
         navigationTexts: {
             prev: "Anterior",
@@ -174,9 +174,9 @@ export const showcase2Projects: Showcase2Project[] = [
         },
         sectionContents: {
             section1: "Uno de mis primeros encargos en el año 2019 que lamentablemente quedó en proyecto y la obra nunca se ejecutó. Sin embargo, un proyecto vigente, que indagó sobre cuestiones historicistas de la arquitectura colonial y del siglo XIX de nuestro país, en relación con una tipología contemporánea.",
-            section2: "Ubicado en Vicente López esquina con Pje. La Tablada de la ciudad de Salta, el encargo comenzó como un pequeño “hotel”. Ese hotel se transformó en un conjunto de unidades para alquiler transitorio (turismo), 18 tipologías mínimas, por encima de una planta libre que contiene estacionamiento, un local comercial y un patio.",
-            section3: "Ingresar por una recova, encontrarse con materiales y texturas nobles y pesadas, y recorrer un tiempo por el espacio intermedio hasta llegar a un volumen de circulación permeable como mirador, fueron algunas ideas que pretendían hacer alusión a situaciones espaciales de nuestra arquitectura del pasado.",
-            section4: "Otra idea consciente es la llegada de la escalera a un espacio “múltiple”. No es un “palier”, no es un espacio de distribución/circulación… es una expansión de las tipologías, un espacio donde mirar, donde ventilar, donde encontrarse con los vecinos… Las tipologías son mínimas… quizás demasiadas compactas a pedido del cliente, pero con una contemporaneidad explícita en su flexibilidad y compacidad.",
+            section2: "Ubicado en Vicente López esquina con Pje. La Tablada de la ciudad de Salta, el encargo comenzó como un pequeño “hotel”. Ese hotel se transformó en un conjunto de unidades para alquiler transitorio (turismo), 18 tipologías mínimas, por encima de una planta libre que contiene estacionamiento, un local comercial y un patio. <br/> Ingresar por una recova, encontrarse con materiales y texturas nobles y pesadas, y recorrer un tiempo por el espacio intermedio hasta llegar a un volumen de circulación permeable como mirador, fueron algunas ideas que pretendían hacer alusión a situaciones espaciales de nuestra arquitectura del pasado. <br/> Otra idea consciente es la llegada de la escalera a un espacio “múltiple”. No es un “palier”, no es un espacio de distribución/circulación… es una expansión de las tipologías, un espacio donde mirar, donde ventilar, donde encontrarse con los vecinos… Las tipologías son mínimas… quizás demasiadas compactas a pedido del cliente, pero con una contemporaneidad explícita en su flexibilidad y compacidad.",
+            section3: "",
+            section4: "",
         },
         navigationTexts: {
             prev: "Anterior",
@@ -271,8 +271,8 @@ export const showcase2Projects: Showcase2Project[] = [
         },
         sectionContents: {
             section1: "Mientras la estructura se conforma como un elemento estático, la dinámica de la luz expresa distintas figuras y atmósferas en el interior, reflejando así, el tiempo en el espacio.",
-            section2: "El desafío también estaba condicionado por una antigua cancha de padel sobre la cual, se asentó el nuevo volumen. Los antiguos muros perimetrales, de la cancha, funcionaban como soporte del terreno desnivelado, por lo cual, hubo que conservarlos como parte de la estructura.",
-            section3: "'La arquitectura es el juego sabio, correcto y magnífico de los volúmenes bajo la luz' - Le Corbusier.",
+            section2: "El desafío también estaba condicionado por una antigua cancha de padel sobre la cual, se asentó el nuevo volumen. Los antiguos muros perimetrales, de la cancha, funcionaban como soporte del terreno desnivelado, por lo cual, hubo que conservarlos como parte de la estructura. <br/> 'La arquitectura es el juego sabio, correcto y magnífico de los volúmenes bajo la luz' - Le Corbusier.",
+            section3: "",
             section4: "",
         },
         navigationTexts: {
