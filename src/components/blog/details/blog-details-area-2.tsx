@@ -19,18 +19,17 @@ export default function BlogDetailsAreaTwo() {
             <div className="postbox__wrapper">
               <div className="row justify-content-center">
                 <div className="col-xl-8">
-                  <div className="blog-details-top-text tp_fade_bottom">
+                  <div className="blog-details-left-content tp_fade_bottom">
                     <p>
                       El dibujo y la pintura son la antesala de la arquitectura: en ellos se gesta la intuición primera, el gesto que aún no conoce la materia pero ya anuncia el espacio. El trazo, como línea suspendida en el vacío, abre la posibilidad de un muro; la mancha, como extensión de color, prefigura la atmósfera de un recinto.{" "}
                     </p>
-                  </div>
-                  <div className="blog-details-left-content tp_fade_bottom">
                     <p>
                       Pintar y dibujar son modos de pensar con la mano, de imaginar con la mirada, de explorar un mundo todavía abstracto que la arquitectura más tarde vuelve habitable.
 
                     </p>
-
                   </div>
+
+
                 </div>
                 <div className="blog-details-thumb-box tp_fade_bottom">
                   <div className="row">
