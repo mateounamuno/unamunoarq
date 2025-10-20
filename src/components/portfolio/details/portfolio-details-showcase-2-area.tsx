@@ -82,25 +82,33 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
               </div>
               <div className="col-xxl-7 col-xl-10">
                 <div className="showcase-details-2-content tp_title_anim">
-                  <p>{summary}</p>
+                  <p style={{ fontSize: '1.15rem' }}>{summary}</p>
                 </div>
                 <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between showcase-details-2-project-info">
-                  <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>ARQUITECTURA</span>
-                    <h5>{autores}</h5>
-                  </div>
-                  <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>CATEGORIA</span>
-                    <h5>{services}</h5>
-                  </div>
-                  <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>LUGAR</span>
-                    <h5>{industries}</h5>
-                  </div>
-                  <div className="showcase-details-2-info tp_fade_bottom">
-                    <span>FECHA</span>
-                    <h5>{release_date}</h5>
-                  </div>
+                  {autores && (
+                    <div className="showcase-details-2-info tp_fade_bottom">
+                      <span>ARQUITECTURA</span>
+                      <h5>{autores}</h5>
+                    </div>
+                  )}
+                  {services && (
+                    <div className="showcase-details-2-info tp_fade_bottom">
+                      <span>CATEGORIA</span>
+                      <h5>{services}</h5>
+                    </div>
+                  )}
+                  {industries && (
+                    <div className="showcase-details-2-info tp_fade_bottom">
+                      <span>LUGAR</span>
+                      <h5>{industries}</h5>
+                    </div>
+                  )}
+                  {release_date && (
+                    <div className="showcase-details-2-info tp_fade_bottom">
+                      <span>FECHA</span>
+                      <h5>{release_date}</h5>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
