@@ -114,7 +114,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
         <div className="showcase-details-2-area pt-120 pb-120 showcase-details-2-section">
           <div className="container">
             <div className="row">
-              <div className="col-xl-8">
+              <div className="col-12">
                 <div className="showcase-details-2-section-box">
                   <h4 className="showcase-details-2-section-title tp-char-animation">{sectionTitles.section1}</h4>
                 </div>

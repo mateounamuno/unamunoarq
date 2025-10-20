@@ -3490,6 +3490,9 @@
             letter-spacing: -6px;
             margin-bottom: 85px;
             color: var(--tp-common-black-2);
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            hyphens: none;
 
             @media #{$xl} {
                 font-size: 110px;
