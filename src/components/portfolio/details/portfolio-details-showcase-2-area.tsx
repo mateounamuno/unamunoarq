@@ -207,17 +207,19 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {sectionContents?.section2 && (
         <div className="showcase-details-2-area pb-120 showcase-details-2-section">
           <div className="container">
-            <div className="row justify-content-center">
+            <div className="row">
               <div className="col-xl-10">
-                <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="pb-25 fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section2 }} />
+                <div className="showcase-details-2-section-left">
+                  <p className="fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section2 }} />
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       )}
       {/* details title 2 */}
+
 
       {/* full width image */}
       {fullWidthImage && (
@@ -235,22 +237,6 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       )}
       {/* full width image */}
 
-      {/* detail title 3 */}
-      {sectionContents?.section3 && (
-        <div className="showcase-details-2-area pt-120 pb-120 showcase-details-2-section">
-          <div className="container">
-
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section3 }} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      {/* detail title 3 */}
 
       {/* grid images */}
       {gridImages && gridImages.length >= 2 && (
@@ -289,21 +275,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       )}
       {/* grid images */}
 
-      {/* details title 4 */}
-      {sectionContents?.section4 && (
-        <div className="showcase-details-2-area pb-120 showcase-details-2-section">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <div className="showcase-details-2-content-center tp_title_anim text-center">
-                  <p className="fs-5" dangerouslySetInnerHTML={{ __html: sectionContents.section4 }} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      {/* details title 4 */}
+
 
       {/* navigation after thumbs */}
       <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
