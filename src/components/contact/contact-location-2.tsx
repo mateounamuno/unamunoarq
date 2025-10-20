@@ -51,7 +51,7 @@ const ContactLocationTwo = () => {
         <div className="row">
           {location_data.map((item) => (
             <div key={item.id} className="col-xl-4 col-lg-4 col-md-6 mb-30">
-              <div className={`cn-contact-2-content ${item.id === 2 ? "mt-60" : ""} text-center`}>
+              <div className={`cn-contact-2-content } text-center`}>
                 <h4 className="cn-contact-2-title">{item.country}</h4>
                 <div className="cn-contact-2-thumb d-flex justify-content-center">
                   <Image

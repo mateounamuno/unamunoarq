@@ -42,24 +42,14 @@ const ContactTwoPage = () => {
             <main>
               {/* hero area start */}
               <div className="tm-hero-area tm-hero-ptb p-relative">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-12">
-                      <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">UNAMUNO ARQUITECTURA</span>
-                        <h4 className="tm-hero-title-big tp-char-animation">
-                          Get <br /> in touch
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+
+                {/* contact location */}
+                <ContactLocationTwo />
+                {/* contact location */}
+
               </div>
               {/* hero area end */}
-
-              {/* contact location */}
-              <ContactLocationTwo />
-              {/* contact location */}
             </main>
 
             {/* footer area */}
