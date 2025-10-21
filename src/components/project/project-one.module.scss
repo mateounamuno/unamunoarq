@@ -13,9 +13,9 @@
 
   .leftWrap {
 
-    // Reducir margin-top a la mitad (de 190px a 95px) en desktop
+    // Reducir margin-top a la mitad (de 190px a 95px a 48px) en desktop
     @media (min-width: 768px) {
-      margin-top: 95px !important;
+      margin-top: 48px !important;
     }
 
     @media (max-width: 1399px) {

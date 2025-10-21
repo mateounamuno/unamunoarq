@@ -48,12 +48,12 @@ function ProjectItem({ item, isLast }: { item: IProject; isLast: boolean }) {
   // Función para obtener la altura responsiva - cuadrados compactos
   const getResponsiveHeight = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1200) return '350px';
-      if (window.innerWidth >= 992) return '320px';
-      if (window.innerWidth >= 768) return '300px';
-      return '350px'; // mantener altura mobile sin cambios
+      if (window.innerWidth >= 1200) return '335px';
+      if (window.innerWidth >= 992) return '305px';
+      if (window.innerWidth >= 768) return '285px';
+      return '335px'; // mantener altura mobile sin cambios
     }
-    return '350px'; // altura por defecto
+    return '335px'; // altura por defecto
   };
 
   const [height, setHeight] = React.useState(getResponsiveHeight());
