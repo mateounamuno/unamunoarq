@@ -82,7 +82,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
               </div>
               <div className="col-xxl-7 col-xl-10">
                 <div className="showcase-details-2-content tp_title_anim">
-                  <p style={{ fontSize: '1.15rem' }}>{summary}</p>
+                  <p style={{ fontSize: '2rem' }}>{summary}</p>
                 </div>
                 <div className="showcase-details-2-info-wrap d-flex align-items-center justify-content-between showcase-details-2-project-info">
                   {autores && (
