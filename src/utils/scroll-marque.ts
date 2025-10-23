@@ -89,7 +89,7 @@ function movingImageSlider() {
         x: xEnd,
         scrollTrigger: {
           trigger: section,
-          scrub: 0.5,
+          scrub: 3,
         }
       });
     });
