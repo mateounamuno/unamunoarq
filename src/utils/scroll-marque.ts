@@ -87,9 +87,10 @@ function movingImageSlider() {
       const [x, xEnd] = (index % 2) ? [(section.offsetWidth - w.scrollWidth), 0] : [0, section.offsetWidth - w.scrollWidth];
       gsap.fromTo(w, { x }, {
         x: xEnd,
+        duration: 6,
         scrollTrigger: {
           trigger: section,
-          scrub: 3,
+          scrub: true,
         }
       });
     });

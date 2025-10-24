@@ -145,7 +145,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {movingGalleryTop && movingGalleryTop.length > 0 && (
         <div className="showcase-details-2-slider-area pb-120 showcase-details-2-gallery">
           <div className="moving-gallery">
-            <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20">
+            <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-top d-flex align-items-end mb-20 mobile-gallery-fix">
               {/* Original images */}
               {movingGalleryTop.map((imgSrc, i) => (
                 <div key={`top-${i}`} className="showcase-details-2-slider-item">
@@ -154,7 +154,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                     alt={`${title} gallery image ${i + 1}`}
                     width={400}
                     height={300}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+                    style={{ cursor: "pointer" }}
                     onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                     alt={`${title} gallery image ${i + 1}`}
                     width={400}
                     height={300}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+                    style={{ cursor: "pointer" }}
                     onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
                   />
                 </div>
@@ -177,7 +177,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
 
           {movingGalleryBottom && movingGalleryBottom.length > 0 && (
             <div className="moving-gallery">
-              <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start">
+              <div className="showcase-details-2-slider-wrap wrapper-gallery slider-wrap-bottom d-flex align-items-start mobile-gallery-fix">
                 {/* Original images */}
                 {movingGalleryBottom.map((imgSrc, i) => (
                   <div key={`bottom-${i}`} className="showcase-details-2-slider-item">
@@ -186,7 +186,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                       alt={`${title} gallery image ${i + 1}`}
                       width={300}
                       height={420}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+                      style={{ cursor: "pointer" }}
                       onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
                     />
                   </div>
@@ -199,7 +199,7 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
                       alt={`${title} gallery image ${i + 1}`}
                       width={300}
                       height={420}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+                      style={{ cursor: "pointer" }}
                       onClick={() => openLightbox(imgSrc, `${title} gallery image ${i + 1}`)}
                     />
                   </div>
