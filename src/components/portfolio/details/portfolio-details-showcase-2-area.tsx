@@ -250,29 +250,27 @@ export default function PortfolioDetailsShowcaseTwoArea({ project }: PortfolioDe
       {gridImages && gridImages.length >= 2 && (
         <div className="showcase-details-2-grid-area pt-120 pb-90 showcase-details-2-gallery">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-6 col-lg-6">
+            <div className="row g-3">
+              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="showcase-details-2-grid-img mb-30">
                   <Image
                     className="img-left"
                     src={gridImages[0]}
                     alt={`${title} grid image 1`}
-                    width={400}
-                    height={300}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', cursor: 'pointer' }}
+                    fill
+                    style={{ cursor: 'pointer' }}
                     onClick={() => openLightbox(gridImages[0], `${title} grid image 1`)}
                   />
                 </div>
               </div>
-              <div className="col-xl-6 col-lg-6">
+              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="showcase-details-2-grid-img mb-30">
                   <Image
                     className="img-right"
                     src={gridImages[1]}
                     alt={`${title} grid image 2`}
-                    width={400}
-                    height={300}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', cursor: 'pointer' }}
+                    fill
+                    style={{ cursor: 'pointer' }}
                     onClick={() => openLightbox(gridImages[1], `${title} grid image 2`)}
                   />
                 </div>

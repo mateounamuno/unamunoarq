@@ -186,14 +186,15 @@
 
 .showcase-details-2-grid-img {
     position: relative;
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
 }
 
 .showcase-details-2-grid-img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 

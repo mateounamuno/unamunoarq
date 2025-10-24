@@ -3602,7 +3602,7 @@
                 }
 
                 &.img-left {
-                    margin-left: -50px;
+                    margin-left: 0;
 
                     @media #{$lg,$md,$xs} {
                         margin-left: 0;
@@ -3610,7 +3610,7 @@
                 }
 
                 &.img-right {
-                    margin-right: -20px;
+                    margin-right: 0;
 
                     @media #{$lg,$md,$xs} {
                         margin-right: 0;
