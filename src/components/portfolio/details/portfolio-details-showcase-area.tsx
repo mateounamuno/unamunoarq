@@ -154,7 +154,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
 
       {/* details thumb */}
       <div className="showcase-details-thumb-wrap pb-40">
-        <div className="container container-1430">
+        <div className="container">
           <div className="row gx-80">
             {thumbs.slice(0, 2).map((src: string, i: number) => (
               <div key={i} className="col-xl-6 col-lg-6">
@@ -190,16 +190,18 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details thumb */}
 
       {/* navigation after thumbs */}
-      <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-        <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/showcase/${prevSlug}` : '#'}>
-          <i className="fa-sharp fa-regular fa-arrow-left"></i>
-        </Link>
-        <a href="#" className="tp_title_anim">
-          <span>• • •</span>
-        </a>
-        <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/showcase/${nextSlug}` : '#'}>
-          <i className="fa-sharp fa-regular fa-arrow-right"></i>
-        </Link>
+      <div className="container">
+        <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
+          <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/showcase/${prevSlug}` : '#'}>
+            <i className="fa-sharp fa-regular fa-arrow-left"></i>
+          </Link>
+          <a href="#" className="tp_title_anim">
+            <span>• • •</span>
+          </a>
+          <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/showcase/${nextSlug}` : '#'}>
+            <i className="fa-sharp fa-regular fa-arrow-right"></i>
+          </Link>
+        </div>
       </div>
 
       {/* Image Lightbox Modal */}
