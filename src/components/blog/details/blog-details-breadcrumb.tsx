@@ -16,21 +16,7 @@ export default function BlogDetailsBreadcrumb() {
         <div className="blog-details-overlay-shape">
           <Image src={overlay} alt="overlay" />
         </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-11">
-              <div className="blog-details-content z-index-5">
-                <span className="blog-details-meta">
-                  Manifiesto
-                </span>
-                <h4 className="blog-details-title tp-char-animation">
-                  La arquitectura como un gesto de liberdad.
-                </h4>
 
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
