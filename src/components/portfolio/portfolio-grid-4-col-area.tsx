@@ -139,20 +139,20 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
         <div className="row">
           {gridItems.map((item) => (
             <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
-              <div
-                className="tp-project-5-2-thumb mb-30 p-relative"
-                style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}
-                onMouseEnter={(e) => {
-                  const img = e.currentTarget.querySelector('img');
-                  if (img) img.style.transform = 'scale(1.1)';
-                }}
-                onMouseLeave={(e) => {
-                  const img = e.currentTarget.querySelector('img');
-                  if (img) img.style.transform = 'scale(1)';
-                }}
-              >
-                <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
-                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+              <div className="tp-project-5-2-thumb mb-30">
+                <div
+                  className="p-relative"
+                  style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}
+                  onMouseEnter={(e) => {
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.style.transform = 'scale(1.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.style.transform = 'scale(1)';
+                  }}
+                >
+                  <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
                     <Image
                       src={item.homeGrid || item.showcaseHeroBg}
                       alt="prd-img"
@@ -163,30 +163,13 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                         height: "100%",
                         objectFit: "cover",
                         display: 'block',
-                        transition: 'transform 0.3s ease'
+                        transition: 'transform 0.3s ease',
+                        marginBottom: '16px'
                       }}
                     />
-                    {/* Overlay solo sobre la imagen */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'rgba(0, 0, 0, 0.2)',
-                        zIndex: 1
-                      }}
-                    />
-                    <div className="tp-project-5-2-category tp_fade_anim" style={{ zIndex: 2, position: 'absolute', top: '10px', left: '10px' }}>
-                      <span style={{ color: 'white', fontWeight: '500' }}>{item.category}</span>
-                    </div>
-                    <div className="tp-project-5-2-content tp_fade_anim" style={{ zIndex: 2, position: 'absolute', bottom: '10px', left: '10px' }}>
-                      <span className="tp-project-5-2-meta" style={{ color: 'white' }}>{item.year}</span>
-                      <h4 className="tp-project-5-2-title-sm" style={{ color: 'white' }}>{item.title}</h4>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
+                <p className="tp_fade_anim" style={{ color: 'black', fontSize: '16px', fontWeight: 'normal', textAlign: 'center' }}>{item.title}</p>
               </div>
             </div>
           ))}
@@ -196,7 +179,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
         {hasMoreProjects && (
           <div className="row">
             <div className="col-xl-12">
-              <div className="tp-projct-5-2-btn-box mt-50 d-flex justify-content-center">
+              <div className="tp-projct-5-2-btn-box mt-25 mb-50 d-flex justify-content-center">
                 <button
                   onClick={loadMoreProjects}
                   style={{
