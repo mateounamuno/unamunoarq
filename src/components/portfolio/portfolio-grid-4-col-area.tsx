@@ -96,7 +96,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
     setVisibleCount(prev => Math.min(prev + 12, items.length));
   };
   return (
-    <div className="tp-project-5-2-area tp-project-5-2-pt pb-130">
+    <div className="tp-project-5-2-area tp-project-5-2-p pt-50 pb-130">
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
           <div className="col-xl-12">
