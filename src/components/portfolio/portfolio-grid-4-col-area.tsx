@@ -31,7 +31,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
     if (typeof window === 'undefined') return;
 
     const animatePortfolioItems = () => {
-      const fadeElements = document.querySelectorAll('.tp-project-5-2-area .tp_fade_anim');
+      const fadeElements = document.querySelectorAll('.tp-project-5-2-area .tp_fade_anim:not(.project-title)');
 
       fadeElements.forEach((element: any) => {
         // Configurar estado inicial
@@ -169,12 +169,22 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                   className="p-relative"
                   style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}
                   onMouseEnter={(e) => {
-                    const img = e.currentTarget.querySelector('img');
+                    const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                    const titleElement = e.currentTarget.parentElement?.querySelector('.project-title') as HTMLElement;
                     if (img) img.style.transform = 'scale(1.1)';
+                    if (titleElement) {
+                      titleElement.style.opacity = '1';
+                      titleElement.style.transform = 'translateY(0)';
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    const img = e.currentTarget.querySelector('img');
+                    const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                    const titleElement = e.currentTarget.parentElement?.querySelector('.project-title') as HTMLElement;
                     if (img) img.style.transform = 'scale(1)';
+                    if (titleElement) {
+                      titleElement.style.opacity = '0';
+                      titleElement.style.transform = 'translateY(10px)';
+                    }
                   }}
                 >
                   <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
@@ -188,13 +198,27 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                         height: "100%",
                         objectFit: "cover",
                         display: 'block',
-                        transition: 'transform 0.3s ease',
-                        marginBottom: '16px'
+                        transition: 'transform 0.3s ease'
                       }}
                     />
                   </Link>
                 </div>
-                <p className="tp_fade_anim" style={{ color: 'black', fontSize: '16px', fontWeight: 'normal', textAlign: 'center' }}>{item.title}</p>
+                <p
+                  className="project-title"
+                  style={{
+                    color: 'black',
+                    fontSize: '16px',
+                    fontWeight: 'normal',
+                    textAlign: 'left',
+                    opacity: 0,
+                    transform: 'translateY(10px)',
+                    transition: 'all 0.3s ease',
+                    marginTop: '16px',
+                    marginBottom: 0
+                  }}
+                >
+                  {item.title}
+                </p>
               </div>
             </div>
           ))}
