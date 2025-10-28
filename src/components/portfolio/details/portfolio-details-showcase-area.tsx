@@ -98,80 +98,53 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       <div id="xyz" className="showcase-details-overview pt-120 pb-120">
         <div className="container">
           <div className="row">
-            <div className="col-xl-4">
-              <div className="showcase-details-overview-left">
-                <span className="showcase-details-subtitle tp_title_anim">Resumen</span>
-              </div>
-            </div>
             <div className="col-xl-8">
               <div className="showcase-details-overview-right">
-                <p className="tp_title_anim" style={{ fontSize: '1.15rem' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
-                <div className="showcase-details-overview-info">
-                  {autores && (
-                    <div className="showcase-details-overview-info-item tp_fade_bottom">
-                      <div className="row align-items-center">
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-left">
-                            <span className="tp_title_anim">Por</span>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-right">
-                            <span className="tp_title_anim">{autores}</span>
-                          </div>
-                        </div>
-                      </div>
+                <p className="tp_title_anim" style={{ fontSize: '1.15rem', paddingRight: '160px' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
+              </div>
+            </div>
+            <div className="col-xl-4">
+              <div className="showcase-details-overview-info">
+                {autores && (
+                  <div className="showcase-details-overview-info-item tp_fade_bottom">
+                    <div className="showcase-details-overview-info-left">
+                      <span className="tp_title_anim">Por</span>
                     </div>
-                  )}
-                  {services && (
-                    <div className="showcase-details-overview-info-item tp_fade_bottom">
-                      <div className="row align-items-center">
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-left">
-                            <span className="tp_title_anim">Servicios</span>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-right">
-                            <span className="tp_title_anim">{services}</span>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="showcase-details-overview-info-right">
+                      <span className="tp_title_anim">{autores}</span>
                     </div>
-                  )}
-                  {location && (
-                    <div className="showcase-details-overview-info-item tp_fade_bottom">
-                      <div className="row align-items-center">
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-left">
-                            <span className="tp_title_anim">Ubicación</span>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-right">
-                            <span className="tp_title_anim">{location}</span>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                )}
+                {services && (
+                  <div className="showcase-details-overview-info-item tp_fade_bottom">
+                    <div className="showcase-details-overview-info-left">
+                      <span className="tp_title_anim">Servicios</span>
                     </div>
-                  )}
-                  {fotografia && (
-                    <div className="showcase-details-overview-info-item tp_fade_bottom">
-                      <div className="row align-items-center">
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-left">
-                            <span className="tp_title_anim">Fotografía</span>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="showcase-details-overview-info-right">
-                            <span className="tp_title_anim">{fotografia}</span>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="showcase-details-overview-info-right">
+                      <span className="tp_title_anim">{services}</span>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
+                {location && (
+                  <div className="showcase-details-overview-info-item tp_fade_bottom">
+                    <div className="showcase-details-overview-info-left">
+                      <span className="tp_title_anim">Ubicación</span>
+                    </div>
+                    <div className="showcase-details-overview-info-right">
+                      <span className="tp_title_anim">{location}</span>
+                    </div>
+                  </div>
+                )}
+                {fotografia && (
+                  <div className="showcase-details-overview-info-item tp_fade_bottom">
+                    <div className="showcase-details-overview-info-left">
+                      <span className="tp_title_anim">Fotografía</span>
+                    </div>
+                    <div className="showcase-details-overview-info-right">
+                      <span className="tp_title_anim">{fotografia}</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -3270,7 +3270,7 @@
 
     &-overview {
         &-right {
-            padding-left: 70px;
+            padding-left: 0;
 
             @media #{$lg,$md,$xs} {
                 padding-left: 0;
@@ -3290,11 +3290,14 @@
             &-item {
                 border-bottom: 1px solid rgba(25, 25, 26, 0.14);
                 padding: 19px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
 
             &-left {
                 & span {
-                    font-size: 28px;
+                    font-size: 20px;
                     font-weight: 400;
                     line-height: 1;
                     color: var(--tp-common-black-2);
@@ -3303,10 +3306,10 @@
             }
 
             &-right {
-                padding-left: 60px;
+                padding-left: 0;
 
                 & span {
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: 400;
                     line-height: 1;
                     color: var(--tp-common-black-2);
