@@ -14,7 +14,7 @@ import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
 import PortfolioDetailsShowcaseTwoArea from "@/components/portfolio/details/portfolio-details-showcase-2-area";
 import FooterTwo from "@/layouts/footers/footer-two";
-import { showcase2Projects, Showcase2Project } from '@/data/projects-showcase-2';
+import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 
 // animation
 import { useShowcase2Animations } from "@/hooks/use-showcase-2-animations";
@@ -36,7 +36,7 @@ export default function ShowcaseTwoDetailsPage({ params }: { params: { slug: str
         }
     }, []);
 
-    const projectIndex = showcase2Projects.findIndex((p: Showcase2Project) => p.slug === params.slug);
+    const projectIndex = showcaseProjects.findIndex((p: ShowcaseProject) => p.slug === params.slug);
 
     if (projectIndex === -1) {
         return (
@@ -46,7 +46,7 @@ export default function ShowcaseTwoDetailsPage({ params }: { params: { slug: str
         );
     }
 
-    const project = showcase2Projects[projectIndex];
+    const project = showcaseProjects[projectIndex];
 
     return (
         <Wrapper>
