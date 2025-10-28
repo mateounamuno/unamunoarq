@@ -189,7 +189,9 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                     fontSize: '16px',
                     fontWeight: 'normal',
                     color: 'var(--tp-common-black)',
-                    textDecoration: 'none',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '4px',
+                    textDecorationThickness: '2px',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     position: 'relative'

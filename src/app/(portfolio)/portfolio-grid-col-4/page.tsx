@@ -66,9 +66,6 @@ const PortfolioGridColFourPage = () => {
               {/* portfolio area */}
             </div>
 
-            {/* big text */}
-            <BigText />
-            {/* big text */}
           </main>
 
           {/* footer area */}
