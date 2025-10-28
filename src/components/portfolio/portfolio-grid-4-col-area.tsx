@@ -3,7 +3,9 @@ import { UpArrow } from "../svg";
 import Image from "next/image";
 import Link from "next/link";
 import { projects, Project } from "@/data/project-data";
-import React__ from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "@/plugins";
+import { useGSAP } from "@gsap/react";
 
 // Función para generar el enlace correcto según el template
 const getProjectLink = (slug: string, template: string): string => {
@@ -25,6 +27,44 @@ type IProps = {
 export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
   const [active, setActive] = React.useState<string>('All');
   const [visibleCount, setVisibleCount] = React.useState<number>(12);
+
+  // Configurar animaciones de fade para los elementos del portfolio
+  useGSAP(() => {
+    if (typeof window === 'undefined') return;
+
+    const animatePortfolioItems = () => {
+      const fadeElements = document.querySelectorAll('.tp-project-5-2-area .tp_fade_anim');
+
+      fadeElements.forEach((element: any) => {
+        // Configurar estado inicial
+        gsap.set(element, {
+          y: 50,
+          opacity: 0
+        });
+
+        // Crear animación con ScrollTrigger
+        gsap.to(element, {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 85%",
+            end: "bottom 15%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      });
+    };
+
+    // Ejecutar animaciones después de un pequeño delay para asegurar que los elementos estén renderizados
+    const timer = setTimeout(() => {
+      animatePortfolioItems();
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [active, visibleCount]); // Re-ejecutar cuando cambien los filtros o la cantidad visible
 
   const categories = React.useMemo(() => {
     const cats = Array.from(new Set(projects.filter(p => p.showInGrid).map(p => p.category)));

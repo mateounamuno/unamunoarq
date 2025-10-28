@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
 import HeroBannerTwo from "@/components/hero-banner/hero-banner-two";
-import ProjectOne from "@/components/project/project-one";
+import PortfolioGridFourColArea from "@/components/portfolio/portfolio-grid-4-col-area";
 import TestimonialOne from "@/components/testimonial/testimonial-one";
 import FooterOne from "@/layouts/footers/footer-one";
 
@@ -83,8 +83,9 @@ const HomePageTwo = () => {
             <HeroBannerTwo />
             {/* hero area end */}
 
-            <ProjectOne />
-            {/* project area */}
+            {/* portfolio area */}
+            <PortfolioGridFourColArea />
+            {/* portfolio area */}
 
             {/* testimonial area */}
             <TestimonialOne />
