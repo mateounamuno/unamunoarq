@@ -96,7 +96,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
     setVisibleCount(prev => Math.min(prev + 12, items.length));
   };
   return (
-    <div className="tp-project-5-2-area tp-project-5-2-p pt-50 pb-130">
+    <div className="tp-project-5-2-area tp-project-5-2-p pt-50 pb-50">
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
           <div className="col-xl-12">
@@ -191,6 +191,8 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
             </div>
           ))}
         </div>
+
+
         {hasMoreProjects && (
           <div className="row">
             <div className="col-xl-12">
@@ -222,6 +224,23 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
             </div>
           </div>
         )}
+
+
+        {/* Sección de imagen completa */}
+        <div className="container-fluid p-0">
+          <div className="row g-0">
+            <div className="col-xl-12">
+              <div className="tp-project-full-img-wrap p-relative fix">
+                <div
+                  className="tp-project-full-img"
+                  style={{
+                    backgroundImage: "url(/assets/img/inner-service/hero/hero-2.jpg)",
+                  }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
