@@ -100,90 +100,37 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
           <div className="col-xl-12">
-            <div className="d-flex gap-2 justify-content-center mb-50 flex-wrap">
+            <div className="d-flex gap-4 justify-content-center mb-50 flex-wrap">
               {categories.map(cat => (
                 <button
                   key={cat}
-                  className={`tp-btn-border ${active === cat ? 'active' : ''}`}
                   onClick={() => setActive(cat)}
                   style={{
-                    padding: '0px 20px',
-                    fontSize: '14px',
-                    minWidth: 'auto',
-                    height: '60px',
-                    lineHeight: '60px',
-                    border: '1px solid var(--tp-border-1)',
-                    background: active === cat ? 'var(--tp-common-black)' : 'transparent',
-                    color: active === cat ? 'var(--tp-common-white)' : 'var(--tp-common-black)',
-                    position: 'relative',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textAlign: 'center',
+                    background: 'none',
+                    border: 'none',
+                    padding: '8px 0',
+                    fontSize: '16px',
+                    fontWeight: active === cat ? 'bold' : 'normal',
+                    color: active === cat ? 'var(--tp-common-black)' : 'var(--tp-common-black)',
+                    textDecoration: active === cat ? 'underline' : 'none',
+                    textUnderlineOffset: '4px',
+                    textDecorationThickness: '2px',
+                    cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    margin: '0',
-                    overflow: 'hidden',
-                    clipPath: 'none',
-                    WebkitClipPath: 'none'
+                    position: 'relative'
                   }}
                   onMouseEnter={(e) => {
                     if (active !== cat) {
-                      e.currentTarget.style.background = 'var(--tp-common-black)';
-                      e.currentTarget.style.color = 'var(--tp-common-white)';
-                      // Cambiar el color del texto en los spans
-                      const text1 = e.currentTarget.querySelector('.text-1') as HTMLElement;
-                      const text2 = e.currentTarget.querySelector('.text-2') as HTMLElement;
-                      if (text1) text1.style.color = 'var(--tp-common-white)';
-                      if (text2) text2.style.color = 'var(--tp-common-white)';
+                      e.currentTarget.style.opacity = '0.7';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (active !== cat) {
-                      e.currentTarget.style.background = 'transparent';
-                      e.currentTarget.style.color = 'var(--tp-common-black)';
-                      // Restaurar el color del texto en los spans
-                      const text1 = e.currentTarget.querySelector('.text-1') as HTMLElement;
-                      const text2 = e.currentTarget.querySelector('.text-2') as HTMLElement;
-                      if (text1) text1.style.color = 'var(--tp-common-black)';
-                      if (text2) text2.style.color = 'var(--tp-common-black)';
+                      e.currentTarget.style.opacity = '1';
                     }
                   }}
                 >
-                  <span
-                    className="tp-btn-border-wrap"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                      width: '100%',
-                      height: '100%',
-                      borderBottom: 'none',
-                      paddingBottom: '0',
-                      borderRadius: '0 !important',
-                      clipPath: 'none',
-                      WebkitClipPath: 'none'
-                    }}
-                  >
-                    <span
-                      className="text-1"
-                      style={{
-                        textAlign: 'center',
-                        color: active === cat ? 'var(--tp-common-white)' : 'var(--tp-common-black)'
-                      }}
-                    >
-                      {cat}
-                    </span>
-                    <span
-                      className="text-2"
-                      style={{
-                        textAlign: 'center',
-                        color: active === cat ? 'var(--tp-common-white)' : 'var(--tp-common-black)'
-                      }}
-                    >
-                      {cat}
-                    </span>
-                  </span>
+                  {cat}
                 </button>
               ))}
             </div>
@@ -248,24 +195,29 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
           <div className="row">
             <div className="col-xl-12">
               <div className="tp-projct-5-2-btn-box mt-50 d-flex justify-content-center">
-                <div className="tp-hover-btn-wrapper">
-                  <a
-                    className="tp-btn-circle style-2 tp-hover-btn-item tp-hover-btn"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      loadMoreProjects();
-                    }}
-                  >
-                    <span className="tp-btn-circle-text">
-                      More <br /> Projects
-                    </span>
-                    <span className="tp-btn-circle-icon">
-                      <UpArrow />
-                    </span>
-                    <i className="tp-btn-circle-dot"></i>
-                  </a>
-                </div>
+                <button
+                  onClick={loadMoreProjects}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: '12px 0',
+                    fontSize: '16px',
+                    fontWeight: 'normal',
+                    color: 'var(--tp-common-black)',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    position: 'relative'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '0.7';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                  }}
+                >
+                  Más proyectos
+                </button>
               </div>
             </div>
           </div>
