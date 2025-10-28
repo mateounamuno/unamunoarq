@@ -60,26 +60,11 @@ const PortfolioGridColFourPage = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            {/* portfolio hero */}
-            <div className="tm-hero-area tm-hero-ptb">
-              <div className="container">
-                <div className="row">
-                  <div className="col-xl-12">
-                    <div className="tm-hero-content">
-                      <span className="tm-hero-subtitle">Unamuno Arquitectura</span>
-                      <h4 className="tm-hero-title fs-200 tp-char-animation">
-                        Proyectos
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="pt-100">
+              {/* portfolio area */}
+              <PortfolioGridFourColArea />
+              {/* portfolio area */}
             </div>
-            {/* portfolio hero */}
-
-            {/* portfolio area */}
-            <PortfolioGridFourColArea />
-            {/* portfolio area */}
 
             {/* big text */}
             <BigText />
