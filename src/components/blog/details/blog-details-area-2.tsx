@@ -105,21 +105,11 @@ export default function BlogDetailsAreaTwo() {
                 <div className="col-xl-8">
                   <div className="blog-details-left-content tp_fade_bottom">
                     <p>
-                      Quizás por eso la arquitectura nace del dibujo como la vida del juego: porque en ese trazo inocente se revela la esencia de lo humano, una búsqueda de cobijo y de belleza sin necesidad de explicación. Dibujar es esbozar el mundo antes de que exista, es acercarse a lo inasible. Y tal vez, en esa fugacidad, residen verdades de la arquitectura: la que nos recuerda que
+                      Quizás por eso la arquitectura nace del dibujo como la vida del juego: porque en ese trazo inocente se revela la esencia de lo humano, una búsqueda de cobijo y de belleza sin necesidad de explicación. Dibujar es esbozar el mundo antes de que exista, es acercarse a lo inasible. Y tal vez, en esa fugacidad, residen verdades de la arquitectura: la que nos recuerda que toda forma, todo espacio, no es más que un intento de atrapar un instante de libertad.
                     </p>
-                  </div>
-                  <div className="blog-details-blockquote tp_fade_bottom">
-                    <blockquote>
-                      <span className="quote-icon">
-                        <QuoteThree />
-                      </span>
-                      <p>
-                        {"Toda"} forma, todo espacio, no es más que un intento de atrapar un instante de libertad.
 
-                      </p>
-                      <span className="blockquote-info">Unamuno.</span>
-                    </blockquote>
                   </div>
+
                 </div>
               </div>
               <div className="blog-details-thumb-box">
