@@ -185,9 +185,8 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
           <div className="row gx-80">
             {thumbs.slice(0, 2).map((src: string, i: number) => (
               <div key={i} className="col-xl-6 col-lg-6">
-                <div className="showcase-details-thumb mb-80">
+                <div className="showcase-details-thumb mb-80 tp_img_fade_in" data-delay={i * 0.3}>
                   <Image
-                    data-speed=".8"
                     src={src}
                     alt={`${title} details thumb ${i + 1}`}
                     width={800}
@@ -200,9 +199,8 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
             ))}
             {thumbs[2] && (
               <div className="col-xl-12">
-                <div className="showcase-details-thumb mb-80">
+                <div className="showcase-details-thumb mb-80 tp_img_fade_in" data-delay="0.6">
                   <Image
-                    data-speed=".8"
                     src={thumbs[2]}
                     alt={`${title} details thumb 3`}
                     width={1200}

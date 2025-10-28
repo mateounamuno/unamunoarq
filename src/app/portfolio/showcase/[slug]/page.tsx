@@ -18,10 +18,11 @@ import FooterTwo from "@/layouts/footers/footer-two";
 import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 
 // animation
-import { charAnimation, titleAnimation } from "@/utils/title-animation";
+import { useShowcaseAnimations } from "@/hooks/use-showcase-animations";
 
 export default function ShowcaseDetailsPage({ params }: { params: { slug: string } }) {
     useScrollSmooth();
+    useShowcaseAnimations(); // Usa el hook que incluye la nueva animación
 
     useEffect(() => {
         document.body.classList.add("tp-magic-cursor");
@@ -35,14 +36,6 @@ export default function ShowcaseDetailsPage({ params }: { params: { slug: string
             cursorAnimation();
         }
     }, []);
-
-    useGSAP(() => {
-        const timer = setTimeout(() => {
-            charAnimation();
-            titleAnimation();
-        }, 100);
-        return () => clearTimeout(timer);
-    });
 
     const project = showcaseProjects.find((p: ShowcaseProject) => p.slug === params.slug);
 

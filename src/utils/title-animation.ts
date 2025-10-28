@@ -467,6 +467,43 @@ function titleAnimation() {
   }
 }
 
+// Custom image fade-in animation with tp_title_anim timing
+function imageFadeInAnimation() {
+  if ($('.tp_img_fade_in').length > 0) {
+    console.log('Found', $('.tp_img_fade_in').length, 'images with tp_img_fade_in class');
+    let imageElements = gsap.utils.toArray(".tp_img_fade_in");
+    imageElements.forEach((imageElement: any, index: number) => {
+      const delay = parseFloat(imageElement.getAttribute("data-delay")) || 0;
+      console.log(`Setting up animation for image ${index + 1} with delay: ${delay}`);
+
+      // Set initial state
+      gsap.set(imageElement, { opacity: 0, y: 50 });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: imageElement,
+          start: 'top 80%',        // Se activa antes para dar tiempo al delay
+          end: 'bottom 60%',
+          scrub: false,
+          markers: false,
+          toggleActions: 'play none none none'
+        }
+      });
+
+      tl.to(imageElement, {
+        duration: 1.5,             // Duración más larga para ser más visible
+        delay: 0.5 + delay,        // Delay más pronunciado (0.5s base + stagger)
+        opacity: 1,                // Fade-in simple
+        y: 0,                      // Movimiento más notorio desde abajo
+        ease: "power2.out",        // Easing suave
+        force3D: true              // Aceleración por hardware
+      });
+    });
+  } else {
+    console.log('No elements found with tp_img_fade_in class');
+  }
+}
+
 export {
   heroTitleAnim,
   heroBgAnimation,
@@ -477,4 +514,5 @@ export {
   revelAnimationOne,
   zoomAnimation,
   titleAnimation,
+  imageFadeInAnimation,
 };
