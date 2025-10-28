@@ -39,16 +39,6 @@ const HomePageTwo = () => {
   useGSAP(() => {
     const timer = setTimeout(() => {
       videoAnimOne();
-      // portfolio image wrap
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".tp-project-full-img-wrap",
-          start: "top 65",
-          end: "bottom 0%",
-          pin: ".tp-project-full-img",
-          pinSpacing: false,
-        }
-      });
       // team marquee
       teamMarqueAnim();
       hoverBtn();

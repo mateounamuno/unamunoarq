@@ -28,7 +28,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
   const [active, setActive] = React.useState<string>('All');
   const [visibleCount, setVisibleCount] = React.useState<number>(12);
 
-  // Configurar animaciones de fade para los elementos del portfolio
+  // Configurar animaciones de fade para los elementos del portfolio y sticky image
   useGSAP(() => {
     if (typeof window === 'undefined') return;
 
@@ -58,9 +58,36 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
       });
     };
 
+    const setupStickyImage = () => {
+      // Limpiar ScrollTriggers existentes para la imagen sticky
+      ScrollTrigger.getAll().forEach((trigger: any) => {
+        if (trigger.trigger === document.querySelector('.tp-project-full-img-wrap')) {
+          trigger.kill();
+        }
+      });
+
+      // Configurar la animación sticky para la imagen completa
+      const stickyImageWrap = document.querySelector('.tp-project-full-img-wrap');
+      const stickyImage = document.querySelector('.tp-project-full-img');
+
+      if (stickyImageWrap && stickyImage) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: stickyImageWrap,
+            start: "top 65",
+            end: "bottom 0%",
+            pin: stickyImage,
+            pinSpacing: false,
+            refreshPriority: -1, // Prioridad baja para que se actualice después de otros elementos
+          }
+        });
+      }
+    };
+
     // Ejecutar animaciones después de un pequeño delay para asegurar que los elementos estén renderizados
     const timer = setTimeout(() => {
       animatePortfolioItems();
+      setupStickyImage();
     }, 150);
 
     return () => clearTimeout(timer);
