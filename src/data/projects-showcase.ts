@@ -233,7 +233,7 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/la-otra-forma/detail-3.jpg",
         ],
     },
-    // Proyectos migrados de showcase-2
+    // Proyectos migrados
     {
         template: "showcase",
         slug: "cielo-y-tierra",

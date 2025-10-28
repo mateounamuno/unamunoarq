@@ -9,12 +9,10 @@ const getProjectsByCategory = (category: string) => {
 // Función para generar el enlace correcto según el template (igual que en portfolio-grid-col-4)
 const getProjectLink = (slug: string, template: string): string => {
   switch (template) {
-    case "showcase-2":
-      return `/portfolio/showcase-2/${slug}`;
     case "showcase":
       return `/portfolio/showcase/${slug}`;
     default:
-      return `/portfolio/showcase2/${slug}`;
+      return `/portfolio/showcase/${slug}`;
   }
 };
 

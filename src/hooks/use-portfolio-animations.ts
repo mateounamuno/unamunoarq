@@ -12,7 +12,7 @@ export const usePortfolioAnimations = () => {
             titleAnimation();
             fadeAnimation();
 
-            // Check if we're on a showcase-2 page and run the specific animation
+            // Check if we're on a portfolio page and run the specific animation
             const pathname = window.location.pathname;
             if (pathname.includes('/portfolio/')) {
                 // Check if we have moving gallery elements
