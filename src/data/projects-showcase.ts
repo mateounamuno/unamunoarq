@@ -79,16 +79,18 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Se trata de una vivienda en las sierras de Córdoba, para una persona que intenta encontrar en la espiritualidad y su conexión con el cielo, el sentido de las cosas. La arquitectura no hace más que representar esta forma de ver el mundo y dialogar desde su materialidad y composición con el paisaje circundante.",
-        autores: "Unamuno Arq. & Estudio RARE & Monte Arq.",
+        autores: "Unamuno, RARE & Monte",
         location: "Córdoba, AR",
         fotografia: "Nicolás Godoy",
         showcaseHeroBg: "/assets/img/inner-project/refugio-para-el-viento/banner.jpg",
         heroOverlayOpacity: 0.05,
         showcaseThumbs: [
+            "/assets/img/inner-project/refugio-para-el-viento/detail-4.jpg",
             "/assets/img/inner-project/refugio-para-el-viento/detail-1.jpg",
             "/assets/img/inner-project/refugio-para-el-viento/detail-2.jpg",
-            "/assets/img/inner-project/refugio-para-el-viento/detail-3.jpg",
+            "/assets/img/inner-project/refugio-para-el-viento/banner.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/refugio-para-el-viento/detail-3.jpg",
     },
     {
         template: "showcase",
