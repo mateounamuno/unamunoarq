@@ -207,9 +207,12 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/the-fav/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
-            "/assets/img/inner-project/the-fav/detail-1.jpg",
             "/assets/img/inner-project/the-fav/detail-2.jpg",
+            "/assets/img/inner-project/the-fav/detail-1.jpg",
             "/assets/img/inner-project/the-fav/detail-3.jpg",
+            "/assets/img/inner-project/the-fav/detail-4.jpg",
+            "/assets/img/inner-project/the-fav/detail-5.jpg",
+            "/assets/img/inner-project/the-fav/detail-6.jpg",
         ],
     },
     {
