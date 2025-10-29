@@ -155,16 +155,16 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "La extensión hacia la planta alta de @broscomedor, resultó en un laboratorio con vista al paseo sobremonte. Propusimos un espacio dinámico, como su cocina. Una experimesa, que es una gran mesa y a la vez muchas mesas. Y una cava, como una lámpara. Trabajamos junto a @estudioparvas, quienes desarollaron para este espacio, dispositivos lumínicos capaces de adaptarse y replegarse junto a las partes de la “experimesa” acompañando sus movimientos. ",
-        autores: "Unamuno Arq., Estudio RARE, B. Marinelli",
+        autores: "Unamuno, RARE, Marinelli",
         location: "Córdoba, AR",
         fotografia: "Ana Salazar",
         showcaseHeroBg: "/assets/img/inner-project/bros-comedor/banner.jpg",
         heroOverlayOpacity: 0.3,
         showcaseThumbs: [
-            "/assets/img/inner-project/bros-comedor/detail-1.jpg",
-            "/assets/img/inner-project/bros-comedor/detail-2.jpg",
             "/assets/img/inner-project/bros-comedor/detail-3.jpg",
+            "/assets/img/inner-project/bros-comedor/detail-1.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/bros-comedor/detail-2.jpg",
     },
     {
         template: "showcase",
