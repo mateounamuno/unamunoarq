@@ -92,15 +92,65 @@ export default function FooterOne() {
           <div className="tp-copyright-wrap">
             <div className="row align-items-center">
               <div className="col-xl-6 col-md-4">
-                <div className="tp-copyright-logo text-center text-md-start">
-                  <Link href="/">
-                    <Image src={logo} alt="logo" />
+                <div className="tp-copyright-logo text-center text-md-start" style={{ display: 'flex', alignItems: 'center', gap: '20px', minHeight: '35px' }}>
+                  <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+                    <Image
+                      src={logo}
+                      alt="logo"
+                      width={200}
+                      height={65}
+                      style={{
+                        width: 'auto',
+                        height: '50px',
+                        maxWidth: 'none'
+                      }}
+                    />
                   </Link>
+                  <a
+                    className="mb-10"
+                    href="https://www.instagram.com/unamuno.arq/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      height: '35px',
+                      lineHeight: '35px',
+                      padding: '0px 35px',
+                      borderRadius: '40px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      letterSpacing: '-0.14px',
+                      display: 'inline-block',
+                      color: 'var(--tp-common-white)',
+                      border: '1.5px solid rgba(255, 255, 255, 0.20)',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s ease',
+                      textTransform: 'uppercase'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--tp-common-white)';
+                      e.currentTarget.style.borderColor = 'var(--tp-common-white)';
+                      e.currentTarget.style.color = 'var(--tp-common-black)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.20)';
+                      e.currentTarget.style.color = 'var(--tp-common-white)';
+                    }}
+                  >
+                    Instagram
+                  </a>
                 </div>
               </div>
               <div className="col-xl-6 col-md-8">
-                <div className="tp-copyright-text text-center text-md-end">
-                  <p>
+                <div className="tp-copyright-text text-center text-md-end" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', minHeight: '35px' }}>
+                  <p style={{
+                    marginBottom: 0,
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    letterSpacing: '-0.14px',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255, 255, 255, 0.60)'
+                  }}>
                     Copyright © {new Date().getFullYear()} <a
                       href="https://authenticwebstudio.com"
                       target="_blank"

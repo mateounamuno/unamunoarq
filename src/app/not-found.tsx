@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Wrapper from '@/layouts/wrapper';
 import HeaderOne from '@/layouts/headers/header-one';
-import FooterTwo from '@/layouts/footers/footer-two';
+import FooterOne from '@/layouts/footers/footer-one';
 
 export default function NotFound() {
   return (
@@ -33,7 +33,7 @@ export default function NotFound() {
               </div>
             </div>
           </main>
-          <FooterTwo topCls="" />
+          <FooterOne />
         </div>
       </div>
     </Wrapper>

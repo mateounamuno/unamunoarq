@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
 import PortfolioGridFourColArea from "@/components/portfolio/portfolio-grid-4-col-area";
-import FooterTwo from "@/layouts/footers/footer-two";
+import FooterOne from "@/layouts/footers/footer-one";
 // animation
 import { hoverBtn } from "@/utils/hover-btn";
 import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-animation";
@@ -68,7 +68,7 @@ const PortfolioGridColFourPage = () => {
           </main>
 
           {/* footer area */}
-          <FooterTwo topCls="" />
+          <FooterOne />
           {/* footer area */}
         </div>
       </div>

@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
-import FooterTwo from "@/layouts/footers/footer-two";
+import FooterOne from "@/layouts/footers/footer-one";
 import BlogDetailsBreadcrumb from "@/components/blog/details/blog-details-breadcrumb";
 import BlogDetailsAreaTwo from "@/components/blog/details/blog-details-area-2";
 // animation
@@ -60,7 +60,7 @@ export default function BlogDetailsPage({ params }: { params: { id: string } }) 
           </main>
 
           {/* footer area */}
-          <FooterTwo topCls="" />
+          <FooterOne />
           {/* footer area */}
         </div>
       </div>

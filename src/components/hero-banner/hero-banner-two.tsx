@@ -21,7 +21,7 @@ const HeroBannerTwo = () => {
       <div className="tp-hero-bg-image">
         <GridDistortion
           imageSrc="/assets/img/home-01/hero/hero-1-2.png"
-          grid={50}
+          grid={25}
           mouse={0.1}
           strength={0.10}
           relaxation={0.9}

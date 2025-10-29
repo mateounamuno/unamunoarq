@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
-import FooterTwo from "@/layouts/footers/footer-two";
+import FooterOne from "@/layouts/footers/footer-one";
 // animation
 import { charAnimation } from "@/utils/title-animation";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
@@ -53,7 +53,7 @@ const ContactTwoPage = () => {
             </main>
 
             {/* footer area */}
-            <FooterTwo topCls="" />
+            <FooterOne />
             {/* footer area */}
           </div>
         </div>

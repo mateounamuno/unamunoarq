@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
 import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
 import PortfolioDetailsShowcaseArea from "@/components/portfolio/details/portfolio-details-showcase-area";
-import FooterTwo from "@/layouts/footers/footer-two";
+import FooterOne from "@/layouts/footers/footer-one";
 import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 
 // animation
@@ -68,7 +68,7 @@ export default function ShowcaseDetailsPage({ params }: { params: { slug: string
                     </main>
 
                     {/* footer area */}
-                    <FooterTwo topCls="" />
+                    <FooterOne />
                     {/* footer area */}
                 </div>
             </div>
