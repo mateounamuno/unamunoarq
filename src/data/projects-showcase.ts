@@ -110,10 +110,11 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/unidades-vb/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
-            "/assets/img/inner-project/unidades-vb/detail-1.jpg",
+
             "/assets/img/inner-project/unidades-vb/detail-2.jpg",
             "/assets/img/inner-project/unidades-vb/detail-3.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/unidades-vb/detail-1.jpg",
     },
     {
         template: "showcase",
