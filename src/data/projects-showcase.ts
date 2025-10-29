@@ -525,16 +525,21 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview: "Un 'banquito' que, en homenaje a la arquitecta, tiene vocación de lo público. Una exploración formal material inspirado en la arquitecta Lina Bo Bardi, que derivó en un mobiliario único. Con su materialidad sólida y resistente a la intemperie, tiene como objetivo, poder estar en cualquier sector de la ciudad para ser apropiado libremente.",
-        autores: "Unamuno Arq., Estudio RARE, Tomas Barros",
+        autores: "Unamuno, RARE, Barros",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/banco-rarx/banner.jpg",
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
-            "/assets/img/inner-project/banco-rarx/moving-top-1.jpg",
-            "/assets/img/inner-project/banco-rarx/moving-top-2.jpg",
-            "/assets/img/inner-project/banco-rarx/moving-top-3.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-1.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-2.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-3.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-4.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-5.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-6.jpg",
+
         ],
+        fullWidthImage: "/assets/img/inner-project/banco-rarx/full-width.jpg",
     },
 
 ];

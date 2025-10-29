@@ -260,21 +260,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
         )}
 
 
-        {/* Sección de imagen completa */}
-        <div className="container-fluid p-0">
-          <div className="row g-0">
-            <div className="col-xl-12">
-              <div className="tp-project-full-img-wrap p-relative fix">
-                <div
-                  className="tp-project-full-img"
-                  style={{
-                    backgroundImage: "url(/assets/img/inner-service/hero/hero-2.jpg)",
-                  }}
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );

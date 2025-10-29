@@ -1,11 +1,22 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 import { projects } from "@/data/project-data";
 
 interface ProjectListPageProps {
     className?: string;
 }
+
+// Función para generar el enlace correcto según el template
+const getProjectLink = (slug: string, template: string): string => {
+    switch (template) {
+        case "showcase":
+            return `/portfolio/showcase/${slug}`;
+        default:
+            return `/portfolio/showcase/${slug}`;
+    }
+};
 
 const FloatingImagePortal: React.FC<{
     src: string;
@@ -147,8 +158,9 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
 
             <div className="project-list">
                 {sortedProjects.map((project) => (
-                    <div
+                    <Link
                         key={project.slug}
+                        href={getProjectLink(project.slug, project.template)}
                         className={`project-row ${hoveredProject === project.slug ? "hovered" : ""
                             }`}
                         onMouseEnter={() => showImage(project.slug)}
@@ -167,7 +179,7 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
                         <div className="project-year">{project.year}</div>
                         <div className="project-title">{project.title}</div>
                         <div className="project-location">{project.location}</div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
@@ -193,7 +205,7 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           width: 100%;
         }
 
-        .project-row {
+        :global(.project-row) {
           display: grid;
           grid-template-columns: 80px 1fr auto;
           align-items: center;
@@ -202,49 +214,52 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           cursor: pointer;
           transition: all 0.15s ease;
           gap: 20px;
+          text-decoration: none;
+          color: inherit;
+          box-sizing: border-box;
         }
 
-        .project-row:last-child {
+        :global(.project-row:last-child) {
           border-bottom: none;
         }
 
-        .project-row.hovered {
+        :global(.project-row.hovered) {
           color: #999;
         }
 
-        .project-row.hovered .project-title {
+        :global(.project-row.hovered .project-title) {
           font-weight: normal;
         }
 
-        .project-year {
+        :global(.project-year) {
           font-size: 16px;
           color: inherit;
           text-align: left;
         }
 
-        .project-title {
+        :global(.project-title) {
           font-size: 16px;
           font-weight: bold;
           color: inherit;
           text-align: left;
         }
 
-        .project-location {
+        :global(.project-location) {
           font-size: 16px;
           color: inherit;
           text-align: right;
         }
 
         @media (max-width: 768px) {
-          .project-row {
+          :global(.project-row) {
             grid-template-columns: 60px 1fr auto;
             gap: 15px;
             padding: 15px 0;
           }
 
-          .project-year,
-          .project-title,
-          .project-location {
+          :global(.project-year),
+          :global(.project-title),
+          :global(.project-location) {
             font-size: 14px;
           }
         }
