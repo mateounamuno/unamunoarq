@@ -1,128 +1,168 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { projects } from "@/data/project-data";
-import Image from "next/image";
 
 interface ProjectListPageProps {
     className?: string;
 }
 
+const FloatingImagePortal: React.FC<{
+    src: string;
+    alt: string;
+    visible: boolean;
+    width?: number | string;
+    height?: number | string;
+}> = ({ src, alt, visible, width = 400, height = 300 }) => {
+    // Si no hay window (SSR) no renderizamos
+    if (typeof window === "undefined") return null;
+
+    const node = document.body;
+
+    const el = (
+        <div
+            className="floating-project-image"
+            aria-hidden
+            style={{
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                zIndex: 9999,
+                pointerEvents: "none",
+                width: typeof width === "number" ? `${width}px` : width,
+                height: typeof height === "number" ? `${height}px` : height,
+                opacity: visible ? 1 : 0,
+                transition: "opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+                borderRadius: 8,
+                overflow: "hidden",
+                backgroundColor: "transparent",
+            }}
+        >
+            <img
+                src={src}
+                alt={alt}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                }}
+            />
+        </div>
+    );
+
+    return createPortal(el, node);
+};
+
 const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null);
     const [isImageVisible, setIsImageVisible] = useState(false);
+
     const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const idleTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     // Ordenar proyectos por año (más recientes primero)
-    const sortedProjects = [...projects].sort((a, b) => parseInt(b.year) - parseInt(a.year));
+    const sortedProjects = [...projects].sort(
+        (a, b) => parseInt(b.year) - parseInt(a.year)
+    );
 
-    const showImage = useCallback((projectSlug: string) => {
-        // Limpiar timeouts anteriores
+    const clearAllTimeouts = () => {
         if (hoverTimeoutRef.current) {
             clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
         }
         if (leaveTimeoutRef.current) {
             clearTimeout(leaveTimeoutRef.current);
+            leaveTimeoutRef.current = null;
         }
         if (idleTimeoutRef.current) {
             clearTimeout(idleTimeoutRef.current);
+            idleTimeoutRef.current = null;
         }
+    };
 
-        // Si ya hay una imagen visible y cambiamos a otro proyecto, hacer transición suave
-        if (hoveredProject && hoveredProject !== projectSlug && isImageVisible) {
-            // Cambiar la imagen inmediatamente pero mantener la visibilidad
+    const showImage = useCallback(
+        (projectSlug: string) => {
+            clearAllTimeouts();
+
             setHoveredProject(projectSlug);
-            return;
-        }
 
-        setHoveredProject(projectSlug);
-        setIsImageVisible(false);
+            // Si ya está visible, solo cambiamos la imagen (sin delay)
+            if (isImageVisible) {
+                return setIsImageVisible(true);
+            }
 
-        // Esperar 800ms de cursor quieto antes de mostrar la imagen
-        idleTimeoutRef.current = setTimeout(() => {
-            setIsImageVisible(true);
-        }, 800);
-    }, [hoveredProject, isImageVisible]);
+            // Esperar 600-800ms para el efecto "cursor quieto"
+            idleTimeoutRef.current = setTimeout(() => {
+                setIsImageVisible(true);
+            }, 700);
+        },
+        [isImageVisible]
+    );
 
     const hideImage = useCallback(() => {
-        // Limpiar todos los timeouts
-        if (hoverTimeoutRef.current) {
-            clearTimeout(hoverTimeoutRef.current);
-        }
+        // Evitamos parpadeos: pequeño delay antes de ocultar
         if (idleTimeoutRef.current) {
             clearTimeout(idleTimeoutRef.current);
+            idleTimeoutRef.current = null;
         }
 
-        // Delay antes de ocultar para evitar parpadeos
+        if (leaveTimeoutRef.current) clearTimeout(leaveTimeoutRef.current);
+
         leaveTimeoutRef.current = setTimeout(() => {
             setHoveredProject(null);
             setIsImageVisible(false);
-        }, 200);
+        }, 150);
     }, []);
 
-    const handleMouseEnter = (projectSlug: string) => {
-        showImage(projectSlug);
-    };
-
-    const handleMouseLeave = () => {
-        hideImage();
-    };
-
-    // Limpiar timeouts al desmontar
+    // limpiar al desmontar
     useEffect(() => {
         return () => {
-            if (hoverTimeoutRef.current) {
-                clearTimeout(hoverTimeoutRef.current);
-            }
-            if (leaveTimeoutRef.current) {
-                clearTimeout(leaveTimeoutRef.current);
-            }
-            if (idleTimeoutRef.current) {
-                clearTimeout(idleTimeoutRef.current);
-            }
+            clearAllTimeouts();
         };
     }, []);
 
+    const currentProject = hoveredProject
+        ? projects.find((p) => p.slug === hoveredProject)
+        : null;
+
     return (
-        <div className={`project-list-page ${className} py-130`}>
-            {/* Imagen flotante que aparece después de cursor quieto */}
-            {hoveredProject && (
-                <div
-                    className={`floating-project-image ${isImageVisible ? 'visible' : 'hidden'}`}
-                    style={{
-                        position: 'fixed',
-                        top: '50vh',
-                        left: '50vw',
-                        transform: 'translate(-50%, -50%)',
-                        zIndex: 9999,
-                        pointerEvents: 'none',
-                        width: '400px',
-                        height: '300px',
-                        opacity: isImageVisible ? 1 : 0,
-                        transition: 'opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1)'
-                    }}
-                >
-                    <Image
-                        src={projects.find(p => p.slug === hoveredProject)?.showcaseHeroBg || ''}
-                        alt={projects.find(p => p.slug === hoveredProject)?.title || ''}
-                        fill
-                        className="object-cover rounded-lg"
-                        style={{
-                            borderRadius: '8px',
-                            transition: 'opacity 0.3s ease-in-out'
-                        }}
-                    />
-                </div>
+        <div
+            className={`project-list-page ${className}`}
+            style={{ paddingTop: "120px", paddingBottom: "120px" }}
+        >
+            {/* Portal: renderizamos la imagen fuera del flujo para que position:fixed sea siempre respecto al viewport */}
+            {currentProject && (
+                <FloatingImagePortal
+                    src={currentProject.showcaseHeroBg}
+                    alt={currentProject.title}
+                    visible={isImageVisible}
+                    width={400}
+                    height={300}
+                />
             )}
 
             <div className="project-list">
-                {sortedProjects.map((project, index) => (
+                {sortedProjects.map((project) => (
                     <div
                         key={project.slug}
-                        className={`project-row ${hoveredProject === project.slug ? 'hovered' : ''}`}
-                        onMouseEnter={() => handleMouseEnter(project.slug)}
-                        onMouseLeave={handleMouseLeave}
+                        className={`project-row ${hoveredProject === project.slug ? "hovered" : ""
+                            }`}
+                        onMouseEnter={() => showImage(project.slug)}
+                        onMouseMove={() => {
+                            // mover el mouse dentro de la fila resetea el idle (no hide)
+                            if (idleTimeoutRef.current) {
+                                clearTimeout(idleTimeoutRef.current);
+                                // volver a iniciar el timeout para mostrar (si aún no visible)
+                                idleTimeoutRef.current = setTimeout(() => {
+                                    setIsImageVisible(true);
+                                }, 700);
+                            }
+                        }}
+                        onMouseLeave={hideImage}
                     >
                         <div className="project-year">{project.year}</div>
                         <div className="project-title">{project.title}</div>
@@ -137,9 +177,15 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           margin: 0 auto;
           padding: 0 20px;
           min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          display: block; /* cambiado a block para evitar centrar vertical del contenedor */
+        }
+
+        @media (max-width: 768px) {
+          .project-list-page {
+            padding: 0 15px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+          }
         }
 
         .project-list {
@@ -154,7 +200,7 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           padding: 20px 0;
           border-bottom: 1px solid #000;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.15s ease;
           gap: 20px;
         }
 
@@ -189,23 +235,7 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           text-align: right;
         }
 
-        .floating-project-image {
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .floating-project-image.visible {
-          opacity: 1;
-        }
-
-        .floating-project-image.hidden {
-          opacity: 0;
-        }
-
         @media (max-width: 768px) {
-          .project-list-page {
-            padding: 0 15px;
-          }
-
           .project-row {
             grid-template-columns: 60px 1fr auto;
             gap: 15px;
@@ -216,11 +246,6 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           .project-title,
           .project-location {
             font-size: 14px;
-          }
-
-          .floating-project-image {
-            width: 300px !important;
-            height: 200px !important;
           }
         }
       `}</style>
