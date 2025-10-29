@@ -99,6 +99,17 @@
     z-index: 10;
 }
 
+/* Asegurar que el contenedor de distorsión pueda recibir eventos del mouse */
+.tp-hero-bg-image {
+    pointer-events: auto !important;
+    z-index: 0 !important;
+
+    .distortion-container {
+        pointer-events: auto !important;
+        z-index: 0 !important;
+    }
+}
+
 /* Asegurar que el título esté por encima */
 .tp-hero-title {
     position: relative;

@@ -21,6 +21,9 @@ import { hoverBtn } from "@/utils/hover-btn";
 import { footerTwoAnimation } from "@/utils/footer-anim";
 import { bounceAnimation, charAnimation, fadeAnimation } from "@/utils/title-animation";
 
+
+
+
 const HomePageTwo = () => {
   useScrollSmooth();
   useEffect(() => {

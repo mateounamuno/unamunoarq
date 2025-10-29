@@ -121,7 +121,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
     setVisibleCount(prev => Math.min(prev + 12, items.length));
   };
   return (
-    <div className="tp-project-5-2-area tp-project-5-2-p pt-50 pb-50">
+    <div className="tp-project-5-2-area tp-project-5-2-p pt-100 pb-50">
       <div className={`container container-${style_2 ? '1800' : '1530'}`}>
         <div className="row">
           <div className="col-xl-12">
@@ -166,24 +166,39 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
             <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
               <div className="tp-project-5-2-thumb mb-30">
                 <div
-                  className="p-relative"
-                  style={{ overflow: 'hidden', width: '100%', height: style_2 ? 504 : 330 }}
+                  className="p-relative tp-project-5-2-overlay"
+                  style={{
+                    overflow: 'hidden',
+                    width: '100%',
+                    height: style_2 ? 504 : 330,
+                    position: 'relative'
+                  }}
                   onMouseEnter={(e) => {
                     const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                    const titleElement = e.currentTarget.parentElement?.querySelector('.project-title') as HTMLElement;
+                    const overlay = e.currentTarget.querySelector('.tp-project-5-2-overlay-inner') as HTMLElement;
+                    const content = e.currentTarget.querySelector('.tp-project-5-2-content') as HTMLElement;
                     if (img) img.style.transform = 'scale(1.1)';
-                    if (titleElement) {
-                      titleElement.style.opacity = '1';
-                      titleElement.style.transform = 'translateY(0)';
+                    if (overlay) {
+                      overlay.style.opacity = '1';
+                      overlay.style.visibility = 'visible';
+                    }
+                    if (content) {
+                      content.style.opacity = '1';
+                      content.style.visibility = 'visible';
                     }
                   }}
                   onMouseLeave={(e) => {
                     const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                    const titleElement = e.currentTarget.parentElement?.querySelector('.project-title') as HTMLElement;
+                    const overlay = e.currentTarget.querySelector('.tp-project-5-2-overlay-inner') as HTMLElement;
+                    const content = e.currentTarget.querySelector('.tp-project-5-2-content') as HTMLElement;
                     if (img) img.style.transform = 'scale(1)';
-                    if (titleElement) {
-                      titleElement.style.opacity = '0';
-                      titleElement.style.transform = 'translateY(10px)';
+                    if (overlay) {
+                      overlay.style.opacity = '0';
+                      overlay.style.visibility = 'hidden';
+                    }
+                    if (content) {
+                      content.style.opacity = '0';
+                      content.style.visibility = 'hidden';
                     }
                   }}
                 >
@@ -202,23 +217,73 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                       }}
                     />
                   </Link>
+                  {/* Overlay oscuro */}
+                  <div
+                    className="tp-project-5-2-overlay-inner"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: 'rgba(9, 9, 11, 0.20)',
+                      zIndex: 2,
+                      opacity: 0,
+                      visibility: 'hidden',
+                      transition: 'opacity 0.3s ease, visibility 0.3s ease'
+                    }}
+                  />
+                  {/* Contenido del overlay - todo apilado arriba a la izquierda */}
+                  <div
+                    className="tp-project-5-2-content"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      padding: '40px',
+                      zIndex: 3,
+                      opacity: 0,
+                      visibility: 'hidden',
+                      transition: 'opacity 0.3s ease, visibility 0.3s ease',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      gap: '0'
+                    }}
+                  >
+                    <span style={{
+                      fontSize: '18px',
+                      fontWeight: 400,
+                      lineHeight: '13px',
+                      color: 'var(--tp-common-white)',
+                      marginBottom: '0'
+                    }}>
+                      {item.category}
+                    </span>
+                    <span className="tp-project-5-2-meta" style={{
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      lineHeight: 1,
+                      color: 'var(--tp-common-white)',
+                      zIndex: 2,
+                      marginTop: '8px',
+                      marginBottom: '0'
+                    }}>
+                      {item.year}
+                    </span>
+                    <h3 className="tp-project-5-2-title-sm" style={{
+                      fontSize: '40px',
+                      fontWeight: 500,
+                      lineHeight: 1,
+                      letterSpacing: '-0.8px',
+                      color: 'var(--tp-common-white)',
+                      marginBottom: 0,
+                      marginTop: '8px'
+                    }}>
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-                <p
-                  className="project-title"
-                  style={{
-                    color: 'black',
-                    fontSize: '16px',
-                    fontWeight: 'normal',
-                    textAlign: 'left',
-                    opacity: 0,
-                    transform: 'translateY(10px)',
-                    transition: 'all 0.3s ease',
-                    marginTop: '16px',
-                    marginBottom: 0
-                  }}
-                >
-                  {item.title}
-                </p>
               </div>
             </div>
           ))}

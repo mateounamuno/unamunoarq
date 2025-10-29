@@ -46,7 +46,7 @@ const FloatingImagePortal: React.FC<{
                 opacity: visible ? 1 : 0,
                 transition: "opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                 boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                borderRadius: 8,
+                borderRadius: 0,
                 overflow: "hidden",
                 backgroundColor: "transparent",
             }}

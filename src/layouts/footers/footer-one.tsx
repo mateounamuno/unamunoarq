@@ -20,8 +20,9 @@ export default function FooterOne() {
   }, [])
   return (
     <footer>
-      {/* footer area start */}
-      <div className="tp-footer-area black-bg pt-90">
+      <div className="tp-footer-area black-bg ">
+        {/* footer area start */}
+        {/* 
         <div className="container-fluid">
           <div className="tp-footer-wrap">
             <div className="row align-items-start">
@@ -83,7 +84,7 @@ export default function FooterOne() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* footer area end */}
 
         {/* copyright area start */}
@@ -126,6 +127,6 @@ export default function FooterOne() {
         {/* copyright area end */}
       </div>
       {/* footer area start */}
-    </footer>
+    </footer >
   );
 }

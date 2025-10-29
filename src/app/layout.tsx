@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
+import "./tailwind.css";
 import "./globals.scss";
 import "./project-one-fixes.css";
 import "./mac-specific-fixes.css";
