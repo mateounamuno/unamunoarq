@@ -218,7 +218,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     {
         template: "showcase",
         slug: "la-otra-forma",
-        title: "La otra forma.",
+        title: "La otra forma",
         category: "Experimentaciones",
         year: "2024",
         homeGrid: "/assets/img/inner-project/la-otra-forma/grid.jpg",
@@ -227,16 +227,18 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura y Arte ]",
         overview:
             "Una intervención artística/arquitectónica de sitio específico en el espacio público, de escala y carácter temporal habitable, realizada en colaboración con el artista Dino Valentini en el marco de la 3ra Bienal de Diseño Córdoba. <br/> IRREGULAR – IMPERFECTO- ORGÁNICO- ASIMETRICO – TANSPARENTE – LIVIANO- RECICLABLE – HABITABLE. <br/> Propone a través de una serie de elementos, operaciones y programas, la construcción de una FORMA con acceso a su interior, pero sin acceso a su centro. Una forma OTRA, no binaria. <br/> Ofreciendo una tensión ante la posibilidad de habitar y hacer un recorrido por un espacio que no tiene centro, en el centro de la ciudad de Córdoba. <br/> Suprimiendo la promesa de lo que significa acceder al núcleo, eliminando las apariencias y habilitando un mismo portal de acceso y escape de un territorio segmentado.",
+        autores: "Unamuno, RARE, Valentini",
         location: "Córdoba, AR",
         fotografia: "Mila Gonzalez Ruso, Jorge Barucco",
         showcaseHeroBg: "/assets/img/inner-project/la-otra-forma/banner.jpg",
-        heroOverlayOpacity: 0.4,
+        heroOverlayOpacity: 0.3,
         showcaseThumbs: [
             "/assets/img/inner-project/la-otra-forma/detail-1.jpg",
             "/assets/img/inner-project/la-otra-forma/detail-2.jpg",
             "/assets/img/inner-project/la-otra-forma/detail-3.jpg",
+            "/assets/img/inner-project/la-otra-forma/detail-4.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/la-otra-forma/detail-1.jpg",
+
     },
     // Proyectos migrados
     {
