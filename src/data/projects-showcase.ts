@@ -178,15 +178,16 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Esto no es un café, sino una instalación efímera y flexible que propone una actitud más que una forma: una gran barra de servicios como pieza esencial, mesas móviles que funcionan tanto para el consumo como para usos expositivos, y una plataforma exterior que dialoga con el árbol existente. Con materiales simples y económicos, de fácil montaje y posibilidad de reciclaje, la propuesta se plantea concreta, ligera y adaptable, buscando abrir el espacio a múltiples situaciones y estimular la imaginación, más allá de lo planificado.",
+        autores: "Unamuno, Echegaray",
         location: "Córdoba, AR",
-        fotografia: "Lorenzo Egues",
+        fotografia: "Francisco Rolfi",
         showcaseHeroBg: "/assets/img/inner-project/cafe-laprida/banner.jpg",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
             "/assets/img/inner-project/cafe-laprida/detail-1.jpg",
             "/assets/img/inner-project/cafe-laprida/detail-2.jpg",
-            "/assets/img/inner-project/cafe-laprida/detail-3.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/cafe-laprida/detail-3.jpg",
     },
     {
         template: "showcase",
