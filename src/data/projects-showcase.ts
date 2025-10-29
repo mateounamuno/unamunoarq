@@ -10,19 +10,19 @@ export type ShowcaseProject = {
     subtitle: string;
     overview?: string;
     autores?: string;
-    services?: string;
     location?: string;
     fotografia?: string;
     showcaseHeroBg: string;
     heroOverlayOpacity?: number; // 0 to 1
     showcaseThumbs: string[]; // length 3 recommended
+    fullWidthImage?: string; // imagen full width opcional
 };
 
 export const showcaseProjects: ShowcaseProject[] = [
     {
         template: "showcase",
         slug: "casa-al-lado-1",
-        title: "La casa de al lado.",
+        title: "La casa de al lado",
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.jpg",
@@ -31,17 +31,18 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Una vivienda que se desarrolla en tira. Una casa que ocupa un lugar en desuso al lado de una residencia existente. Una extensión independiente de la misma. Una propuesta para pensar como re-densificar. Un diálogo material entre lo que hay y lo que vendrá. Una casa al lado de la casa.",
-        autores: "Unamuno Arq.",
-        services: "Arquitectura",
+        autores: "Unamuno, RARE, Bertoya",
         location: "Córdoba, AR",
-        fotografia: "",
+        fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/casa-al-lado/banner.jpg",
         heroOverlayOpacity: 0.20,
         showcaseThumbs: [
-            "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
-            "/assets/img/inner-project/casa-al-lado/detail-2.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-3.jpg",
+            "/assets/img/inner-project/casa-al-lado/detail-4.jpg",
+            "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
+            "/assets/img/inner-project/casa-al-lado/detail-2.jpg"
         ],
+        fullWidthImage: "/assets/img/inner-project/casa-al-lado/full-width.jpg",
     },
     {
         template: "showcase",
@@ -56,7 +57,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "En esta vivienda ubicada en un lote de 250 m² en la localidad de Malageño, se busca integrar de manera armónica los árboles existentes del terreno, acompañando con una orientación estratégica para optimizar la luz solar y garantizar una flexibilidad funcional en los espacios interiores. En lugar de desarrollar un volumen compacto con un único patio trasero, se optó por una disposición que incorpora dos patios de casi igual jerarquía. <br/> Esta configuración no solo permite aprovechar al máximo el lote, sino que también, integrar el exterior al interior de la vivienda en ambos sentidos. En planta baja, el espacio social se integra con el exterior y una doble altura en la que balconea la circulación de planta alta. En esta, el volumen privado de dormitorios, intenta leerse como un bloque independiente simplemente apoyado.",
         autores: "Unamuno Arq.",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/casa-nina/frente.png",
@@ -80,7 +80,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "Se trata de una vivienda en las sierras de Córdoba, para una persona que intenta encontrar en la espiritualidad y su conexión con el cielo, el sentido de las cosas. La arquitectura no hace más que representar esta forma de ver el mundo y dialogar desde su materialidad y composición con el paisaje circundante.",
         autores: "Unamuno Arq. & Estudio RARE & Monte Arq.",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "Nicolás Godoy",
         showcaseHeroBg: "/assets/img/inner-project/refugio-para-el-viento/banner.jpg",
@@ -104,7 +103,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "Un proyecto que prioriza la flexibilidad de uso (apto para viviendas u oficinas) y optimiza la ocupación del lote.\nLa privacidad hacia el exterior, la relación con las visuales y un espacio verde en común terminan de configurar los volúmenes.",
         autores: "Unamuno Arq.",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/unidades-vb/banner.jpg",
@@ -128,7 +126,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "Ejercicio para conversar con la barranca, una vivienda unifamiliar en la localidad de Cuesta Blanca. \n La vivienda se despliega siguiendo el pulso del terreno, adaptándose a su relieve como si siempre hubiera estado allí. \n Su geometría se inclina, buscando la luz y enmarcando las mejores vistas, dialogando con el horizonte. \n Flexible en su interior, la casa se transforma para acompañar distintos modos de habitar, respirando al ritmo del paisaje que la rodea.",
         autores: "Unamuno Arq., Estudio RARE, B. Marinelli",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/la-barranca/banner.jpg",
@@ -152,7 +149,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "La extensión hacia la planta alta de @broscomedor, resultó en un laboratorio con vista al paseo sobremonte. Propusimos un espacio dinámico, como su cocina. Una experimesa, que es una gran mesa y a la vez muchas mesas. Y una cava, como una lámpara. Trabajamos junto a @estudioparvas, quienes desarollaron para este espacio, dispositivos lumínicos capaces de adaptarse y replegarse junto a las partes de la “experimesa” acompañando sus movimientos. ",
         autores: "Unamuno Arq., Estudio RARE, B. Marinelli",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "Ana Salazar",
         showcaseHeroBg: "/assets/img/inner-project/bros-comedor/banner.jpg",
@@ -175,7 +171,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Esto no es un café, sino una instalación efímera y flexible que propone una actitud más que una forma: una gran barra de servicios como pieza esencial, mesas móviles que funcionan tanto para el consumo como para usos expositivos, y una plataforma exterior que dialoga con el árbol existente. Con materiales simples y económicos, de fácil montaje y posibilidad de reciclaje, la propuesta se plantea concreta, ligera y adaptable, buscando abrir el espacio a múltiples situaciones y estimular la imaginación, más allá de lo planificado.",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/cafe-laprida/banner.jpg",
@@ -199,7 +194,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "Lo espontáneo, lo efímero, el punto de encuentro, la esquina, la expresión individual, el gesto colectivo, el ruido, los autos, las chapas, las luces… La calle. <br/> Un conjunto de acciones (de afuera hacia adentro) direccionadas a generar lógicas diferentes de relación entre lo que antes era una vidriera, con el espacio público. Un manifiesto, usar la vereda, ocupar la calle y una vez más, comenzar a borrar los márgenes entre el interior y el exterior previamente inexistente.",
         autores: "Unamuno Arq.",
-        services: "Arquitectura",
         location: "Córdoba, AR",
         fotografia: "Ana Salazar",
         showcaseHeroBg: "/assets/img/inner-project/the-fav/banner.jpg",
@@ -222,7 +216,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura y Arte ]",
         overview:
             "Una intervención artística/arquitectónica de sitio específico en el espacio público, de escala y carácter temporal habitable, realizada en colaboración con el artista Dino Valentini en el marco de la 3ra Bienal de Diseño Córdoba. <br/> IRREGULAR – IMPERFECTO- ORGÁNICO- ASIMETRICO – TANSPARENTE – LIVIANO- RECICLABLE – HABITABLE. <br/> Propone a través de una serie de elementos, operaciones y programas, la construcción de una FORMA con acceso a su interior, pero sin acceso a su centro. Una forma OTRA, no binaria. <br/> Ofreciendo una tensión ante la posibilidad de habitar y hacer un recorrido por un espacio que no tiene centro, en el centro de la ciudad de Córdoba. <br/> Suprimiendo la promesa de lo que significa acceder al núcleo, eliminando las apariencias y habilitando un mismo portal de acceso y escape de un territorio segmentado.",
-        services: "Arquitectura y Arte",
         location: "Córdoba, AR",
         fotografia: "Mila Gonzalez Ruso, Jorge Barucco",
         showcaseHeroBg: "/assets/img/inner-project/la-otra-forma/banner.jpg",
@@ -232,6 +225,7 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/la-otra-forma/detail-2.jpg",
             "/assets/img/inner-project/la-otra-forma/detail-3.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/la-otra-forma/detail-1.jpg",
     },
     // Proyectos migrados
     {
@@ -246,7 +240,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Una casa que conecta el cielo y la tierra, diseñada para maximizar la luz natural y crear espacios que fluyen armoniosamente con el entorno natural. La Casa Cielo y Tierra nació de la necesidad de crear un espacio que respete y celebre la conexión entre el ser humano y la naturaleza. El diseño busca maximizar la luz natural y crear espacios que fluyan armoniosamente con el entorno, utilizando materiales sostenibles y técnicas de construcción tradicionales.",
         autores: "Unamuno Arq.",
-        services: "Diseño Arquitectónico",
         location: "Río Cuarto, Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.jpg",
@@ -269,7 +262,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "A cada paso se repite: 'Caminante no hay camino, se hace camino al andar'. En casa para andar no hay comienzo y no hay final. Si no se anda, no se descubre. Si no se descubre, no se encuentra el interior. Porque el andar es dinámico, la casa es dinámica. Porque es dinámica, puede cambiar. El andar a pie es primitivo, es por ello que la casa para andar es vernácula.",
         autores: "Unamuno Arq. & Willnecker & Ferrrero & Marinelli",
-        services: "Diseño Arquitectónico",
         location: "Río Cuarto, Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/casa-andar/banner.jpg",
@@ -292,7 +284,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un proyecto vigente, que indagó sobre cuestiones historicistas de la arquitectura colonial y del siglo XIX de nuestro país, en relación con una tipología contemporánea. Ubicado en Vicente López esquina con Pje. La Tablada de la ciudad de Salta, el encargo comenzó como un pequeño 'hotel'. Ese hotel se transformó en un conjunto de unidades para alquiler transitorio (turismo), 18 tipologías mínimas, por encima de una planta libre que contiene estacionamiento, un local comercial y un patio.",
         autores: "Unamuno Arq.",
-        services: "Diseño Arquitectónico",
         location: "Salta, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/edificio-recova/banner.png",
@@ -315,7 +306,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Con intervenciones mínimas, la vivienda volvió a respirar. Una casa llena de memoria, nos pidió poco. Solo dejar entrar la luz. Solo abrirle el paso al aire y al tiempo. Con intervenciones mínimas, casi susurradas, la vivienda volvió a respirar. Los muros se volvieron más permeables, los espacios más libres, más vivos.",
         autores: "Unamuno Arq.",
-        services: "Diseño Arquitectónico",
         location: "Río Cuarto, Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/remodelacion-ar/banner.jpg",
@@ -338,7 +328,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un proyecto que parte de entrelazar la luz y la forma, para que, en su conjunto, generen un espacio dinámico y flexible. Mientras la estructura se conforma como un elemento estático, la dinámica de la luz expresa distintas figuras y atmósferas en el interior, reflejando así, el tiempo en el espacio.",
         autores: "Unamuno Arq. & RARE",
-        services: "Diseño Arquitectónico",
         location: "Río Cuarto, Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/atelier-artista/banner.jpg",
@@ -361,7 +350,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un encargo especial, una vivienda de vacaciones para varias familias. Una serie de dormitorios vinculados directamente a un patio central. Ese patio es encuentro y es reunión, al mismo tiempo que es zaguán, ingreso, circulación, articulación y distribución. Es el patio del limonero.",
         autores: "Unamuno Arq., RARE, S. Maglioni.",
-        services: "Diseño Arquitectónico",
         location: "Río Cuarto, Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/patio-con-casa/banner.jpg",
@@ -384,7 +372,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Una experiencia sintética, atemporal y unificadora. Molt propone un espacio abstracto. Con un material translúcido como predominante, el espacio se transforma en una gran lámpara que destaca por sobre el espacio público corriente. Casi como una invitación a una cápsula del tiempo, una realidad paralela o surreal.",
         autores: "Unamuno Arq., Estudio Parvas",
-        services: "Diseño Arquitectónico",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/molt/banner.jpg",
@@ -407,7 +394,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Una experiencia sintética, atemporal y unificadora. Molt propone un espacio abstracto. Con un material translúcido como predominante, el espacio se transforma en una gran lámpara que destaca por sobre el espacio público corriente. Casi como una invitación a una cápsula del tiempo, una realidad paralela o surreal.",
         autores: "Unamuno Arq., Estudio Parvas",
-        services: "Diseño Arquitectónico",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/cafe-popolo/banner.jpg",
@@ -430,7 +416,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un restaurante de comida con coctelería. Tregua es un restaurante de comida con coctelería, ubicado en barrio General Paz de la ciudad de Córdoba. Se intentó generar un ambiente que pueda dialogar con los dos rubros que interactúan en la cocina, combinando materiales pulidos y brillosos, con otros más opacos y nobles como el hormigón.",
         autores: "Unamuno Arq., Estudio Parvas",
-        services: "Diseño Arquitectónico",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/tregua/banner.jpg",
@@ -453,7 +438,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un ecosistema de encuentro y sociabilización. Entendimos al sitio del presente concurso, como un sector estratégico que forma parte no sólo de la ciudad sino también, de un extenso corredor verde de escala regional. Con el objetivo de fortalecer esta continuidad paisajística entre el campo de golf existente y el cinturón verde urbano circundante.",
         autores: "Unamuno Arq., otros colaboradores.",
-        services: "Diseño Arquitectónico",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/la-macarena/banner.jpg",
@@ -476,7 +460,6 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un 'banquito' que, en homenaje a la arquitecta, tiene vocación de lo público. Una exploración formal material inspirado en la arquitecta Lina Bo Bardi, que derivó en un mobiliario único. Con su materialidad sólida y resistente a la intemperie, tiene como objetivo, poder estar en cualquier sector de la ciudad para ser apropiado libremente.",
         autores: "Unamuno Arq., Estudio RARE, Tomas Barros",
-        services: "Diseño Arquitectónico",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/banco-rarx/banner.jpg",

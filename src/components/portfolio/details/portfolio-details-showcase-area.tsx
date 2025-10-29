@@ -41,14 +41,15 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
   const {
     showcaseHeroBg = "/assets/img/inner-project/showcase/showcase-1.jpg",
     heroOverlayOpacity = 0.5,
-    subtitle = "[ UI, Web Design ]",
-    title = "Top Paddock",
-    overview = "Eagle Films is an active player on the entertainment scene as a major Hollywood movies distributor and co-producer. They reach out to me to not only redesign their website but also to change the look and feel of their brand.",
-    autores = 'LikoTheme',
-    services = 'UI / UX Design',
-    location = 'USA',
-    fotografia = "October '2024",
+    subtitle = "",
+    title = "",
+    overview = "",
+    autores = '',
+    category = '',
+    location = '',
+    fotografia = "",
     showcaseThumbs,
+    fullWidthImage,
   } = project;
 
   // Usa la data real si existe, de lo contrario, usa un array de fallback.
@@ -100,7 +101,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
           <div className="row">
             <div className="col-xl-8">
               <div className="showcase-details-overview-right">
-                <p className="tp_title_anim" style={{ fontSize: '1.15rem', paddingRight: '160px' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
+                <p className="tp_title_anim showcase-overview-text" style={{ fontSize: '1.15rem', paddingRight: '160px' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
               </div>
             </div>
             <div className="col-xl-4">
@@ -115,13 +116,13 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     </div>
                   </div>
                 )}
-                {services && (
+                {category && (
                   <div className="showcase-details-overview-info-item tp_fade_bottom">
                     <div className="showcase-details-overview-info-left">
-                      <span className="tp_title_anim">Servicios</span>
+                      <span className="tp_title_anim">Categoría</span>
                     </div>
                     <div className="showcase-details-overview-info-right">
-                      <span className="tp_title_anim">{services}</span>
+                      <span className="tp_title_anim">{category}</span>
                     </div>
                   </div>
                 )}
@@ -155,36 +156,71 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details thumb */}
       <div className="showcase-details-thumb-wrap pb-40">
         <div className="container">
-          <div className="row gx-80">
-            {thumbs.slice(0, 2).map((src: string, i: number) => (
-              <div key={i} className="col-xl-6 col-lg-6">
-                <div className="showcase-details-thumb mb-80 tp_img_fade_in" data-delay={i * 0.3}>
-                  <Image
-                    src={src}
-                    alt={`${title} details thumb ${i + 1}`}
-                    width={800}
-                    height={600}
-                    style={{ width: "100%", height: "auto", objectFit: "cover", cursor: "pointer" }}
-                    onClick={() => openLightbox(src, `${title} details thumb ${i + 1}`)}
-                  />
+          {/* Grid de 2 columnas para hasta 8 fotos */}
+          {thumbs.length > 0 && (
+            <div className="row gx-80">
+              {thumbs.slice(0, 8).map((src: string, i: number) => (
+                <div key={i} className="col-xl-6 col-lg-6">
+                  <div className="showcase-details-thumb tp_img_fade_in" data-delay={i * 0.1} style={{
+                    marginBottom: "70px !important",
+                    height: "auto !important"
+                  }}>
+                    <div className="thumb-container" style={{
+                      width: "100%",
+                      height: "400px",
+                      overflow: "hidden"
+                    }}>
+                      <Image
+                        src={src}
+                        alt={`${title} details thumb ${i + 1}`}
+                        width={800}
+                        height={400}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          cursor: "pointer"
+                        }}
+                        onClick={() => openLightbox(src, `${title} details thumb ${i + 1}`)}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {thumbs[2] && (
+              ))}
+            </div>
+          )}
+
+          {/* Foto full width opcional */}
+          {fullWidthImage && (
+            <div className="row">
               <div className="col-xl-12">
-                <div className="showcase-details-thumb mb-80 tp_img_fade_in" data-delay="0.6">
-                  <Image
-                    src={thumbs[2]}
-                    alt={`${title} details thumb 3`}
-                    width={1200}
-                    height={800}
-                    style={{ width: "100%", height: "auto", objectFit: "cover", cursor: "pointer" }}
-                    onClick={() => openLightbox(thumbs[2], `${title} details thumb 3`)}
-                  />
+                <div className="showcase-details-thumb tp_img_fade_in" data-delay="0.8" style={{
+                  marginBottom: "70px !important",
+                  height: "auto !important"
+                }}>
+                  <div className="fullwidth-container" style={{
+                    width: "100%",
+                    height: "600px",
+                    overflow: "hidden"
+                  }}>
+                    <Image
+                      src={fullWidthImage}
+                      alt={`${title} details full width`}
+                      width={1200}
+                      height={600}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        cursor: "pointer"
+                      }}
+                      onClick={() => openLightbox(fullWidthImage, `${title} details full width`)}
+                    />
+                  </div>
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
       {/* details thumb */}

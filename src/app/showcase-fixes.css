@@ -294,6 +294,11 @@
 /* Mobile responsive - disable scroll effect and stack images */
 @media (max-width: 768px) {
 
+    /* Remove right padding from showcase overview text on mobile */
+    .showcase-overview-text {
+        padding-right: 0 !important;
+    }
+
     /* Override any existing styles with higher specificity */
     .showcase-details-2-area .moving-gallery .showcase-details-2-slider-wrap {
         flex-direction: column !important;
