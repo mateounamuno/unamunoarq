@@ -42,7 +42,7 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-2.jpg"
         ],
-        fullWidthImage: "/assets/img/inner-project/casa-al-lado/full-width.jpg",
+        fullWidthImage: "/assets/img/inner-project/casa-al-lado/full-width.jpeg",
     },
     {
         template: "showcase",
@@ -63,9 +63,9 @@ export const showcaseProjects: ShowcaseProject[] = [
         heroOverlayOpacity: 0.2,
         showcaseThumbs: [
             "/assets/img/inner-project/casa-nina/render1.jpg",
-            "/assets/img/inner-project/casa-nina/dibujo-horizontal.png",
-            "/assets/img/inner-project/casa-nina/render3.jpg",
+            "/assets/img/inner-project/casa-nina/render2.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/casa-nina/render3.jpg",
     },
     {
         template: "showcase",

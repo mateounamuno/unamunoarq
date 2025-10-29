@@ -99,12 +99,8 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       <div id="xyz" className="showcase-details-overview pt-120 pb-120">
         <div className="container">
           <div className="row">
-            <div className="col-xl-8">
-              <div className="showcase-details-overview-right">
-                <p className="tp_title_anim showcase-overview-text" style={{ fontSize: '1.15rem', paddingRight: '160px' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
-              </div>
-            </div>
-            <div className="col-xl-4">
+
+            <div className="col-xl-4" >
               <div className="showcase-details-overview-info">
                 {autores && (
                   <div className="showcase-details-overview-info-item tp_fade_bottom">
@@ -146,6 +142,12 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     </div>
                   </div>
                 )}
+              </div>
+            </div>
+
+            <div className="col-xl-8">
+              <div className="showcase-details-overview-right">
+                <p className="tp_title_anim showcase-overview-text" style={{ fontSize: '1.15rem', paddingLeft: '180px' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
               </div>
             </div>
           </div>
