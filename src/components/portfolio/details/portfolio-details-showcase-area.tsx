@@ -161,34 +161,39 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
           {/* Grid de 2 columnas para hasta 8 fotos */}
           {thumbs.length > 0 && (
             <div className="row gx-80">
-              {thumbs.slice(0, 8).map((src: string, i: number) => (
-                <div key={i} className="col-xl-6 col-lg-6">
-                  <div className="showcase-details-thumb tp_img_fade_in" data-delay={i * 0.1} style={{
-                    marginBottom: "70px !important",
-                    height: "auto !important"
-                  }}>
-                    <div className="thumb-container" style={{
-                      width: "100%",
-                      height: "400px",
-                      overflow: "hidden"
+              {thumbs.slice(0, 8).map((src: string, i: number) => {
+                // Usar unoptimized para todas las imágenes para evitar problemas de optimización
+                return (
+                  <div key={i} className="col-xl-6 col-lg-6">
+                    <div className="showcase-details-thumb tp_img_fade_in" data-delay={i * 0.1} style={{
+                      marginBottom: "70px !important",
+                      height: "auto !important"
                     }}>
-                      <Image
-                        src={src}
-                        alt={`${title} details thumb ${i + 1}`}
-                        width={800}
-                        height={400}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          cursor: "pointer"
-                        }}
-                        onClick={() => openLightbox(src, `${title} details thumb ${i + 1}`)}
-                      />
+                      <div className="thumb-container" style={{
+                        width: "100%",
+                        height: "400px",
+                        overflow: "hidden",
+                        position: "relative"
+                      }}>
+                        <Image
+                          src={src}
+                          alt={`${title} details thumb ${i + 1}`}
+                          width={800}
+                          height={400}
+                          unoptimized={true}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            cursor: "pointer"
+                          }}
+                          onClick={() => openLightbox(src, `${title} details thumb ${i + 1}`)}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
 
