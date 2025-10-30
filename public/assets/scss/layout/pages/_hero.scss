@@ -284,6 +284,7 @@
 /* Estilos específicos para HeroBannerOne */
 .tp-hero-area.tp-hero-ptb.main-slider {
     position: relative;
+    min-height: 100vh; // ensure the hero reserves space in the document flow
 
     .tp-hero-bg-image {
         position: absolute;

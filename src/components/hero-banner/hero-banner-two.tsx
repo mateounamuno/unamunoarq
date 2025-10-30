@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { fadeAnimation } from "@/utils/title-animation";
-import GridDistortion from '@/components/GridDistortion';
 
 
 const HeroBannerTwo = () => {
@@ -16,16 +15,16 @@ const HeroBannerTwo = () => {
   }, {});
 
   return (
-    <div className="tp-hero-area tp-hero-ptb main-slider">
+    <div className="tp-hero-area tp-hero-ptb main-slider" style={{ minHeight: '100vh' }}>
       {/* Fondo del hero con opacidad */}
       <div className="tp-hero-bg-image">
-        <GridDistortion
-          imageSrc="/assets/img/home-01/hero/hero-1-2.png"
-          grid={50}
-          mouse={0.1}
-          strength={0.10}
-          relaxation={0.9}
-          className="custom-class"
+        <Image
+          src="/assets/img/home-01/hero/hero-1-2.png"
+          alt="Hero background"
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>

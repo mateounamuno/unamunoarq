@@ -12,7 +12,6 @@ import "./project-one-fixes.css";
 import "./mac-specific-fixes.css";
 import "./mac-breakpoints.css";
 import "./final-project-fixes.css";
-import "./contact-fixes.css";
 
 const gellery = localFont({
   src: [
