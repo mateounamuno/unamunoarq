@@ -388,3 +388,27 @@
     font-weight: 300 !important;
     /* light */
 }
+
+/* Centrar icono dentro del círculo en redes */
+.tp-offcanvas-social ul li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+.tp-offcanvas-social ul li a svg {
+    transform: none !important;
+}
+
+/* Centrar flecha del botón back-to-top */
+.back-to-top-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+.back-to-top-btn svg {
+    transform: none !important;
+}
