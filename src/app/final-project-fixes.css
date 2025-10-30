@@ -321,3 +321,8 @@
         font-size: 18px;
     }
 }
+
+/* Override hero padding */
+.tm-hero-ptb {
+    padding-top: 100px !important;
+}
