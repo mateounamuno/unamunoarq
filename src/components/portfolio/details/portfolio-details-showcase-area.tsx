@@ -107,7 +107,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details area */}
 
       {/* details overview */}
-      <div id="xyz" className="showcase-details-overview pt-120 pb-120">
+      <div id="xyz" className="showcase-details-overview pt-100 pb-100">
         <div className="container">
           <div className="row">
 
@@ -158,7 +158,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
 
             <div className="col-xl-8">
               <div className="showcase-details-overview-right">
-                <p className="tp_title_anim showcase-overview-text" style={{ fontSize: '1.15rem', paddingLeft: '180px' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
+                <p className="tp_title_anim showcase-overview-text" style={{ fontSize: '1.15rem' }} data-fade-offset="30" data-duration="1.2" dangerouslySetInnerHTML={{ __html: overview?.replace(/\n/g, '<br/>') || '' }}></p>
               </div>
             </div>
           </div>

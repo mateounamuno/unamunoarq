@@ -297,6 +297,7 @@
     /* Remove right padding from showcase overview text on mobile */
     .showcase-overview-text {
         padding-right: 0 !important;
+        padding-top: 30px !important;
     }
 
     /* Override any existing styles with higher specificity */

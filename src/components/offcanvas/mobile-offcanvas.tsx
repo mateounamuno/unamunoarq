@@ -76,7 +76,7 @@ export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IPr
               </ul>
             </div>
             <div className="tp-offcanvas-social">
-              <h3 className="tp-offcanvas-title sm pb-20">REDES SOCIALES</h3>
+              <h3 className="tp-offcanvas-title sm pb-10">REDES SOCIALES</h3>
               <ul>
                 <li>
                   <a href="https://www.instagram.com/unamuno.arq/"><InstagramTwo /></a>

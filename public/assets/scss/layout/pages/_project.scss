@@ -3283,6 +3283,16 @@
                 color: var(--tp-common-black-2);
                 font-family: var(--tp-ff-marcellus);
                 padding-bottom: 30px;
+
+                &.showcase-overview-text {
+                    @media (min-width: 992px) {
+                        padding-left: 180px;
+                    }
+
+                    @media (max-width: 991px) {
+                        padding-top: 50px;
+                    }
+                }
             }
         }
 
