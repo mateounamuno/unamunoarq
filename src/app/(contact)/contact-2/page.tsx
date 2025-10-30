@@ -14,6 +14,7 @@ import FooterOne from "@/layouts/footers/footer-one";
 import { charAnimation } from "@/utils/title-animation";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
 import AboutSection from "@/components/contact/about-section";
+import ServicesSection from "@/components/contact/services-section";
 
 const ContactTwoPage = () => {
   useScrollSmooth();
@@ -41,6 +42,10 @@ const ContactTwoPage = () => {
               {/* about section */}
               <AboutSection />
               {/* about section */}
+
+              {/* services section */}
+              <ServicesSection />
+              {/* services section */}
 
               {/* contact location */}
               <ContactLocationTwo />

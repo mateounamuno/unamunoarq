@@ -167,3 +167,157 @@
         padding-right: 0 !important;
     }
 }
+
+/* Services section */
+.contact-services-section .services-header {
+    font-size: 16px;
+    color: #6f6f6f;
+    margin-bottom: 16px;
+}
+
+.contact-services-section .services-list {
+    border-top: 0;
+}
+
+.contact-services-section .service-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-services-section .service-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.contact-services-section .service-title {
+    font-size: 25px;
+    line-height: 1.2;
+    transition: color .2s ease;
+}
+
+.contact-services-section .service-trigger:hover .service-title {
+    color: #9c9c9c;
+    /* gris al hover */
+}
+
+.contact-services-section .service-toggle {
+    font-size: 20px;
+    color: #9c9c9c;
+    min-width: 40px;
+    text-align: right;
+}
+
+.contact-services-section .service-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+}
+
+.contact-services-section .service-panel.show {
+    max-height: 240px;
+    /* suficiente para el texto */
+}
+
+.contact-services-section .service-text {
+    padding: 0 0 14px 0;
+    color: #4a4a4a;
+    font-size: 16px;
+    /* igual que párrafo de contact */
+    line-height: 1.6;
+}
+
+/* Match About paragraph typography to services text */
+.contact-about-section .contact-about-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+/* Contact cards grid on Services right column */
+.services-contact-grid {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.services-contact-grid>.cn-contact-2-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    background: #fff;
+}
+
+.services-contact-grid .contact-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+/* Title now reuses About/Services heading styles via .contact-about-title */
+
+.services-contact-grid .contact-card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.services-contact-grid .contact-card-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.services-contact-grid .cn-contact-2-thumb {
+    display: block;
+    margin: 6px 0 8px 0;
+}
+
+.services-contact-grid .contact-card-images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.services-contact-grid .cn-contact-2-thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 140px;
+    aspect-ratio: 1/1;
+}
+
+.services-contact-grid .contact-card-links {
+    margin-top: auto;
+}
+
+.services-contact-grid .contact-card-links a {
+    color: inherit;
+    font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .services-contact-grid {
+        grid-template-rows: none;
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile title sizing inherited from global About/Services styles */
+}
+
+@media (max-width: 767px) {
+    .contact-services-section .service-title {
+        font-size: 18px;
+    }
+}

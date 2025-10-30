@@ -16,20 +16,20 @@ const location_data = [
     img_1: c_img_1,
     img_2: c_img_2,
     map: "https://www.google.com/maps/@23.822356,90.3671947,15z?entry=ttu",
-    address: "Córdoba, Argentina.",
+    address: "Bv. Las Heras 22, Cba., Argentina.",
     email: undefined,
     phone: undefined,
     note: undefined,
   },
   {
     id: 2,
-    country: "Email",
+    country: "Contacto",
     img_1: c_img_3,
     img_2: c_img_4,
     email: "mateo@unamunoarq.com",
     map: undefined,
     address: undefined,
-    phone: undefined,
+    phone: "+54 3584262112",
     note: undefined,
   },
   {
@@ -46,14 +46,14 @@ const location_data = [
 ];
 const ContactLocationTwo = () => {
   return (
-    <div className="cn-contact-2-info-area pb-90">
+    <div className="cn-contact-2-info-area ">
       <div className="container container-1530">
         <div className="row">
           {location_data.map((item) => (
-            <div key={item.id} className="col-xl-4 col-lg-4 col-md-6 mb-30">
-              <div className={`cn-contact-2-content } text-center`}>
-                <h4 className="cn-contact-2-title">{item.country}</h4>
-                <div className="cn-contact-2-thumb d-flex justify-content-center">
+            <div key={item.id} className="col-xl-4 col-lg-4 col-md-6 mb-30" >
+              <div className="cn-contact-2-content  text-center d-flex align-items-center justify-content-center flex-column" style={{ height: "50vh" }}>
+                <h2 className="contact-about-title pb-30">{item.country}</h2>
+                <div className="cn-contact-2-thumb d-flex justify-content-center ">
                   <Image
                     src={item.img_1}
                     alt="contact-img"
@@ -79,7 +79,7 @@ const ContactLocationTwo = () => {
                     className="contact-img-mobile"
                   />
                 </div>
-                <div className="cn-contact-2-info-details">
+                <div className="cn-contact-2-info-details" >
                   <a className="pb-15" href={item.map} target="_blank">
                     {item.address}
                   </a>

@@ -4,7 +4,7 @@ import Image from "next/image";
 const AboutSection = () => {
     return (
         <div className="contact-about-section">
-            <div className="container container-1530 pb-90">
+            <div className="container container-1530 pb-70">
                 <div className="about-wrapper" style={{ height: "auto", padding: 10 }}>
                     <div className="row align-items-stretch about-row">
                         {/* Left column - Text content */}
