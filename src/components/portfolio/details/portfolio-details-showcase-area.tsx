@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { scroller } from 'react-scroll';
 import Link from 'next/link';
@@ -18,6 +18,12 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
   const [showLightbox, setShowLightbox] = useState(false);
   const [lightboxImage, setLightboxImage] = useState('');
   const [lightboxAlt, setLightboxAlt] = useState('');
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Evita desajustes entre SSR y cliente: renderiza solo tras montar en cliente
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Calculamos los slugs de navegación unificada
   const { prevSlug, nextSlug, prevType, nextType } = findUnifiedPrevNext(project.slug, 'showcase');
@@ -60,6 +66,11 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       "/assets/img/inner-project/showcase/showcase-details-2.jpg",
       "/assets/img/inner-project/showcase/showcase-details-3.jpg",
     ];
+
+  // Evita hidratación hasta que el cliente esté listo
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <>
@@ -166,8 +177,9 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                 return (
                   <div key={i} className="col-xl-6 col-lg-6">
                     <div className="showcase-details-thumb tp_img_fade_in" data-delay={i * 0.1} style={{
-                      marginBottom: "70px !important",
-                      height: "auto !important"
+                      // Evitar !important en inline styles, no es soportado en React
+                      marginBottom: "70px",
+                      height: "auto"
                     }}>
                       <div className="thumb-container" style={{
                         width: "100%",
@@ -181,6 +193,8 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                           width={800}
                           height={400}
                           unoptimized={true}
+                          priority={i < 2}
+                          sizes="(min-width: 1200px) 800px, (min-width: 768px) 50vw, 100vw"
                           style={{
                             width: "100%",
                             height: "100%",
@@ -202,8 +216,8 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
             <div className="row">
               <div className="col-xl-12">
                 <div className="showcase-details-thumb tp_img_fade_in" data-delay="0.8" style={{
-                  marginBottom: "70px !important",
-                  height: "auto !important"
+                  marginBottom: "70px",
+                  height: "auto"
                 }}>
                   <div className="fullwidth-container" style={{
                     width: "100%",
@@ -215,6 +229,8 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                       alt={`${title} details full width`}
                       width={1200}
                       height={600}
+                      priority={true}
+                      sizes="100vw"
                       style={{
                         width: "100%",
                         height: "100%",
