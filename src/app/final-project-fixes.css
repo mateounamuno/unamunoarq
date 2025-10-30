@@ -412,3 +412,8 @@
 .back-to-top-btn svg {
     transform: none !important;
 }
+
+/* Fondo del círculo de la flecha en blanco explícito */
+.back-to-top-btn {
+    background: #ffffff !important;
+}
