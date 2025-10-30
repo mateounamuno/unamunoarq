@@ -285,6 +285,7 @@
 .tp-hero-area.tp-hero-ptb.main-slider {
     position: relative;
     min-height: 100vh; // ensure the hero reserves space in the document flow
+    isolation: isolate; // create stacking context so children with z-index >= 0 render above
 
     .tp-hero-bg-image {
         position: absolute;
@@ -292,8 +293,8 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        z-index: -2;
-        opacity: 0.60;
+        z-index: 0; // render above the page background
+        opacity: 1; // manage transparency at tile level if needed
 
         & img {
             width: 100%;

@@ -13,6 +13,7 @@ import FooterOne from "@/layouts/footers/footer-one";
 // animation
 import { charAnimation } from "@/utils/title-animation";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
+import AboutSection from "@/components/contact/about-section";
 
 const ContactTwoPage = () => {
   useScrollSmooth();
@@ -32,32 +33,29 @@ const ContactTwoPage = () => {
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div
-            className="inner-bg"
-            style={{
-              backgroundImage:
-                "url(/assets/img/home-01/team/team-details-bg.png)",
-            }}
-          >
-            <main>
-              {/* hero area start */}
-              <div className="tm-hero-area tm-hero-ptb p-relative">
 
+          <main>
+            {/* hero area start */}
+            <div className="tm-hero-area tm-hero-ptb p-relative container">
 
-                {/* contact location */}
-                <ContactLocationTwo />
-                {/* contact location */}
+              {/* about section */}
+              <AboutSection />
+              {/* about section */}
 
-              </div>
-              {/* hero area end */}
-            </main>
+              {/* contact location */}
+              <ContactLocationTwo />
+              {/* contact location */}
 
-            {/* footer area */}
-            <FooterOne />
-            {/* footer area */}
-          </div>
+            </div>
+            {/* hero area end */}
+          </main>
+
+          {/* footer area */}
+          <FooterOne />
+          {/* footer area */}
         </div>
       </div>
+
     </Wrapper>
   );
 };
