@@ -326,3 +326,65 @@
 .tm-hero-ptb {
     padding-top: 100px !important;
 }
+
+/* Offcanvas: keep logo arriba y empujar menú + info + redes al fondo */
+.tp-offcanvas-area {
+    height: 100vh !important;
+    overflow: hidden !important;
+    /* sin scroll interno */
+    padding: 0 !important;
+    /* padding se aplica al wrapper interno */
+}
+
+.tp-offcanvas-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    padding: 24px 30px !important;
+    /* padding visual interno */
+    box-sizing: border-box !important;
+}
+
+.tp-offcanvas-main {
+    margin-top: auto !important;
+    /* empuja el bloque principal al fondo */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    /* separación más compacta */
+}
+
+/* Asegura que el header (logo + close) se mantenga compacto */
+.tp-offcanvas-top {
+    padding-bottom: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+/* El menú usa el espacio restante y solo él puede scrollear si no entra */
+.tp-main-menu-mobile {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Compactar separadores para que quepa todo */
+.tp-offcanvas-contact {
+    margin-bottom: 8px !important;
+}
+
+.tp-offcanvas-social {
+    margin-bottom: 0 !important;
+}
+
+.tp-offcanvas-title.sm {
+    margin-bottom: 8px !important;
+}
+
+/* Tipografía más grande y con mayor peso en los datos de contacto */
+.tp-offcanvas-contact ul li a {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    /* light */
+}

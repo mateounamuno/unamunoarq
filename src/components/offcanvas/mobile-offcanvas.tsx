@@ -39,14 +39,11 @@ export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IPr
             </div>
           </div>
           <div className="tp-offcanvas-main">
-            <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title">Unamuno Arq.</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
-            </div>
+
             <div className="tp-main-menu-mobile d-xl-none">
               <MobileMenus />
             </div>
-            <div className="tp-offcanvas-gallery">
+            {/* <div className="tp-offcanvas-gallery">
               <div className="row gx-2">
                 {gallery_images.map((item, i) => (
                   <div className="col-md-3 col-3" key={i}>
@@ -62,24 +59,24 @@ export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IPr
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
             <div className="tp-offcanvas-contact">
-              <h3 className="tp-offcanvas-title sm">Information</h3>
+              <h3 className="tp-offcanvas-title sm pb-20">CONTACTO</h3>
 
               <ul>
                 <li>
-                  <a href="tel:1245654">+ 4 20 7700 1007</a>
+                  <a href="tel:+54 3584262112">+ 54 3584262112</a>
                 </li>
                 <li>
-                  <a href="mailto:hello@diego.com">hello@diego.com</a>
+                  <a href="mailto:mateo@unamunoarq.com">mateo@unamunoarq.com</a>
                 </li>
                 <li>
-                  <a href="#">Avenue de Roma 158b, Lisboa</a>
+                  <a href="#">Bv. Las Heras 22, Cba., Argentina</a>
                 </li>
               </ul>
             </div>
             <div className="tp-offcanvas-social">
-              <h3 className="tp-offcanvas-title sm">REDES SOCIALES</h3>
+              <h3 className="tp-offcanvas-title sm pb-20">REDES SOCIALES</h3>
               <ul>
                 <li>
                   <a href="https://www.instagram.com/unamuno.arq/"><InstagramTwo /></a>
