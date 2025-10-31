@@ -164,42 +164,55 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
         <div className="row">
           {gridItems.map((item) => (
             <div key={item.slug} className="col-xl-3 col-lg-6 col-md-6">
-              <div className="tp-project-5-2-thumb mb-30">
+              <div
+                className="tp-project-5-2-thumb mb-30"
+                onMouseEnter={(e) => {
+                  const title = e.currentTarget.querySelector('.tp-project-title-hover') as HTMLElement;
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  const imgContainer = e.currentTarget.querySelector('.tp-project-img-container') as HTMLElement;
+                  const gradientOverlay = e.currentTarget.querySelector('.tp-project-gradient-overlay') as HTMLElement;
+                  if (title) {
+                    title.style.opacity = '1';
+                    title.style.visibility = 'visible';
+                  }
+                  if (img) {
+                    img.style.transform = 'scale(1.1)';
+                  }
+                  if (imgContainer) {
+                    imgContainer.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.15)';
+                  }
+                  if (gradientOverlay) {
+                    gradientOverlay.style.opacity = '1';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const title = e.currentTarget.querySelector('.tp-project-title-hover') as HTMLElement;
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  const imgContainer = e.currentTarget.querySelector('.tp-project-img-container') as HTMLElement;
+                  const gradientOverlay = e.currentTarget.querySelector('.tp-project-gradient-overlay') as HTMLElement;
+                  if (title) {
+                    title.style.opacity = '0';
+                    title.style.visibility = 'hidden';
+                  }
+                  if (img) {
+                    img.style.transform = 'scale(1)';
+                  }
+                  if (imgContainer) {
+                    imgContainer.style.boxShadow = 'none';
+                  }
+                  if (gradientOverlay) {
+                    gradientOverlay.style.opacity = '0';
+                  }
+                }}
+              >
                 <div
-                  className="p-relative tp-project-5-2-overlay"
+                  className="p-relative tp-project-img-container"
                   style={{
                     overflow: 'hidden',
                     width: '100%',
                     height: style_2 ? 504 : 330,
-                    position: 'relative'
-                  }}
-                  onMouseEnter={(e) => {
-                    const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                    const overlay = e.currentTarget.querySelector('.tp-project-5-2-overlay-inner') as HTMLElement;
-                    const content = e.currentTarget.querySelector('.tp-project-5-2-content') as HTMLElement;
-                    if (img) img.style.transform = 'scale(1.1)';
-                    if (overlay) {
-                      overlay.style.opacity = '1';
-                      overlay.style.visibility = 'visible';
-                    }
-                    if (content) {
-                      content.style.opacity = '1';
-                      content.style.visibility = 'visible';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                    const overlay = e.currentTarget.querySelector('.tp-project-5-2-overlay-inner') as HTMLElement;
-                    const content = e.currentTarget.querySelector('.tp-project-5-2-content') as HTMLElement;
-                    if (img) img.style.transform = 'scale(1)';
-                    if (overlay) {
-                      overlay.style.opacity = '0';
-                      overlay.style.visibility = 'hidden';
-                    }
-                    if (content) {
-                      content.style.opacity = '0';
-                      content.style.visibility = 'hidden';
-                    }
+                    position: 'relative',
+                    transition: 'box-shadow 0.3s ease'
                   }}
                 >
                   <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
@@ -213,77 +226,48 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                         height: "100%",
                         objectFit: "cover",
                         display: 'block',
-                        transition: 'transform 0.3s ease'
+                        transition: 'transform 0.5s ease'
                       }}
                     />
                   </Link>
-                  {/* Overlay oscuro */}
+                  {/* Overlay con degradado en los bordes */}
                   <div
-                    className="tp-project-5-2-overlay-inner"
+                    className="tp-project-gradient-overlay"
                     style={{
                       position: 'absolute',
                       top: 0,
                       left: 0,
                       width: '100%',
                       height: '100%',
-                      backgroundColor: 'rgba(9, 9, 11, 0.20)',
-                      zIndex: 2,
+                      background: `
+                        linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, transparent 8%, transparent 92%, rgba(255, 255, 255, 0.1) 100%),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 8%, transparent 92%, rgba(255, 255, 255, 0.1) 100%)
+                      `,
+                      pointerEvents: 'none',
+                      zIndex: 1,
                       opacity: 0,
-                      visibility: 'hidden',
-                      transition: 'opacity 0.3s ease, visibility 0.3s ease'
+                      transition: 'opacity 0.3s ease'
                     }}
                   />
-                  {/* Contenido del overlay - todo apilado arriba a la izquierda */}
-                  <div
-                    className="tp-project-5-2-content"
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      padding: '40px',
-                      zIndex: 3,
-                      opacity: 0,
-                      visibility: 'hidden',
-                      transition: 'opacity 0.3s ease, visibility 0.3s ease',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'flex-start',
-                      gap: '0'
-                    }}
-                  >
-                    <span style={{
-                      fontSize: '18px',
-                      fontWeight: 400,
-                      lineHeight: '13px',
-                      color: 'var(--tp-common-white)',
-                      marginBottom: '0'
-                    }}>
-                      {item.category}
-                    </span>
-                    <span className="tp-project-5-2-meta" style={{
-                      fontSize: '16px',
-                      fontWeight: 500,
-                      lineHeight: 1,
-                      color: 'var(--tp-common-white)',
-                      zIndex: 2,
-                      marginTop: '8px',
-                      marginBottom: '0'
-                    }}>
-                      {item.year}
-                    </span>
-                    <h3 className="tp-project-5-2-title-sm" style={{
-                      fontSize: '40px',
-                      fontWeight: 500,
-                      lineHeight: 1,
-                      letterSpacing: '-0.8px',
-                      color: 'var(--tp-common-white)',
-                      marginBottom: 0,
-                      marginTop: '8px'
-                    }}>
-                      {item.title}
-                    </h3>
-                  </div>
                 </div>
+                {/* Título que aparece debajo de la imagen al hacer hover */}
+                <p
+                  className="tp-project-title-hover"
+                  style={{
+                    fontSize: '16px',
+                    fontWeight: 400,
+                    lineHeight: '1.5',
+                    color: 'var(--tp-common-black)',
+                    marginTop: '12px',
+                    marginBottom: 0,
+                    textAlign: 'left',
+                    opacity: 0,
+                    visibility: 'hidden',
+                    transition: 'opacity 0.3s ease, visibility 0.3s ease'
+                  }}
+                >
+                  {item.title}
+                </p>
               </div>
             </div>
           ))}
