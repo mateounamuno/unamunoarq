@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 // images
-import c_img_1 from "@/assets/img/inner-contact/contact/contact-1.png";
+import c_img_1 from "@/assets/img/inner-contact/contact/contact-1.jpeg";
 import c_img_2 from "@/assets/img/inner-contact/contact/contact-2.png";
 import c_img_3 from "@/assets/img/inner-contact/contact/contact-3.png";
 import c_img_4 from "@/assets/img/inner-contact/contact/contact-4.jpeg";
@@ -12,20 +12,9 @@ import c_img_6 from "@/assets/img/inner-contact/contact/contact-6.png";
 const location_data = [
   {
     id: 1,
-    country: "Oficinas",
-    img_1: c_img_1,
-    img_2: c_img_2,
-    map: "https://www.google.com/maps/@23.822356,90.3671947,15z?entry=ttu",
-    address: "Bv. Las Heras 22, Cba., Argentina.",
-    email: undefined,
-    phone: undefined,
-    note: undefined,
-  },
-  {
-    id: 2,
     country: "Contacto",
     img_1: c_img_3,
-    img_2: c_img_4,
+
     email: "mateo@unamunoarq.com",
     map: undefined,
     address: undefined,
@@ -33,10 +22,21 @@ const location_data = [
     note: undefined,
   },
   {
+    id: 2,
+    country: "Oficinas",
+    img_1: c_img_1,
+
+    map: "https://www.google.com/maps/@23.822356,90.3671947,15z?entry=ttu",
+    address: "Bv. Las Heras 22, Cba., Argentina.",
+    email: undefined,
+    phone: undefined,
+    note: undefined,
+  },
+  {
     id: 3,
     country: "Instagram",
     img_1: c_img_5,
-    img_2: c_img_6,
+
     map: "https://www.instagram.com/unamuno.arq/",
     address: "@unamuno.arq",
     email: undefined,
@@ -61,23 +61,12 @@ const ContactLocationTwo = () => {
                       height: "auto",
                       objectFit: "cover",
                       width: "100%",
-                      maxHeight: "200px",
+                      maxHeight: "175px",
                       aspectRatio: "1/1"
                     }}
                     className="contact-img-mobile"
                   />
-                  <Image
-                    src={item.img_2}
-                    alt="contact-img"
-                    style={{
-                      height: "auto",
-                      objectFit: "cover",
-                      width: "100%",
-                      maxHeight: "200px",
-                      aspectRatio: "1/1"
-                    }}
-                    className="contact-img-mobile"
-                  />
+
                 </div>
                 <div className="cn-contact-2-info-details" >
                   <a className="pb-15" href={item.map} target="_blank">
