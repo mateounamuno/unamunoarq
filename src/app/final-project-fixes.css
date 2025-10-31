@@ -329,11 +329,25 @@
 
 /* Offcanvas: keep logo arriba y empujar menú + info + redes al fondo */
 .tp-offcanvas-area {
+    width: 375px !important;
     height: 100vh !important;
     overflow: hidden !important;
     /* sin scroll interno */
     padding: 0 !important;
     /* padding se aplica al wrapper interno */
+}
+
+/* Media queries para mantener responsividad del offcanvas */
+@media (max-width: 575px) {
+    .tp-offcanvas-area {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .tp-offcanvas-area {
+        width: 375px !important;
+    }
 }
 
 .tp-offcanvas-wrapper {
