@@ -98,13 +98,13 @@ export default function MobileMenus() {
                     </div>
                     <ul style={{ display: expandedCategories.includes(menu.portfolio_mega_menus?.first.title || '') ? "block" : "none" }}>
                       {menu.portfolio_mega_menus?.first.submenus.map((portSm, i) => (
-                        <li key={i}>
-                          {portSm.menu_lists.map((psm) => (
-                            <Link key={psm.title} href={psm.link}>
+                        portSm.menu_lists.map((psm) => (
+                          <li key={psm.title}>
+                            <Link href={psm.link}>
                               {psm.title}
                             </Link>
-                          ))}
-                        </li>
+                          </li>
+                        ))
                       ))}
                     </ul>
                   </li>

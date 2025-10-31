@@ -428,3 +428,25 @@
 .back-to-top-btn {
     background: #ffffff !important;
 }
+
+/* ===== MENU MOBILE: arreglar líneas de categorías y items ===== */
+
+/* Las líneas de las categorías (RESIDENCIAL, COMERCIAL) deben ser de ancho completo y alineadas */
+.tp-main-menu-mobile .category-header .tp-megamenu-title {
+    display: block !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(6, 7, 40, 0.1) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Los items de las listas de categorías necesitan bordes */
+.tp-main-menu-mobile .tp-submenu.submenu ul li:not(:last-child)>a {
+    border-bottom: 1px solid rgba(6, 7, 40, 0.1) !important;
+}
+
+.tp-main-menu-mobile .tp-submenu.submenu ul li>a {
+    display: block !important;
+    padding: 15px 0 !important;
+}
