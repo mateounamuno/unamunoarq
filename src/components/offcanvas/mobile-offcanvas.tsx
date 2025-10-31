@@ -75,7 +75,7 @@ export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IPr
                 </li>
               </ul>
             </div>
-            <div className="tp-offcanvas-social">
+            <div className="tp-offcanvas-social pb-30">
               <h3 className="tp-offcanvas-title sm pb-10">REDES SOCIALES</h3>
               <ul>
                 <li>
