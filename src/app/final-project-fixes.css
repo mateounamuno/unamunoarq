@@ -331,8 +331,9 @@
 .tp-offcanvas-area {
     width: 375px !important;
     height: 100vh !important;
-    overflow: hidden !important;
-    /* sin scroll interno */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    /* scroll interno habilitado */
     padding: 0 !important;
     /* padding se aplica al wrapper interno */
 }
@@ -354,19 +355,17 @@
     display: flex !important;
     flex-direction: column !important;
     min-height: 100vh !important;
-    height: 100% !important;
     padding: 24px 30px !important;
     /* padding visual interno */
     box-sizing: border-box !important;
 }
 
 .tp-offcanvas-main {
-    margin-top: auto !important;
-    /* empuja el bloque principal al fondo */
     display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
-    /* separación más compacta */
+    margin-top: auto !important;
+    /* separación más compacta con space-between */
 }
 
 /* Asegura que el header (logo + close) se mantenga compacto */
@@ -375,12 +374,10 @@
     margin-bottom: 8px !important;
 }
 
-/* El menú usa el espacio restante y solo él puede scrollear si no entra */
+/* El menú usa el espacio disponible */
 .tp-main-menu-mobile {
     flex: 1 1 auto !important;
     min-height: 0 !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
 }
 
 /* Compactar separadores para que quepa todo */
