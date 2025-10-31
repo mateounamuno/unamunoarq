@@ -49,7 +49,7 @@ const ServicesSection: React.FC = () => {
 
                     <div className="row align-items-stretch about-row">
                         <div className="col-xl-12 col-lg-12 col-md-12 pb-70" style={{ height: "100%" }}>
-                            <div className="contact-about-image about-image-wrap" style={{ width: "100%", height: "60vh", overflow: "hidden" }}>
+                            <div className="contact-about-image about-image-wrap tp_img_fade_in" data-delay="0.2" style={{ width: "100%", height: "60vh", overflow: "hidden" }}>
                                 {/* Reuse office image to keep consistency; can be changed later */}
                                 <img
                                     src="/assets/img/inner-contact/contact/biblio.jpg"
@@ -61,7 +61,7 @@ const ServicesSection: React.FC = () => {
                         {/* Left column - Title + List */}
                         <div className="col-xl-4 col-lg-4 col-md-4 mb-40 mb-md-0 about-left-col" >
                             <div>
-                                <h2 className="contact-about-title pb-20">SERVICIOS</h2>
+                                <h2 className="contact-about-title pb-20 tp_title_anim">SERVICIOS</h2>
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-8 col-md-8 mb-40 mb-md-0 about-left-col" >
@@ -80,7 +80,7 @@ const ServicesSection: React.FC = () => {
                                                     aria-expanded={isOpen}
                                                     aria-controls={`service-panel-${index}`}
                                                 >
-                                                    <span className="service-title">{service.title}</span>
+                                                    <span className="service-title tp_title_anim">{service.title}</span>
                                                     <span className="service-toggle" aria-hidden>
                                                         {isOpen ? "-" : "+"}
                                                     </span>
@@ -90,7 +90,7 @@ const ServicesSection: React.FC = () => {
                                                     className={`service-panel ${isOpen ? "show" : ""}`}
                                                     role="region"
                                                 >
-                                                    <p className="service-text">{service.description}</p>
+                                                    <p className="service-text tp_title_anim">{service.description}</p>
                                                 </div>
                                             </div>
                                         );

@@ -18,7 +18,7 @@ import FooterOne from "@/layouts/footers/footer-one";
 import BlogDetailsBreadcrumb from "@/components/blog/details/blog-details-breadcrumb";
 import BlogDetailsAreaTwo from "@/components/blog/details/blog-details-area-2";
 // animation
-import { charAnimation } from "@/utils/title-animation";
+import { charAnimation, imageFadeInAnimation, titleAnimation, fadeAnimation } from "@/utils/title-animation";
 
 export default function BlogDetailsPage({ params }: { params: { id: string } }) {
   useScrollSmooth();
@@ -26,6 +26,9 @@ export default function BlogDetailsPage({ params }: { params: { id: string } }) 
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
+      titleAnimation();
+      fadeAnimation();
+      imageFadeInAnimation();
     }, 100);
     return () => clearTimeout(timer);
   });

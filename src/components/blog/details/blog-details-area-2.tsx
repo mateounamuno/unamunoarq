@@ -20,10 +20,10 @@ export default function BlogDetailsAreaTwo() {
               <div className="row justify-content-center">
                 <div className="col-xl-8">
                   <div className="blog-details-left-content tp_fade_bottom">
-                    <p>
+                    <p className="tp_title_anim">
                       El dibujo y la pintura son la antesala de la arquitectura: en ellos se gesta la intuición primera, el gesto que aún no conoce la materia pero ya anuncia el espacio. El trazo, como línea suspendida en el vacío, abre la posibilidad de un muro; la mancha, como extensión de color, prefigura la atmósfera de un recinto.{" "}
                     </p>
-                    <p>
+                    <p className="tp_title_anim">
                       Pintar y dibujar son modos de pensar con la mano, de imaginar con la mirada, de explorar un mundo todavía abstracto que la arquitectura más tarde vuelve habitable.
 
                     </p>
@@ -34,7 +34,7 @@ export default function BlogDetailsAreaTwo() {
                 <div className="blog-details-thumb-box tp_fade_bottom">
                   <div className="row">
                     <div className="col-md-6">
-                      <div className="blog-details-thumb">
+                      <div className="blog-details-thumb tp_img_fade_in" data-delay="0">
                         <Image
                           className=""
                           src={details_thumb_1}
@@ -44,7 +44,7 @@ export default function BlogDetailsAreaTwo() {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="blog-details-thumb">
+                      <div className="blog-details-thumb tp_img_fade_in" data-delay="0.1">
                         <Image
                           className="mb-20"
                           src={details_thumb_2}
@@ -56,7 +56,7 @@ export default function BlogDetailsAreaTwo() {
                   </div>
                   <div className="row">
                     <div className="col-xl-12">
-                      <div className="blog-details-thumb">
+                      <div className="blog-details-thumb tp_img_fade_in" data-delay="0.2">
                         <Image
                           className="w-100"
                           src={details_thumb_3}
@@ -71,7 +71,7 @@ export default function BlogDetailsAreaTwo() {
                 <div className="col-xl-8">
                   <div className="blog-details-top-text tp_fade_bottom">
                     <div className="blog-details-left-content tp_fade_bottom">
-                      <p className="pb-40">Dibujo para abstraerme del tiempo y de lo coyuntural, como quien se refugia en un estado más puro de la atención. Me interesa la libertad de los dibujos de los niños: desestructurados, espontáneos, con errores y, a su manera, profundamente serios. El dibujo para ellos no es un medio, sino un fin en sí mismo: lo hacen por diversión, y en esa aparente ligereza se esconde una sabiduría despojada y sincera.
+                      <p className="pb-40 tp_title_anim">Dibujo para abstraerme del tiempo y de lo coyuntural, como quien se refugia en un estado más puro de la atención. Me interesa la libertad de los dibujos de los niños: desestructurados, espontáneos, con errores y, a su manera, profundamente serios. El dibujo para ellos no es un medio, sino un fin en sí mismo: lo hacen por diversión, y en esa aparente ligereza se esconde una sabiduría despojada y sincera.
                       </p>
                     </div>
                   </div>
@@ -80,7 +80,7 @@ export default function BlogDetailsAreaTwo() {
               <div className="blog-details-thumb-box tp_fade_bottom">
                 <div className="row">
                   <div className="col-md-6">
-                    <div className="blog-details-thumb">
+                    <div className="blog-details-thumb tp_img_fade_in" data-delay="0.3">
                       <Image
                         className="mb-20"
                         src={details_thumb_4}
@@ -90,7 +90,7 @@ export default function BlogDetailsAreaTwo() {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="blog-details-thumb">
+                    <div className="blog-details-thumb tp_img_fade_in" data-delay="0.4">
                       <Image
                         className="mb-20"
                         src={details_thumb_5}
@@ -104,7 +104,7 @@ export default function BlogDetailsAreaTwo() {
               <div className="row justify-content-center">
                 <div className="col-xl-8">
                   <div className="blog-details-left-content tp_fade_bottom">
-                    <p>
+                    <p className="tp_title_anim">
                       Quizás por eso la arquitectura nace del dibujo como la vida del juego: porque en ese trazo inocente se revela la esencia de lo humano, una búsqueda de cobijo y de belleza sin necesidad de explicación. Dibujar es esbozar el mundo antes de que exista, es acercarse a lo inasible. Y tal vez, en esa fugacidad, residen verdades de la arquitectura: la que nos recuerda que toda forma, todo espacio, no es más que un intento de atrapar un instante de libertad.
                     </p>
 
@@ -115,7 +115,7 @@ export default function BlogDetailsAreaTwo() {
               <div className="blog-details-thumb-box">
                 <div className="row">
                   <div className="col-xl-12">
-                    <div className="blog-details-thumb">
+                    <div className="blog-details-thumb tp_img_fade_in" data-delay="0.5">
                       <Image
                         className="w-100"
                         src={details_thumb_6}

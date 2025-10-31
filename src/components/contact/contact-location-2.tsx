@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
@@ -52,8 +53,8 @@ const ContactLocationTwo = () => {
           {location_data.map((item) => (
             <div key={item.id} className="col-xl-4 col-lg-4 col-md-6 mb-30" >
               <div className="cn-contact-2-content  text-center d-flex align-items-center justify-content-center flex-column" style={{ height: "50vh" }}>
-                <h2 className="contact-about-title pb-30">{item.country}</h2>
-                <div className="cn-contact-2-thumb d-flex justify-content-center ">
+                <h2 className="contact-about-title pb-30 tp_title_anim">{item.country}</h2>
+                <div className="cn-contact-2-thumb d-flex justify-content-center tp_img_fade_in" data-delay={`${item.id * 0.15}`}>
                   <Image
                     src={item.img_1}
                     alt="contact-img"
@@ -69,12 +70,12 @@ const ContactLocationTwo = () => {
 
                 </div>
                 <div className="cn-contact-2-info-details" >
-                  <a className="pb-15" href={item.map} target="_blank">
+                  <a className="pb-15 tp_title_anim" href={item.map} target="_blank">
                     {item.address}
                   </a>
-                  <a href={`mailto:${item.email}`}>{item.email}</a>
-                  {item.phone && <a href={`tel:${item.phone}`}>{item.phone}</a>}
-                  {item.note && <span>{item.note}</span>}
+                  <a className="tp_title_anim" href={`mailto:${item.email}`}>{item.email}</a>
+                  {item.phone && <a className="tp_title_anim" href={`tel:${item.phone}`}>{item.phone}</a>}
+                  {item.note && <span className="tp_title_anim">{item.note}</span>}
                 </div>
               </div>
             </div>

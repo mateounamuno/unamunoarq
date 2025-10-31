@@ -11,20 +11,14 @@ import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
 import FooterOne from "@/layouts/footers/footer-one";
 // animation
-import { charAnimation } from "@/utils/title-animation";
+import { useContactAnimations } from "@/hooks/use-contact-animations";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
 import AboutSection from "@/components/contact/about-section";
 import ServicesSection from "@/components/contact/services-section";
 
 const ContactTwoPage = () => {
   useScrollSmooth();
-
-  useGSAP(() => {
-    const timer = setTimeout(() => {
-      charAnimation();
-    }, 100);
-    return () => clearTimeout(timer);
-  });
+  useContactAnimations();
 
   return (
     <Wrapper>
