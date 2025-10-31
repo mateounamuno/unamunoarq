@@ -169,7 +169,7 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
             )}
 
             {/* Filter buttons */}
-            <div className="project-list-filters">
+            <div className="project-list-filters pt-100">
                 <div className="d-flex gap-4 justify-content-center mb-50 flex-wrap">
                     {categories.map(cat => (
                         <button

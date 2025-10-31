@@ -169,7 +169,6 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                 onMouseEnter={(e) => {
                   const title = e.currentTarget.querySelector('.tp-project-title-hover') as HTMLElement;
                   const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                  const imgContainer = e.currentTarget.querySelector('.tp-project-img-container') as HTMLElement;
                   const gradientOverlay = e.currentTarget.querySelector('.tp-project-gradient-overlay') as HTMLElement;
                   if (title) {
                     title.style.opacity = '1';
@@ -178,9 +177,6 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                   if (img) {
                     img.style.transform = 'scale(1.1)';
                   }
-                  if (imgContainer) {
-                    imgContainer.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.15)';
-                  }
                   if (gradientOverlay) {
                     gradientOverlay.style.opacity = '1';
                   }
@@ -188,7 +184,6 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                 onMouseLeave={(e) => {
                   const title = e.currentTarget.querySelector('.tp-project-title-hover') as HTMLElement;
                   const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                  const imgContainer = e.currentTarget.querySelector('.tp-project-img-container') as HTMLElement;
                   const gradientOverlay = e.currentTarget.querySelector('.tp-project-gradient-overlay') as HTMLElement;
                   if (title) {
                     title.style.opacity = '0';
@@ -196,9 +191,6 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                   }
                   if (img) {
                     img.style.transform = 'scale(1)';
-                  }
-                  if (imgContainer) {
-                    imgContainer.style.boxShadow = 'none';
                   }
                   if (gradientOverlay) {
                     gradientOverlay.style.opacity = '0';
@@ -211,8 +203,7 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
                     overflow: 'hidden',
                     width: '100%',
                     height: style_2 ? 504 : 330,
-                    position: 'relative',
-                    transition: 'box-shadow 0.3s ease'
+                    position: 'relative'
                   }}
                 >
                   <Link href={getProjectLink(item.slug, item.template)} className="cursor-hide" style={{ display: 'block', width: '100%', height: '100%' }}>
