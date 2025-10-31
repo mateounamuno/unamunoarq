@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { projects } from "@/data/project-data";
@@ -70,15 +70,27 @@ const FloatingImagePortal: React.FC<{
 const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null);
     const [isImageVisible, setIsImageVisible] = useState(false);
+    const [active, setActive] = useState<string>('All');
 
     const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const idleTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    // Ordenar proyectos por año (más recientes primero)
-    const sortedProjects = [...projects].sort(
-        (a, b) => parseInt(b.year) - parseInt(a.year)
-    );
+    // Obtener categorías únicas de todos los proyectos
+    const categories = useMemo(() => {
+        const cats = Array.from(new Set(projects.map(p => p.category)));
+        return ['All', ...cats];
+    }, []);
+
+    // Filtrar y ordenar proyectos
+    const sortedProjects = useMemo(() => {
+        const filtered = active === 'All'
+            ? [...projects]
+            : projects.filter(p => p.category === active);
+
+        // Ordenar por año (más recientes primero)
+        return filtered.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+    }, [active]);
 
     const clearAllTimeouts = () => {
         if (hoverTimeoutRef.current) {
@@ -156,6 +168,44 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
                 />
             )}
 
+            {/* Filter buttons */}
+            <div className="project-list-filters">
+                <div className="d-flex gap-4 justify-content-center mb-50 flex-wrap">
+                    {categories.map(cat => (
+                        <button
+                            key={cat}
+                            onClick={() => setActive(cat)}
+                            style={{
+                                background: 'none',
+                                border: 'none',
+                                padding: '8px 0',
+                                fontSize: '16px',
+                                fontWeight: active === cat ? 'bold' : 'normal',
+                                color: active === cat ? 'var(--tp-common-black)' : 'var(--tp-common-black)',
+                                textDecoration: active === cat ? 'underline' : 'none',
+                                textUnderlineOffset: '4px',
+                                textDecorationThickness: '2px',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                position: 'relative'
+                            }}
+                            onMouseEnter={(e) => {
+                                if (active !== cat) {
+                                    e.currentTarget.style.opacity = '0.7';
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                if (active !== cat) {
+                                    e.currentTarget.style.opacity = '1';
+                                }
+                            }}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
             <div className="project-list">
                 {sortedProjects.map((project) => (
                     <Link
@@ -177,6 +227,7 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
                         onMouseLeave={hideImage}
                     >
                         <div className="project-year">{project.year}</div>
+                        <div className="project-category">{project.category}</div>
                         <div className="project-title">{project.title}</div>
                         <div className="project-location">{project.location}</div>
                     </Link>
@@ -200,6 +251,10 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           }
         }
 
+        .project-list-filters {
+          margin-bottom: 30px;
+        }
+
         .project-list {
           background: white;
           width: 100%;
@@ -207,13 +262,13 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
 
         :global(.project-row) {
           display: grid;
-          grid-template-columns: 80px 1fr auto;
+          grid-template-columns: 80px 120px 1fr auto;
           align-items: center;
           padding: 20px 0;
           border-bottom: 1px solid #000;
           cursor: pointer;
           transition: all 0.15s ease;
-          gap: 20px;
+          gap: 30px;
           text-decoration: none;
           color: inherit;
           box-sizing: border-box;
@@ -237,6 +292,13 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
           text-align: left;
         }
 
+        :global(.project-category) {
+          font-size: 16px;
+          color: inherit;
+          text-align: left;
+          opacity: 0.7;
+        }
+
         :global(.project-title) {
           font-size: 16px;
           font-weight: bold;
@@ -252,12 +314,13 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
 
         @media (max-width: 768px) {
           :global(.project-row) {
-            grid-template-columns: 60px 1fr auto;
-            gap: 15px;
+            grid-template-columns: 60px 90px 1fr auto;
+            gap: 20px;
             padding: 15px 0;
           }
 
           :global(.project-year),
+          :global(.project-category),
           :global(.project-title),
           :global(.project-location) {
             font-size: 14px;

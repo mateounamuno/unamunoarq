@@ -10,6 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import HeaderOne from "@/layouts/headers/header-one";
 import PortfolioGridFourColArea from "@/components/portfolio/portfolio-grid-4-col-area";
+import ProjectListPage from "@/components/portfolio/project-list-page";
 import FooterOne from "@/layouts/footers/footer-one";
 // animation
 import { hoverBtn } from "@/utils/hover-btn";
@@ -60,10 +61,9 @@ const PortfolioGridColFourPage = () => {
         <div id="smooth-content">
           <main>
 
-
-            {/* portfolio area */}
-            <PortfolioGridFourColArea />
-            {/* portfolio area */}
+            {/* project list area */}
+            <ProjectListPage />
+            {/* project list area */}
 
           </main>
 
