@@ -314,13 +314,16 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
 
         @media (max-width: 768px) {
           :global(.project-row) {
-            grid-template-columns: 60px 90px 1fr auto;
+            grid-template-columns: 60px 1fr auto;
             gap: 20px;
             padding: 15px 0;
           }
 
+          :global(.project-category) {
+            display: none;
+          }
+
           :global(.project-year),
-          :global(.project-category),
           :global(.project-title),
           :global(.project-location) {
             font-size: 14px;
