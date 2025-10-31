@@ -344,3 +344,12 @@ select {
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero Banner zoom effect */
+.tp-hero-area.tp-hero-ptb.main-slider {
+  overflow: hidden;
+
+  .tp-hero-bg-image {
+    overflow: hidden;
+  }
+}
