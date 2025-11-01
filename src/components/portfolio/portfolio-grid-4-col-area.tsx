@@ -122,10 +122,10 @@ export default function PortfolioGridFourColArea({ style_2 = false }: IProps) {
   };
   return (
     <div className="tp-project-5-2-area tp-project-5-2-p pt-100 pb-50">
-      <div className={`container container-${style_2 ? '1800' : '1530'}`}>
+      <div className="container-1480">
         <div className="row">
           <div className="col-xl-12">
-            <div className="d-flex gap-4 justify-content-center mb-50 flex-wrap">
+            <div className="d-flex gap-4 justify-content-center mb-50 flex-wrap p-60">
               {categories.map(cat => (
                 <button
                   key={cat}

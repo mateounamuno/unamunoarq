@@ -203,19 +203,7 @@
         }
 
         &-height {
-            height: 800px;
-
-            @media #{$lg} {
-                height: 700px;
-            }
-
-            @media #{$xs} {
-                height: 600px;
-            }
-
-            @media #{$sm} {
-                height: 700px;
-            }
+            height: 100vh;
         }
     }
 

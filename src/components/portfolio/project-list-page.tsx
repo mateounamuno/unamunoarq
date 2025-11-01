@@ -238,12 +238,30 @@ const ProjectListPage: React.FC<ProjectListPageProps> = ({ className = "" }) => 
         .project-list-page {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 20px;
+          padding: 0 30px;
           min-height: 100vh;
           display: block; /* cambiado a block para evitar centrar vertical del contenedor */
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 1400px) {
+          .project-list-page {
+            padding: 0 40px;
+          }
+        }
+
+        @media (min-width: 992px) and (max-width: 1399px) {
+          .project-list-page {
+            padding: 0 30px;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          .project-list-page {
+            padding: 0 20px;
+          }
+        }
+
+        @media (max-width: 767px) {
           .project-list-page {
             padding: 0 15px;
             padding-top: 100px;
