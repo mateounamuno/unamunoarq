@@ -451,49 +451,67 @@
     padding: 15px 0 !important;
 }
 
-/* ===== PORTFOLIO GRID: Márgenes horizontales para containers ===== */
+/* Portfolio Grid - Restaurar márgenes horizontales */
+/* Override cualquier regla que pueda estar aplicando margin: 0 */
 .tp-project-5-2-area .container-1480,
-.tp-project-5-2-area .container-1530,
-.tp-project-5-2-area .container-1800 {
-    margin: 0 auto !important;
+.tp-project-5-2-area .container.container-1480 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 @media (min-width: 1400px) {
 
     .tp-project-5-2-area .container-1480,
-    .tp-project-5-2-area .container-1530,
-    .tp-project-5-2-area .container-1800 {
-        padding-left: 80px !important;
-        padding-right: 80px !important;
+    .tp-project-5-2-area .container.container-1480 {
+        max-width: 1480px !important;
+        padding: 0 30px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
-@media (min-width: 992px) and (max-width: 1399px) {
+@media (min-width: 1200px) and (max-width: 1399px) {
 
     .tp-project-5-2-area .container-1480,
-    .tp-project-5-2-area .container-1530,
-    .tp-project-5-2-area .container-1800 {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+    .tp-project-5-2-area .container.container-1480 {
+        max-width: 100% !important;
+        padding: 0 40px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .tp-project-5-2-area .container-1480,
+    .tp-project-5-2-area .container.container-1480 {
+        max-width: 100% !important;
+        padding: 0 30px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 
     .tp-project-5-2-area .container-1480,
-    .tp-project-5-2-area .container-1530,
-    .tp-project-5-2-area .container-1800 {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+    .tp-project-5-2-area .container.container-1480 {
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
 @media (max-width: 767px) {
 
     .tp-project-5-2-area .container-1480,
-    .tp-project-5-2-area .container-1530,
-    .tp-project-5-2-area .container-1800 {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+    .tp-project-5-2-area .container.container-1480 {
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }

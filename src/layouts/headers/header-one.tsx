@@ -33,7 +33,7 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                 <div className="tp-header-logo">
                   <Link className={`${transparent ? 'ab-logo-1' : 'logo-1'}`} href="/">
                     <Image
-                      src={transparent ? "/assets/img/logo/logo-white.png" : "/assets/img/logo/logo.png"}
+                      src="/assets/img/logo/logo-mini.png"
                       alt="logo"
                       width={400}
                       height={130}
@@ -46,7 +46,7 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                   </Link>
                   <Link className={`${transparent ? 'ab-logo-2' : 'logo-2'}`} href="/">
                     <Image
-                      src={transparent ? "/assets/img/logo/logo.png" : "/assets/img/logo/logo-white.png"}
+                      src="/assets/img/logo/logo-mini.png"
                       alt="logo"
                       width={400}
                       height={130}
