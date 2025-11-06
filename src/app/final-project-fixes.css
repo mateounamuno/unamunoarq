@@ -263,6 +263,23 @@
     line-height: 1.6;
 }
 
+/* Make services section height fit content */
+.contact-services-section .about-wrapper {
+    height: auto !important;
+}
+
+.contact-services-section .about-row {
+    height: auto !important;
+}
+
+.contact-services-section .about-left-col {
+    height: auto !important;
+}
+
+.contact-services-section .contact-about-content {
+    height: auto !important;
+}
+
 /* Match About paragraph typography to services text */
 .contact-about-section .contact-about-text {
     font-size: 16px;
