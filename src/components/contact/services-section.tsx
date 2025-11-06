@@ -27,11 +27,7 @@ const SERVICES: ServiceItem[] = [
         description:
             "Dirección y conducción de obra. Control de calidad, planificación, certificaciones y seguimiento integral hasta la entrega.",
     },
-    {
-        title: "Comercialización",
-        description:
-            "Acompañamos la estrategia comercial: material gráfico, renders, memoria descriptiva y soporte para ventas.",
-    },
+
 ];
 
 const ServicesSection: React.FC = () => {
