@@ -85,7 +85,7 @@ const menu_data: IMenuDT[] = [
   },
   {
     id: 4,
-    title: 'Contacto',
+    title: 'Bio/Contacto',
     link: '/contact-2'
   }
 ];
