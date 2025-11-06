@@ -163,10 +163,40 @@
 
 @media (max-width: 767px) {
     .about-left-col {
-        margin-bottom: 30px !important;
-        padding-right: 0 !important;
+        padding-left: 0 !important;
+        height: 100vh;
+    }
+
+    .about-image-col {
+        padding: 0px;
     }
 }
+
+@media (min-width: 992px) {
+    .about-left-col {
+        height: 80vh;
+    }
+}
+
+
+/* Bio section fixes */
+
+@media (min-width: 992px) {
+    .bio-img-col {
+        padding-right: 150px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bio-img-col {
+        padding: 0 !important;
+        margin-bottom: 40px;
+
+
+    }
+
+}
+
 
 /* Services section */
 .contact-services-section .services-header {
