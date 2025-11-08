@@ -15,6 +15,11 @@ import details_thumb_9 from "@/assets/img/inner-blog/blog-details/9.png";
 import details_thumb_10 from "@/assets/img/inner-blog/blog-details/10.png";
 import details_thumb_11 from "@/assets/img/inner-blog/blog-details/11.png";
 import details_thumb_12 from "@/assets/img/inner-blog/blog-details/12.png";
+import details_thumb_13 from "@/assets/img/inner-blog/blog-details/13.jpeg";
+import details_thumb_14 from "@/assets/img/inner-blog/blog-details/14.jpeg";
+import details_thumb_15 from "@/assets/img/inner-blog/blog-details/15.jpeg";
+import details_thumb_16 from "@/assets/img/inner-blog/blog-details/16.jpeg";
+
 
 
 export default function BlogDetailsAreaTwo() {
@@ -91,10 +96,6 @@ export default function BlogDetailsAreaTwo() {
                   </div>
                 </div>
 
-
-
-
-
                 {/*Segunda sección: Imágenes (3/3) */}
                 <div className=" tp_fade_bottom col-xl-12">
                   <div className="row align-items-start">
@@ -130,57 +131,40 @@ export default function BlogDetailsAreaTwo() {
                         />
                       </div>
                     </div>
-
-
-
                   </div>
                 </div>
-                {/* Imágenes full width */}
-                <div className=" tp_fade_bottom col-xl-12 ">
-                  <div className="row">
+
+
+                {/*Segunda sección: Imágenes (3/3) */}
+                <div className=" tp_fade_bottom col-xl-12">
+                  <div className="row align-items-start">
+
                     <div className="col-xl-4 col-lg-4">
-                      <div className="blog-details-thumb-box tp_img_fade_in " data-delay="0.3">
+                      <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0">
                         <Image
                           className="w-100"
-                          src={details_thumb_8}
+                          src={details_thumb_14}
                           alt="details-thumb"
-                          style={{ height: "550px", objectFit: "contain", width: "100%" }}
+                          style={{ height: "550px", objectFit: "cover", width: "100%" }}
                         />
                       </div>
                     </div>
-                    <div className="col-xl-8  col-lg-8">
-                      <div className="blog-details-thumb-box tp_img_fade_in " data-delay="0.1">
+                    <div className="col-xl-4 col-lg-4">
+                      <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0">
                         <Image
-                          className=""
-                          src={details_thumb_8a}
+                          className="w-100"
+                          src={details_thumb_15}
                           alt="details-thumb"
                           style={{ height: "550px", objectFit: "cover", width: "100%" }}
                         />
                       </div>
                     </div>
 
-                  </div>
-                </div>
-
-                {/* Segunda sección: Texto (2/3) + Imagen (1/3) */}
-                <div className="col-xl-12">
-                  <div className="row align-items-center">
-                    <div className="col-xl-8 col-lg-8">
-                      <div className="blog-details-thumb-box blog-details-top-text tp_fade_bottom">
-                        <div className="blog-details-left-content tp_fade_bottom">
-                          <p className="tp_title_anim">Dibujo para abstraerme del tiempo y de lo coyuntural, como quien se refugia en un estado más puro de la atención. Me interesa la libertad de los dibujos de los niños: desestructurados, espontáneos, con errores y, a su manera, profundamente serios. El dibujo para ellos no es un medio, sino un fin en sí mismo: lo hacen por diversión, y en esa aparente ligereza se esconde una sabiduría despojada y sincera.
-                          </p>
-                          <p className="tp_title_anim">
-                            Quizás por eso la arquitectura nace del dibujo como la vida del juego: porque en ese trazo inocente se revela la esencia de lo humano, una búsqueda de cobijo y de belleza sin necesidad de explicación. Dibujar es esbozar el mundo antes de que exista, es acercarse a lo inasible. Y tal vez, en esa fugacidad, residen verdades de la arquitectura: la que nos recuerda que toda forma, todo espacio, no es más que un intento de atrapar un instante de libertad.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
                     <div className="col-xl-4 col-lg-4">
-                      <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0.3">
+                      <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0">
                         <Image
                           className="w-100"
-                          src={details_thumb_9}
+                          src={details_thumb_13}
                           alt="details-thumb"
                           style={{ height: "550px", objectFit: "cover", width: "100%" }}
                         />
@@ -192,34 +176,105 @@ export default function BlogDetailsAreaTwo() {
                 {/* Imágenes full width */}
                 <div className="tp_fade_bottom col-xl-12">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                       <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0.4">
                         <Image
                           className="mb-20 w-100"
-                          src={details_thumb_10}
+                          src={details_thumb_16}
                           alt="details-thumb-10"
                           unoptimized
                           style={{ height: "550px", objectFit: "cover", width: "100%" }}
                         />
                       </div>
                     </div>
-                    <div className="col-md-6">
-                      <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0.5">
-                        <Image
-                          className="mb-20 w-100"
-                          src={details_thumb_11}
-                          alt="details-thumb-11"
-                          unoptimized
-                          style={{ height: "550px", objectFit: "cover", width: "100%" }}
-                        />
+                  </div>
+
+                  {/* Imágenes  1/3 & 2/3 */}
+                  <div className=" tp_fade_bottom col-xl-12 ">
+                    <div className="row">
+                      <div className="col-xl-4 col-lg-4">
+                        <div className="blog-details-thumb-box tp_img_fade_in " data-delay="0.3">
+                          <Image
+                            className="w-100"
+                            src={details_thumb_8}
+                            alt="details-thumb"
+                            style={{ height: "550px", objectFit: "contain", width: "100%" }}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-8  col-lg-8">
+                        <div className="blog-details-thumb-box tp_img_fade_in " data-delay="0.1">
+                          <Image
+                            className=""
+                            src={details_thumb_8a}
+                            alt="details-thumb"
+                            style={{ height: "550px", objectFit: "cover", width: "100%" }}
+                          />
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  {/* Segunda sección: Texto (2/3) + Imagen (1/3) */}
+                  <div className="col-xl-12">
+                    <div className="row align-items-center">
+                      <div className="col-xl-8 col-lg-8">
+                        <div className="blog-details-thumb-box blog-details-top-text tp_fade_bottom">
+                          <div className="blog-details-left-content tp_fade_bottom">
+                            <p className="tp_title_anim">Dibujo para abstraerme del tiempo y de lo coyuntural, como quien se refugia en un estado más puro de la atención. Me interesa la libertad de los dibujos de los niños: desestructurados, espontáneos, con errores y, a su manera, profundamente serios. El dibujo para ellos no es un medio, sino un fin en sí mismo: lo hacen por diversión, y en esa aparente ligereza se esconde una sabiduría despojada y sincera.
+                            </p>
+                            <p className="tp_title_anim">
+                              Quizás por eso la arquitectura nace del dibujo como la vida del juego: porque en ese trazo inocente se revela la esencia de lo humano, una búsqueda de cobijo y de belleza sin necesidad de explicación. Dibujar es esbozar el mundo antes de que exista, es acercarse a lo inasible. Y tal vez, en esa fugacidad, residen verdades de la arquitectura: la que nos recuerda que toda forma, todo espacio, no es más que un intento de atrapar un instante de libertad.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-xl-4 col-lg-4">
+                        <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0.3">
+                          <Image
+                            className="w-100"
+                            src={details_thumb_9}
+                            alt="details-thumb"
+                            style={{ height: "550px", objectFit: "cover", width: "100%" }}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Imágenes full width */}
+                  <div className="tp_fade_bottom col-xl-12">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0.4">
+                          <Image
+                            className="mb-20 w-100"
+                            src={details_thumb_10}
+                            alt="details-thumb-10"
+                            unoptimized
+                            style={{ height: "550px", objectFit: "cover", width: "100%" }}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="blog-details-thumb-box tp_img_fade_in" data-delay="0.5">
+                          <Image
+                            className="mb-20 w-100"
+                            src={details_thumb_11}
+                            alt="details-thumb-11"
+                            unoptimized
+                            style={{ height: "550px", objectFit: "cover", width: "100%" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tercera sección: Texto (2/3) + Imagen (1/3) */}
+
+
                 </div>
-
-                {/* Tercera sección: Texto (2/3) + Imagen (1/3) */}
-
-
               </div>
             </div>
           </div>
