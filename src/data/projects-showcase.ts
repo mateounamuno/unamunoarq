@@ -179,7 +179,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview:
-            "Esto no es un café, sino una instalación efímera y flexible que propone una actitud más que una forma: una gran barra de servicios como pieza esencial, mesas móviles que funcionan tanto para el consumo como para usos expositivos, y una plataforma exterior que dialoga con el árbol existente. Con materiales simples y económicos, de fácil montaje y posibilidad de reciclaje, la propuesta se plantea concreta, ligera y adaptable, buscando abrir el espacio a múltiples situaciones y estimular la imaginación, más allá de lo planificado.",
+            "Esto no es un café. Es una instalación para dinamizar un espacio: útil, económica, poética y cosmopolita.<br/> Materiales mínimos: perfiles galvanizados, tornillos autoperforantes, granito negro Brasil, tubos led y ruedas.<br/> Propone una barra que habilita usos múltiples, equipamientos móviles y una plataforma exterior que relaciona interior / exterior.<br/> Efímera, accesible, eficiente y reciclable: más actitud que “café” o “instalación”.<br/> La barra como pieza esencial: soporte para servicios y formatos expositivos. Situación abierta para estimular imaginación.<br/>",
         autores: "Unamuno, Echegaray",
         location: "Córdoba, AR",
         fotografia: "Francisco Rolfi",
@@ -444,7 +444,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showOnHome: false,
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
-        overview: "",
+        overview: "Un café al paso ubicado en el intersticio de dos grandes edificios de la ciudad de Córdoba. <br/> Una 'protesis' urbana que, a través de su forma, retoma cuestiones antagónicas sobre el peso y la levedad, lo estático y lo dinámico, lo sólido y lo líquido. <br/> Inspirado en la sensación de compresión que genera el sitio, el volumen adopta una forma “líquida” que enfatiza el gesto de compresión. Al mismo tiempo, el despojo de elementos contrasta con su entorno variado y su color morado, trae consigo, una reminiscencia a la planta del café.",
         autores: "Unamuno Arq.",
         location: "Córdoba, AR",
         fotografia: "",
