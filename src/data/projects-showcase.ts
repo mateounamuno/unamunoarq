@@ -163,10 +163,12 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/bros-comedor/banner.jpg",
         heroOverlayOpacity: 0.3,
         showcaseThumbs: [
+            "/assets/img/inner-project/bros-comedor/detail-2.jpg",
             "/assets/img/inner-project/bros-comedor/detail-3.jpg",
             "/assets/img/inner-project/bros-comedor/detail-1.jpg",
+            "/assets/img/inner-project/bros-comedor/detail-4.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/bros-comedor/detail-2.jpg",
+        fullWidthImage: "/assets/img/inner-project/bros-comedor/banner.jpg",
     },
     {
         template: "showcase",
