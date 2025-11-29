@@ -550,6 +550,8 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/banco-rarx/detail-4.jpg",
             "/assets/img/inner-project/banco-rarx/detail-5.jpg",
             "/assets/img/inner-project/banco-rarx/detail-6.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-7.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-8.jpg",
 
         ],
         fullWidthImage: "/assets/img/inner-project/banco-rarx/full-width.jpg",
