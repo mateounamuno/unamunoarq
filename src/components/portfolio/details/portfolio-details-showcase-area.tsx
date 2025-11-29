@@ -176,10 +176,10 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details thumb */}
       <div className="showcase-details-thumb-wrap pb-40">
         <div className="container">
-          {/* Grid de 2 columnas para hasta 10 fotos */}
+          {/* Grid de 2 columnas para hasta 12 fotos */}
           {thumbs.length > 0 && (
             <div className="row gx-80">
-              {thumbs.slice(0, 10).map((src: string, i: number) => {
+              {thumbs.slice(0, 12).map((src: string, i: number) => {
                 // Usar unoptimized para todas las imágenes para evitar problemas de optimización
                 return (
                   <div key={i} className="col-xl-6 col-lg-6">

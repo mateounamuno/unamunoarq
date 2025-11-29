@@ -14,7 +14,7 @@ export type ShowcaseProject = {
     fotografia?: string;
     showcaseHeroBg: string;
     heroOverlayOpacity?: number; // 0 to 1
-    showcaseThumbs: string[]; // hasta 10 imágenes recomendadas
+    showcaseThumbs: string[]; // hasta 12 imágenes recomendadas
     fullWidthImage?: string | string[]; // imagen(es) full width opcional(es) - puede ser una o múltiples
 };
 
@@ -285,8 +285,14 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/cielo-y-tierra/detail-5.jpg",
             "/assets/img/inner-project/cielo-y-tierra/detail-7.png",
             "/assets/img/inner-project/cielo-y-tierra/detail-8.png",
+            "/assets/img/inner-project/cielo-y-tierra/detail-9.jpg",
+            "/assets/img/inner-project/cielo-y-tierra/detail-10.jpg",
+            "/assets/img/inner-project/cielo-y-tierra/detail-11.jpg",
+            "/assets/img/inner-project/cielo-y-tierra/detail-12.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/cielo-y-tierra/full-width.jpg",
+        fullWidthImage: ["/assets/img/inner-project/cielo-y-tierra/full-width.jpg",
+            "/assets/img/inner-project/cielo-y-tierra/full-width-2.jpg",
+        ],
     },
     {
         template: "showcase",
