@@ -22,7 +22,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     {
         template: "showcase",
         slug: "casa-al-lado-1",
-        title: "La casa de al lado",
+        title: "Casa al Lado",
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.png",
@@ -40,7 +40,11 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/casa-al-lado/detail-3.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-4.jpg",
             "/assets/img/inner-project/casa-al-lado/detail-1.jpg",
-            "/assets/img/inner-project/casa-al-lado/detail-2.jpg"
+            "/assets/img/inner-project/casa-al-lado/detail-2.jpg",
+            "/assets/img/inner-project/casa-al-lado/detail-5.jpeg",
+            "/assets/img/inner-project/casa-al-lado/detail-6.jpg",
+            "/assets/img/inner-project/casa-al-lado/detail-7.jpg",
+            "/assets/img/inner-project/casa-al-lado/detail-8.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/casa-al-lado/full-width.jpeg",
     },
