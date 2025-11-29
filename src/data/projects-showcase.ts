@@ -14,7 +14,7 @@ export type ShowcaseProject = {
     fotografia?: string;
     showcaseHeroBg: string;
     heroOverlayOpacity?: number; // 0 to 1
-    showcaseThumbs: string[]; // length 3 recommended
+    showcaseThumbs: string[]; // hasta 10 imágenes recomendadas
     fullWidthImage?: string | string[]; // imagen(es) full width opcional(es) - puede ser una o múltiples
 };
 
@@ -438,6 +438,8 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/molt/detail-6.jpg",
             "/assets/img/inner-project/molt/detail-7.jpg",
             "/assets/img/inner-project/molt/detail-8.jpg",
+            "/assets/img/inner-project/molt/detail-9.jpg",
+            "/assets/img/inner-project/molt/detail-10.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/molt/full-width.jpg",
     },
@@ -466,6 +468,8 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/cafe-popolo/detail-6.jpg",
             "/assets/img/inner-project/cafe-popolo/detail-7.jpg",
             "/assets/img/inner-project/cafe-popolo/detail-8.jpg",
+            "/assets/img/inner-project/cafe-popolo/detail-9.jpg",
+            "/assets/img/inner-project/cafe-popolo/detail-10.jpg",
         ],
         fullWidthImage: "/assets/img/inner-project/cafe-popolo/full-width.jpg",
     },
