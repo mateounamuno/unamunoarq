@@ -67,6 +67,13 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       "/assets/img/inner-project/showcase/showcase-details-3.jpg",
     ];
 
+  // Normalizar fullWidthImage a un array para manejar tanto string como array
+  const fullWidthImages = fullWidthImage
+    ? Array.isArray(fullWidthImage)
+      ? fullWidthImage
+      : [fullWidthImage]
+    : [];
+
   // Evita hidratación hasta que el cliente esté listo
   if (!isMounted) {
     return null;
@@ -211,11 +218,11 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
             </div>
           )}
 
-          {/* Foto full width opcional */}
-          {fullWidthImage && (
-            <div className="row">
+          {/* Fotos full width opcionales - puede ser una o múltiples */}
+          {fullWidthImages.length > 0 && fullWidthImages.map((imgSrc, index) => (
+            <div key={index} className="row">
               <div className="col-xl-12">
-                <div className="showcase-details-thumb tp_img_fade_in" data-delay="0.8" style={{
+                <div className="showcase-details-thumb tp_img_fade_in" data-delay={`${0.8 + index * 0.1}`} style={{
                   marginBottom: "70px",
                   height: "auto"
                 }}>
@@ -225,11 +232,11 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     overflow: "hidden"
                   }}>
                     <Image
-                      src={fullWidthImage}
-                      alt={`${title} details full width`}
+                      src={imgSrc}
+                      alt={`${title} details full width ${index + 1}`}
                       width={1200}
                       height={600}
-                      priority={true}
+                      priority={index === 0}
                       sizes="100vw"
                       style={{
                         width: "100%",
@@ -237,13 +244,13 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                         objectFit: "cover",
                         cursor: "pointer"
                       }}
-                      onClick={() => openLightbox(fullWidthImage, `${title} details full width`)}
+                      onClick={() => openLightbox(imgSrc, `${title} details full width ${index + 1}`)}
                     />
                   </div>
                 </div>
               </div>
             </div>
-          )}
+          ))}
         </div>
       </div>
       {/* details thumb */}

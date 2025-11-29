@@ -15,7 +15,7 @@ export type ShowcaseProject = {
     showcaseHeroBg: string;
     heroOverlayOpacity?: number; // 0 to 1
     showcaseThumbs: string[]; // length 3 recommended
-    fullWidthImage?: string; // imagen full width opcional
+    fullWidthImage?: string | string[]; // imagen(es) full width opcional(es) - puede ser una o múltiples
 };
 
 export const showcaseProjects: ShowcaseProject[] = [
@@ -190,8 +190,13 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseThumbs: [
             "/assets/img/inner-project/cafe-laprida/detail-1.jpg",
             "/assets/img/inner-project/cafe-laprida/detail-2.jpg",
+            "/assets/img/inner-project/cafe-laprida/detail-5.jpg",
+            "/assets/img/inner-project/cafe-laprida/detail-6.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/cafe-laprida/detail-3.jpg",
+        fullWidthImage: [
+            "/assets/img/inner-project/cafe-laprida/detail-4.jpg",
+            "/assets/img/inner-project/cafe-laprida/detail-3.jpg",
+        ],
     },
     {
         template: "showcase",
