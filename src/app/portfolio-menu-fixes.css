@@ -43,14 +43,26 @@
 .tp-megamenu-portfolio {
     max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 20px !important;
+}
+
+/* Asegurar que el row interno esté centrado simétricamente */
+.tp-megamenu-portfolio .row.gx-50 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Asegurar que el contenedor interno esté centrado */
+.tp-megamenu-portfolio .row.gx-50>.col-xxl-9,
+.tp-megamenu-portfolio .row.gx-50>.col-xl-10 {
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Ajustar el contenedor del mega menú */
 .tp-menu-fullwidth {
     max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 20px !important;
+    padding: 0 !important;
 }
 
 /* Enfoque más agresivo para limitar el ancho */

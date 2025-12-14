@@ -22,7 +22,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     {
         template: "showcase",
         slug: "casa-al-lado-1",
-        title: "Casa al Lado",
+        title: "Casa de al Lado",
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-al-lado/grid.png",
@@ -297,7 +297,7 @@ export const showcaseProjects: ShowcaseProject[] = [
     {
         template: "showcase",
         slug: "casa-para-andar",
-        title: "Casa andar",
+        title: "Casa para andar",
         category: "Residencial",
         year: "2024",
         homeGrid: "/assets/img/inner-project/casa-andar/grid.png",

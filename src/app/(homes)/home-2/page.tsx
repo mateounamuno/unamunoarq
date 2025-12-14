@@ -72,9 +72,7 @@ const HomePageTwo = () => {
         <div id="smooth-content">
           <main>
 
-            {/* hero area start */}
-            <HeroBannerTwo />
-            {/* hero area end */}
+
 
             {/* portfolio grid area */}
             <PortfolioGridFourColArea />
