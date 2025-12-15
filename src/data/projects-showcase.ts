@@ -423,7 +423,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "Un encargo especial, una vivienda de vacaciones para varias familias. Una serie de dormitorios vinculados directamente a un patio central. Ese patio es encuentro y es reunión, al mismo tiempo que es zaguán, ingreso, circulación, articulación y distribución. Es el patio del limonero. <br/> Se propone un diálogo con la antigua arquitectura cordobesa, con las viviendas andaluzas y la villa romana. Estar “afuera” en un interior fue lo que desató una serie de ideas para esta casa, cuya sucesión de patios es el partido. Un diálogo continuo con la historia y un particular contexto a veras de dique Los Molinos.",
         autores: "Unamuno, RARE, Maglione.",
-        location: "Río Cuarto, Córdoba, AR",
+        location: "Potrero de Garay, Córdoba, AR",
         fotografia: "Lorenzo Egues",
         showcaseHeroBg: "/assets/img/inner-project/patio-con-casa/banner.jpg",
         heroOverlayOpacity: 0.25,
