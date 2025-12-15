@@ -51,11 +51,40 @@
     margin-right: 0 !important;
 }
 
-/* Asegurar que el contenedor interno esté centrado */
+/* Asegurar que el contenedor interno esté centrado y no exceda el ancho */
 .tp-megamenu-portfolio .row.gx-50>.col-xxl-9,
 .tp-megamenu-portfolio .row.gx-50>.col-xl-10 {
     margin-left: auto !important;
     margin-right: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ajustar las columnas del menú de portfolio para que quepan todas */
+.tp-megamenu-list-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.tp-megamenu-list-box .row.gx-30 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    --bs-gutter-x: 15px !important;
+}
+
+/* Ajustar el ancho de las columnas para que quepan 4 columnas */
+.tp-megamenu-list-box .row.gx-30>[class*="col-xxl-3"],
+.tp-megamenu-list-box .row.gx-30>[class*="col-xl-3"] {
+    flex: 0 0 calc(25% - 11.25px) !important;
+    max-width: calc(25% - 11.25px) !important;
+    width: calc(25% - 11.25px) !important;
+    box-sizing: border-box !important;
 }
 
 /* Ajustar el contenedor del mega menú */
