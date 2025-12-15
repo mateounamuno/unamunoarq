@@ -450,10 +450,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview: "Molt propone un espacio abstracto. Una experiencia sintética, atemporal y unificadora. <br/> Con un material translúcido como predominante, el espacio se transforma en una gran lámpara que destaca por sobre el espacio público corriente. Casi como una invitación a una cápsula del tiempo, una realidad paralela o surreal. <br/> La forma de exhibir los productos de manera provocativa, también potencian la experiencia peculiar con los clientes.",
-        autores: "Unamuno, Estudio Parvas",
+        autores: "Unamuno, Parvas & RARE",
         location: "Córdoba, AR",
         fotografia: "",
-        showcaseHeroBg: "/assets/img/inner-project/molt/banner.jpg",
+        showcaseHeroBg: "/assets/img/inner-project/molt/full-width.jpg",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
             "/assets/img/inner-project/molt/detail-1.jpg",
@@ -467,7 +467,7 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/molt/detail-9.jpg",
             "/assets/img/inner-project/molt/detail-10.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/molt/full-width.jpg",
+        fullWidthImage: "/assets/img/inner-project/molt/banner.jpg",
     },
     {
         template: "showcase",
