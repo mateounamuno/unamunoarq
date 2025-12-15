@@ -537,7 +537,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview: "Entendimos al sitio del presente concurso, como un sector estratégico que forma parte no sólo de la ciudad sino también, de un extenso corredor verde de escala regional. Con el objetivo de fortalecer esta continuidad paisajística entre el campo de golf existente y el cinturón verde urbano circundante, nuestro proyecto busca crear un nuevo parque, que no solo responda a los requisitos del concurso, sino que también actúe como un ecosistema de encuentro y socialización, convirtiéndose en un referente para la ciudad y la región.",
-        autores: "Unamuno y otros colaboradores.",
+        autores: "Unamuno y e404",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/la-macarena/banner.jpg",
