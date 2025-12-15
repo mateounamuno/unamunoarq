@@ -90,7 +90,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "Se trata de una vivienda en las sierras de Córdoba, para una persona que intenta encontrar en la espiritualidad y su conexión con el cielo, el sentido de las cosas. La arquitectura no hace más que representar esta forma de ver el mundo y dialogar desde su materialidad y composición con el paisaje circundante.",
         autores: "Unamuno, RARE & Monte",
-        location: "Córdoba, AR",
+        location: "Villa Ciudad Parque, AR",
         fotografia: "Nicolás Godoy",
         showcaseHeroBg: "/assets/img/inner-project/refugio-para-el-viento/banner.jpg",
         heroOverlayOpacity: 0.05,
