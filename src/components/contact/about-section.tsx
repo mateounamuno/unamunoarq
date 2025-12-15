@@ -6,7 +6,7 @@ const AboutSection = () => {
         <div className="contact-about-section">
             <div className="container container-1530 pb-70">
                 <div className="about-wrapper" style={{ height: "auto", padding: 10 }}>
-                    <div className="row align-items-stretch about-row mb-20">
+                    <div className="row align-items-stretch about-row mb-80">
                         {/* Left column - Text content */}
                         <div className="col-xl-6 col-lg-6 col-md-12 mb-40 mb-md-0 about-left-col" style={{ height: "80vh" }}>
                             <div
