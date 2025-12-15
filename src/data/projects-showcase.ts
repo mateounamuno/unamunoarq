@@ -345,14 +345,14 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseThumbs: [
             "/assets/img/inner-project/edificio-recova/detail-1.png",
             "/assets/img/inner-project/edificio-recova/detail-2.png",
-            "/assets/img/inner-project/edificio-recova/detail-3.png",
             "/assets/img/inner-project/edificio-recova/detail-4.png",
+            "/assets/img/inner-project/edificio-recova/full-width.jpg",
             "/assets/img/inner-project/edificio-recova/detail-5.jpg",
             "/assets/img/inner-project/edificio-recova/detail-6.png",
             "/assets/img/inner-project/edificio-recova/detail-7.jpg",
             "/assets/img/inner-project/edificio-recova/detail-8.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/edificio-recova/full-width.jpg",
+        fullWidthImage: "/assets/img/inner-project/edificio-recova/detail-3.png",
     },
     {
         template: "showcase",
