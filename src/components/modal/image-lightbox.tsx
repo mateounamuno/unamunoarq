@@ -18,15 +18,22 @@ export default function ImageLightbox({ showModal, setShowModal, imageSrc, image
 
     // Prevent body scroll when modal is open
     useEffect(() => {
+        // Ensure we're on the client side
+        if (typeof window === 'undefined' || !document.body) return;
+
+        const originalOverflow = document.body.style.overflow || '';
+
         if (showModal) {
             document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = originalOverflow || 'unset';
         }
 
         // Cleanup on unmount
         return () => {
-            document.body.style.overflow = 'unset';
+            if (typeof document !== 'undefined' && document.body) {
+                document.body.style.overflow = originalOverflow || 'unset';
+            }
         };
     }, [showModal]);
 

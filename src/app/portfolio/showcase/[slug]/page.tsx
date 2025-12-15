@@ -25,9 +25,13 @@ export default function ShowcaseDetailsPage({ params }: { params: { slug: string
     useShowcaseAnimations(); // Usa el hook que incluye la nueva animación
 
     useEffect(() => {
+        if (typeof window === 'undefined' || !document.body) return;
+        
         document.body.classList.add("tp-magic-cursor");
         return () => {
-            document.body.classList.remove("tp-magic-cursor");
+            if (typeof document !== 'undefined' && document.body) {
+                document.body.classList.remove("tp-magic-cursor");
+            }
         }
     }, []);
 

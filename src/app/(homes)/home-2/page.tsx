@@ -27,9 +27,13 @@ import { bounceAnimation, charAnimation, fadeAnimation } from "@/utils/title-ani
 const HomePageTwo = () => {
   useScrollSmooth();
   useEffect(() => {
+    if (typeof window === 'undefined' || !document.body) return;
+
     document.body.classList.add("tp-magic-cursor");
     return () => {
-      document.body.classList.remove("tp-magic-cursor");
+      if (typeof document !== 'undefined' && document.body) {
+        document.body.classList.remove("tp-magic-cursor");
+      }
     }
   }, []);
 
