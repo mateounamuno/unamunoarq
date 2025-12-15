@@ -157,18 +157,18 @@
 
 @media (min-width: 992px) {
     .about-image-col {
-        padding-left: 150px !important;
+        padding-left: 10px !important;
     }
 }
 
 @media (max-width: 767px) {
     .about-left-col {
-        padding-left: 0 !important;
+        padding-left: 10px !important;
         height: 100vh;
     }
 
     .about-image-col {
-        padding: 0px;
+        padding-left: 10px !important;
     }
 }
 
@@ -183,13 +183,13 @@
 
 @media (min-width: 992px) {
     .bio-img-col {
-        padding-right: 150px !important;
+        padding-right: 10px !important;
     }
 }
 
 @media (max-width: 767px) {
     .bio-img-col {
-        padding: 0 !important;
+        padding-right: 10px !important;
         margin-bottom: 40px;
 
 
