@@ -221,7 +221,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Lo espontáneo, lo efímero, el punto de encuentro, la esquina, la expresión individual, el gesto colectivo, el ruido, los autos, las chapas, las luces… La calle. <br/> Un conjunto de acciones (de afuera hacia adentro) direccionadas a generar lógicas diferentes de relación entre lo que antes era una vidriera, con el espacio público. Un manifiesto, usar la vereda, ocupar la calle y una vez más, comenzar a borrar los márgenes entre el interior y el exterior previamente inexistente.",
-        autores: "Unamuno Arq.",
+        autores: "Unamuno Arq. & RARE",
         location: "Córdoba, AR",
         fotografia: "Ana Salazar",
         showcaseHeroBg: "/assets/img/inner-project/the-fav/banner.jpg",
@@ -231,9 +231,12 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/the-fav/detail-1.jpg",
             "/assets/img/inner-project/the-fav/detail-3.jpg",
             "/assets/img/inner-project/the-fav/detail-4.jpg",
+            "/assets/img/inner-project/the-fav/detail-8.jpg",
+            "/assets/img/inner-project/the-fav/detail-7.jpg",
             "/assets/img/inner-project/the-fav/detail-5.jpg",
             "/assets/img/inner-project/the-fav/detail-6.jpg",
         ],
+        fullWidthImage: "/assets/img/inner-project/the-fav/banner.jpg",
     },
     {
         template: "showcase",
