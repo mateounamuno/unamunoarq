@@ -63,13 +63,19 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno Arq.",
         location: "Córdoba, AR",
         fotografia: "",
-        showcaseHeroBg: "/assets/img/inner-project/casa-nina/frente.png",
+        showcaseHeroBg: "/assets/img/inner-project/casa-nina/hero.jpg",
         heroOverlayOpacity: 0.2,
         showcaseThumbs: [
             "/assets/img/inner-project/casa-nina/render1.jpg",
             "/assets/img/inner-project/casa-nina/render2.jpg",
+            "/assets/img/inner-project/casa-nina/render3.jpg",
+            "/assets/img/inner-project/casa-nina/render4.jpg",
+            "/assets/img/inner-project/casa-nina/grafico1.jpg",
+            "/assets/img/inner-project/casa-nina/grafico2.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/casa-nina/render3.jpg",
+        fullWidthImage: ["/assets/img/inner-project/casa-nina/grafico3.jpg",
+            "/assets/img/inner-project/casa-nina/frente.png"],
+
     },
     {
         template: "showcase",
