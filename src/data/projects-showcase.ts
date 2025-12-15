@@ -486,9 +486,9 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/cafe-popolo/banner.jpg",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
-            "/assets/img/inner-project/cafe-popolo/detail-1.jpg",
-            "/assets/img/inner-project/cafe-popolo/detail-2.jpg",
             "/assets/img/inner-project/cafe-popolo/detail-4.jpg",
+            "/assets/img/inner-project/cafe-popolo/detail-2.jpg",
+            "/assets/img/inner-project/cafe-popolo/detail-1.jpg",
             "/assets/img/inner-project/cafe-popolo/detail-3.jpg",
             "/assets/img/inner-project/cafe-popolo/detail-5.jpg",
             "/assets/img/inner-project/cafe-popolo/detail-6.jpg",
