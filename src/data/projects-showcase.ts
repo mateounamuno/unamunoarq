@@ -142,7 +142,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview:
             "Ejercicio para conversar con la barranca, una vivienda unifamiliar en la localidad de Cuesta Blanca. \n La vivienda se despliega siguiendo el pulso del terreno, adaptándose a su relieve como si siempre hubiera estado allí. \n Su geometría se inclina, buscando la luz y enmarcando las mejores vistas, dialogando con el horizonte. \n Flexible en su interior, la casa se transforma para acompañar distintos modos de habitar, respirando al ritmo del paisaje que la rodea.",
         autores: "Unamuno, RARE, Marinelli",
-        location: "Córdoba, AR",
+        location: "Cuesta Blanca, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/la-barranca/banner.jpg",
         heroOverlayOpacity: 0.4,
