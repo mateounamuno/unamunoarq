@@ -73,7 +73,6 @@ const HomePageTwo = () => {
           <main>
 
 
-
             {/* portfolio grid area */}
             <PortfolioGridFourColArea />
             {/* portfolio grid area */}

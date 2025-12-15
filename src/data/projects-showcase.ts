@@ -126,7 +126,8 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/unidades-vb/detail-2.jpg",
             "/assets/img/inner-project/unidades-vb/detail-4.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/unidades-vb/full-width.jpg",
+        fullWidthImage: ["/assets/img/inner-project/unidades-vb/full-width.jpg",
+            "/assets/img/inner-project/unidades-vb/banner.jpg"],
     },
     {
         template: "showcase",
@@ -312,7 +313,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview: "En casa para andar no hay comienzo y no hay final. <br/> A cada paso se repite: “Caminante no hay camino, se hace camino al andar”. Si no se anda, no se descubre. Si no se descubre, no se encuentra el interior. Porque el andar es dinámico, la casa es dinámica. Porque es dinámica, puede cambiar. El andar a pie es primitivo, es por ello que la casa para andar es vernácula. La casa para andar es una performance artística. La casa es paisaje, porque en el paisaje andamos, anduvimos y andaremos. Es un conjunto de piedras y ladrillos que un artista del land art encontró, parte en la montaña y parte en la ciudad. Luego las desparramó, según su orgánico y racional criterio, a pie de un cerro. <br/> En el andar hay paradas, porque quien no descansa no anda. Sin pausa, pero sin prisa. Si andar es de máquina, esta máquina funciona a sol y luna. <br/> No es una imagen, son muchas imágenes, más bien diría que es un film. <br/> Es deriva y es errar, errar de errante y errar de error. <br/> Se amasó con paisaje y se quemó en un horno ladrillero.",
         autores: "Unamuno, Willnecker, Ferrrero, Marinelli",
-        location: "Río Cuarto, Córdoba, AR",
+        location: "Villa Ciudad América, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/casa-andar/banner.jpg",
         heroOverlayOpacity: 0.25,
