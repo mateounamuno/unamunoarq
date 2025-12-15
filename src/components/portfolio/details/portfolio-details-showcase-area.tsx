@@ -52,6 +52,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
     overview = "",
     autores = '',
     category = '',
+    year = '',
     location = '',
     fotografia = "",
     showcaseThumbs,
@@ -147,6 +148,16 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
                     </div>
                     <div className="showcase-details-overview-info-right">
                       <span className="tp_title_anim">{location}</span>
+                    </div>
+                  </div>
+                )}
+                {year && (
+                  <div className="showcase-details-overview-info-item tp_fade_bottom">
+                    <div className="showcase-details-overview-info-left">
+                      <span className="tp_title_anim">Año</span>
+                    </div>
+                    <div className="showcase-details-overview-info-right">
+                      <span className="tp_title_anim">{year}</span>
                     </div>
                   </div>
                 )}
