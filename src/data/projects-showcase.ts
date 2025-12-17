@@ -725,4 +725,33 @@ export const showcaseProjects: ShowcaseProject[] = [
 
         ],
     },
+    {
+        template: "showcase",
+        slug: "estructura-soporte",
+        title: "Estructura Soporte",
+        category: "Experimentaciones",
+        year: "2025",
+        subtitle: "[ Arquitectura ]",
+        overview: "",
+        autores: "Unamuno & RARE",
+        location: "",
+        fotografia: "",
+        showcaseHeroBg: "/assets/img/inner-project/estructura-soporte/banner.webp",
+        homeGrid: "/assets/img/inner-project/estructura-soporte/banner.webp",
+        showOnHome: false,
+        showInGrid: true,
+        heroOverlayOpacity: 0.15,
+        showcaseThumbs: [
+            "/assets/img/inner-project/estructura-soporte/detail-1.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-2.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-3.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-4.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-5.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-6.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-7.webp",
+            "/assets/img/inner-project/estructura-soporte/detail-8.webp",
+
+        ],
+        fullWidthImage: ["/assets/img/inner-project/estructura-soporte/full-width-1.webp", "/assets/img/inner-project/estructura-soporte/full-width-2.webp"],
+    },
 ]
