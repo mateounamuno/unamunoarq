@@ -657,16 +657,16 @@ export const showcaseProjects: ShowcaseProject[] = [
         location: "",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/edificio-nsc/banner.webp",
-        heroOverlayOpacity: 0.15,
+        heroOverlayOpacity: 0.25,
         showcaseThumbs: [
-            "/assets/img/inner-project/edificio-nsc/detail-1.webp",
+            "/assets/img/inner-project/edificio-nsc/banner.webp",
             "/assets/img/inner-project/edificio-nsc/detail-2.webp",
             "/assets/img/inner-project/edificio-nsc/detail-3.webp",
             "/assets/img/inner-project/edificio-nsc/detail-4.webp",
             "/assets/img/inner-project/edificio-nsc/detail-6.webp",
             "/assets/img/inner-project/edificio-nsc/detail-5.webp",
         ],
-        fullWidthImage: "/assets/img/inner-project/edificio-nsc/detail-1.webp",
+
     },
     {
         template: "showcase",
