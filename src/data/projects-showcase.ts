@@ -622,7 +622,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         heroOverlayOpacity: 0.15,
         overview: "Elogio a la Textura es un proyecto que centra la mirada y el cuerpo de un grupo de arquitectxs y artistas sobre la arquitectura cordobesa. Un recorrido que lleva a explorar distintos rincones de la Provincia, en la búsqueda de aquello que caracteriza y representa la esencia del espacio y el paisaje arquitectónico local. La piedra, el ladrillo, la cal, el hormigón y un catálogo de materiales inertes capaces de condicionar nuestra experiencia cotidiana desde la combinación y expresión viva de los mismos. Un recorrido sensitivo y una observación detallada es lo que propone la muestra... <br/> Instalación temporal de sitio específico.",
-        autores: "Unamuno & otros colaboradores.",
+        autores: "Unamuno, RARE & otros colaboradores.",
         location: "Museo de Bellas Artes, Río IV, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/elogio-textura/banner.webp",
