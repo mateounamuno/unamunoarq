@@ -3,12 +3,9 @@ import React from "react";
 import Image from "next/image";
 
 // images
-import c_img_1 from "@/assets/img/inner-contact/contact/contact-1.jpeg";
-import c_img_2 from "@/assets/img/inner-contact/contact/contact-2.png";
-import c_img_3 from "@/assets/img/inner-contact/contact/contact-3.png";
-import c_img_4 from "@/assets/img/inner-contact/contact/contact-4.jpeg";
-import c_img_5 from "@/assets/img/inner-contact/contact/contact-5.png";
-import c_img_6 from "@/assets/img/inner-contact/contact/contact-6.png";
+import c_img_1 from "@/assets/img/inner-contact/contact/contact-1.webp";
+import c_img_3 from "@/assets/img/inner-contact/contact/contact-3.webp";
+import c_img_5 from "@/assets/img/inner-contact/contact/contact-5.webp";
 
 const location_data = [
   {

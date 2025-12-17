@@ -27,7 +27,7 @@ const AboutSection = () => {
                         <div className="col-xl-6 col-lg-6 col-md-12 about-image-col" style={{ height: "100%", padding: "0" }}>
                             <div className="contact-about-image about-image-wrap tp_img_fade_in" data-delay="0" style={{ width: "100%", height: "80vh", overflow: "hidden" }}>
                                 <Image
-                                    src="/assets/img/inner-contact/contact/oficina.jpg"
+                                    src="/assets/img/inner-contact/contact/oficina.webp"
                                     alt="Oficina de Arquitectura"
                                     width={1200}
                                     height={900}
@@ -47,7 +47,7 @@ const AboutSection = () => {
                         <div className="col-xl-6 col-lg-6 col-md-12 bio-img-col" style={{ height: "100%" }}>
                             <div className="  about-image-wrap tp_img_fade_in" data-delay="0" style={{ width: "100%", height: "80vh", overflow: "hidden" }}>
                                 <Image
-                                    src="/assets/img/inner-contact/contact/mateo.jpg"
+                                    src="/assets/img/inner-contact/contact/mateo.webp"
                                     alt="Oficina de Arquitectura"
                                     width={1200}
                                     height={900}

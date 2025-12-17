@@ -2,23 +2,23 @@ import React from "react";
 import Image from "next/image";
 
 // images
-import details_thumb_1 from "@/assets/img/inner-blog/blog-details/1.jpg";
-import details_thumb_2 from "@/assets/img/inner-blog/blog-details/2.jpg";
-import details_thumb_3 from "@/assets/img/inner-blog/blog-details/3.jpg";
-import details_thumb_4 from "@/assets/img/inner-blog/blog-details/4.jpg";
-import details_thumb_5 from "@/assets/img/inner-blog/blog-details/5.jpg";
-import details_thumb_6 from "@/assets/img/inner-blog/blog-details/6.jpg";
-import details_thumb_7 from "@/assets/img/inner-blog/blog-details/7.jpg";
-import details_thumb_8 from "@/assets/img/inner-blog/blog-details/8.png";
-import details_thumb_8a from "@/assets/img/inner-blog/blog-details/8a.png";
-import details_thumb_9 from "@/assets/img/inner-blog/blog-details/9.png";
-import details_thumb_10 from "@/assets/img/inner-blog/blog-details/10.png";
-import details_thumb_11 from "@/assets/img/inner-blog/blog-details/11.png";
-import details_thumb_12 from "@/assets/img/inner-blog/blog-details/12.png";
-import details_thumb_13 from "@/assets/img/inner-blog/blog-details/13.jpeg";
-import details_thumb_14 from "@/assets/img/inner-blog/blog-details/14.jpeg";
-import details_thumb_15 from "@/assets/img/inner-blog/blog-details/15.jpeg";
-import details_thumb_16 from "@/assets/img/inner-blog/blog-details/16.jpeg";
+import details_thumb_1 from "@/assets/img/inner-blog/blog-details/1.webp";
+import details_thumb_2 from "@/assets/img/inner-blog/blog-details/2.webp";
+import details_thumb_3 from "@/assets/img/inner-blog/blog-details/3.webp";
+import details_thumb_4 from "@/assets/img/inner-blog/blog-details/4.webp";
+import details_thumb_5 from "@/assets/img/inner-blog/blog-details/5.webp";
+import details_thumb_6 from "@/assets/img/inner-blog/blog-details/6.webp";
+import details_thumb_7 from "@/assets/img/inner-blog/blog-details/7.webp";
+import details_thumb_8 from "@/assets/img/inner-blog/blog-details/8.webp";
+import details_thumb_8a from "@/assets/img/inner-blog/blog-details/8a.webp";
+import details_thumb_9 from "@/assets/img/inner-blog/blog-details/9.webp";
+import details_thumb_10 from "@/assets/img/inner-blog/blog-details/10.webp";
+import details_thumb_11 from "@/assets/img/inner-blog/blog-details/11.webp";
+import details_thumb_12 from "@/assets/img/inner-blog/blog-details/12.webp";
+import details_thumb_13 from "@/assets/img/inner-blog/blog-details/13.webp";
+import details_thumb_14 from "@/assets/img/inner-blog/blog-details/14.webp";
+import details_thumb_15 from "@/assets/img/inner-blog/blog-details/15.webp";
+import details_thumb_16 from "@/assets/img/inner-blog/blog-details/16.webp";
 
 
 

@@ -48,7 +48,7 @@ const ServicesSection: React.FC = () => {
                             <div className="contact-about-image about-image-wrap tp_img_fade_in" data-delay="0.2" style={{ width: "100%", height: "60vh", overflow: "hidden" }}>
                                 {/* Reuse office image to keep consistency; can be changed later */}
                                 <img
-                                    src="/assets/img/inner-contact/contact/biblio.jpg"
+                                    src="/assets/img/inner-contact/contact/biblio.webp"
                                     alt="Servicios - Unamuno Arquitectura"
                                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                                 />
