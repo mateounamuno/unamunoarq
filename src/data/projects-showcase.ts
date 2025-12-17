@@ -653,9 +653,9 @@ export const showcaseProjects: ShowcaseProject[] = [
         showOnHome: false,
         showInGrid: true,
         overview: "",
-        autores: "Unamuno",
+        autores: "Unamuno & Mancini",
         location: "",
-        fotografia: "",
+        fotografia: "El presente proyecto propone un edificio de viviendas colectivas y locales comerciales, concebido bajo una lógica de síntesis formal, honestidad material y apertura urbana. La idea que lo estructura parte de reducir la arquitectura a su expresión más esencial, despojando la morfología de todo gesto superfluo para dar lugar a una composición sobria, austera y atemporal. Esta depuración formal no responde a una búsqueda estética en sí misma, sino a una ética proyectual: permitir que la arquitectura se exprese a través de la claridad constructiva y la nobleza de los materiales. <br/> Por un lado, una planta baja permeable que activa el uso social/urbano y del conjunto, y por otro, las unidades de vivienda que buscan versatilidad tipológica y flexibilidad funcional. Por último, los espacios de expansión y su relación con la naturaleza son un eje fundamental en el habitar y una parte importante en el lenguaje formal del edificio.",
         showcaseHeroBg: "/assets/img/inner-project/edificio-nsc/banner.webp",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
