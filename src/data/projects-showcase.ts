@@ -740,7 +740,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         homeGrid: "/assets/img/inner-project/casa-ml/grid.webp",
         showOnHome: false,
         showInGrid: true,
-        heroOverlayOpacity: 0.15,
+        heroOverlayOpacity: 0.10,
         showcaseThumbs: [
             "/assets/img/inner-project/casa-ml/detail-1.webp",
             "/assets/img/inner-project/casa-ml/detail-2.webp",
