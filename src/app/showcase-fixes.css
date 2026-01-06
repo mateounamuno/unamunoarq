@@ -211,6 +211,13 @@
     border-top: 1px solid #eee;
 }
 
+/* Same container max-width for showcase navigation to match showcase thumb section */
+@media (min-width: 1400px) {
+    .showcase-details-navigation-wrap .container {
+        max-width: 1600px !important;
+    }
+}
+
 .project-details-1-prev,
 .project-details-1-next {
     display: flex;

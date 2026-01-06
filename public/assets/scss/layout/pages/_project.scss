@@ -3349,6 +3349,15 @@
     }
 }
 
+// Same container max-width for showcase navigation to match showcase thumb section
+.showcase-details-navigation-wrap {
+    & .container {
+        @media (min-width: 1400px) {
+            max-width: 1600px !important;
+        }
+    }
+}
+
 .showcase-details {
     &-thumb {
         & img {

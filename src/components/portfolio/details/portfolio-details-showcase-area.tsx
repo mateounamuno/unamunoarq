@@ -267,17 +267,19 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details thumb */}
 
       {/* navigation after thumbs */}
-      <div className="container">
-        <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
-          <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/showcase/${prevSlug}` : '#'}>
-            <i className="fa-sharp fa-regular fa-arrow-left"></i>
-          </Link>
-          <a href="#" className="tp_title_anim">
-            <span>• • •</span>
-          </a>
-          <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/showcase/${nextSlug}` : '#'}>
-            <i className="fa-sharp fa-regular fa-arrow-right"></i>
-          </Link>
+      <div className="showcase-details-navigation-wrap">
+        <div className="container">
+          <div className="project-details-1-navigation d-flex justify-content-between align-items-center pb-60">
+            <Link className="project-details-1-prev tp_title_anim" href={prevSlug ? `/portfolio/showcase/${prevSlug}` : '#'}>
+              <i className="fa-sharp fa-regular fa-arrow-left"></i>
+            </Link>
+            <a href="#" className="tp_title_anim">
+              <span>• • •</span>
+            </a>
+            <Link className="project-details-1-next tp_title_anim" href={nextSlug ? `/portfolio/showcase/${nextSlug}` : '#'}>
+              <i className="fa-sharp fa-regular fa-arrow-right"></i>
+            </Link>
+          </div>
         </div>
       </div>
 
