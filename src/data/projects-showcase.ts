@@ -763,7 +763,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         location: "",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/estructura-soporte/banner.webp",
-        homeGrid: "/assets/img/inner-project/estructura-soporte/banner.webp",
+        homeGrid: "/assets/img/inner-project/estructura-soporte/grid.webp",
         showOnHome: false,
         showInGrid: true,
         heroOverlayOpacity: 0.15,
