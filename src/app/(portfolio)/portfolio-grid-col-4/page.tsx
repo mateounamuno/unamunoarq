@@ -4,7 +4,15 @@ import React, { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from "@/plugins";
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
+
+// Register plugins only on client side
+if (typeof window !== 'undefined') {
+  const pluginsToRegister = [useGSAP];
+  if (ScrollTrigger) pluginsToRegister.push(ScrollTrigger);
+  if (ScrollSmoother) pluginsToRegister.push(ScrollSmoother);
+  if (SplitText) pluginsToRegister.push(SplitText);
+  gsap.registerPlugin(...pluginsToRegister);
+}
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";

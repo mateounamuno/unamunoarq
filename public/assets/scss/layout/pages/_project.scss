@@ -3328,6 +3328,25 @@
             }
         }
     }
+
+}
+
+// Override container max-width for showcase overview section
+.showcase-details-overview {
+    & .container {
+        @media (min-width: 1400px) {
+            max-width: 1600px !important;
+        }
+    }
+}
+
+// Same container max-width for showcase thumb section to match horizontal margins
+.showcase-details-thumb-wrap {
+    & .container {
+        @media (min-width: 1400px) {
+            max-width: 1600px !important;
+        }
+    }
 }
 
 .showcase-details {

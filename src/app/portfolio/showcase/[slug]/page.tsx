@@ -7,7 +7,13 @@ import { ScrollSmoother, ScrollTrigger, SplitText, cursorAnimation } from "@/plu
 
 // Only register plugins on client side
 if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+    const pluginsToRegister = [];
+    if (ScrollTrigger) pluginsToRegister.push(ScrollTrigger);
+    if (ScrollSmoother) pluginsToRegister.push(ScrollSmoother);
+    if (SplitText) pluginsToRegister.push(SplitText);
+    if (pluginsToRegister.length > 0) {
+        gsap.registerPlugin(...pluginsToRegister);
+    }
 }
 
 // internal imports
