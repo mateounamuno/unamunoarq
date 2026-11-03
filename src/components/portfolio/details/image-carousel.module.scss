@@ -32,10 +32,10 @@
   // Padding interno para que la imagen nunca toque los bordes: evita que
   // se "corte" y deja lugar a la sombra en los 4 lados (incluso en
   // imágenes panorámicas que se ajustan por el ancho).
-  padding: 32px;
+  padding: 40px;
 
   @media (max-width: 768px) {
-    padding: 18px;
+    padding: 24px;
   }
 }
 
@@ -50,7 +50,7 @@
   object-fit: contain;
   object-position: center;
   // Sombra sutil ceñida al contorno visible de la imagen (respeta el contain).
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.18));
 }
 
 .nav {
