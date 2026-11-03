@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import ImageCarousel from "@/components/portfolio/details/image-carousel";
-import ImageLightbox from "@/components/modal/image-lightbox";
 import styles from "./apuntes-area.module.scss";
 
 const APUNTES_IMAGES = [
@@ -32,16 +31,6 @@ const APUNTES_PARAGRAPHS = [
 ];
 
 export default function BlogDetailsAreaTwo() {
-  const [showLightbox, setShowLightbox] = useState(false);
-  const [lightboxImage, setLightboxImage] = useState("");
-  const [lightboxAlt, setLightboxAlt] = useState("");
-
-  const openLightbox = (imageSrc: string, imageAlt: string) => {
-    setLightboxImage(imageSrc);
-    setLightboxAlt(imageAlt);
-    setShowLightbox(true);
-  };
-
   return (
     <section className={styles.section}>
       <div className={styles.wrap}>
@@ -50,11 +39,11 @@ export default function BlogDetailsAreaTwo() {
             <ImageCarousel
               images={APUNTES_IMAGES}
               title="Apuntes"
-              autoplay={!showLightbox}
+              autoplay
+              navBelow
               paddingX="20px"
               height="min(68vh, 640px)"
               heightMobile="min(55vh, 480px)"
-              onImageClick={openLightbox}
             />
           </div>
           <div className={styles.text}>
@@ -66,13 +55,6 @@ export default function BlogDetailsAreaTwo() {
           </div>
         </div>
       </div>
-
-      <ImageLightbox
-        showModal={showLightbox}
-        setShowModal={setShowLightbox}
-        imageSrc={lightboxImage}
-        imageAlt={lightboxAlt}
-      />
     </section>
   );
 }

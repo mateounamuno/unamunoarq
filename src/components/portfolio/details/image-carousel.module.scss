@@ -119,9 +119,10 @@
 }
 
 .controls {
-  display: grid;
-  grid-template-columns: 48px 1fr 48px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin-top: 12px;
   min-height: 48px;
 
@@ -131,23 +132,12 @@
     transform: none;
   }
 
-  .navPrev {
-    grid-column: 1;
-    justify-self: start;
-  }
-
-  .navNext {
-    grid-column: 3;
-    justify-self: end;
-  }
-
   .counter {
-    grid-column: 2;
     margin-top: 0;
+    min-width: 4.5em;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 40px 1fr 40px;
     min-height: 40px;
   }
 }

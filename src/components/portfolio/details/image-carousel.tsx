@@ -21,6 +21,8 @@ type Props = {
   heightMobile?: string;
   /** Padding horizontal del slide (CSS). */
   paddingX?: string;
+  /** Flechas siempre debajo, alineadas con el contador. */
+  navBelow?: boolean;
   /** Callback opcional al hacer click en una imagen (p. ej. abrir lightbox). */
   onImageClick?: (src: string, alt: string) => void;
 };
@@ -58,6 +60,7 @@ export default function ImageCarousel({
   height,
   heightMobile,
   paddingX,
+  navBelow = false,
   onImageClick,
 }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -65,7 +68,9 @@ export default function ImageCarousel({
   const [isEnd, setIsEnd] = useState(images.length <= 1);
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [prefersReduced] = useState<boolean>(getPrefersReducedMotion);
-  const [navLayout, setNavLayout] = useState<NavLayout>(DEFAULT_NAV);
+  const [navLayout, setNavLayout] = useState<NavLayout>(
+    navBelow ? { below: true, left: 0, right: 0 } : DEFAULT_NAV
+  );
   const viewportRef = useRef<HTMLDivElement>(null);
 
   const total = images?.length ?? 0;
@@ -79,6 +84,10 @@ export default function ImageCarousel({
   };
 
   const updateNavFromImage = useCallback(() => {
+    if (navBelow) {
+      setNavLayout({ below: true, left: 0, right: 0 });
+      return;
+    }
     const viewport = viewportRef.current;
     const img = viewport?.querySelector(".swiper-slide-active img") as HTMLImageElement | null;
     if (!viewport || !img) return;
@@ -102,7 +111,7 @@ export default function ImageCarousel({
       left: Math.max(0, spaceLeft - arrowW - gap),
       right: Math.max(0, spaceRight - arrowW - gap),
     });
-  }, []);
+  }, [navBelow]);
 
   useEffect(() => {
     const viewport = viewportRef.current;
@@ -143,29 +152,30 @@ export default function ImageCarousel({
   const prevDisabled = !loopEnabled && isBeginning;
   const nextDisabled = !loopEnabled && isEnd;
 
-  const navButtons = total > 1 && (
-    <>
-      <button
-        type="button"
-        className={`${styles.nav} ${styles.navPrev}`}
-        aria-label="Imagen anterior"
-        onClick={() => swiper?.slidePrev()}
-        disabled={prevDisabled}
-        style={navLayout.below ? undefined : { left: navLayout.left }}
-      >
-        <i className="fa-sharp fa-regular fa-arrow-left" aria-hidden="true"></i>
-      </button>
-      <button
-        type="button"
-        className={`${styles.nav} ${styles.navNext}`}
-        aria-label="Imagen siguiente"
-        onClick={() => swiper?.slideNext()}
-        disabled={nextDisabled}
-        style={navLayout.below ? undefined : { right: navLayout.right }}
-      >
-        <i className="fa-sharp fa-regular fa-arrow-right" aria-hidden="true"></i>
-      </button>
-    </>
+  const prevButton = total > 1 && (
+    <button
+      type="button"
+      className={`${styles.nav} ${styles.navPrev}`}
+      aria-label="Imagen anterior"
+      onClick={() => swiper?.slidePrev()}
+      disabled={prevDisabled}
+      style={navLayout.below ? undefined : { left: navLayout.left }}
+    >
+      <i className="fa-sharp fa-regular fa-arrow-left" aria-hidden="true"></i>
+    </button>
+  );
+
+  const nextButton = total > 1 && (
+    <button
+      type="button"
+      className={`${styles.nav} ${styles.navNext}`}
+      aria-label="Imagen siguiente"
+      onClick={() => swiper?.slideNext()}
+      disabled={nextDisabled}
+      style={navLayout.below ? undefined : { right: navLayout.right }}
+    >
+      <i className="fa-sharp fa-regular fa-arrow-right" aria-hidden="true"></i>
+    </button>
   );
 
   const counter = total > 1 && (
@@ -236,14 +246,20 @@ export default function ImageCarousel({
           })}
         </Swiper>
 
-        {total > 1 && !navLayout.below && navButtons}
+        {total > 1 && !navLayout.below && (
+          <>
+            {prevButton}
+            {nextButton}
+          </>
+        )}
       </div>
 
       {total > 1 && (
         navLayout.below ? (
           <div className={styles.controls}>
-            {navButtons}
+            {prevButton}
             {counter}
+            {nextButton}
           </div>
         ) : (
           counter
