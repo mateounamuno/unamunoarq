@@ -486,6 +486,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/cafe-popolo/banner.webp",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
+            "/assets/img/inner-project/cafe-popolo/full-width.webp",
             "/assets/img/inner-project/cafe-popolo/detail-4.webp",
             "/assets/img/inner-project/cafe-popolo/detail-2.webp",
             "/assets/img/inner-project/cafe-popolo/detail-1.webp",
@@ -497,7 +498,6 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/cafe-popolo/detail-9.webp",
             "/assets/img/inner-project/cafe-popolo/detail-10.webp",
         ],
-        fullWidthImage: "/assets/img/inner-project/cafe-popolo/full-width.webp",
     },
     {
         template: "showcase",
