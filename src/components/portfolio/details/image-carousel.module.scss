@@ -29,6 +29,14 @@
   width: 100%;
   height: 100%;
   background-color: #fff;
+  // Padding interno para que la imagen nunca toque los bordes: evita que
+  // se "corte" y deja lugar a la sombra en los 4 lados (incluso en
+  // imágenes panorámicas que se ajustan por el ancho).
+  padding: 32px;
+
+  @media (max-width: 768px) {
+    padding: 18px;
+  }
 }
 
 .imageWrap {
