@@ -684,6 +684,9 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/casa-grilla/banner.webp",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
+            "/assets/img/inner-project/casa-grilla/full-width-1.webp",
+            "/assets/img/inner-project/casa-grilla/full-width-2.webp",
+            "/assets/img/inner-project/casa-grilla/full-width-3.webp",
             "/assets/img/inner-project/casa-grilla/detail-1.webp",
             "/assets/img/inner-project/casa-grilla/detail-5.webp",
             "/assets/img/inner-project/casa-grilla/detail-2.webp",
@@ -692,8 +695,8 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/casa-grilla/detail-7.webp",
             "/assets/img/inner-project/casa-grilla/detail-6.webp",
             "/assets/img/inner-project/casa-grilla/detail-8.webp",
+            "/assets/img/inner-project/casa-grilla/full-width-4.webp",
         ],
-        fullWidthImage: ["/assets/img/inner-project/casa-grilla/full-width-1.webp", "/assets/img/inner-project/casa-grilla/full-width-2.webp", "/assets/img/inner-project/casa-grilla/full-width-3.webp", "/assets/img/inner-project/casa-grilla/full-width-4.webp"],
 
     },
     {
