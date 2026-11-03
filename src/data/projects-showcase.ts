@@ -913,8 +913,8 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
-            "/assets/img/inner-project/nuevo-hogar/detail-1.webp",
             "/assets/img/inner-project/nuevo-hogar/detail-4.webp",
+            "/assets/img/inner-project/nuevo-hogar/detail-1.webp",
             "/assets/img/inner-project/nuevo-hogar/detail-5.webp",
             "/assets/img/inner-project/nuevo-hogar/full-width-1.webp",
             "/assets/img/inner-project/nuevo-hogar/detail-2.webp",
