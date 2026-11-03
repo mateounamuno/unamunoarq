@@ -619,12 +619,12 @@ export const showcaseProjects: ShowcaseProject[] = [
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/elogio-textura/banner.webp",
         showcaseThumbs: [
+            "/assets/img/inner-project/elogio-textura/detail-10.webp",
             "/assets/img/inner-project/elogio-textura/detail-1.webp",
             "/assets/img/inner-project/elogio-textura/detail-4.webp",
             "/assets/img/inner-project/elogio-textura/detail-5.webp",
             "/assets/img/inner-project/elogio-textura/detail-7.webp",
             "/assets/img/inner-project/elogio-textura/detail-9.webp",
-            "/assets/img/inner-project/elogio-textura/detail-10.webp",
             "/assets/img/inner-project/elogio-textura/detail-11.webp",
             "/assets/img/inner-project/elogio-textura/detail-12.webp",
             "/assets/img/inner-project/elogio-textura/full-width.webp",
