@@ -35,8 +35,8 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                     <Image
                       src="/assets/img/logo/logo-mini.png"
                       alt="Unamuno Arquitectura"
-                      width={2000}
-                      height={2000}
+                      width={1457}
+                      height={756}
                       priority
                       style={{
                         width: 'auto',
@@ -49,8 +49,8 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                     <Image
                       src="/assets/img/logo/logo-mini.png"
                       alt="Unamuno Arquitectura"
-                      width={2000}
-                      height={2000}
+                      width={1457}
+                      height={756}
                       style={{
                         width: 'auto',
                         height: '60px',
