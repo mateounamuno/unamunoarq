@@ -570,17 +570,16 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/banco-rarx/banner.webp",
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
+            "/assets/img/inner-project/banco-rarx/c-1.webp",
             "/assets/img/inner-project/banco-rarx/detail-1.webp",
             "/assets/img/inner-project/banco-rarx/detail-2.webp",
             "/assets/img/inner-project/banco-rarx/detail-3.webp",
             "/assets/img/inner-project/banco-rarx/detail-4.webp",
-            "/assets/img/inner-project/banco-rarx/detail-5.webp",
-            "/assets/img/inner-project/banco-rarx/detail-6.webp",
-            "/assets/img/inner-project/banco-rarx/detail-7.webp",
-            "/assets/img/inner-project/banco-rarx/detail-8.webp",
-
+            "/assets/img/inner-project/banco-rarx/detail-5.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-6.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-7.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-8.jpg",
         ],
-        fullWidthImage: "/assets/img/inner-project/banco-rarx/full-width.webp",
     },
     {
         template: "showcase",
