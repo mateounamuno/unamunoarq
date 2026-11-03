@@ -174,12 +174,12 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/bros-comedor/banner.webp",
         heroOverlayOpacity: 0.3,
         showcaseThumbs: [
-            "/assets/img/inner-project/bros-comedor/detail-2.webp",
+            "/assets/img/inner-project/bros-comedor/banner.webp",
             "/assets/img/inner-project/bros-comedor/detail-3.webp",
+            "/assets/img/inner-project/bros-comedor/detail-2.webp",
             "/assets/img/inner-project/bros-comedor/detail-1.webp",
             "/assets/img/inner-project/bros-comedor/detail-4.webp",
         ],
-        fullWidthImage: "/assets/img/inner-project/bros-comedor/banner.webp",
     },
     {
         template: "showcase",
@@ -199,11 +199,13 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/cafe-laprida/banner.webp",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
-            "/assets/img/inner-project/cafe-laprida/detail-4.webp",
-            "/assets/img/inner-project/cafe-laprida/detail-2.webp",
             "/assets/img/inner-project/cafe-laprida/detail-1.webp",
+            "/assets/img/inner-project/cafe-laprida/detail-2.webp",
             "/assets/img/inner-project/cafe-laprida/detail-5.webp",
             "/assets/img/inner-project/cafe-laprida/detail-6.webp",
+        ],
+        fullWidthImage: [
+            "/assets/img/inner-project/cafe-laprida/detail-4.webp",
             "/assets/img/inner-project/cafe-laprida/detail-3.webp",
         ],
     },
