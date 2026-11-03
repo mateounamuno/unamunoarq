@@ -50,7 +50,8 @@ export default function BlogDetailsAreaTwo() {
             <ImageCarousel
               images={APUNTES_IMAGES}
               title="Apuntes"
-              loop={false}
+              autoplay={!showLightbox}
+              paddingX="20px"
               height="min(68vh, 640px)"
               heightMobile="min(55vh, 480px)"
               onImageClick={openLightbox}

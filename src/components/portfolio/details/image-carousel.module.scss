@@ -32,10 +32,10 @@
   // Padding interno para que la imagen nunca toque los bordes: evita que
   // se "corte" y deja lugar a la sombra en los 4 lados (incluso en
   // imágenes panorámicas que se ajustan por el ancho).
-  padding: 40px;
+  padding: 40px var(--carousel-pad-x, 40px);
 
   @media (max-width: 768px) {
-    padding: 24px;
+    padding: 24px var(--carousel-pad-x, 24px);
   }
 }
 
@@ -112,17 +112,43 @@
 
 .navPrev {
   left: 8px;
-
-  @media (min-width: 768px) {
-    left: 16px;
-  }
 }
 
 .navNext {
   right: 8px;
+}
 
-  @media (min-width: 768px) {
-    right: 16px;
+.controls {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  margin-top: 12px;
+  min-height: 48px;
+
+  .nav {
+    position: static;
+    top: auto;
+    transform: none;
+  }
+
+  .navPrev {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .navNext {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .counter {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 40px 1fr 40px;
+    min-height: 40px;
   }
 }
 
