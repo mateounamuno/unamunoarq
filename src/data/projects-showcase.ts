@@ -767,12 +767,12 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
+            "/assets/img/inner-project/casa-lm/detail-6.webp",
             "/assets/img/inner-project/casa-lm/detail-1.webp",
             "/assets/img/inner-project/casa-lm/detail-2.webp",
             "/assets/img/inner-project/casa-lm/detail-3.webp",
             "/assets/img/inner-project/casa-lm/detail-4.webp",
             "/assets/img/inner-project/casa-lm/detail-5.webp",
-            "/assets/img/inner-project/casa-lm/detail-6.webp",
             "/assets/img/inner-project/casa-lm/detail-7.webp",
             "/assets/img/inner-project/casa-lm/detail-8.webp",
         ],
