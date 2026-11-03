@@ -77,9 +77,13 @@
 
 .tp-header {
     &-logo {
+        min-height: 75px;
+        display: flex;
+        align-items: center;
+
         & img {
             width: auto;
-            height: 75px;
+            height: 46px;
         }
     }
 

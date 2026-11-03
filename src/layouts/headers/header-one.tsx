@@ -30,7 +30,7 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-6">
-                <div className="tp-header-logo">
+                <div className="tp-header-logo" style={{ minHeight: 75, display: 'flex', alignItems: 'center' }}>
                   <Link className={`${transparent ? 'ab-logo-1' : 'logo-1'}`} href="/">
                     <Image
                       src="/assets/img/logo/logo-mini.png"
@@ -40,7 +40,7 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                       priority
                       style={{
                         width: 'auto',
-                        height: '75px',
+                        height: '46px',
                         maxWidth: 'none'
                       }}
                     />
@@ -53,7 +53,7 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                       height={756}
                       style={{
                         width: 'auto',
-                        height: '60px',
+                        height: '40px',
                         maxWidth: 'none'
                       }}
                     />

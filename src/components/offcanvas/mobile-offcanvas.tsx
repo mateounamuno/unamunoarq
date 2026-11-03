@@ -26,7 +26,7 @@ export default function MobileOffcanvas({ openOffcanvas, setOpenOffcanvas }: IPr
           <div className="tp-offcanvas-top d-flex align-items-center justify-content-between" style={{ paddingBottom: '0', marginBottom: '45px' }}>
             <div className="tp-offcanvas-logo">
               <a href="#">
-                <Image src={logo} alt="Unamuno Arquitectura" width={1457} height={756} style={{ width: 'auto', height: '48px' }} />
+                <Image src={logo} alt="Unamuno Arquitectura" width={1457} height={756} style={{ width: 'auto', height: '32px' }} />
               </a>
             </div>
             <div className="tp-offcanvas-close">
