@@ -341,10 +341,10 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/edificio-recova/banner.webp",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
+            "/assets/img/inner-project/edificio-recova/detail-3.webp",
             "/assets/img/inner-project/edificio-recova/detail-1.webp",
             "/assets/img/inner-project/edificio-recova/detail-2.webp",
             "/assets/img/inner-project/edificio-recova/detail-4.webp",
-            "/assets/img/inner-project/edificio-recova/detail-3.webp",
             "/assets/img/inner-project/edificio-recova/full-width.webp",
             "/assets/img/inner-project/edificio-recova/detail-5.webp",
             "/assets/img/inner-project/edificio-recova/detail-6.webp",
