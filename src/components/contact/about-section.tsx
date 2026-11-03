@@ -47,14 +47,15 @@ const AboutSection = () => {
                         <div className="col-xl-6 col-lg-6 col-md-12 bio-img-col" style={{ height: "100%" }}>
                             <div className="  about-image-wrap tp_img_fade_in" data-delay="0" style={{ width: "100%", height: "80vh", overflow: "hidden" }}>
                                 <Image
-                                    src="/assets/img/inner-contact/contact/mateo.webp"
-                                    alt="Oficina de Arquitectura"
-                                    width={1200}
-                                    height={900}
+                                    src="/assets/img/inner-contact/contact/retrato-info.webp"
+                                    alt="Mateo Unamuno"
+                                    width={1280}
+                                    height={1920}
                                     style={{
                                         width: "100%",
                                         height: "100%",
                                         objectFit: "cover",
+                                        objectPosition: "center 30%",
                                         display: "block",
                                     }}
                                     className=""
