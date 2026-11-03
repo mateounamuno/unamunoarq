@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y, EffectFade } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper/types";
-import { NextIcon, PrevIcon } from "@/components/svg";
 import styles from "./image-carousel.module.scss";
 
 type Props = {
@@ -124,7 +123,7 @@ export default function ImageCarousel({
               onClick={() => swiper?.slidePrev()}
               disabled={prevDisabled}
             >
-              <PrevIcon />
+              <i className="fa-sharp fa-regular fa-arrow-left" aria-hidden="true"></i>
             </button>
             <button
               type="button"
@@ -133,7 +132,7 @@ export default function ImageCarousel({
               onClick={() => swiper?.slideNext()}
               disabled={nextDisabled}
             >
-              <NextIcon />
+              <i className="fa-sharp fa-regular fa-arrow-right" aria-hidden="true"></i>
             </button>
           </>
         )}
