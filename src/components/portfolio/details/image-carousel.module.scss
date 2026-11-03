@@ -51,6 +51,11 @@
   object-position: center;
   // Sombra sutil ceñida al contorno visible de la imagen (respeta el contain).
   filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.18));
+
+  @media (max-width: 768px) {
+    // En mobile: sombra más chica para que no se recorte ni pese sobre fondos blancos.
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.12));
+  }
 }
 
 .nav {

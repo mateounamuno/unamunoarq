@@ -498,6 +498,11 @@
     padding: 15px 0 !important;
 }
 
+/* Filtros del home: mismo gap que Bootstrap gap-4 en desktop */
+.tp-project-5-2-area .home-category-filters {
+    gap: 1.5rem;
+}
+
 /* Portfolio Grid - Restaurar márgenes horizontales */
 /* Override cualquier regla que pueda estar aplicando margin: 0 */
 .tp-project-5-2-area .container-1480,
@@ -560,5 +565,27 @@
         padding: 0 15px !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+
+    /* Filtros del home: más aire a los costados, menos espacio entre renglones.
+       gap-4 de Bootstrap usa `gap` con !important; hay que pisar row/column por separado. */
+    .tp-project-5-2-area .home-category-filters {
+        column-gap: 1.75rem !important;
+        row-gap: 2px !important;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-bottom: 24px !important;
+    }
+
+    .tp-project-5-2-area .home-category-filters button {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Nombre del proyecto siempre visible: en mobile no hay hover */
+    .tp-project-5-2-area .tp-project-title-hover {
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 }
