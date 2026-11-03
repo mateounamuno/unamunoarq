@@ -106,7 +106,6 @@ export default function ImageCarousel({
                     fill
                     unoptimized
                     loading={shouldEager(i) ? "eager" : "lazy"}
-                    priority={i === 0}
                     sizes="(max-width: 768px) 100vw, 90vw"
                     className={styles.image}
                   />
