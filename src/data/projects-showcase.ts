@@ -762,6 +762,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
+            "/assets/img/inner-project/estructura-soporte/full-width-1.webp",
             "/assets/img/inner-project/estructura-soporte/detail-1.webp",
             "/assets/img/inner-project/estructura-soporte/detail-2.webp",
             "/assets/img/inner-project/estructura-soporte/detail-3.webp",
@@ -770,7 +771,6 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/estructura-soporte/detail-6.webp",
             "/assets/img/inner-project/estructura-soporte/detail-7.webp",
             "/assets/img/inner-project/estructura-soporte/detail-8.webp",
-            "/assets/img/inner-project/estructura-soporte/full-width-1.webp",
             "/assets/img/inner-project/estructura-soporte/full-width-2.webp",
         ],
     },
