@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { scroller } from 'react-scroll';
 import Link from 'next/link';
 
@@ -8,6 +7,7 @@ import Link from 'next/link';
 import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 import { findUnifiedPrevNext } from '@/utils/unified-projects';
 import ImageLightbox from '@/components/modal/image-lightbox';
+import ImageCarousel from '@/components/portfolio/details/image-carousel';
 
 // Define los tipos de las props que este componente espera.
 // Ya no necesitamos prevSlug y nextSlug aquí, los calcularemos internamente.
@@ -74,6 +74,9 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       ? fullWidthImage
       : [fullWidthImage]
     : [];
+
+  // Galería unificada para el carrusel: miniaturas + imágenes full width.
+  const galleryImages = [...thumbs, ...fullWidthImages].filter(Boolean);
 
   // Evita hidratación hasta que el cliente esté listo
   if (!isMounted) {
@@ -184,87 +187,24 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       </div>
       {/* details overview */}
 
-      {/* details thumb */}
+      {/* details carousel */}
       <div className="showcase-details-thumb-wrap pb-40">
         <div className="container">
-          {/* Grid de 2 columnas para hasta 12 fotos */}
-          {thumbs.length > 0 && (
-            <div className="row gx-80">
-              {thumbs.slice(0, 12).map((src: string, i: number) => {
-                // Usar unoptimized para todas las imágenes para evitar problemas de optimización
-                return (
-                  <div key={i} className="col-xl-6 col-lg-6">
-                    <div className="showcase-details-thumb tp_img_fade_in" data-delay={i * 0.1} style={{
-                      // Evitar !important en inline styles, no es soportado en React
-                      marginBottom: "70px",
-                      height: "auto"
-                    }}>
-                      <div className="thumb-container" style={{
-                        width: "100%",
-                        height: "400px",
-                        overflow: "hidden",
-                        position: "relative"
-                      }}>
-                        <Image
-                          src={src}
-                          alt={`${title} details thumb ${i + 1}`}
-                          width={800}
-                          height={400}
-                          unoptimized={true}
-                          priority={i < 2}
-                          sizes="(min-width: 1200px) 800px, (min-width: 768px) 50vw, 100vw"
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            cursor: "pointer"
-                          }}
-                          onClick={() => openLightbox(src, `${title} details thumb ${i + 1}`)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {/* Fotos full width opcionales - puede ser una o múltiples */}
-          {fullWidthImages.length > 0 && fullWidthImages.map((imgSrc, index) => (
-            <div key={index} className="row">
+          {galleryImages.length > 0 && (
+            <div className="row">
               <div className="col-xl-12">
-                <div className="showcase-details-thumb tp_img_fade_in" data-delay={`${0.8 + index * 0.1}`} style={{
-                  marginBottom: "70px",
-                  height: "auto"
-                }}>
-                  <div className="fullwidth-container" style={{
-                    width: "100%",
-                    height: "600px",
-                    overflow: "hidden"
-                  }}>
-                    <Image
-                      src={imgSrc}
-                      alt={`${title} details full width ${index + 1}`}
-                      width={1200}
-                      height={600}
-                      priority={index === 0}
-                      sizes="100vw"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        cursor: "pointer"
-                      }}
-                      onClick={() => openLightbox(imgSrc, `${title} details full width ${index + 1}`)}
-                    />
-                  </div>
-                </div>
+                <ImageCarousel
+                  images={galleryImages}
+                  title={title}
+                  loop={false}
+                  onImageClick={openLightbox}
+                />
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
-      {/* details thumb */}
+      {/* details carousel */}
 
       {/* navigation after thumbs */}
       <div className="showcase-details-navigation-wrap">
