@@ -66,15 +66,15 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/casa-nina/hero.webp",
         heroOverlayOpacity: 0.2,
         showcaseThumbs: [
+            "/assets/img/inner-project/casa-nina/frente.webp",
             "/assets/img/inner-project/casa-nina/render1.webp",
             "/assets/img/inner-project/casa-nina/render2.webp",
             "/assets/img/inner-project/casa-nina/render3.webp",
             "/assets/img/inner-project/casa-nina/render4.webp",
             "/assets/img/inner-project/casa-nina/grafico1.webp",
             "/assets/img/inner-project/casa-nina/grafico2.webp",
+            "/assets/img/inner-project/casa-nina/grafico3.webp",
         ],
-        fullWidthImage: ["/assets/img/inner-project/casa-nina/grafico3.webp",
-            "/assets/img/inner-project/casa-nina/frente.webp"],
 
     },
     {
