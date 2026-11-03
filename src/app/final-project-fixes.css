@@ -583,9 +583,10 @@
         line-height: 1.2 !important;
     }
 
-    /* Nombre del proyecto siempre visible: en mobile no hay hover */
+    /* Nombre del proyecto siempre visible y centrado: en mobile no hay hover */
     .tp-project-5-2-area .tp-project-title-hover {
         opacity: 1 !important;
         visibility: visible !important;
+        text-align: center !important;
     }
 }
