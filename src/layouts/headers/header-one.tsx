@@ -34,9 +34,10 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                   <Link className={`${transparent ? 'ab-logo-1' : 'logo-1'}`} href="/">
                     <Image
                       src="/assets/img/logo/logo-mini.png"
-                      alt="logo"
-                      width={400}
-                      height={130}
+                      alt="Unamuno Arquitectura"
+                      width={2000}
+                      height={2000}
+                      priority
                       style={{
                         width: 'auto',
                         height: '75px',
@@ -47,9 +48,9 @@ const HeaderOne = ({ transparent = false, cls = '' }: IProps) => {
                   <Link className={`${transparent ? 'ab-logo-2' : 'logo-2'}`} href="/">
                     <Image
                       src="/assets/img/logo/logo-mini.png"
-                      alt="logo"
-                      width={400}
-                      height={130}
+                      alt="Unamuno Arquitectura"
+                      width={2000}
+                      height={2000}
                       style={{
                         width: 'auto',
                         height: '60px',
