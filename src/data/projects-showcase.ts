@@ -571,11 +571,11 @@ export const showcaseProjects: ShowcaseProject[] = [
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
             "/assets/img/inner-project/banco-rarx/c-1.webp",
+            "/assets/img/inner-project/banco-rarx/detail-5.jpg",
             "/assets/img/inner-project/banco-rarx/detail-1.webp",
             "/assets/img/inner-project/banco-rarx/detail-2.webp",
             "/assets/img/inner-project/banco-rarx/detail-3.webp",
             "/assets/img/inner-project/banco-rarx/detail-4.webp",
-            "/assets/img/inner-project/banco-rarx/detail-5.jpg",
             "/assets/img/inner-project/banco-rarx/detail-6.jpg",
             "/assets/img/inner-project/banco-rarx/detail-7.jpg",
             "/assets/img/inner-project/banco-rarx/detail-8.jpg",
