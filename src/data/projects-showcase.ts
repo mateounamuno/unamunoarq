@@ -744,14 +744,15 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         heroOverlayOpacity: 0.10,
         showcaseThumbs: [
+            "/assets/img/inner-project/casa-ml/full-width-2.webp",
             "/assets/img/inner-project/casa-ml/detail-1.webp",
             "/assets/img/inner-project/casa-ml/detail-2.webp",
-            "/assets/img/inner-project/casa-ml/detail-3.webp",
-            "/assets/img/inner-project/casa-ml/detail-4.webp",
             "/assets/img/inner-project/casa-ml/detail-5.webp",
             "/assets/img/inner-project/casa-ml/detail-6.webp",
+            "/assets/img/inner-project/casa-ml/detail-3.webp",
+            "/assets/img/inner-project/casa-ml/detail-4.webp",
+            "/assets/img/inner-project/casa-ml/full-width-1.webp",
         ],
-        fullWidthImage: ["/assets/img/inner-project/casa-ml/full-width-1.webp", "/assets/img/inner-project/casa-ml/full-width-2.webp"],
     },
     {
         template: "showcase",
