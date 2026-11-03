@@ -114,7 +114,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         subtitle: "[ Arquitectura ]",
         overview:
             "Un proyecto que prioriza la flexibilidad de uso (apto para viviendas u oficinas) y optimiza la ocupación del lote.\nLa privacidad hacia el exterior, la relación con las visuales y un espacio verde en común terminan de configurar los volúmenes.",
-        autores: "Unamuno Arq.",
+        autores: "Unamuno y Aubee Studio",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/unidades-vb/banner.webp",
