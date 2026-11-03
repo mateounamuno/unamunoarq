@@ -8,9 +8,24 @@
   }
 }
 
+.wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  // El .container de Bootstrap deja ~ (100vw - 1320px) / 2 a cada lado.
+  // Mitad de ese margen: max-width = (100% + 1320px) / 2
+  @media (min-width: 1400px) {
+    max-width: calc((100% + 1320px) / 2);
+  }
+}
+
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 48px 28px;
   align-items: start;
 

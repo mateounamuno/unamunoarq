@@ -44,7 +44,7 @@ export default function BlogDetailsAreaTwo() {
 
   return (
     <section className={styles.section}>
-      <div className="container">
+      <div className={styles.wrap}>
         <div className={styles.layout}>
           <div className={styles.carousel}>
             <ImageCarousel
