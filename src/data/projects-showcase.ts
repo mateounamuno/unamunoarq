@@ -709,13 +709,13 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
+            "/assets/img/inner-project/la-macarena-2/detail-4.webp",
             "/assets/img/inner-project/la-macarena-2/detail-3.webp",
             "/assets/img/inner-project/la-macarena-2/detail-5.webp",
             "/assets/img/inner-project/la-macarena-2/detail-6.webp",
             "/assets/img/inner-project/la-macarena-2/detail-7.webp",
             "/assets/img/inner-project/la-macarena-2/detail-1.webp",
             "/assets/img/inner-project/la-macarena-2/detail-2.webp",
-            "/assets/img/inner-project/la-macarena-2/detail-4.webp",
         ],
     },
     {
