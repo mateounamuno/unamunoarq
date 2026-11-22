@@ -47,16 +47,20 @@ function getPrefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-function getContainedBox(img: HTMLImageElement, wrap: DOMRect) {
-  const nw = img.naturalWidth;
-  const nh = img.naturalHeight;
-  if (!nw || !nh) return wrap;
-  const scale = Math.min(wrap.width / nw, wrap.height / nh);
-  const width = nw * scale;
-  const height = nh * scale;
-  const left = wrap.left + (wrap.width - width) / 2;
-  const top = wrap.top + (wrap.height - height) / 2;
-  return { left, right: left + width, top, bottom: top + height, width, height };
+type MediaSize = { width: number; height: number };
+
+function getContainedSize(nw: number, nh: number, wrapW: number, wrapH: number) {
+  const scale = Math.min(wrapW / nw, wrapH / nh);
+  return { width: nw * scale, height: nh * scale };
+}
+
+function loadImageSize(src: string): Promise<MediaSize | null> {
+  return new Promise((resolve) => {
+    const img = new window.Image();
+    img.onload = () => resolve({ width: img.naturalWidth, height: img.naturalHeight });
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
 }
 
 export default function ImageCarousel({
@@ -88,6 +92,8 @@ export default function ImageCarousel({
     navBelow ? { below: true, left: 0, right: 0 } : DEFAULT_NAV
   );
   const viewportRef = useRef<HTMLDivElement>(null);
+  // Dimensiones naturales de todos los slides; las flechas se fijan a la imagen más ancha.
+  const mediaSizesRef = useRef<MediaSize[]>([]);
   const autoplayDelay = autoplay === true ? 4500 : autoplay || 0;
   const autoplayEnabled = Boolean(autoplayDelay) && !prefersReduced && total > 1;
 
@@ -97,22 +103,39 @@ export default function ImageCarousel({
     setIsEnd(sw.isEnd);
   };
 
-  const updateNavFromImage = useCallback(() => {
+  const updateNavFromLargest = useCallback(() => {
     if (navBelow) {
       setNavLayout({ below: true, left: 0, right: 0 });
       return;
     }
     const viewport = viewportRef.current;
-    const img = viewport?.querySelector(".swiper-slide-active img") as HTMLImageElement | null;
-    if (!viewport || !img) return;
+    if (!viewport) return;
+
+    const wrapEl =
+      (viewport.querySelector(`.${styles.imageWrap}`) as HTMLElement | null) ??
+      (viewport.querySelector(".swiper-slide-active") as HTMLElement | null);
+    if (!wrapEl) return;
 
     const view = viewport.getBoundingClientRect();
-    const wrap = img.getBoundingClientRect();
-    const box = getContainedBox(img, wrap);
+    const wrap = wrapEl.getBoundingClientRect();
+    const sizes = mediaSizesRef.current;
+    if (sizes.length === 0) return;
+
+    // Usar el ancho visual máximo (imagen más grande en el viewport con object-fit: contain).
+    let maxWidth = 0;
+    for (const size of sizes) {
+      if (!size.width || !size.height) continue;
+      const contained = getContainedSize(size.width, size.height, wrap.width, wrap.height);
+      if (contained.width > maxWidth) maxWidth = contained.width;
+    }
+    if (maxWidth <= 0) return;
+
+    const boxLeft = wrap.left + (wrap.width - maxWidth) / 2;
+    const boxRight = boxLeft + maxWidth;
     const arrowW = window.innerWidth <= 768 ? 40 : 48;
     const gap = 8;
-    const spaceLeft = box.left - view.left;
-    const spaceRight = view.right - box.right;
+    const spaceLeft = boxLeft - view.left;
+    const spaceRight = view.right - boxRight;
     const need = arrowW + gap;
 
     if (spaceLeft < need || spaceRight < need) {
@@ -127,26 +150,40 @@ export default function ImageCarousel({
     });
   }, [navBelow]);
 
+  // Precargar tamaños de todos los slides y fijar flechas a la imagen más ancha.
+  // Solo se recalcula al cambiar slides/resize — no al cambiar de foto activa.
   useEffect(() => {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
-
-    const ro = new ResizeObserver(() => updateNavFromImage());
-    ro.observe(viewport);
-
-    const img = viewport.querySelector(".swiper-slide-active img") as HTMLImageElement | null;
-    if (img) {
-      if (img.complete) updateNavFromImage();
-      else img.addEventListener("load", updateNavFromImage);
+    if (navBelow) {
+      setNavLayout({ below: true, left: 0, right: 0 });
+      return;
     }
 
-    const timer = window.setTimeout(updateNavFromImage, 50);
+    let cancelled = false;
+
+    (async () => {
+      const sizes = await Promise.all(
+        slides.map(async (item) => {
+          if (item.type === "video") {
+            // Sin metadata de video aún: tratar como 16:9 para no bloquear el layout.
+            return { width: 1920, height: 1080 } as MediaSize;
+          }
+          return (await loadImageSize(item.src)) ?? { width: 0, height: 0 };
+        })
+      );
+      if (cancelled) return;
+      mediaSizesRef.current = sizes.filter((s) => s.width > 0 && s.height > 0);
+      updateNavFromLargest();
+    })();
+
+    const viewport = viewportRef.current;
+    const ro = viewport ? new ResizeObserver(() => updateNavFromLargest()) : null;
+    if (viewport && ro) ro.observe(viewport);
+
     return () => {
-      ro.disconnect();
-      img?.removeEventListener("load", updateNavFromImage);
-      window.clearTimeout(timer);
+      cancelled = true;
+      ro?.disconnect();
     };
-  }, [activeIndex, slides, updateNavFromImage]);
+  }, [slides, navBelow, updateNavFromLargest]);
 
   if (total === 0) return null;
 
@@ -232,7 +269,6 @@ export default function ImageCarousel({
             handleUpdate(sw);
           }}
           onSlideChange={handleUpdate}
-          onTransitionEnd={updateNavFromImage}
           className={styles.swiper}
         >
           {slides.map((item, i) => {
@@ -272,7 +308,6 @@ export default function ImageCarousel({
                     loading={shouldEager(i) ? "eager" : "lazy"}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className={styles.image}
-                    onLoad={updateNavFromImage}
                   />
                 </div>
               </SwiperSlide>
