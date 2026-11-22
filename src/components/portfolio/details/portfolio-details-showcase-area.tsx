@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { showcaseProjects, ShowcaseProject } from '@/data/projects-showcase';
 import { findUnifiedPrevNext } from '@/utils/unified-projects';
 import ImageLightbox from '@/components/modal/image-lightbox';
-import ImageCarousel from '@/components/portfolio/details/image-carousel';
+import ImageCarousel, { CarouselMedia } from '@/components/portfolio/details/image-carousel';
 
 // Define los tipos de las props que este componente espera.
 // Ya no necesitamos prevSlug y nextSlug aquí, los calcularemos internamente.
@@ -57,6 +57,7 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
     fotografia = "",
     showcaseThumbs,
     fullWidthImage,
+    videos,
   } = project;
 
   // Usa la data real si existe, de lo contrario, usa un array de fallback.
@@ -75,8 +76,26 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       : [fullWidthImage]
     : [];
 
-  // Galería unificada para el carrusel: miniaturas + imágenes full width.
-  const galleryImages = [...thumbs, ...fullWidthImages].filter(Boolean);
+  // La portada también va en el carrusel (al inicio). Si ya está en thumbs/
+  // fullWidth con la misma ruta, no se duplica.
+  const galleryImages = (() => {
+    const rest = [...thumbs, ...fullWidthImages].filter(Boolean);
+    if (!showcaseHeroBg) {
+      return rest.filter((src, index, arr) => arr.indexOf(src) === index);
+    }
+    const withoutHero = rest.filter((src) => src !== showcaseHeroBg);
+    return [showcaseHeroBg, ...withoutHero.filter((src, index, arr) => arr.indexOf(src) === index)];
+  })();
+
+  // Galería final para el carrusel: imágenes + videos opcionales de los datos.
+  const galleryMedia: CarouselMedia[] = [
+    ...galleryImages.map((src) => ({ type: "image" as const, src })),
+    ...(videos ?? []).map((video) => ({
+      type: "video" as const,
+      src: video.src,
+      poster: video.poster,
+    })),
+  ];
 
   // Evita hidratación hasta que el cliente esté listo
   if (!isMounted) {
@@ -190,11 +209,11 @@ export default function PortfolioDetailsShowcaseArea({ project }: Props) {
       {/* details carousel */}
       <div className="showcase-details-thumb-wrap pb-40">
         <div className="container">
-          {galleryImages.length > 0 && (
+          {galleryMedia.length > 0 && (
             <div className="row">
               <div className="col-xl-12">
                 <ImageCarousel
-                  images={galleryImages}
+                  media={galleryMedia}
                   title={title}
                   loop={false}
                   onImageClick={openLightbox}

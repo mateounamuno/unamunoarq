@@ -1,3 +1,8 @@
+export type ProjectVideo = {
+    src: string; // ruta del archivo de video (ej: /assets/video/<slug>/clip.mp4)
+    poster?: string; // imagen de precarga opcional mostrada antes de reproducir
+};
+
 export type ShowcaseProject = {
     template: "showcase";
     slug: string;
@@ -16,6 +21,7 @@ export type ShowcaseProject = {
     heroOverlayOpacity?: number; // 0 to 1
     showcaseThumbs: string[]; // hasta 12 imágenes recomendadas
     fullWidthImage?: string | string[]; // imagen(es) full width opcional(es) - puede ser una o múltiples
+    videos?: ProjectVideo[]; // video(s) opcional(es) que se agregan al final de la galería
 };
 
 export const showcaseProjects: ShowcaseProject[] = [
@@ -66,16 +72,22 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/casa-nina/hero.webp",
         heroOverlayOpacity: 0.2,
         showcaseThumbs: [
-            "/assets/img/inner-project/casa-nina/frente.webp",
-            "/assets/img/inner-project/casa-nina/render1.webp",
-            "/assets/img/inner-project/casa-nina/render2.webp",
-            "/assets/img/inner-project/casa-nina/render3.webp",
-            "/assets/img/inner-project/casa-nina/render4.webp",
+            "/assets/img/inner-project/casa-nina/maqueta2.webp",
+            "/assets/img/inner-project/casa-nina/maqueta3.webp",
+            "/assets/img/inner-project/casa-nina/maqueta4.webp",
+            "/assets/img/inner-project/casa-nina/maqueta5.webp",
+            "/assets/img/inner-project/casa-nina/maqueta6.webp",
             "/assets/img/inner-project/casa-nina/grafico1.webp",
             "/assets/img/inner-project/casa-nina/grafico2.webp",
             "/assets/img/inner-project/casa-nina/grafico3.webp",
+            "/assets/img/inner-project/casa-nina/grafico4.webp",
         ],
-
+        videos: [
+            {
+                src: "/assets/video/casa-nina/casa-nina.mp4",
+                poster: "/assets/img/inner-project/casa-nina/video-poster.webp",
+            },
+        ],
     },
     {
         template: "showcase",
@@ -100,6 +112,11 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/refugio-para-el-viento/detail-2.webp",
             "/assets/img/inner-project/refugio-para-el-viento/banner.webp",
             "/assets/img/inner-project/refugio-para-el-viento/detail-3.webp",
+            "/assets/img/inner-project/refugio-para-el-viento/detail-5.webp",
+            "/assets/img/inner-project/refugio-para-el-viento/detail-6.webp",
+            "/assets/img/inner-project/refugio-para-el-viento/detail-7.webp",
+            "/assets/img/inner-project/refugio-para-el-viento/detail-8.webp",
+            "/assets/img/inner-project/refugio-para-el-viento/detail-9.webp",
         ],
     },
     {
@@ -117,7 +134,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno y Aubee Studio",
         location: "Córdoba, AR",
         fotografia: "",
-        showcaseHeroBg: "/assets/img/inner-project/unidades-vb/banner.webp",
+        showcaseHeroBg: "/assets/img/inner-project/unidades-vb/detail-6.webp",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
             "/assets/img/inner-project/unidades-vb/detail-1.webp",
@@ -131,6 +148,7 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/unidades-vb/detail-9.webp",
             "/assets/img/inner-project/unidades-vb/detail-10.webp",
             "/assets/img/inner-project/unidades-vb/detail-11.webp",
+            "/assets/img/inner-project/unidades-vb/banner.webp",
         ],
     },
     {
@@ -151,11 +169,11 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseHeroBg: "/assets/img/inner-project/la-barranca/banner.webp",
         heroOverlayOpacity: 0.4,
         showcaseThumbs: [
-            "/assets/img/inner-project/la-barranca/detail-1.jpg",
-            "/assets/img/inner-project/la-barranca/detail-2.jpg",
+            "/assets/img/inner-project/la-barranca/detail-1.webp",
+            "/assets/img/inner-project/la-barranca/detail-2.webp",
             "/assets/img/inner-project/la-barranca/detail-3.webp",
-            "/assets/img/inner-project/la-barranca/detail-4.jpg",
-            "/assets/img/inner-project/la-barranca/detail-5.jpg",
+            "/assets/img/inner-project/la-barranca/detail-4.webp",
+            "/assets/img/inner-project/la-barranca/detail-5.webp",
             "/assets/img/inner-project/la-barranca/detail-6.webp",
             "/assets/img/inner-project/la-barranca/full-width.webp",
         ],
@@ -286,7 +304,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno Arq.",
         location: "Río Cuarto, Córdoba, AR",
         fotografia: "",
-        showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/banner.webp",
+        showcaseHeroBg: "/assets/img/inner-project/cielo-y-tierra/detail-1.webp",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
             "/assets/img/inner-project/cielo-y-tierra/detail-1.webp",
@@ -316,7 +334,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview: "En casa para andar no hay comienzo y no hay final. <br/> A cada paso se repite: “Caminante no hay camino, se hace camino al andar”. Si no se anda, no se descubre. Si no se descubre, no se encuentra el interior. Porque el andar es dinámico, la casa es dinámica. Porque es dinámica, puede cambiar. El andar a pie es primitivo, es por ello que la casa para andar es vernácula. La casa para andar es una performance artística. La casa es paisaje, porque en el paisaje andamos, anduvimos y andaremos. Es un conjunto de piedras y ladrillos que un artista del land art encontró, parte en la montaña y parte en la ciudad. Luego las desparramó, según su orgánico y racional criterio, a pie de un cerro. <br/> En el andar hay paradas, porque quien no descansa no anda. Sin pausa, pero sin prisa. Si andar es de máquina, esta máquina funciona a sol y luna. <br/> No es una imagen, son muchas imágenes, más bien diría que es un film. <br/> Es deriva y es errar, errar de errante y errar de error. <br/> Se amasó con paisaje y se quemó en un horno ladrillero.",
-        autores: "Unamuno, Willnecker, Ferrrero, Marinelli",
+        autores: "Unamuno y Estudio Rare",
         location: "Villa Ciudad América, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/casa-andar/banner.webp",
@@ -324,9 +342,9 @@ export const showcaseProjects: ShowcaseProject[] = [
         showcaseThumbs: [
             "/assets/img/inner-project/casa-andar/detail-1.webp",
             "/assets/img/inner-project/casa-andar/detail-2.webp",
-            "/assets/img/inner-project/casa-andar/detail-3.webp",
-            "/assets/img/inner-project/casa-andar/detail-4.webp",
             "/assets/img/inner-project/casa-andar/detail-6.webp",
+            "/assets/img/inner-project/casa-andar/croquis-1.webp",
+            "/assets/img/inner-project/casa-andar/croquis-2.webp",
         ],
     },
     {
@@ -343,7 +361,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno, RARE, Perrote",
         location: "Salta, AR",
         fotografia: "",
-        showcaseHeroBg: "/assets/img/inner-project/edificio-recova/banner.webp",
+        showcaseHeroBg: "/assets/img/inner-project/edificio-recova/detail-1.webp",
         heroOverlayOpacity: 0.25,
         showcaseThumbs: [
             "/assets/img/inner-project/edificio-recova/detail-3.webp",
@@ -353,7 +371,7 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/edificio-recova/full-width.webp",
             "/assets/img/inner-project/edificio-recova/detail-5.webp",
             "/assets/img/inner-project/edificio-recova/detail-6.webp",
-            "/assets/img/inner-project/edificio-recova/detail-7.jpg",
+            "/assets/img/inner-project/edificio-recova/detail-7.webp",
             "/assets/img/inner-project/edificio-recova/detail-8.webp",
         ],
     },
@@ -377,7 +395,6 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/remodelacion-ar/detail-1.webp",
             "/assets/img/inner-project/remodelacion-ar/detail-2.webp",
             "/assets/img/inner-project/remodelacion-ar/detail-3.webp",
-            "/assets/img/inner-project/remodelacion-ar/detail-4.webp",
             "/assets/img/inner-project/remodelacion-ar/detail-5.webp",
             "/assets/img/inner-project/remodelacion-ar/detail-6.webp",
             "/assets/img/inner-project/remodelacion-ar/full-width.webp",
@@ -396,8 +413,8 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview: "Un proyecto que parte de entrelazar la luz y la forma, para que, en su conjunto, generen un espacio dinámico y flexible. Mientras la estructura se conforma como un elemento estático, la dinámica de la luz expresa distintas figuras y atmósferas en el interior, reflejando así, el tiempo en el espacio. <br/> El desafío también estaba condicionado por una antigua cancha de padel sobre la cual, se asentó el nuevo volumen. Los antiguos muros perimetrales, de la cancha, funcionaban como soporte del terreno desnivelado, por lo cual, hubo que conservarlos como parte de la estructura. <br/> “La arquitectura es el juego sabio, correcto y magnífico de los volúmenes bajo la luz” - Le Corbusier",
-        autores: "Unamuno, RARE.",
-        location: "Río Cuarto, Córdoba, AR",
+        autores: "Unamuno y Estudio Rare",
+        location: "Córdoba",
         fotografia: "Jorge Barucco",
         showcaseHeroBg: "/assets/img/inner-project/atelier-artista/banner.webp",
         heroOverlayOpacity: 0.25,
@@ -409,6 +426,12 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/atelier-artista/c-5.webp",
             "/assets/img/inner-project/atelier-artista/c-6.webp",
             "/assets/img/inner-project/atelier-artista/c-7.webp",
+        ],
+        videos: [
+            {
+                src: "/assets/video/atelier-artista/atelier-artista.mp4",
+                poster: "/assets/img/inner-project/atelier-artista/video-poster.webp",
+            },
         ],
     },
     {
@@ -461,12 +484,12 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/molt/detail-4.webp",
             "/assets/img/inner-project/molt/detail-3.webp",
             "/assets/img/inner-project/molt/banner.webp",
-            "/assets/img/inner-project/molt/detail-5.jpg",
-            "/assets/img/inner-project/molt/detail-6.jpg",
-            "/assets/img/inner-project/molt/detail-7.jpg",
+            "/assets/img/inner-project/molt/detail-5.webp",
+            "/assets/img/inner-project/molt/detail-6.webp",
+            "/assets/img/inner-project/molt/detail-7.webp",
             "/assets/img/inner-project/molt/detail-8.webp",
-            "/assets/img/inner-project/molt/detail-9.jpg",
-            "/assets/img/inner-project/molt/detail-10.jpg",
+            "/assets/img/inner-project/molt/detail-9.webp",
+            "/assets/img/inner-project/molt/detail-10.webp",
         ],
     },
     {
@@ -480,7 +503,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         showInGrid: true,
         subtitle: "[ Arquitectura ]",
         overview: "Un café al paso ubicado en el intersticio de dos grandes edificios de la ciudad de Córdoba. <br/> Una 'protesis' urbana que, a través de su forma, retoma cuestiones antagónicas sobre el peso y la levedad, lo estático y lo dinámico, lo sólido y lo líquido. <br/> Inspirado en la sensación de compresión que genera el sitio, el volumen adopta una forma “líquida” que enfatiza el gesto de compresión. Al mismo tiempo, el despojo de elementos contrasta con su entorno variado y su color morado, trae consigo, una reminiscencia a la planta del café.",
-        autores: "Unamuno Arq.",
+        autores: "Unamuno y Estudio Rare",
         location: "Córdoba, AR",
         fotografia: "",
         showcaseHeroBg: "/assets/img/inner-project/cafe-popolo/banner.webp",
@@ -539,7 +562,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno y e404",
         location: "Córdoba, AR",
         fotografia: "",
-        showcaseHeroBg: "/assets/img/inner-project/la-macarena/banner.webp",
+        showcaseHeroBg: "/assets/img/inner-project/la-macarena/detail-2.webp",
         heroOverlayOpacity: 0.15,
         showcaseThumbs: [
             "/assets/img/inner-project/la-macarena/detail-1.webp",
@@ -573,10 +596,10 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/banco-rarx/detail-1.webp",
             "/assets/img/inner-project/banco-rarx/detail-2.webp",
             "/assets/img/inner-project/banco-rarx/detail-3.webp",
-            "/assets/img/inner-project/banco-rarx/detail-5.jpg",
-            "/assets/img/inner-project/banco-rarx/detail-6.jpg",
-            "/assets/img/inner-project/banco-rarx/detail-7.jpg",
-            "/assets/img/inner-project/banco-rarx/detail-8.jpg",
+            "/assets/img/inner-project/banco-rarx/detail-5.webp",
+            "/assets/img/inner-project/banco-rarx/detail-6.webp",
+            "/assets/img/inner-project/banco-rarx/detail-7.webp",
+            "/assets/img/inner-project/banco-rarx/detail-8.webp",
         ],
     },
     {
@@ -592,7 +615,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         overview: "El encargo de un segundo Caffé del Popolo planteó el desafío de honrar la esencia del proyecto original sin querer replicar su lenguaje, ya que cada uno es una respuesta única a su sitio específico. <br/> Mientras el primer Caffé abrazaba lo exterior, este nuevo local demandaba una experiencia inherentemente interior. <br/> El concepto se centró en generar una atmósfera abstracta y potente que irradia desde dentro hacia fuera, reflejando también su paisaje circundante. Manteniendo el espíritu experimental del proyecto original a través de un material curvo y complejo, y traduciendo su identidad a un espacio completamente nuevo.",
         autores: "Unamuno, RARE & Mil9",
         location: "Córdoba, AR",
-        fotografia: "",
+        fotografia: "Victoria Echegaray",
         showcaseHeroBg: "/assets/img/inner-project/cafe-popolo-2/banner.webp",
         showcaseThumbs: [
             "/assets/img/inner-project/cafe-popolo-2/detail-1.webp",
@@ -734,7 +757,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno & RARE",
         location: "Córdoba, AR",
         fotografia: "Victoria Echegaray",
-        showcaseHeroBg: "/assets/img/inner-project/casa-ml/banner.webp",
+        showcaseHeroBg: "/assets/img/inner-project/casa-ml/full-width-2.webp",
         homeGrid: "/assets/img/inner-project/casa-ml/grid.webp",
         showOnHome: false,
         showInGrid: true,
@@ -848,7 +871,7 @@ export const showcaseProjects: ShowcaseProject[] = [
         autores: "Unamuno, Willnecker, Ferrero & Marinelli",
         location: "Villa General Belgrano, AR",
         fotografia: "Victoria Echegaray",
-        showcaseHeroBg: "/assets/img/inner-project/casa-vgb/banner.webp",
+        showcaseHeroBg: "/assets/img/inner-project/casa-vgb/detail-3.webp",
         homeGrid: "/assets/img/inner-project/casa-vgb/grid.webp",
         showOnHome: true,
         showInGrid: true,
@@ -860,12 +883,11 @@ export const showcaseProjects: ShowcaseProject[] = [
             "/assets/img/inner-project/casa-vgb/detail-4.webp",
             "/assets/img/inner-project/casa-vgb/detail-5.webp",
             "/assets/img/inner-project/casa-vgb/detail-6.webp",
-            "/assets/img/inner-project/casa-vgb/full-width-1.webp",
-            "/assets/img/inner-project/casa-vgb/full-width-2.webp",
             "/assets/img/inner-project/casa-vgb/detail-7.webp",
-            "/assets/img/inner-project/casa-vgb/detail-8.webp",
-            "/assets/img/inner-project/casa-vgb/detail-9.webp",
-            "/assets/img/inner-project/casa-vgb/detail-10.webp",
+            "/assets/img/inner-project/casa-vgb/grafico1.webp",
+            "/assets/img/inner-project/casa-vgb/grafico2.webp",
+            "/assets/img/inner-project/casa-vgb/grafico3.webp",
+            "/assets/img/inner-project/casa-vgb/grafico4.webp",
         ],
     },
     {

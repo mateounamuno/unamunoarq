@@ -66,7 +66,11 @@ async function convertToWebP(inputPath, outputPath) {
         }
 
         // Convertir a WebP
+        // .rotate() sin argumentos aplica la orientación EXIF (si existe)
+        // horneándola en los píxeles y descarta esa metadata. Evita que las
+        // fotos de celular queden rotadas tras la conversión a WebP.
         await sharp(inputPath)
+            .rotate()
             .resize(width, height, {
                 fit: 'inside',
                 withoutEnlargement: true,

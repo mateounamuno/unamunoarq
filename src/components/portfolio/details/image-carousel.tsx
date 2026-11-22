@@ -1,14 +1,21 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y, EffectFade, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper/types";
 import styles from "./image-carousel.module.scss";
 
+/** Elemento de la galería: imagen o video. */
+export type CarouselMedia =
+  | { type: "image"; src: string }
+  | { type: "video"; src: string; poster?: string };
+
 type Props = {
   /** Lista de rutas de imágenes a mostrar (una por slide). */
-  images: string[];
+  images?: string[];
+  /** Alternativa a `images`: lista de medios (imágenes y/o videos). Tiene prioridad sobre `images`. */
+  media?: CarouselMedia[];
   /** Título del proyecto, usado para construir los `alt`. */
   title: string;
   /** Habilita el loop infinito. Por defecto: false (sin loop). */
@@ -54,6 +61,7 @@ function getContainedBox(img: HTMLImageElement, wrap: DOMRect) {
 
 export default function ImageCarousel({
   images,
+  media,
   title,
   loop = false,
   autoplay = false,
@@ -63,17 +71,23 @@ export default function ImageCarousel({
   navBelow = false,
   onImageClick,
 }: Props) {
+  // Normaliza las props a una lista única de medios. `media` tiene prioridad;
+  // si solo llega `images`, se tratan todas como imágenes (retrocompatibilidad).
+  const slides = useMemo<CarouselMedia[]>(
+    () => media ?? (images ?? []).map((src) => ({ type: "image" as const, src })),
+    [media, images]
+  );
+  const total = slides.length;
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(images.length <= 1);
+  const [isEnd, setIsEnd] = useState(total <= 1);
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [prefersReduced] = useState<boolean>(getPrefersReducedMotion);
   const [navLayout, setNavLayout] = useState<NavLayout>(
     navBelow ? { below: true, left: 0, right: 0 } : DEFAULT_NAV
   );
   const viewportRef = useRef<HTMLDivElement>(null);
-
-  const total = images?.length ?? 0;
   const autoplayDelay = autoplay === true ? 4500 : autoplay || 0;
   const autoplayEnabled = Boolean(autoplayDelay) && !prefersReduced && total > 1;
 
@@ -132,9 +146,9 @@ export default function ImageCarousel({
       img?.removeEventListener("load", updateNavFromImage);
       window.clearTimeout(timer);
     };
-  }, [activeIndex, images, updateNavFromImage]);
+  }, [activeIndex, slides, updateNavFromImage]);
 
-  if (!images || total === 0) return null;
+  if (total === 0) return null;
 
   const shouldEager = (index: number): boolean => {
     if (Math.abs(index - activeIndex) <= 1) return true;
@@ -221,17 +235,37 @@ export default function ImageCarousel({
           onTransitionEnd={updateNavFromImage}
           className={styles.swiper}
         >
-          {images.map((src, i) => {
+          {slides.map((item, i) => {
             const alt = `${title} — imagen ${i + 1} de ${total}`;
+
+            if (item.type === "video") {
+              return (
+                <SwiperSlide key={`${item.src}-${i}`} className={styles.slide}>
+                  <div className={styles.imageWrap}>
+                    <video
+                      className={styles.video}
+                      src={item.src}
+                      poster={item.poster}
+                      controls
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={`${title} — video ${i + 1} de ${total}`}
+                    />
+                  </div>
+                </SwiperSlide>
+              );
+            }
+
             return (
-              <SwiperSlide key={`${src}-${i}`} className={styles.slide}>
+              <SwiperSlide key={`${item.src}-${i}`} className={styles.slide}>
                 <div
                   className={styles.imageWrap}
-                  onClick={onImageClick ? () => onImageClick(src, alt) : undefined}
+                  onClick={onImageClick ? () => onImageClick(item.src, alt) : undefined}
                   style={onImageClick ? { cursor: "pointer" } : undefined}
                 >
                   <Image
-                    src={src}
+                    src={item.src}
                     alt={alt}
                     fill
                     unoptimized
